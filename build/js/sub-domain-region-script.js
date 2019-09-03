@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(o){$("#region-form").overlay({load:!0,mask:{color:"#000",loadSpeed:200,opacity:.5}})});

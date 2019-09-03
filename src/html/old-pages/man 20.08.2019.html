@@ -1,0 +1,327 @@
+<link rel="stylesheet" href="/css/lax-tecDoc-pages/style.css">
+<div class="tabn" id="">
+  <div class="laximo-in-laxTecdoc">
+    <div class="lx-b-lax-col">
+      <div class="lx-b-lax-container">
+        <div class="lx-wht-vin">Поиск по VIN</div>
+
+        <div class="lx-b-search-container"><label>Поиск по VIN номеру</label>
+
+          <div class="lx-search-wrap-inp">
+            <form accept-charset="UTF-8" action="/laximo/vehicle_by_vin_frame" method="get"><input name="utf8" type="hidden" value="✓"> <input class="lx-search-inp" id="vin" name="vin" type="text"> <input class="lx-search-send" name="commit" type="submit" value="НАЙТИ">&nbsp;</form>
+          </div>
+        </div>
+
+        <div id="js-laximo-wizard-options"><div class="lx-b-search-container">
+          <label>Поиск по Frame номеру:</label>
+          <div class="lx-search-wrap-inp">
+            <form action="/laximo/vehicle_by_vin_frame" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="text" name="vin" id="vin" class="lx-search-inp">
+              <input type="hidden" name="catalog_code" id="catalog_code" value="MAN201412">
+              <input type="submit" name="commit" value="НАЙТИ" class="lx-search-send">
+            </form>  </div>
+        </div>
+        </div>
+
+        <div id="js-laximo-chassis-options"><div class="lx-b-search-container">
+          <label>Поиск по номеру автомобиля:</label>
+          <div class="lx-search-wrap-inp">
+            <form action="/laximo/vehicle_by_operation" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="text" name="fields[vehicleNumber]" id="fields_vehicleNumber" class="lx-search-inp" pattern="^^[\w\d*%#+-]{7,10}$$">
+              <input type="hidden" name="operation" id="operation" value="searchByVehicleNumber">
+              <input type="hidden" name="catalog_code" id="catalog_code" value="MAN201412">
+              <input type="submit" name="commit" value="НАЙТИ" class="lx-search-send">
+            </form>      </div>
+          <div class="lx-search-examp"> введите 7,10 символов (латинские буквы, цифры)  </div>
+        </div>
+        </div>
+
+        <div class="laximo"><a class="laximo__BtnAllCat" href="">Все каталоги</a></div>
+      </div>
+    </div>
+    <div class="laximo-tecdoc-page__small-tip">
+      <p class="lx-b-lax-col laximo-tecdoc-page__small-tip-wrapper">
+        * Рекомендуем использовать поиск по VIN коду. Подбор запчастей по быстрому поиску может быть неточным и содержит не весь ассортимент.
+      </p>
+      <div class="lx-b-lax-col laximo-tecdoc-page__where-to-fin-VIN">
+        <div class="lx-b-lax-container lx-b-lax-container--tecdoc-lax-page">
+          <p>Где найти VIN-номер?</p>
+          <div class="tecdoc-lax-page__where-to-find-VIN-wrapper hidden">
+            <p>Вы всегда можете найти VIN-номер в свидетельстве о регистрации.</p>
+            <img class="tecdoc-lax-page__where-to-find-VIN-VIN-img" src="/images/sts-show-vin.jpg" alt="стс с VIN-номером">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $( document ).ready(function() {
+
+        var wizard_div = $('#js-laximo-wizard-options');
+        $('#js-laximo-wizard-catalog').val('MAN201412 no no');
+        wizard_div.html("<div class=\"lx-b-search-container\">\n  <label>Поиск по Frame номеру:<\/label>\n  <div class=\"lx-search-wrap-inp\">\n    <form action=\"/laximo/vehicle_by_vin_frame\" accept-charset=\"UTF-8\" method=\"get\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />\n      <input type=\"text\" name=\"vin\" id=\"vin\" class=\"lx-search-inp\" />\n      <input type=\"hidden\" name=\"catalog_code\" id=\"catalog_code\" value=\"MAN201412\" />\n      <input type=\"submit\" name=\"commit\" value=\"НАЙТИ\" class=\"lx-search-send\" />\n<\/form>  <\/div>\n<\/div>\n");
+        $('#js-laximo-chassis-options').html("<div class=\"lx-b-search-container\">\n      <label>Поиск по номеру автомобиля:<\/label>\n      <div class=\"lx-search-wrap-inp\">\n        <form action=\"/laximo/vehicle_by_operation\" accept-charset=\"UTF-8\" method=\"get\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />\n            <input type=\"text\" name=\"fields[vehicleNumber]\" id=\"fields_vehicleNumber\" class=\"lx-search-inp\" pattern=\"^^[\\w\\d*%#+-]{7,10}$$\" />\n          <input type=\"hidden\" name=\"operation\" id=\"operation\" value=\"searchByVehicleNumber\" />\n          <input type=\"hidden\" name=\"catalog_code\" id=\"catalog_code\" value=\"MAN201412\" />\n          <input type=\"submit\" name=\"commit\" value=\"НАЙТИ\" class=\"lx-search-send\" />\n<\/form>      <\/div>\n      <div class=\"lx-search-examp\"> введите 7,10 символов (латинские буквы, цифры)  <\/div>\n    <\/div>\n");
+      });
+    </script>
+  </div>
+  <div class="tecDoc-in-laxTecdoc">
+    <section class="car-chooser-list-tecdoc" data-status="0">
+      <div class="car-chooser-list-tecdoc__point" data-status="0">TGL</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">TGS</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">TGX</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">TGA</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">TGE</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">MS</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">CLA</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">LION</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">90</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">2000</div>
+      <a href="/tecdoc2/69/models.html" class="car-chooser-list-tecdoc__point">Все</a>
+    </section>
+    <ul class="td-model" style="display: block;">
+      <li data-start-year="2017" data-end-year="2019" data-name="TGEUY_" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/37791.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6326/8_original_original.jpg" alt="8 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            TGE ФУРГОН (UY_)          </div>
+          <div class="car-base-list-date">
+            2017.02              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2016" data-end-year="2019" data-name="TGECUZ_" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/37792.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6325/7_original_original.jpg" alt="7 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            TGE C БОРТОВОЙ ПЛАТФОРМОЙ/ХОДОВАЯ ЧАСТЬ (UZ_)          </div>
+          <div class="car-base-list-date">
+            2016.11              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2007" data-end-year="2019" data-name="TGX" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/6416.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4727/2_original_original.jpg" alt="2 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            TGX          </div>
+          <div class="car-base-list-date">
+            2007.09              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2007" data-end-year="2019" data-name="TGS" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/6417.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4726/3_original_original.jpg" alt="3 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            TGS          </div>
+          <div class="car-base-list-date">
+            2007.08              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2006" data-end-year="2019" data-name="MS" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/12849.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6588/6_original_original.jpg" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            MS          </div>
+          <div class="car-base-list-date">
+            2006.01              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2006" data-end-year="2019" data-name="CLA" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/9539.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4689/4_original_original.jpg" alt="4 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            CLA          </div>
+          <div class="car-base-list-date">
+            2006.01              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2005" data-end-year="2019" data-name="TGL" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/5422.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4724/6_original_original.jpg" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            TGL          </div>
+          <div class="car-base-list-date">
+            2005.04              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2004" data-end-year="2019" data-name="LIONSREGIO" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/36647.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6110/7_original_original.jpg" alt="7 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            LION S REGIO          </div>
+          <div class="car-base-list-date">
+            2004.01              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2000" data-end-year="2019" data-name="E2000" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/8377.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4690/8_original_original.jpg" alt="8 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            E 2000          </div>
+          <div class="car-base-list-date">
+            2000.05              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2000" data-end-year="2019" data-name="TGA" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/4722.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4723/9_original_original.jpg" alt="9 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            TGA          </div>
+          <div class="car-base-list-date">
+            2000.03              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1996" data-end-year="2019" data-name="LIONSCOMFORT" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/4049.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4706/10_original_original.jpg" alt="10 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            LION S COMFORT          </div>
+          <div class="car-base-list-date">
+            1996.09              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1996" data-end-year="2019" data-name="LIONSCITY" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/8130.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4704/11_original_original.jpg" alt="11 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            LION S CITY          </div>
+          <div class="car-base-list-date">
+            1996.03              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1995" data-end-year="2019" data-name="LIONSCOACH" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/4046.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4705/12_original_original.jpg" alt="12 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            LION S COACH          </div>
+          <div class="car-base-list-date">
+            1995.09              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1995" data-end-year="2005" data-name="M2000M" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3603.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4709/14_original_original.jpg" alt="14 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            M 2000 M          </div>
+          <div class="car-base-list-date">
+            1995.08              ...
+            2005.12          </div>
+        </div>
+      </li>
+      <li data-start-year="1995" data-end-year="2019" data-name="M2000L" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3538.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4708/13_original_original.jpg" alt="13 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            M 2000 L          </div>
+          <div class="car-base-list-date">
+            1995.08              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1994" data-end-year="2019" data-name="F2000" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3539.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4693/15_original_original.jpg" alt="15 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            F 2000          </div>
+          <div class="car-base-list-date">
+            1994.01              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1993" data-end-year="2019" data-name="L2000" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3537.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4702/16_original_original.jpg" alt="16 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            L 2000          </div>
+          <div class="car-base-list-date">
+            1993.10              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1991" data-end-year="2019" data-name="LIONSSTAR" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/4047.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4707/4_original_original.jpg" alt="4 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            LION S STAR          </div>
+          <div class="car-base-list-date">
+            1991.03              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="1988" data-end-year="1998" data-name="M90" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3540.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4710/5_original_original.jpg" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            M 90          </div>
+          <div class="car-base-list-date">
+            1988.08              ...
+            1998.12          </div>
+        </div>
+      </li>
+      <li data-start-year="1987" data-end-year="1995" data-name="G90" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3534.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4699/3_original_original.jpg" alt="3 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            G 90          </div>
+          <div class="car-base-list-date">
+            1987.09              ...
+            1995.05          </div>
+        </div>
+      </li>
+      <li data-start-year="1986" data-end-year="1997" data-name="F90" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3541.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4695/1_original_original.jpg" alt="1 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            F 90          </div>
+          <div class="car-base-list-date">
+            1986.06              ...
+            1997.12          </div>
+        </div>
+      </li>
+      <li data-start-year="1986" data-end-year="1996" data-name="F90UNTERFLUR" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/69/models/3898.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4696/2_original_original.jpg" alt="2 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            F 90 UNTERFLUR          </div>
+          <div class="car-base-list-date">
+            1986.06              ...
+            1996.09          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="/scripts/lax-tecDoc-pages/script.js" defer=""></script>

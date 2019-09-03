@@ -1,0 +1,14 @@
+.car-type-chooser-preloader {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(200, 200, 200, 0.5);
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100500;
+}

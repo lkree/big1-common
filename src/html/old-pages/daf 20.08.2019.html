@@ -1,0 +1,322 @@
+<link rel="stylesheet" href="/css/lax-tecDoc-pages/style.css">
+<div class="tabn" id="">
+  <div class="laximo-in-laxTecdoc">
+    <div class="lx-b-lax-col">
+      <div class="lx-b-lax-container">
+        <div class="lx-wht-vin">Поиск по VIN</div>
+
+        <div class="lx-b-search-container"><label>Поиск по VIN номеру</label>
+
+          <div class="lx-search-wrap-inp">
+            <form accept-charset="UTF-8" action="/laximo/vehicle_by_vin_frame" method="get"><input name="utf8" type="hidden" value="✓"> <input class="lx-search-inp" id="vin" name="vin" type="text">
+              <input class="lx-search-send" name="commit" type="submit" value="НАЙТИ">&nbsp;
+            </form>
+          </div>
+        </div>
+
+        <div id="js-laximo-wizard-options"><div class="lx-b-search-container">
+          <label>Поиск по Frame номеру:</label>
+          <div class="lx-search-wrap-inp">
+            <form action="/laximo/vehicle_by_vin_frame" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="text" name="vin" id="vin" class="lx-search-inp">
+              <input type="hidden" name="catalog_code" id="catalog_code" value="DAF">
+              <input type="submit" name="commit" value="НАЙТИ" class="lx-search-send">
+            </form>  </div>
+        </div>
+        </div>
+
+        <div id="js-laximo-chassis-options"><div class="lx-b-search-container">
+          <label>Поиск по номеру шасси:</label>
+          <div class="lx-search-wrap-inp">
+            <form action="/laximo/vehicle_by_operation" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="text" name="fields[chassis]" id="fields_chassis" class="lx-search-inp" pattern="^[A-Z0-9]{7,8}$">
+              <input type="hidden" name="operation" id="operation" value="findByChassisNumber">
+              <input type="hidden" name="catalog_code" id="catalog_code" value="DAF">
+              <input type="submit" name="commit" value="НАЙТИ" class="lx-search-send">
+            </form>      </div>
+          <div class="lx-search-examp"> введите 7,8 символов (латинские буквы, цифры)  </div>
+        </div>
+        </div>
+
+        <div class="laximo"><a class="laximo__BtnAllCat" href="/laximo">Все каталоги</a></div>
+      </div>
+    </div>
+    <div class="laximo-tecdoc-page__small-tip">
+      <p class="lx-b-lax-col laximo-tecdoc-page__small-tip-wrapper">
+        * Рекомендуем использовать поиск по VIN коду. Подбор запчастей по
+        быстрому поиску может быть неточным и содержит не весь ассортимент. </p>
+      <div class="lx-b-lax-col laximo-tecdoc-page__where-to-fin-VIN">
+        <div class="lx-b-lax-container lx-b-lax-container--tecdoc-lax-page">
+          <p>Где найти VIN-номер?</p>
+          <div class="tecdoc-lax-page__where-to-find-VIN-wrapper hidden">
+            <p>Вы всегда можете найти VIN-номер в свидетельстве о
+              регистрации.</p>
+            <img class="tecdoc-lax-page__where-to-find-VIN-VIN-img" src="/images/sts-show-vin.jpg" alt="стс с VIN-номером">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+
+      var wizard_div = $('#js-laximo-wizard-options');
+      $('#js-laximo-wizard-catalog').val('DAF no no');
+      wizard_div.html("<div class=\"lx-b-search-container\">\n  <label>Поиск по Frame номеру:<\/label>\n  <div class=\"lx-search-wrap-inp\">\n    <form action=\"/laximo/vehicle_by_vin_frame\" accept-charset=\"UTF-8\" method=\"get\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />\n      <input type=\"text\" name=\"vin\" id=\"vin\" class=\"lx-search-inp\" />\n      <input type=\"hidden\" name=\"catalog_code\" id=\"catalog_code\" value=\"DAF\" />\n      <input type=\"submit\" name=\"commit\" value=\"НАЙТИ\" class=\"lx-search-send\" />\n<\/form>  <\/div>\n<\/div>\n");
+      $('#js-laximo-chassis-options').html("<div class=\"lx-b-search-container\">\n      <label>Поиск по номеру шасси:<\/label>\n      <div class=\"lx-search-wrap-inp\">\n        <form action=\"/laximo/vehicle_by_operation\" accept-charset=\"UTF-8\" method=\"get\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />\n            <input type=\"text\" name=\"fields[chassis]\" id=\"fields_chassis\" class=\"lx-search-inp\" pattern=\"^[A-Z0-9]{7,8}$\" />\n          <input type=\"hidden\" name=\"operation\" id=\"operation\" value=\"findByChassisNumber\" />\n          <input type=\"hidden\" name=\"catalog_code\" id=\"catalog_code\" value=\"DAF\" />\n          <input type=\"submit\" name=\"commit\" value=\"НАЙТИ\" class=\"lx-search-send\" />\n<\/form>      <\/div>\n      <div class=\"lx-search-examp\"> введите 7,8 символов (латинские буквы, цифры)  <\/div>\n    <\/div>\n");
+    });
+  </script>
+  <div class="tecDoc-in-laxTecdoc">
+    <section class="car-chooser-list-tecdoc" data-status="0">
+      <div class="car-chooser-list-tecdoc__point" data-status="0">45</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">55</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">65</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">75</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">85</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">95</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">105</div>
+      <a href="/tecdoc2/24/models.html" class="car-chooser-list-tecdoc__point">Все</a>
+    </section>
+    <ul class="td-model" style="display: block;">
+      <li data-start-year="2005" data-end-year="2019" data-name="XF105" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/5539.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5514/5_original_original.jpg" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            XF 105
+          </div>
+          <div class="car-base-list-date">
+            2005.10 ...
+            Выпускается
+          </div>
+        </div>
+      </li>
+      <li data-start-year="2002" data-end-year="2006" data-name="XF95" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4967.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5515/6_original_original.jpg" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            XF 95
+          </div>
+          <div class="car-base-list-date">
+            2002.01 ...
+            2006.12
+          </div>
+        </div>
+      </li>
+      <li data-start-year="2001" data-end-year="2013" data-name="CF85" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4970.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5478/7_original_original.jpg" alt="7 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            CF 85
+          </div>
+          <div class="car-base-list-date">
+            2001.01 ...
+            2013.05
+          </div>
+        </div>
+      </li>
+      <li data-start-year="2001" data-end-year="2013" data-name="CF65" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4968.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5476/11_original_original.jpg" alt="11 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            CF 65
+          </div>
+          <div class="car-base-list-date">
+            2001.01 ...
+            2013.05
+          </div>
+        </div>
+      </li>
+      <li data-start-year="2001" data-end-year="2019" data-name="LF55" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4966.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5509/13_original_original.jpg" alt="13 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            LF 55
+          </div>
+          <div class="car-base-list-date">
+            2001.01 ...
+            Выпускается
+          </div>
+        </div>
+      </li>
+      <li data-start-year="2001" data-end-year="2013" data-name="CF75" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4969.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5477/12_original_original.jpg" alt="12 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            CF 75
+          </div>
+          <div class="car-base-list-date">
+            2001.01 ...
+            2013.05
+          </div>
+        </div>
+      </li>
+      <li data-start-year="2001" data-end-year="2019" data-name="LF45" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4964.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5508/10_original_original.jpg" alt="10 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            LF 45
+          </div>
+          <div class="car-base-list-date">
+            2001.01 ...
+            Выпускается
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1998" data-end-year="2000" data-name="85CF" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4179.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5472/14_original_original.jpg" alt="14 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            85 CF
+          </div>
+          <div class="car-base-list-date">
+            1998.02 ...
+            2000.12
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1998" data-end-year="2000" data-name="75CF" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4178.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5470/9_original_original.jpg" alt="9 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            75 CF
+          </div>
+          <div class="car-base-list-date">
+            1998.02 ...
+            2000.12
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1998" data-end-year="2000" data-name="65CF" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4177.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5468/8_original_original.jpg" alt="8 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            65 CF
+          </div>
+          <div class="car-base-list-date">
+            1998.02 ...
+            2000.12
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1997" data-end-year="2002" data-name="95XF" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/4176.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5474/15_original_original.jpg" alt="15 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            95 XF
+          </div>
+          <div class="car-base-list-date">
+            1997.01 ...
+            2002.09
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1995" data-end-year="2000" data-name="55" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/1541.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5466/16_original_original.jpg" alt="16 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            55
+          </div>
+          <div class="car-base-list-date">
+            1995.09 ...
+            2000.12
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1993" data-end-year="1998" data-name="65" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/3653.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5467/17_original_original.jpg" alt="17 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            65
+          </div>
+          <div class="car-base-list-date">
+            1993.01 ...
+            1998.02
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1992" data-end-year="1998" data-name="75" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/587.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5469/18_original_original.jpg" alt="18 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            75
+          </div>
+          <div class="car-base-list-date">
+            1992.07 ...
+            1998.02
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1992" data-end-year="1998" data-name="85" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/755.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5471/19_original_original.jpg" alt="19 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            85
+          </div>
+          <div class="car-base-list-date">
+            1992.07 ...
+            1998.02
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1991" data-end-year="2000" data-name="45" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/714.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5465/20_original_original.jpg" alt="20 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            45
+          </div>
+          <div class="car-base-list-date">
+            1991.01 ...
+            2000.12
+          </div>
+        </div>
+      </li>
+      <li data-start-year="1987" data-end-year="1998" data-name="95" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/24/models/837.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/default.gif" alt="Default" style="display: inline; width: 255px; margin-top: -11px; height: 150px;">
+          </div>
+          <div class="car-base-list-name">
+            95
+          </div>
+          <div class="car-base-list-date">
+            1987.09 ...
+            1998.01
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="/scripts/lax-tecDoc-pages/script.js" defer=""></script>

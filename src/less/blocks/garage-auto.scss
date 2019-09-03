@@ -1,0 +1,114 @@
+.garage-auto {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.garage-auto__item {
+  width: 31%;
+  min-height: 534px;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 1% 19px;
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px
+}
+
+.garage-auto__item-top-part {
+  height: 230px;
+  width: 100%;
+  display: flex;
+  justify-content: center
+}
+
+.garage-auto__item-top-part img {
+  object-fit: none;
+  overflow: hidden;
+  min-width: 255px;
+  max-width: 300px
+}
+
+.garage-auto__item-bottom-part {
+  height: calc(100% - 230px);
+  padding: 15px;
+  background-color: #1c4254;
+  color: #fff;
+  position: relative
+}
+
+.garage-auto__item-bottom-part-top {
+  overflow: hidden
+}
+
+.garage-auto__item-bold-tag {
+  font-size: 17px
+}
+
+.garage-auto__item-auto-descr-item {
+  font-size: 15px;
+  font-style: italic
+}
+
+.garage-auto__item-bottom-part-bot {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  padding-top: 10px
+}
+
+.garage-auto__item-part-bot-link {
+  font-size: 15px;
+  font-style: italic;
+  color: #fff;
+  padding: 3px 0
+}
+
+.garage-auto__item-part-bot-link:hover {
+  cursor: pointer
+}
+
+.garage-auto__service-btns {
+  position: absolute;
+  top: 7px;
+  right: 0
+}
+
+.garage-auto__item-repair {
+  background: url(/images/design/settingsIconFFF.png) no-repeat center;
+  background-size: contain;
+  padding: 10px;
+  margin: 0 5px 0 0;
+  font-size: 0
+}
+
+.garage-auto__item-delete {
+  padding: 10px;
+  background: url(/images/design/deleteIconFFF.png) no-repeat center;
+  background-size: contain;
+  margin-right: 5px;
+  font-size: 0
+}
+
+@media (max-width: 900px) {
+  .garage-auto__item {
+    width: 48%
+  }
+}
+
+@media (max-width: 700px) {
+  .garage-auto__item {
+    width: 70%;
+    margin: 10px auto
+  }
+}
+
+@media (max-width: 550px) {
+  .garage-auto__item {
+    width: 100%
+  }
+}

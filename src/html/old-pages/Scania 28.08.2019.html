@@ -1,0 +1,233 @@
+<link rel="stylesheet" href="/css/lax-tecDoc-pages/style.css">
+<div class="tabn" id="">
+  <div class="laximo-in-laxTecdoc">
+    <div class="lx-b-lax-col">
+      <div class="lx-b-lax-container">
+        <div class="lx-wht-vin">Поиск по VIN</div>
+
+        <div class="lx-b-search-container"><label>Поиск по VIN номеру</label>
+
+          <div class="lx-search-wrap-inp">
+            <form accept-charset="UTF-8" action="/laximo/vehicle_by_vin_frame" method="get"><input name="utf8" type="hidden" value="✓"> <input class="lx-search-inp" id="vin" name="vin" type="text"> <input class="lx-search-send" name="commit" type="submit" value="НАЙТИ">&nbsp;</form>
+          </div>
+
+          <div id="js-laximo-wizard-options"><div class="lx-b-sel-tm">
+            <label>Тип автомобиля/двигателя</label>
+            <div class="lx-wrap-ss lx-tt-u">
+              <select class="js-laximo-wizard-select">
+                <option value=""></option>
+                <option value="SCANIA $*KwENVyhFAAAAAM1Z-pI$ no">3 series bus (1987-1999)</option>
+                <option value="SCANIA $*KwGv9YrjpQAAAACvsVCX$ no">3 series truck (1987-1996)</option>
+                <option value="SCANIA $*KwE6YB9xPgAAAAD6XZlO$ no">4 series bus (1994-2010)</option>
+                <option value="SCANIA $*KwHLke6FzwAAAADK6xdY$ no">4 series truck (1994-2008)</option>
+                <option value="SCANIA $*KwFzKVY_cQAAAADrkwY8$ no">E2011 (2010- )</option>
+                <option value="SCANIA $*KwGRy7TbkAAAAADQnG9H$ no">F, K, N series bus (2004- )</option>
+                <option value="SCANIA $*KwGu9IvvrgAAAAAtqMtB$ no">P, G, R, T series truck (2003- )</option>
+                <option value="SCANIA $*KwE2bBN8MQAAAACcgLxO$ no">P96 (1996- )</option>
+              </select>
+            </div>
+          </div>
+          </div>
+
+          <div id="js-laximo-chassis-options">  <div class="lx-sel-or"><em>или</em></div>
+
+            <div class="lx-b-search-container">
+              <label>Поиск по номеру шасси:</label>
+              <div class="lx-search-wrap-inp">
+                <form action="/laximo/vehicle_by_operation" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                  <input type="text" name="fields[chassis]" id="fields_chassis" class="lx-search-inp" pattern="^[0-9]{7}$">
+                  <input type="hidden" name="operation" id="operation" value="findByChassisNumber">
+                  <input type="hidden" name="catalog_code" id="catalog_code" value="SCANIA">
+                  <input type="submit" name="commit" value="НАЙТИ" class="lx-search-send">
+                </form>      </div>
+              <div class="lx-search-examp"> введите 7 символов (латинские буквы, цифры)  </div>
+            </div>
+            <div class="lx-sel-or"><em>или</em></div>
+
+            <div class="lx-b-search-container">
+              <label>Найти по номеру двигателя:</label>
+              <div class="lx-search-wrap-inp">
+                <form action="/laximo/vehicle_by_operation" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                  <input type="text" name="fields[engineNo]" id="fields_engineNo" class="lx-search-inp" pattern="^[A-Z0-9]{7}$">
+                  <input type="hidden" name="operation" id="operation" value="findByEngineNumber">
+                  <input type="hidden" name="catalog_code" id="catalog_code" value="SCANIA">
+                  <input type="submit" name="commit" value="НАЙТИ" class="lx-search-send">
+                </form>      </div>
+              <div class="lx-search-examp"> введите 7 символов (латинские буквы, цифры)  </div>
+            </div>
+          </div>
+
+          <div class="laximo"><a class="laximo__BtnAllCat" href="/laximo">Все каталоги</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="laximo-tecdoc-page__small-tip">
+      <p class="lx-b-lax-col laximo-tecdoc-page__small-tip-wrapper">
+        * Рекомендуем использовать поиск по VIN коду. Подбор запчастей по
+        быстрому поиску может быть неточным и содержит не весь ассортимент. </p>
+      <div class="lx-b-lax-col laximo-tecdoc-page__where-to-fin-VIN">
+        <div class="lx-b-lax-container lx-b-lax-container--tecdoc-lax-page">
+          <p>Где найти VIN-номер?</p>
+          <div class="tecdoc-lax-page__where-to-find-VIN-wrapper hidden">
+            <p>Вы всегда можете найти VIN-номер в свидетельстве о
+              регистрации.</p>
+            <img class="tecdoc-lax-page__where-to-find-VIN-VIN-img" src="/images/sts-show-vin.jpg" alt="стс с VIN-номером">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tecDoc-in-laxTecdoc">
+    <section class="car-chooser-list-tecdoc" data-status="0">
+      <div class="car-chooser-list-tecdoc__point" data-status="0">3-series</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">4-series</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">t-series</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">s-series</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">k-series</div>
+      <div class="car-chooser-list-tecdoc__point" data-status="0">omni</div>
+      <a href="/tecdoc2/103/models.html" class="car-chooser-list-tecdoc__point">Все</a>
+    </section>
+    <ul class="td-model" style="display: block;">
+
+
+
+
+
+
+
+
+
+
+
+      <li data-start-year="2016" data-end-year="2019" data-name="SSERIES" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/36972.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6223/1_original_original.jpg" alt="1 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            S - SERIES          </div>
+          <div class="car-base-list-date">
+            2016.08              ...
+            Выпускается          </div>
+        </div>
+      </li>
+
+
+
+
+      <li data-start-year="2008" data-end-year="2019" data-name="OMNICITY" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/37714.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6335/5_original_original.jpg" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            OMNICITY          </div>
+          <div class="car-base-list-date">
+            2008.07              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2007" data-end-year="2019" data-name="OMNIEXPRESS" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/36645.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6160/5_original_original.jpg" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            OMNIEXPRESS          </div>
+          <div class="car-base-list-date">
+            2007.01              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2006" data-end-year="2019" data-name="OMNILINK" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/37715.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6336/6_original_original.jpg" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            OMNILINK          </div>
+          <div class="car-base-list-date">
+            2006.09              ...
+            Выпускается          </div>
+        </div>
+      </li>
+
+
+      <li data-start-year="2006" data-end-year="2019" data-name="KSERIES" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/11695.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4810/6_original_original.jpg" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            K - SERIES          </div>
+          <div class="car-base-list-date">
+            2006.01              ...
+            Выпускается          </div>
+        </div>
+      </li>
+      <li data-start-year="2004" data-end-year="2019" data-name="PGRTSERIES" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/5534.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4811/7_original_original.jpg" alt="7 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            P,G,R,T - SERIES          </div>
+          <div class="car-base-list-date">
+            2004.03              ...
+            Выпускается          </div>
+        </div>
+      </li>
+
+      <li data-start-year="1995" data-end-year="2004" data-name="4SERIES" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/5535.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4808/9_original_original.jpg" alt="9 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            4 - SERIES          </div>
+          <div class="car-base-list-date">
+            1995.09              ...
+            2004.09          </div>
+        </div>
+      </li>
+      <li data-start-year="1995" data-end-year="2004" data-name="4SERIESBUS" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/13876.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/5108/1_original_original.jpg" alt="1 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            4 - SERIES BUS          </div>
+          <div class="car-base-list-date">
+            1995.09              ...
+            2004.09          </div>
+        </div>
+      </li>
+      <li data-start-year="1991" data-end-year="2013" data-name="KSERIESBUS" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/36709.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/6334/4_original_original.jpg" alt="4 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            K - SERIES BUS          </div>
+          <div class="car-base-list-date">
+            1991.01              ...
+            2013.08          </div>
+        </div>
+      </li>
+
+      <li data-start-year="1988" data-end-year="1996" data-name="3SERIES" class="model-item" style="display: none;">
+        <div class="model-link-div" data-href="/tecdoc2/103/models/5536.html">
+          <div class="car-base-list-image" style="overflow: hidden;">
+            <img src="https://api.parts-soft.ru/system/car_base_model/4806/10_original_original.jpg" alt="10 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+          <div class="car-base-list-name">
+            3 - SERIES          </div>
+          <div class="car-base-list-date">
+            1988.01              ...
+            1996.12          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  $( document ).ready(function() {
+
+    var wizard_div = $('#js-laximo-wizard-options');
+    $('#js-laximo-wizard-catalog').val('SCANIA no no');
+    wizard_div.html('');
+    wizard_div.append("<div class=\"lx-b-sel-tm\">\n  <label>Тип автомобиля/двигателя<\/label>\n    <div class=\"lx-wrap-ss lx-tt-u\">\n      <select class=\'js-laximo-wizard-select\'>\n        <option value=\"\"><\/option>\n          <option value=\'SCANIA $*KwENVyhFAAAAAM1Z-pI$ no\'>3 series bus (1987-1999)<\/option>\n          <option value=\'SCANIA $*KwGv9YrjpQAAAACvsVCX$ no\'>3 series truck (1987-1996)<\/option>\n          <option value=\'SCANIA $*KwE6YB9xPgAAAAD6XZlO$ no\'>4 series bus (1994-2010)<\/option>\n          <option value=\'SCANIA $*KwHLke6FzwAAAADK6xdY$ no\'>4 series truck (1994-2008)<\/option>\n          <option value=\'SCANIA $*KwFzKVY_cQAAAADrkwY8$ no\'>E2011 (2010- )<\/option>\n          <option value=\'SCANIA $*KwGRy7TbkAAAAADQnG9H$ no\'>F, K, N series bus (2004- )<\/option>\n          <option value=\'SCANIA $*KwGu9IvvrgAAAAAtqMtB$ no\'>P, G, R, T series truck (2003- )<\/option>\n          <option value=\'SCANIA $*KwE2bBN8MQAAAACcgLxO$ no\'>P96 (1996- )<\/option>\n      <\/select>\n    <\/div>\n<\/div>\n");
+    $('#js-laximo-chassis-options').html("  <div class=\"lx-sel-or\"><em>или<\/em><\/div>\n\n    <div class=\"lx-b-search-container\">\n      <label>Поиск по номеру шасси:<\/label>\n      <div class=\"lx-search-wrap-inp\">\n        <form action=\"/laximo/vehicle_by_operation\" accept-charset=\"UTF-8\" method=\"get\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />\n            <input type=\"text\" name=\"fields[chassis]\" id=\"fields_chassis\" class=\"lx-search-inp\" pattern=\"^[0-9]{7}$\" />\n          <input type=\"hidden\" name=\"operation\" id=\"operation\" value=\"findByChassisNumber\" />\n          <input type=\"hidden\" name=\"catalog_code\" id=\"catalog_code\" value=\"SCANIA\" />\n          <input type=\"submit\" name=\"commit\" value=\"НАЙТИ\" class=\"lx-search-send\" />\n<\/form>      <\/div>\n      <div class=\"lx-search-examp\"> введите 7 символов (латинские буквы, цифры)  <\/div>\n    <\/div>\n  <div class=\"lx-sel-or\"><em>или<\/em><\/div>\n\n    <div class=\"lx-b-search-container\">\n      <label>Найти по номеру двигателя:<\/label>\n      <div class=\"lx-search-wrap-inp\">\n        <form action=\"/laximo/vehicle_by_operation\" accept-charset=\"UTF-8\" method=\"get\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />\n            <input type=\"text\" name=\"fields[engineNo]\" id=\"fields_engineNo\" class=\"lx-search-inp\" pattern=\"^[A-Z0-9]{7}$\" />\n          <input type=\"hidden\" name=\"operation\" id=\"operation\" value=\"findByEngineNumber\" />\n          <input type=\"hidden\" name=\"catalog_code\" id=\"catalog_code\" value=\"SCANIA\" />\n          <input type=\"submit\" name=\"commit\" value=\"НАЙТИ\" class=\"lx-search-send\" />\n<\/form>      <\/div>\n      <div class=\"lx-search-examp\"> введите 7 символов (латинские буквы, цифры)  <\/div>\n    <\/div>\n");
+  });
+</script>
+<script src="/scripts/lax-tecDoc-pages/script.js" defer=""></script>

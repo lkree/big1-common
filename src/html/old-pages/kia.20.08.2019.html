@@ -1,0 +1,850 @@
+<script src="/scripts/car-type-chooser-modal-window-script.js" defer="defer"></script>
+  <div class="car-type-chooser-preloader hidden">
+    <div class="car-type-chooser-modal-window">
+      <header class="car-type-chooser-modal-window__header">
+        Выберите тип вашего авто
+      </header>
+      <div class="car-type-chooser-modal-window__type-choose-wrapper">
+        <a href="?type=truck" class="car-type-chooser-modal-window__checkbox car-type-chooser-modal-window__truck-checkbox">
+          <img src="/images/another-images/car-type-chooser-modal-window/truck-icon-complete.png" alt="Грузовая">
+          <p class="car-type-chooser-modal-window__checkbox-description">Грузовой</p>
+        </a>
+        <a href="?type=car" class="car-type-chooser-modal-window__checkbox car-type-chooser-modal-window__car-checkbox">
+          <img src="/images/another-images/car-type-chooser-modal-window/car-icon-complete.png" alt="Легковая">
+          <p class="car-type-chooser-modal-window__checkbox-description">Легковой</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="/css/lax-tecDoc-pages/style.css">
+  <div class="car-type-toggler">
+    <input type="checkbox" id="car-type-toggler__checkbox" class="car-type-toggler__checkbox">
+    <label class="car-type-toggler__label" for="car-type-toggler__checkbox"></label>
+  </div>
+  <div class="tabn" id="">
+    <div class="laximo-in-laxTecdoc">
+      <div class="lx-b-lax-col">
+        <div class="lx-b-lax-container">
+          <div class="lx-wht-vin">Поиск по VIN</div>
+
+          <div class="lx-b-search-container"><label>Поиск по VIN номеру</label>
+
+            <div class="lx-search-wrap-inp">
+              <form accept-charset="UTF-8" action="/laximo/vehicle_by_vin_frame" method="get"><input name="utf8" type="hidden" value="✓"> <input class="lx-search-inp" id="vin" name="vin" type="text"> <input class="lx-search-send" name="commit" type="submit" value="НАЙТИ">&nbsp;</form>
+            </div>
+          </div>
+
+          <div id="js-laximo-wizard-options"><div class="lx-b-sel-tm">
+            <label>Семейство</label>
+            <div class="lx-wrap-ss lx-tt-u">
+              <select class="js-laximo-wizard-select">
+                <option value=""></option>
+                <option value="HYWCV201803 $*KwELVC5ECwAAAABUP3-K$ no">11 Ton Class</option>
+                <option value="HYWCV201803 $*KwGXyLLYkwAAAAB0gL5i$ no">18 Ton Class</option>
+                <option value="HYWCV201803 $*KwGC3afOhwAAAAAP6Bn-$ no">23 Ton Class</option>
+                <option value="HYWCV201803 $*KwFYB30ZXwAAAACAbvnb$ no">5 Ton Class</option>
+                <option value="HYWCV201803 $*KwEDXCZDBQAAAAA3Yb0d$ no">8 Ton Class</option>
+                <option value="HYWCV201803 $*KwGWybPYnQAAAAAqRp43$ no">Aero City</option>
+                <option value="HYWCV201803 $*KwE4Zx14PAAAAABbwq_8$ no">Aero Queen</option>
+                <option value="HYWCV201803 $*KwHptsyh6uwAAAAAsKnZdQ$ no">Aero Space</option>
+                <option value="HYWCV201803 $*KwGA36XAgwAAAAA_i-yM$ no">Aero Town</option>
+                <option value="HYWCV201803 $*KwFzLFYzcQAAAABw-LkC$ no">Chorus</option>
+                <option value="HYWCV201803 $*KwH2qdO5_AAAAAAf5Kk8$ no">County</option>
+                <option value="HYWCV201803 $*KwG65Z_3uwAAAAAx5Iyl$ no">E-Aerotown</option>
+                <option value="HYWCV201803 $*KwHDnOaJwQAAAAB9n_w2$ no">E-County</option>
+                <option value="HYWCV201803 $*KwELVC5EAAAAAADD7aYC$ no">Global</option>
+                <option value="HYWCV201803 $*KwGp9ozhq60AAAAA621bgw$ no">Grace</option>
+                <option value="HYWCV201803 $*KwEPUCpDDgAAAADjfyJJ$ no">Grand Starex</option>
+                <option value="HYWCV201803 $*KwHzrNa48wAAAACnVbc1$ no">H-1</option>
+                <option value="HYWCV201803 $*KwHFmuCNxsQAAAAAY693Jg$ no">H-100</option>
+                <option value="HYWCV201803 $*KwErdA5jKSoAAAAA_8PlZQ$ no">H100</option>
+                <option value="HYWCV201803 $*KwH4p9248wAAAAB8Ad_V$ no">H350</option>
+                <option value="HYWCV201803 $*KwFBHmQLRAAAAABMGcAO$ no">HD</option>
+                <option value="HYWCV201803 $*KwHmucOt4AAAAABpdNbJ$ no">HLD</option>
+                <option value="HYWCV201803 $*KwEMUylADAAAAAA2rwER$ no">HMD</option>
+                <option value="HYWCV201803 $*KwHBnuSPwwAAAABsRiZ5$ no">Libero</option>
+                <option value="HYWCV201803 $*KwFNEmgFT0gAAAAAK720kA$ no">Mega Truck</option>
+                <option value="HYWCV201803 $*KwEjfAZrISQAAAAAK3Vw_A$ no">Meighty</option>
+                <option value="HYWCV201803 $*KwGVyrDalAAAAABxX1Wm$ no">Mighty</option>
+                <option value="HYWCV201803 $*KwGu8YvlpQAAAAB3Swpx$ no">New Power Truck</option>
+                <option value="HYWCV201803 $*KwHHmOKLzQAAAADOdO0U$ no">Porter</option>
+                <option value="HYWCV201803 $*KwF3KFI_dHcAAAAA_JKuMQ$ no">Solati</option>
+                <option value="HYWCV201803 $*KwEJVixCCgAAAADc7_R_$ no">Starex</option>
+                <option value="HYWCV201803 $*KwHnuMKs4wAAAABQGLtg$ no">Trago</option>
+                <option value="HYWCV201803 $*KwFZBnwSUwAAAADTUmFp$ no">Universe</option>
+                <option value="HYWCV201803 $*KwE2aRN-NDUAAAAAo1po3g$ no">Xcient</option>
+              </select>
+            </div>
+          </div>
+            <div class="lx-b-sel-tm">
+              <label>Год выпуска</label>
+              <div class="lx-wrap-ss lx-tt-u">
+                <select class="js-laximo-wizard-select">
+                  <option value=""></option>
+                  <option value="HYWCV201803 $*KwEudwtmLiooAAAAAKZ1Ciw$ no">1990</option>
+                  <option value="HYWCV201803 $*KwGx6JT5sbW2AAAAAOsRONI$ no">1991</option>
+                  <option value="HYWCV201803 $*KwHEneGMxMDEAAAAAGNUrKk$ no">1992</option>
+                  <option value="HYWCV201803 $*KwFiO0cqYmZjAAAAAFZsfkM$ no">1993</option>
+                  <option value="HYWCV201803 $*KwELUi5DCw8JAAAAAPXFJWM$ no">1994</option>
+                  <option value="HYWCV201803 $*KwHfhvqX39vcAAAAADBEN6E$ no">1995</option>
+                  <option value="HYWCV201803 $*KwFJEGwBSU1FAAAAAGpAbAk$ no">1996</option>
+                  <option value="HYWCV201803 $*KwE9ZBh1PTkwAAAAACo4q9c$ no">1997</option>
+                  <option value="HYWCV201803 $*KwHyq9e68vn2AAAAAKzj51o$ no">1998</option>
+                  <option value="HYWCV201803 $*KwGH3qLPh4yCAAAAAM3F1hQ$ no">1999</option>
+                  <option value="HYWCV201803 $*KwFJEGwBSUJPAAAAAA0Nmdg$ no">2000</option>
+                  <option value="HYWCV201803 $*KwEfRjpXHxQYAAAAAP8wdKA$ no">2001</option>
+                  <option value="HYWCV201803 $*KwHAmeWIwMvAAAAAAGG3aiY$ no">2002</option>
+                  <option value="HYWCV201803 $*KwH3rtK_9_z2AAAAAHisPwU$ no">2003</option>
+                  <option value="HYWCV201803 $*KwEvdgpnLyQtAAAAAAfeJGo$ no">2004</option>
+                  <option value="HYWCV201803 $*KwGJ0KzBiYKKAAAAADLm9oA$ no">2005</option>
+                  <option value="HYWCV201803 $*KwFjOkYrY2hvAAAAAI4b6KE$ no">2006</option>
+                  <option value="HYWCV201803 $*KwHpsMyh6eLkAAAAAB8mlUw$ no">2007</option>
+                  <option value="HYWCV201803 $*KwGN1KjFjYeJAAAAADDiiCI$ no">2008</option>
+                  <option value="HYWCV201803 $*KwF5IFwxeXN8AAAAAAWbXWY$ no">2009</option>
+                  <option value="HYWCV201803 $*KwGcxbnUnJaaAAAAAIfOfF0$ no">2010</option>
+                  <option value="HYWCV201803 $*KwH2r9O-9vzxAAAAAKmKXeE$ no">2011</option>
+                  <option value="HYWCV201803 $*KwGF3KDNhY-FAAAAAOYJ_vo$ no">2012</option>
+                  <option value="HYWCV201803 $*KwH_ptq3__X-AAAAALAxvIU$ no">2013</option>
+                  <option value="HYWCV201803 $*KwEFXCBNBQ8HAAAAAH0GjUw$ no">2014</option>
+                  <option value="HYWCV201803 $*KwFIEW0ASEJLAAAAAEUiqoY$ no">2015</option>
+                  <option value="HYWCV201803 $*KwFqM08iamBmAAAAAGfYnbE$ no">2016</option>
+                  <option value="HYWCV201803 $*KwEQSTVYEBodAAAAADHg384$ no">2017</option>
+                </select>
+              </div>
+            </div>
+            <div class="lx-b-sel-tm">
+              <label>Категория ТС</label>
+              <div class="lx-wrap-ss lx-tt-u">
+                <select class="js-laximo-wizard-select">
+                  <option value=""></option>
+                  <option value="HYWCV201803 $*KwFVDXAdXgAAAAD0YH9-$ no">Commercial</option>
+                  <option value="HYWCV201803 $*KwGUzLHckQAAAABzxjNE$ no">R/V</option>
+                  <option value="HYWCV201803 $*KwGm_oPurAAAAAC7Eyrw$ no">Special</option>
+                </select>
+              </div>
+            </div>
+            <div class="lx-b-sel-tm">
+              <label>Рынок</label>
+              <div class="lx-wrap-ss lx-tt-u">
+                <select class="js-laximo-wizard-select">
+                  <option value=""></option>
+                  <option value="HYWCV201803 $*KwGZw7zRmwAAAAB2BicS$ no">Australia</option>
+                  <option value="HYWCV201803 $*KwHjucar4gAAAADX69KI$ no">Canada</option>
+                  <option value="HYWCV201803 $*KwFGHGMJAAAAAN1xA8Y$ no">Domestic</option>
+                  <option value="HYWCV201803 $*KwHdh_iXAAAAAKk1uUU$ no">Europe</option>
+                  <option value="HYWCV201803 $*KwHXjfKf1wAAAABmWcfm$ no">General</option>
+                  <option value="HYWCV201803 $*KwFoMk0jAAAAAD8eqNY$ no">Middle East</option>
+                  <option value="HYWCV201803 $*KwH9p9i9AAAAAN9HEtE$ no">Russia</option>
+                  <option value="HYWCV201803 $*KwFSCHcaUQAAAAAZDxKf$ no">USA</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="js-laximo-chassis-options"></div>
+
+          <div class="laximo"><a class="laximo__BtnAllCat" href="/laximo">Все каталоги</a></div>
+        </div>
+      </div>
+      <div class="laximo-tecdoc-page__small-tip">
+        <p class="lx-b-lax-col laximo-tecdoc-page__small-tip-wrapper">
+          * Рекомендуем использовать поиск по VIN коду. Подбор запчастей по
+          быстрому поиску может быть неточным и содержит не весь ассортимент. </p>
+        <div class="lx-b-lax-col laximo-tecdoc-page__where-to-fin-VIN">
+          <div class="lx-b-lax-container lx-b-lax-container--tecdoc-lax-page">
+            <p>Где найти VIN-номер?</p>
+            <div class="tecdoc-lax-page__where-to-find-VIN-wrapper hidden">
+              <p>Вы всегда можете найти VIN-номер в свидетельстве о
+                регистрации.</p>
+              <img class="tecdoc-lax-page__where-to-find-VIN-VIN-img" src="/images/sts-show-vin.jpg" alt="стс с VIN-номером">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tecDoc-in-laxTecdoc">
+      <section class="car-chooser-list-tecdoc" data-status="0">
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Bongo</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Besta</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Granbird</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">K2500</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">K2700</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">K3600</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Pregio</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Towner</div>
+        <a href="/tecdoc2/184/models.html" class="car-chooser-list-tecdoc__point">Все</a>
+      </section>
+      <ul class="td-model" style="display: block;">
+        <li data-start-year="2003" data-end-year="2019" data-name="BONGOC" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/6670.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5043/7_original_original.jpg" alt="7 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              BONGO C БОРТОВОЙ ПЛАТФОРМОЙ/ХОДОВАЯ ЧАСТЬ          </div>
+            <div class="car-base-list-date">
+              2003.10              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2003" data-end-year="2019" data-name="K2500SD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5129.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1624/13_original_original.JPG" alt="13 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              K2500 (SD)          </div>
+            <div class="car-base-list-date">
+              2003.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="1999" data-end-year="2019" data-name="K2700SD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5495.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1625/14_original_original.JPG" alt="14 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              K2700 (SD)          </div>
+            <div class="car-base-list-date">
+              1999.10              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="1998" data-end-year="2002" data-name="TOWNER" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38292.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/7032/5_original_original.jpg" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              TOWNER автобус          </div>
+            <div class="car-base-list-date">
+              1998.07              ...
+              2002.12          </div>
+          </div>
+        </li>
+        <li data-start-year="1998" data-end-year="2002" data-name="TOWNER" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38293.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/7033/6_original_original.jpg" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              TOWNER Фургон          </div>
+            <div class="car-base-list-date">
+              1998.07              ...
+              2002.12          </div>
+          </div>
+        </li>
+        <li data-start-year="1997" data-end-year="2019" data-name="PREGIOTB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/4144.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1633/40_original_original.JPG" alt="40 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PREGIO фургон (TB)          </div>
+            <div class="car-base-list-date">
+              1997.10              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="1997" data-end-year="2003" data-name="K3600C_D5_" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38267.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/default.gif" alt="Default" style="display: inline; width: 255px; margin-top: -11px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              K3600 C бортовой платформой/ходовая часть (_D5_)          </div>
+            <div class="car-base-list-date">
+              1997.03              ...
+              2003.10          </div>
+          </div>
+        </li>
+        <li data-start-year="1997" data-end-year="2003" data-name="K3600" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/7936.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5280/10_original_original.jpg" alt="10 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              K3600          </div>
+            <div class="car-base-list-date">
+              1997.03              ...
+              2003.10          </div>
+          </div>
+        </li>
+        <li data-start-year="1995" data-end-year="2004" data-name="PREGIO" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/7630.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1632/16_original_original.JPG" alt="16 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PREGIO автобус          </div>
+            <div class="car-base-list-date">
+              1995.08              ...
+              2004.09          </div>
+          </div>
+        </li>
+        <li data-start-year="1994" data-end-year="2019" data-name="GRANBIRD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/14366.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5516/11_original_original.jpg" alt="11 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              GRANBIRD          </div>
+            <div class="car-base-list-date">
+              1994.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="1993" data-end-year="2003" data-name="BESTA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/4025.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1603/30_original_original.JPG" alt="30 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              BESTA фургон          </div>
+            <div class="car-base-list-date">
+              1993.07              ...
+              2003.12          </div>
+          </div>
+        </li>
+        <li data-start-year="1992" data-end-year="2003" data-name="BESTA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10891.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/4894/12_original_original.jpg" alt="12 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              BESTA АВТОБУС          </div>
+            <div class="car-base-list-date">
+              1992.07              ...
+              2003.12          </div>
+          </div>
+        </li>
+
+        <li data-start-year="1990" data-end-year="1999" data-name="BONGOC" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/6672.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5045/4_original_original.jpg" alt="4 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              BONGO C БОРТОВОЙ ПЛАТФОРМОЙ/ХОДОВАЯ ЧАСТЬ          </div>
+            <div class="car-base-list-date">
+              1990.09              ...
+              1999.09          </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tabn hidden">
+    <div class="laximo-in-laxTecdoc">
+      <div class="lx-b-lax-col">
+        <div class="lx-b-lax-container">
+          <div class="lx-wht-vin">Поиск по VIN</div>
+
+          <div class="lx-b-search-container"><label>Поиск по VIN номеру</label>
+
+            <div class="lx-search-wrap-inp">
+              <form accept-charset="UTF-8" action="/laximo/vehicle_by_vin_frame" method="get"><input name="utf8" type="hidden" value="✓"> <input class="lx-search-inp" id="vin" name="vin" type="text"> <input class="lx-search-send" name="commit" type="submit" value="НАЙТИ">&nbsp;</form>
+            </div>
+            <div class="laximo"><a class="laximo__BtnAllCat" href="/laximo">Все каталоги</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="laximo-tecdoc-page__small-tip">
+        <p class="lx-b-lax-col laximo-tecdoc-page__small-tip-wrapper">
+          * Рекомендуем использовать поиск по VIN коду. Подбор запчастей по быстрому поиску может быть неточным и содержит не весь ассортимент.
+        </p>
+        <div class="lx-b-lax-col laximo-tecdoc-page__where-to-fin-VIN">
+          <div class="lx-b-lax-container lx-b-lax-container--tecdoc-lax-page">
+            <p>Где найти VIN-номер?</p>
+            <div class="tecdoc-lax-page__where-to-find-VIN-wrapper hidden">
+              <p>Вы всегда можете найти VIN-номер в свидетельстве о регистрации.</p>
+              <img class="tecdoc-lax-page__where-to-find-VIN-VIN-img" src="/images/sts-show-vin.jpg" alt="стс с VIN-номером">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tecDoc-in-laxTecdoc">
+      <section class="car-chooser-list-tecdoc" data-status="0">
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Ceed</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Cerato</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Magentis</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Optima</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Picanto</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Rio</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Sorento</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Soul</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Spectra</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Sportage</div>
+        <div class="car-chooser-list-tecdoc__point" data-status="0">Stinger</div>
+        <a href="/tecdoc2/184/models.html" class="car-chooser-list-tecdoc__point">Все</a>
+      </section>
+      <ul class="td-model" style="display: block;">
+        <li data-start-year="2018" data-end-year="2019" data-name="CEEDCD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38795.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/default.gif" alt="Default" style="display: inline; width: 255px; margin-top: -11px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CEED (CD)          </div>
+            <div class="car-base-list-date">
+              2018.03              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2018" data-end-year="2019" data-name="CERATOBDBDM" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38784.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/default.gif" alt="Default" style="display: inline; width: 255px; margin-top: -11px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO седан (BD, BDM)          </div>
+            <div class="car-base-list-date">
+              2018.02              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2017" data-end-year="2019" data-name="RIOXLINEIVFB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/39265.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/default.gif" alt="Default" style="display: inline; width: 255px; margin-top: -11px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO X-LINE IV Наклонная задняя часть (FB)          </div>
+            <div class="car-base-list-date">
+              2017.11              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2017" data-end-year="2019" data-name="RIOIVSCFB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38135.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/6621/2_original_original.jpg" alt="2 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO IV седан (SC, FB)          </div>
+            <div class="car-base-list-date">
+              2017.07              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2017" data-end-year="2019" data-name="STINGERCK" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/38141.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/default.gif" alt="Default" style="display: inline; width: 255px; margin-top: -11px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              STINGER (CK)          </div>
+            <div class="car-base-list-date">
+              2017.06              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2017" data-end-year="2019" data-name="PICANTOJA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/37886.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/6381/1_original_original.jpg" alt="1 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PICANTO (JA)          </div>
+            <div class="car-base-list-date">
+              2017.03              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2017" data-end-year="2019" data-name="RIOIVYB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/37619.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/6331/3_original_original.jpg" alt="3 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO IV (YB)          </div>
+            <div class="car-base-list-date">
+              2017.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+
+        <li data-start-year="2016" data-end-year="2019" data-name="OPTIMASPORTSWAGON" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/36968.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/6201/1_original_original.jpg" alt="1 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              OPTIMA SPORTSWAGON          </div>
+            <div class="car-base-list-date">
+              2016.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2015" data-end-year="2019" data-name="OPTIMA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/14969.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5392/4_original_original.jpg" alt="4 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              OPTIMA          </div>
+            <div class="car-base-list-date">
+              2015.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2015" data-end-year="2019" data-name="SPORTAGEQL" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/36216.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5393/3_original_original.jpg" alt="3 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SPORTAGE (QL)          </div>
+            <div class="car-base-list-date">
+              2015.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2015" data-end-year="2019" data-name="SORENTOIII" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/13620.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5282/5_original_original.jpg" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SORENTO III          </div>
+            <div class="car-base-list-date">
+              2015.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2014" data-end-year="2019" data-name="SOULIIPS" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/12796.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/3761/1_original_original.JPG" alt="1 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SOUL II (PS)          </div>
+            <div class="car-base-list-date">
+              2014.02              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2013" data-end-year="2019" data-name="CERATOKOUP" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/13626.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/5111/4_original_original.jpg" alt="4 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO KOUP КУПЕ          </div>
+            <div class="car-base-list-date">
+              2013.12              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2013" data-end-year="2019" data-name="CERATO" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/11578.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1618/10_original_original.JPG" alt="10 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO седан          </div>
+            <div class="car-base-list-date">
+              2013.06              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2013" data-end-year="2019" data-name="PROCEED" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10751.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1636/17_original_original.JPG" alt="17 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PRO CEEїD          </div>
+            <div class="car-base-list-date">
+              2013.03              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2012" data-end-year="2019" data-name="CEEDSPORTSWAGON" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10750.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1611/5_original_original.JPG" alt="5 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CEE`D SPORTSWAGON          </div>
+            <div class="car-base-list-date">
+              2012.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2012" data-end-year="2019" data-name="CEED" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10192.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1612/6_original_original.JPG" alt="6 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CEE'D          </div>
+            <div class="car-base-list-date">
+              2012.05              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2011" data-end-year="2019" data-name="RIOIIIUB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/9697.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1641/20_original_original.JPG" alt="20 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO III (UB)          </div>
+            <div class="car-base-list-date">
+              2011.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2011" data-end-year="2019" data-name="RIOIIIUB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10575.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1642/21_original_original.JPG" alt="21 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO III седан (UB)          </div>
+            <div class="car-base-list-date">
+              2011.06              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2011" data-end-year="2019" data-name="PICANTOTA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/9134.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1631/54_original_original.JPG" alt="54 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PICANTO (TA)          </div>
+            <div class="car-base-list-date">
+              2011.05              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2010" data-end-year="2019" data-name="SPORTAGESL" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/8751.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1658/59_original_original.JPG" alt="59 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SPORTAGE (SL)          </div>
+            <div class="car-base-list-date">
+              2010.07              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2010" data-end-year="2019" data-name="OPTIMA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10163.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1629/15_original_original.JPG" alt="15 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              OPTIMA          </div>
+            <div class="car-base-list-date">
+              2010.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2009" data-end-year="2019" data-name="SORENTOIIXM" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/8258.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1653/45_original_original.JPG" alt="45 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SORENTO II (XM)          </div>
+            <div class="car-base-list-date">
+              2009.11              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2009" data-end-year="2019" data-name="SOULAM" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/7593.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1654/58_original_original.JPG" alt="58 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SOUL (AM)          </div>
+            <div class="car-base-list-date">
+              2009.02              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2009" data-end-year="2019" data-name="CERATOKOUPTD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/8615.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1617/9_original_original.JPG" alt="9 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO KOUP (TD)          </div>
+            <div class="car-base-list-date">
+              2009.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2009" data-end-year="2019" data-name="CERATOIITD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/8614.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1616/8_original_original.JPG" alt="8 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO II седан (TD)          </div>
+            <div class="car-base-list-date">
+              2009.01              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2008" data-end-year="2019" data-name="PROCEEDED" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/6449.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1637/18_original_original.JPG" alt="18 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PRO CEE'D (ED)          </div>
+            <div class="car-base-list-date">
+              2008.02              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2007" data-end-year="2019" data-name="CEEDSWED" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/6234.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1614/7_original_original.JPG" alt="7 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CEE'D SW (ED)          </div>
+            <div class="car-base-list-date">
+              2007.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2006" data-end-year="2019" data-name="CEEDED" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5626.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1613/35_original_original.JPG" alt="35 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CEE'D Наклонная задняя часть (ED)          </div>
+            <div class="car-base-list-date">
+              2006.12              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2005" data-end-year="2019" data-name="MAGENTISMG" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5494.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1627/53_original_original.JPG" alt="53 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              MAGENTIS (MG)          </div>
+            <div class="car-base-list-date">
+              2005.11              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2005" data-end-year="2019" data-name="RIOIIJB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5435.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1640/43_original_original.JPG" alt="43 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO II седан (JB)          </div>
+            <div class="car-base-list-date">
+              2005.03              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2005" data-end-year="2019" data-name="RIOIIJB" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5436.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1639/42_original_original.JPG" alt="42 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO II (JB)          </div>
+            <div class="car-base-list-date">
+              2005.03              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2004" data-end-year="2019" data-name="SPORTAGEJE_" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5394.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1656/46_original_original.JPG" alt="46 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SPORTAGE (JE_)          </div>
+            <div class="car-base-list-date">
+              2004.09              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2004" data-end-year="2019" data-name="SPECTRALD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5115.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1655/25_original_original.JPG" alt="25 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SPECTRA седан (LD)          </div>
+            <div class="car-base-list-date">
+              2004.04              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2004" data-end-year="2019" data-name="PICANTOBA" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5128.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1630/39_original_original.JPG" alt="39 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              PICANTO (BA)          </div>
+            <div class="car-base-list-date">
+              2004.04              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2004" data-end-year="2019" data-name="CERATOLD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/5116.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1615/48_original_original.JPG" alt="48 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO (LD)          </div>
+            <div class="car-base-list-date">
+              2004.03              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2002" data-end-year="2019" data-name="SORENTOIJC" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/4938.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1652/29_original_original.JPG" alt="29 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SORENTO I (JC)          </div>
+            <div class="car-base-list-date">
+              2002.08              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2001" data-end-year="2019" data-name="MAGENTISGD" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/4792.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1626/37_original_original.JPG" alt="37 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              MAGENTIS (GD)          </div>
+            <div class="car-base-list-date">
+              2001.05              ...
+              Выпускается          </div>
+          </div>
+        </li>
+        <li data-start-year="2001" data-end-year="2004" data-name="CERATO" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/10833.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/4896/8_original_original.jpg" alt="8 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              CERATO СЕДАН          </div>
+            <div class="car-base-list-date">
+              2001.01              ...
+              2004.12          </div>
+          </div>
+        </li>
+        <li data-start-year="2000" data-end-year="2005" data-name="RIODC_" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/4750.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1643/22_original_original.JPG" alt="22 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO седан (DC_)          </div>
+            <div class="car-base-list-date">
+              2000.09              ...
+              2005.02          </div>
+          </div>
+        </li>
+        <li data-start-year="2000" data-end-year="2005" data-name="RIODC" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/4645.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1644/23_original_original.JPG" alt="23 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              RIO универсал (DC)          </div>
+            <div class="car-base-list-date">
+              2000.08              ...
+              2005.02          </div>
+          </div>
+        </li>
+        <li data-start-year="1994" data-end-year="2004" data-name="SPORTAGEK00" class="model-item" style="display: none;">
+          <div class="model-link-div" data-href="/tecdoc2/184/models/1302.html">
+            <div class="car-base-list-image" style="overflow: hidden;">
+              <img src="https://api.parts-soft.ru/system/car_base_model/1657/47_original_original.JPG" alt="47 original original" style="display: inline; width: 255px; margin-top: -53px; height: 150px;">          </div>
+            <div class="car-base-list-name">
+              SPORTAGE (K00)          </div>
+            <div class="car-base-list-date">
+              1994.04              ...
+              2004.04          </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="/scripts/lax-tecDoc-pages/script.js" defer="defer"></script>
+  <script>
+    $( document ).ready(function() {
+
+      var wizard_div = $('#js-laximo-wizard-options');
+      $('#js-laximo-wizard-catalog').val('HYWCV201803 no no');
+      wizard_div.html('');
+      wizard_div.append("<div class=\"lx-b-sel-tm\">\n  <label>Семейство<\/label>\n    <div class=\"lx-wrap-ss lx-tt-u\">\n      <select class=\'js-laximo-wizard-select\'>\n        <option value=\"\"><\/option>\n          <option value=\'HYWCV201803 $*KwELVC5ECwAAAABUP3-K$ no\'>11 Ton Class<\/option>\n          <option value=\'HYWCV201803 $*KwGXyLLYkwAAAAB0gL5i$ no\'>18 Ton Class<\/option>\n          <option value=\'HYWCV201803 $*KwGC3afOhwAAAAAP6Bn-$ no\'>23 Ton Class<\/option>\n          <option value=\'HYWCV201803 $*KwFYB30ZXwAAAACAbvnb$ no\'>5 Ton Class<\/option>\n          <option value=\'HYWCV201803 $*KwEDXCZDBQAAAAA3Yb0d$ no\'>8 Ton Class<\/option>\n          <option value=\'HYWCV201803 $*KwGWybPYnQAAAAAqRp43$ no\'>Aero City<\/option>\n          <option value=\'HYWCV201803 $*KwE4Zx14PAAAAABbwq_8$ no\'>Aero Queen<\/option>\n          <option value=\'HYWCV201803 $*KwHptsyh6uwAAAAAsKnZdQ$ no\'>Aero Space<\/option>\n          <option value=\'HYWCV201803 $*KwGA36XAgwAAAAA_i-yM$ no\'>Aero Town<\/option>\n          <option value=\'HYWCV201803 $*KwFzLFYzcQAAAABw-LkC$ no\'>Chorus<\/option>\n          <option value=\'HYWCV201803 $*KwH2qdO5_AAAAAAf5Kk8$ no\'>County<\/option>\n          <option value=\'HYWCV201803 $*KwG65Z_3uwAAAAAx5Iyl$ no\'>E-Aerotown<\/option>\n          <option value=\'HYWCV201803 $*KwHDnOaJwQAAAAB9n_w2$ no\'>E-County<\/option>\n          <option value=\'HYWCV201803 $*KwELVC5EAAAAAADD7aYC$ no\'>Global<\/option>\n          <option value=\'HYWCV201803 $*KwGp9ozhq60AAAAA621bgw$ no\'>Grace<\/option>\n          <option value=\'HYWCV201803 $*KwEPUCpDDgAAAADjfyJJ$ no\'>Grand Starex<\/option>\n          <option value=\'HYWCV201803 $*KwHzrNa48wAAAACnVbc1$ no\'>H-1<\/option>\n          <option value=\'HYWCV201803 $*KwHFmuCNxsQAAAAAY693Jg$ no\'>H-100<\/option>\n          <option value=\'HYWCV201803 $*KwErdA5jKSoAAAAA_8PlZQ$ no\'>H100<\/option>\n          <option value=\'HYWCV201803 $*KwH4p9248wAAAAB8Ad_V$ no\'>H350<\/option>\n          <option value=\'HYWCV201803 $*KwFBHmQLRAAAAABMGcAO$ no\'>HD<\/option>\n          <option value=\'HYWCV201803 $*KwHmucOt4AAAAABpdNbJ$ no\'>HLD<\/option>\n          <option value=\'HYWCV201803 $*KwEMUylADAAAAAA2rwER$ no\'>HMD<\/option>\n          <option value=\'HYWCV201803 $*KwHBnuSPwwAAAABsRiZ5$ no\'>Libero<\/option>\n          <option value=\'HYWCV201803 $*KwFNEmgFT0gAAAAAK720kA$ no\'>Mega Truck<\/option>\n          <option value=\'HYWCV201803 $*KwEjfAZrISQAAAAAK3Vw_A$ no\'>Meighty<\/option>\n          <option value=\'HYWCV201803 $*KwGVyrDalAAAAABxX1Wm$ no\'>Mighty<\/option>\n          <option value=\'HYWCV201803 $*KwGu8YvlpQAAAAB3Swpx$ no\'>New Power Truck<\/option>\n          <option value=\'HYWCV201803 $*KwHHmOKLzQAAAADOdO0U$ no\'>Porter<\/option>\n          <option value=\'HYWCV201803 $*KwF3KFI_dHcAAAAA_JKuMQ$ no\'>Solati<\/option>\n          <option value=\'HYWCV201803 $*KwEJVixCCgAAAADc7_R_$ no\'>Starex<\/option>\n          <option value=\'HYWCV201803 $*KwHnuMKs4wAAAABQGLtg$ no\'>Trago<\/option>\n          <option value=\'HYWCV201803 $*KwFZBnwSUwAAAADTUmFp$ no\'>Universe<\/option>\n          <option value=\'HYWCV201803 $*KwE2aRN-NDUAAAAAo1po3g$ no\'>Xcient<\/option>\n      <\/select>\n    <\/div>\n<\/div>\n");
+      wizard_div.append("<div class=\"lx-b-sel-tm\">\n  <label>Год выпуска<\/label>\n    <div class=\"lx-wrap-ss lx-tt-u\">\n      <select class=\'js-laximo-wizard-select\'>\n        <option value=\"\"><\/option>\n          <option value=\'HYWCV201803 $*KwEudwtmLiooAAAAAKZ1Ciw$ no\'>1990<\/option>\n          <option value=\'HYWCV201803 $*KwGx6JT5sbW2AAAAAOsRONI$ no\'>1991<\/option>\n          <option value=\'HYWCV201803 $*KwHEneGMxMDEAAAAAGNUrKk$ no\'>1992<\/option>\n          <option value=\'HYWCV201803 $*KwFiO0cqYmZjAAAAAFZsfkM$ no\'>1993<\/option>\n          <option value=\'HYWCV201803 $*KwELUi5DCw8JAAAAAPXFJWM$ no\'>1994<\/option>\n          <option value=\'HYWCV201803 $*KwHfhvqX39vcAAAAADBEN6E$ no\'>1995<\/option>\n          <option value=\'HYWCV201803 $*KwFJEGwBSU1FAAAAAGpAbAk$ no\'>1996<\/option>\n          <option value=\'HYWCV201803 $*KwE9ZBh1PTkwAAAAACo4q9c$ no\'>1997<\/option>\n          <option value=\'HYWCV201803 $*KwHyq9e68vn2AAAAAKzj51o$ no\'>1998<\/option>\n          <option value=\'HYWCV201803 $*KwGH3qLPh4yCAAAAAM3F1hQ$ no\'>1999<\/option>\n          <option value=\'HYWCV201803 $*KwFJEGwBSUJPAAAAAA0Nmdg$ no\'>2000<\/option>\n          <option value=\'HYWCV201803 $*KwEfRjpXHxQYAAAAAP8wdKA$ no\'>2001<\/option>\n          <option value=\'HYWCV201803 $*KwHAmeWIwMvAAAAAAGG3aiY$ no\'>2002<\/option>\n          <option value=\'HYWCV201803 $*KwH3rtK_9_z2AAAAAHisPwU$ no\'>2003<\/option>\n          <option value=\'HYWCV201803 $*KwEvdgpnLyQtAAAAAAfeJGo$ no\'>2004<\/option>\n          <option value=\'HYWCV201803 $*KwGJ0KzBiYKKAAAAADLm9oA$ no\'>2005<\/option>\n          <option value=\'HYWCV201803 $*KwFjOkYrY2hvAAAAAI4b6KE$ no\'>2006<\/option>\n          <option value=\'HYWCV201803 $*KwHpsMyh6eLkAAAAAB8mlUw$ no\'>2007<\/option>\n          <option value=\'HYWCV201803 $*KwGN1KjFjYeJAAAAADDiiCI$ no\'>2008<\/option>\n          <option value=\'HYWCV201803 $*KwF5IFwxeXN8AAAAAAWbXWY$ no\'>2009<\/option>\n          <option value=\'HYWCV201803 $*KwGcxbnUnJaaAAAAAIfOfF0$ no\'>2010<\/option>\n          <option value=\'HYWCV201803 $*KwH2r9O-9vzxAAAAAKmKXeE$ no\'>2011<\/option>\n          <option value=\'HYWCV201803 $*KwGF3KDNhY-FAAAAAOYJ_vo$ no\'>2012<\/option>\n          <option value=\'HYWCV201803 $*KwH_ptq3__X-AAAAALAxvIU$ no\'>2013<\/option>\n          <option value=\'HYWCV201803 $*KwEFXCBNBQ8HAAAAAH0GjUw$ no\'>2014<\/option>\n          <option value=\'HYWCV201803 $*KwFIEW0ASEJLAAAAAEUiqoY$ no\'>2015<\/option>\n          <option value=\'HYWCV201803 $*KwFqM08iamBmAAAAAGfYnbE$ no\'>2016<\/option>\n          <option value=\'HYWCV201803 $*KwEQSTVYEBodAAAAADHg384$ no\'>2017<\/option>\n      <\/select>\n    <\/div>\n<\/div>\n");
+      wizard_div.append("<div class=\"lx-b-sel-tm\">\n  <label>Категория ТС<\/label>\n    <div class=\"lx-wrap-ss lx-tt-u\">\n      <select class=\'js-laximo-wizard-select\'>\n        <option value=\"\"><\/option>\n          <option value=\'HYWCV201803 $*KwFVDXAdXgAAAAD0YH9-$ no\'>Commercial<\/option>\n          <option value=\'HYWCV201803 $*KwGUzLHckQAAAABzxjNE$ no\'>R/V<\/option>\n          <option value=\'HYWCV201803 $*KwGm_oPurAAAAAC7Eyrw$ no\'>Special<\/option>\n      <\/select>\n    <\/div>\n<\/div>\n");
+      wizard_div.append("<div class=\"lx-b-sel-tm\">\n  <label>Рынок<\/label>\n    <div class=\"lx-wrap-ss lx-tt-u\">\n      <select class=\'js-laximo-wizard-select\'>\n        <option value=\"\"><\/option>\n          <option value=\'HYWCV201803 $*KwGZw7zRmwAAAAB2BicS$ no\'>Australia<\/option>\n          <option value=\'HYWCV201803 $*KwHjucar4gAAAADX69KI$ no\'>Canada<\/option>\n          <option value=\'HYWCV201803 $*KwFGHGMJAAAAAN1xA8Y$ no\'>Domestic<\/option>\n          <option value=\'HYWCV201803 $*KwHdh_iXAAAAAKk1uUU$ no\'>Europe<\/option>\n          <option value=\'HYWCV201803 $*KwHXjfKf1wAAAABmWcfm$ no\'>General<\/option>\n          <option value=\'HYWCV201803 $*KwFoMk0jAAAAAD8eqNY$ no\'>Middle East<\/option>\n          <option value=\'HYWCV201803 $*KwH9p9i9AAAAAN9HEtE$ no\'>Russia<\/option>\n          <option value=\'HYWCV201803 $*KwFSCHcaUQAAAAAZDxKf$ no\'>USA<\/option>\n      <\/select>\n    <\/div>\n<\/div>\n");
+      $('#js-laximo-chassis-options').html("")
+    });
+  </script>
