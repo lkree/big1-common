@@ -87,3 +87,20 @@ class LaximoWizardy {
     }
   }
 };
+
+
+const models = ['duster', 'fluence', 'kangoo', 'kaptur', 'koleos', 'laguna', 'logan', 'megane', 'sandero', 'scenic', 'symbol'];
+const options = $('.tabn:not("hidden") .cloned-lax-list option');
+let array = [];
+[...options].forEach((option) => {
+  const optionName = option.textContent.toLowerCase();
+
+  models.forEach((model) => {
+    const modelName = model.toLowerCase();
+    if (~optionName.indexOf(modelName)) array.push(option);
+  });
+});
+const div = document.createElement('div');
+div.classList.add('test');
+div.append(...array);
+document.body.append(div);
