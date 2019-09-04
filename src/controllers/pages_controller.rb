@@ -64,11 +64,13 @@ class PagesController < ApplicationController
       if is_car_catalog()
         @title.sub! 'Каталоги запчастей', 'Каталоги легковых запчастей'
         @description.sub! 'каталог', 'каталог легковых'
+        @page.title.sub! 'Каталоги запчастей', 'Каталоги легковых запчастей'
       end
 
       if is_truck_catalog()
         @title.sub! 'Каталоги запчастей', 'Каталоги грузовых запчастей'
         @description.sub! 'каталог', 'каталог грузовых'
+        @page.title.sub! 'Каталоги запчастей', 'Каталоги грузовых запчастей'
       end
 
     end

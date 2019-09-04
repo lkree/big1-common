@@ -560,13 +560,11 @@
       if (h1Text[1] === 'каталоги') {
         h1Text.splice(1,0,'грузовые');
         h1.textContent = h1Text.join(' ');
-        document.title = `${h1.textContent} | БИГОДИН продажа запчастей для импортных автомобилей оптом и в розницу`;
         return;
       }
 
       h1Text[1] === 'грузовые' ? h1Text.splice(1,1,'легковые') : h1Text.splice(1,1,'грузовые');
       h1.textContent = h1Text.join(' ');
-      document.title = `${h1.textContent} | БИГОДИН продажа запчастей для импортных автомобилей оптом и в розницу`;
     };
 
     $(document).on('DOMContentLoaded', onDOMContentLoaded);
