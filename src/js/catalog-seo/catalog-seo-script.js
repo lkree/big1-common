@@ -164,6 +164,15 @@
       $(form).html('');
 
   };
+  const getGetParams = function(name) {
+    const results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+
+    if (results === null) {
+      return null;
+    }
+
+    return decodeURI(results[1]) || 0;
+  };
   const laximoWizardyController = chooseCurrentModel();
   // const laxFormInitialization = () => {
   //   const catalogs = document.querySelectorAll('[data-catalog-type]'),
@@ -213,19 +222,19 @@
       const toggler = document.querySelector('.car-type-toggler__checkbox');
 
       if (!isAvailable(toggler)) return;
-      toggler.checked = false;
+      if (getGetParams('type') === 'car') toggler.checked = true;
     })(); //togglerReconstructor
-    // (function() {
-    //   const cars = document.querySelectorAll('.model-link-div');
-    //   const onCarClick = (evt) => {
-    //     location.assign(evt.currentTarget.dataset.href);
-    //   };
-    //
-    //   Array.from(cars)
-    //     .forEach((el) => {
-    //       el.addEventListener('click', onCarClick);
-    //     });
-    // })(); //link creator
+    // // (function() {
+    // //   const cars = document.querySelectorAll('.model-link-div');
+    // //   const onCarClick = (evt) => {
+    // //     location.assign(evt.currentTarget.dataset.href);
+    // //   };
+    // //
+    // //   Array.from(cars)
+    // //     .forEach((el) => {
+    // //       el.addEventListener('click', onCarClick);
+    // //     });
+    // // })(); //link creator
     (function() {
       if (!isAvailable$($('.lx-b-lax-container select'))) return; //if no selectos on page
 
@@ -371,18 +380,9 @@
     // };
     const onTogglerChange = (evt) => {
       (function() {
-        try {
-          const content = document.querySelectorAll('.tabn');
-          // h1TitleSwitcher();
-
-          for (const tab of content) {
-            tab.classList.toggle('hidden');
-          }
-        } catch(e) {
-          console.log(e.message);
-        }
+        $('#car-type-toggler__checkbox')[0].checked ? window.location.assign('?type=car') : window.location.assign('?type=truck');
       })(); //truck-car switcher
-      hideAllCars();
+      // hideAllCars();
       // laxFormInitialization();
     };
     const onDocumentClick = (evt) => {

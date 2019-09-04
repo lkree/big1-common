@@ -1,0 +1,29 @@
+@import "../../less/mixins.scss";
+
+.b-content {
+  min-height: 400px;
+}
+.car-chooser-list-tecdoc, .td-model {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.car-chooser-list-tecdoc__point {
+  border: 1px solid rgba(0,0,0,.12);
+  margin: 10px 0;
+  width: 100px;
+  height: 40px;
+  @include flex(center, center);
+}
+a.car-chooser-list-tecdoc__point {
+  text-align: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div.car-chooser-list-tecdoc__point:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.car-chooser-list-tecdoc__point:hover {
+  cursor: pointer;
+}
