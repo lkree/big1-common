@@ -9,6 +9,20 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'app',
+          src: 'src/html/catalog-seo/*/*/*.html.erb',
+          dest: 'build'
+        }]
+      }
+    },
     sass: {
       dist: {
         options: {
@@ -231,6 +245,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-tinypng');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
   grunt.registerTask("default", ["babel"]);
 };
