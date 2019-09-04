@@ -373,7 +373,7 @@
       (function() {
         try {
           const content = document.querySelectorAll('.tabn');
-          h1TitleSwitcher();
+          // h1TitleSwitcher();
 
           for (const tab of content) {
             tab.classList.toggle('hidden');
@@ -551,24 +551,24 @@
           }
         });
     };
-    const h1TitleSwitcher = () => {
-      if (!isAvailable(document.querySelector('#car-type-toggler__checkbox'))) return;
-
-      const h1 = document.querySelector('h1'),
-             h1Text = h1.textContent.split(' ');
-
-      if (h1Text[1] === 'каталоги') {
-        h1Text.splice(1,0,'грузовые');
-        h1.textContent = h1Text.join(' ');
-        return;
-      }
-
-      h1Text[1] === 'грузовые' ? h1Text.splice(1,1,'легковые') : h1Text.splice(1,1,'грузовые');
-      h1.textContent = h1Text.join(' ');
-    };
+    // const h1TitleSwitcher = () => {
+    //   if (!isAvailable(document.querySelector('#car-type-toggler__checkbox'))) return;
+    //
+    //   const h1 = document.querySelector('h1'),
+    //          h1Text = h1.textContent.split(' ');
+    //
+    //   if (h1Text[1] === 'каталоги') {
+    //     h1Text.splice(1,0,'грузовые');
+    //     h1.textContent = h1Text.join(' ');
+    //     return;
+    //   }
+    //
+    //   h1Text[1] === 'грузовые' ? h1Text.splice(1,1,'легковые') : h1Text.splice(1,1,'грузовые');
+    //   h1.textContent = h1Text.join(' ');
+    // };
 
     $(document).on('DOMContentLoaded', onDOMContentLoaded);
-    $(document).on('DOMContentLoaded', h1TitleSwitcher);
+    // $(document).on('DOMContentLoaded', h1TitleSwitcher);
     // $('.lx-b-lax-container--tecdoc-lax-page').on('click', onVinInfoWrapperClick);
     $('.car-type-toggler').on('change', onTogglerChange);
     $(document).on('click', onDocumentClick);
