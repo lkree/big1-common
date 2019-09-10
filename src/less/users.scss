@@ -167,10 +167,10 @@ body, html {
   background: 0 0;
   background-color: #ad1318;
   font-weight: 400;
-  position: relative;
+  position: absolute;
   padding: 10px 32px;
-  right: 108px;
-  top: 1px;
+  right: 1px;
+  top: 2px;
   width: auto;
   height: auto
 }
@@ -348,6 +348,7 @@ table.logo-table td div.logotype {
 }
 
 .b-bsd-cat-td, .b-bsd-search .b-list .b-item, .b-bsd-search-td {
+  position: relative;
   display: inline-block
 }
 
