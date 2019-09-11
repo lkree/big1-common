@@ -1,0 +1,34 @@
+<%= breadcrumbs(@page.title) -%>
+<article class="text">
+
+  <% def seo_catalogs() %>
+    <% def is_original_catalog() %>
+      <% request.fullpath.slice(0, 18) == '/original-catalog/' %>
+    <% end %>
+
+    <% def is_type_param(param) %>
+      <% params[:type] == param %>
+    <% end %>
+
+    <% if is_original_catalog %>
+
+      <% brands = %w(test) %>
+      <% current_catalog = request.path_info.split('/')[2] ? request.path_info.split('/')[2] : '' %>
+
+      <% if brands.include? current_catalog %>
+        <% if is_type_param('car') %>
+            <%= render file: "/app/views/pages/original-catalog/#{current_catalog}/car.html.erb" %>
+        <% elsif is_type_param('truck') %>
+            <%= render file: "/app/views/pages/original-catalog/#{current_catalog}/truck.html.erb" %>
+        <% else %>
+            <%= render file: "/app/views/pages/original-catalog/#{current_catalog}/common.html.erb" %>
+        <% end %>
+
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% seo_catalogs %>
+
+  <%= @page.body.html_safe -%>
+</article>
