@@ -2,6 +2,18 @@
 ;(function() {
   const isAvailable = (element) => !!element;
   const isAvailable$ = (element) => !!element[0];
+  const showRegistrationInfo = () => {
+    const registration = $('.b-popup-enter');
+
+    registration.css('display') === 'block' ? registration.css('display', 'none') :
+
+      registration.css({
+        'display'  : 'block',
+        'position' : 'fixed',
+        'top'      : 'calc(50vh - 85px)',
+        'left'     : 'calc(50vw - 150px)'
+      });
+  };
   class LaximoWizardy {
     init(e) {
       if (!e) return;
@@ -474,6 +486,12 @@
           })(); //tecdoc btn handler (redirects to tecdoc car page)
         } else {
           (function() {
+            const $enterLink = $('.b-enter-link');
+            if (isAvailable$($enterLink)) {
+              showRegistrationInfo();
+              return;
+            };
+
             const $form = $('.laximo-in-laxTecdoc');
             if (isAvailable$($form) && $form[0].style.display !== 'none') {
               $form.slideUp(500);
