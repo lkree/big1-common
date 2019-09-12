@@ -167,10 +167,10 @@ body, html {
   background: 0 0;
   background-color: #ad1318;
   font-weight: 400;
-  position: relative;
+  position: absolute;
   padding: 10px 32px;
-  right: 108px;
-  top: 1px;
+  right: 2px;
+  top: 2px;
   width: auto;
   height: auto
 }
@@ -348,7 +348,8 @@ table.logo-table td div.logotype {
 }
 
 .b-bsd-cat-td, .b-bsd-search .b-list .b-item, .b-bsd-search-td {
-  display: inline-block
+  display: inline-block;
+  position: relative
 }
 
 .b-bsd-search .b-list, .b-bsd-tb {
@@ -3057,4 +3058,8 @@ p img, span img, div img {
 }
 .manager tbody tr td img {
   width: 100%;
+}
+.search-type-toggler {
+  position: absolute;
+  top: 1px;
 }
