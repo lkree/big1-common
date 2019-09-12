@@ -476,6 +476,8 @@
       })(); //shows full buttons
     };
     const onBtnClick = (evt) => {
+      evt.preventDefault();
+
       (function() {
         evt.originalEvent.stopPropagation();
 
