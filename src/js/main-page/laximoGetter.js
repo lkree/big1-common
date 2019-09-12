@@ -859,3 +859,9 @@ if (hrefChecker.mainPage()) {
     $('.request-parts__form-wrapper').animate({'right': '-100500px'}, 1000);
   });
 })(); */
+
+(function() {
+  $('.main-popup-reg__close').on('click', function() {
+    $('.b-popup-enter').hide();
+  });
+})(); //close reg form (mini-form)
