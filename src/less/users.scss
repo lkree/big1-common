@@ -3078,3 +3078,16 @@ p img, span img, div img {
 .list-resn {
   @include flex(center, center, row, wrap);
 }
+.payment-success__text {
+  color: #1c4254;
+  font-size: 18px;
+  font-weight: 700;
+}
+.payment-success__text--red {
+  color: #ad1318;
+  margin-bottom: 10px;
+}
+.banner-for-login {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,73 @@
+.customer-session-form {
+  width: 100%;
+  @include flex(center, center);
+}
+.customer-session-form__wrapper {
+  width: 468px;
+  @include flex(flex-start, center, row, wrap);
+  box-shadow: 5px 8px 7px -5px;
+  border: 1px solid #1c4254;
+  background-color: #fff;
+  padding: 15px;
+}
+.customer-session-form__input-field {
+  flex-basis: 100%;
+  margin: 0 0 20px 0;
+  @include flex(flex-start);
+}
+.customer-session-form__input-field label {
+  flex-basis: 18%;
+  color: #1c4254;
+  font-size: 18px;
+  font-weight: 700;
+}
+.customer-session-form__input-field label i {
+  color: #cf0101;
+}
+.ent-inp {
+  flex-basis: 80%;
+}
+.customer-session-form__logo {
+  flex-basis: 20%;
+  margin: 0 10px 20px 0;
+}
+.customer-session-form__enter-links {
+  flex-basis: 80%;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.customer-session-form__remember_me {
+  flex-basis: 10%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.customer-session-form__submit .btn-reg {
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .customer-session-form__wrapper {
+    width: 320px;
+  }
+  .customer-session-form__input-field {
+    flex-wrap: wrap;
+  }
+  .customer-session-form__input-field label, .ent-inp {
+    flex-basis: 100%;
+  }
+  .customer-session-form__logo {
+    flex-basis: 36%;
+    margin: 0 5px 0 0;
+  }
+  .customer-session-form__logo img {
+    max-width: 100%;
+  }
+  .customer-session-form__bottom-form {
+    flex-basis: 60%;
+  }
+  .customer-session-form__enter-links a {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
