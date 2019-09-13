@@ -3075,3 +3075,6 @@ p img, span img, div img {
   background: url('/images/another-images/icons/close-icon--red.png') no-repeat;
   cursor: pointer;
 }
+.list-resn {
+  @include flex(center, center, row, wrap);
+}
