@@ -3,7 +3,7 @@
   @include flex(center, center);
 }
 .customer-session-form__wrapper {
-  width: 468px;
+  width: 80%;
   @include flex(flex-start, center, row, wrap);
   box-shadow: 5px 8px 7px -5px;
   border: 1px solid #1c4254;
@@ -45,11 +45,14 @@
 .customer-session-form__submit .btn-reg {
   margin: 0;
 }
+@media (max-width: 1000px) {
+  .customer-session-form__wrapper {
+    width: 100%;
+    max-width: 600px;
+  }
+}
 
 @media (max-width: 500px) {
-  .customer-session-form__wrapper {
-    width: 320px;
-  }
   .customer-session-form__input-field {
     flex-wrap: wrap;
   }
