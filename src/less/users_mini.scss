@@ -401,7 +401,7 @@
     font-size: 14px
   }
 
-  .articles-list-itemLink, .main-news__item, .news-list-itemLink {
+  .articles-list-itemLink, .news-list-itemLink {
     width: 30%
   }
 
@@ -1052,12 +1052,8 @@
 }
 
 @media (max-width: 480px) {
-  .articles-list-itemLink, .main-news__item, .news-list-itemLink {
+  .articles-list-itemLink, .news-list-itemLink {
     width: 82%
-  }
-
-  .main-news__news-list {
-    justify-content: center
   }
 
   .b-mp-form .b-list .b-item {
