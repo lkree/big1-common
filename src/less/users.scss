@@ -115,10 +115,6 @@ body, html {
   cursor: pointer;
   box-shadow: 3px 3px 22px 3px #bdbcbc;
   transition: 1s ease all;
-  -webkit-transition: 1s ease all;
-  -moz-transition: 1s ease all;
-  -ms-transition: 1s ease all;
-  -o-transition: 1s ease all
 }
 
 .b-tsd-nav-list > li ul {
@@ -157,10 +153,6 @@ body, html {
 
 .b-bsd-cat-label, .b-list .b-item .b-btn-send, .b-list .b-item .b-btn-vin, .b-list .b-item input[type=text], .big-service {
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px
 }
 
 .b-list .b-item .b-btn-send {
@@ -206,8 +198,9 @@ table.logo-table td div.logotype {
 .b-bsd-cat-label {
   padding: 11px 13px 11px 39px;
   border: 1px solid #fff;
-  margin: 2px 0 0;
+  margin: 0;
   background: 0 0;
+  line-height: 19px;
   text-transform: uppercase;
   font-weight: 400
 }
@@ -328,10 +321,6 @@ table.logo-table td div.logotype {
   margin-top: 10px
 }
 
-.b-bsd-cat-td {
-  position: relative
-}
-
 .b-bsd-cat-td::after, .b-item-vin::after, .b-item-vin::before {
   height: 27px;
   top: 8px;
@@ -347,34 +336,33 @@ table.logo-table td div.logotype {
   display: none
 }
 
-.b-bsd-cat-td, .b-bsd-search .b-list .b-item, .b-bsd-search-td {
-  display: inline-block;
-  position: relative
+.b-bsd-search .b-list {
+  display: flex;
 }
 
-.b-bsd-search .b-list, .b-bsd-tb {
-  display: block
+.b-bsd-tb {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .b-bsd-search-td {
   padding: 0;
-  margin: 2px 0 2px 18px;
-  width: 68%;
+  margin: 0 40px;
   position: relative;
-  bottom: 0
+  bottom: 0;
+  flex-grow: 1;
 }
 
 .b-bsd-cat-td {
   padding: 0;
-  margin: 0 20px 0 0
+  position: relative;
+  flex-basis: 145px;
+  margin: 0
 }
 
 .b-bot-side {
   padding: 6px 0 11px
-}
-
-.b-list .b-item {
-  width: 73.8%
 }
 
 .b-bsd-search .b-list .b-item-vin {
@@ -795,14 +783,13 @@ address {
 }
 
 .big-service {
-  display: inline-block;
+  flex-basis: 116px;
   color: #fff;
   text-transform: uppercase;
   border: 1px solid #fff;
   white-space: nowrap;
-  width: auto;
-  margin: 2px 0 0 12px;
-  position: relative
+  position: relative;
+  height: 43px;
 }
 
 .big-service__btn {
@@ -2497,7 +2484,7 @@ p a {
   position: absolute;
   z-index: 10;
   top: 45px;
-  left: -90px;
+  left: -140px;
   background-color: #fff;
   border: 1px solid #000;
   color: #000;
@@ -3002,4 +2989,11 @@ p img, span img, div img {
 }
 #oem {
   padding-left: 180px;
+}
+.b-item-search {
+  flex-grow: 1;
+  position: relative;
+}
+.b-bot-side-inner {
+  min-width: unset;
 }
