@@ -3061,7 +3061,13 @@ p img, span img, div img {
 }
 .search-type-toggler {
   position: absolute;
-  top: 1px;
+  top: 0;
+  height: 100%;
+  padding: 0 0 0 15px;
+  border-top: none;
+  border-bottom: none;
+  width: 177px;
+  padding-left: 2px;
 }
 .main-popup-reg__close {
   position: absolute;
@@ -3090,4 +3096,7 @@ p img, span img, div img {
 .banner-for-login {
   display: flex;
   justify-content: center;
+}
+#oem {
+  padding-left: 180px;
 }
