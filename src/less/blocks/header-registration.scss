@@ -1,0 +1,19 @@
+.header-registration {
+  height: 80%;
+  @include flex(false, center);
+  background-color: #ad1318;
+  padding: 0 15px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+.header-registration__link {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media (max-width: 570px) {
+  .header-registration {
+    display: none;
+  }
+}

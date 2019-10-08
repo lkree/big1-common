@@ -427,14 +427,15 @@ table.logo-table td div.logotype {
   display: block
 }
 
-.b-tsd-city-link {
-  background: url(/images/design/locationMarker.png) no-repeat 10px 0
-}
+//.b-tsd-city-link {
+//  background: url(/images/design/locationMarker.png) no-repeat 10px 0
+//}
 
 .b-tsd-tb {
   display: flex;
   justify-content: space-between;
-  height: 100%
+  height: 100%;
+  align-items: center;
 }
 
 .b-tsd-nav-list > li > a {
@@ -446,8 +447,6 @@ address {
 }
 
 .phone-and-mail {
-  padding-top: 5px;
-  margin-right: 50px;
   position: relative
 }
 
@@ -492,7 +491,7 @@ address {
   left: -27px
 }
 
-.b-tsd-nav::after, .phone-and-mail::after, address::after {
+.phone-and-mail::before, .phone-and-mail::after, address::after {
   display: inline-block;
   content: '';
   position: absolute;
@@ -505,20 +504,16 @@ address {
 
 .b-tsd-nav {
   position: relative;
-  margin-right: 30px;
-  width: auto !important;
-  height: auto !important;
-  padding: 0 !important
 }
 
-.b-tsd-nav::after {
-  top: 8px;
-  right: -2px
+.phone-and-mail::before {
+  top: 3px;
+  left: -53px
 }
 
 .phone-and-mail::after {
-  top: 8px;
-  right: -42px
+  top: 3px;
+  right: -53px
 }
 
 @keyframes fade {
@@ -730,7 +725,7 @@ address {
   background-color: #1c4254;
   width: 100vw;
   height: 10px;
-  right: 105%;
+  right: 100%;
   bottom: 8px
 }
 
@@ -747,13 +742,14 @@ address {
   cursor: context-menu
 }
 
-.b-tsd-cities {
-  padding: 0
-}
+//.b-tsd-cities {
+//  padding: 0
+//}
 
 .b-tsd-cities, .b-tsd-user {
   display: flex !important;
-  align-items: center
+  align-items: center;
+  height: 100%;
 }
 
 .header__info-textModify {
@@ -2996,4 +2992,12 @@ p img, span img, div img {
 }
 .b-bot-side-inner {
   min-width: unset;
+}
+.registration-nav-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.b-msd-tb {
+  @include flex();
 }

@@ -8,16 +8,6 @@
   .b-container {
     padding: 0 15px
   }
-
-  .b-msd-logo::before {
-    right: 103%
-  }
-}
-
-@media (max-width: 1192px) {
-  .b-msd-shedule {
-    margin-left: 50px
-  }
 }
 
 @media (max-width: 1186px) {
@@ -44,7 +34,7 @@
     right: -17px
   }
 
-  .b-tsd-nav::after, .phone-and-mail::after, address::after {
+  .phone-and-mail::before, .phone-and-mail::after, address::after {
     display: none
   }
 }
@@ -116,24 +106,6 @@
   }
 }
 
-@media (max-width: 1090px) {
-  .b-msd-shedule {
-    margin-left: 50px
-  }
-}
-
-@media (max-width: 1087px) {
-  .b-msd-shedule {
-    margin-left: 49px
-  }
-}
-
-@media (max-width: 1081px) {
-  .b-msd-shedule {
-    margin-left: 48px
-  }
-}
-
 @media (max-width: 1080px) {
   .small-info {
     flex-wrap: wrap
@@ -160,25 +132,9 @@
   }
 }
 
-@media (max-width: 1076px) {
-  .b-msd-shedule {
-    margin-left: 45px
-  }
-}
-
 @media (max-width: 1062px) {
   .header__info {
     font-size: 32px
-  }
-
-  .b-msd-shedule {
-    margin-left: 40px
-  }
-}
-
-@media (max-width: 1035px) {
-  .b-msd-shedule {
-    margin-left: 36px
   }
 }
 
@@ -207,10 +163,6 @@
 
   .b-msd-contact::after, .b-userbox::before, .mail::before, .popup-overlay::before {
     display: none
-  }
-
-  .b-msd-shedule {
-    margin-left: 30px
   }
 }
 
@@ -242,12 +194,6 @@
   }
 }
 
-@media (max-width: 981px) {
-  .b-msd-shedule {
-    margin-left: 19px
-  }
-}
-
 @media (max-width: 980px) {
   .b-tsd-nav {
     top: 40px;
@@ -255,9 +201,9 @@
     position: absolute
   }
 
-  .b-tsd-cities {
-    padding-left: 25px
-  }
+  ////.b-tsd-cities {
+  ////  padding-left: 25px
+  ////}
 
   .mail::before {
     display: none
@@ -479,14 +425,14 @@
     justify-content: space-between
   }
 
-  .b-tsd-city-link {
-    background: 0 0
-  }
+  //.b-tsd-city-link {
+  //  background: 0 0
+  //}
 
-  .b-tsd-cities {
-    padding: 0;
-    display: inline-block
-  }
+  //.b-tsd-cities {
+  //  padding: 0;
+  //  display: inline-block
+  //}
 
   .b-userbox::before, .popup-overlay::before {
     display: none
@@ -497,8 +443,6 @@
   }
 
   .b-userbox {
-    padding: 0 0 0 27px;
-    background-position: 0 0;
     background-size: 20px;
   }
 
@@ -601,10 +545,6 @@
     font-size: 40px
   }
 
-  .b-msd-logo::before {
-    right: 98%
-  }
-
   .b-msd-logo {
     width: 31%
   }
@@ -634,38 +574,26 @@
 }
 
 @media (max-width: 721px) {
-  .b-msd-shedule {
-    margin: 0
-  }
-
   .b-logo-link {
     width: auto
-  }
-
-  .b-msd-logo::before {
-    right: 103%
   }
 }
 
 @media (max-width: 720px) {
-  .b-tsd-cities {
-    padding-left: 35px
-  }
+  //.b-tsd-cities {
+  //  padding-left: 35px
+  //}
 
   .b-yel-cat-list li:last-of-type {
     border-bottom: none
   }
 
-  .b-msd-contact, .b-msd-logo, .b-msd-shedule {
+  .b-msd-contact, .b-msd-logo {
     width: 49%
   }
 
   .b-msd-contact {
     text-align: right
-  }
-
-  .b-msd-shedule {
-    text-align: left
   }
 
   .phone-and-mail {
@@ -708,7 +636,7 @@
     padding: 0;
     position: absolute;
     top: 9px;
-    left: 61vw;
+    left: calc(50% + 40px);
     z-index: 10
   }
 
@@ -828,6 +756,12 @@
   }
 }
 
+@media (max-width: 570px) {
+  .b-msd-shedule {
+    left: calc(50% - 15px)
+  }
+}
+
 @media (max-width: 568px) {
   .header__info {
     font-size: 39px
@@ -835,28 +769,20 @@
 }
 
 @media (max-width: 560px) {
-  .b-msd-shedule {
-    left: 40vw
-  }
-
   .text .no-list-style li {
     display: block
   }
 
-  .b-tsd-city-link {
-    background: url(/images/design/locationMarker.png) no-repeat;
-    width: 2px;
-    overflow: hidden
-  }
+  //.b-tsd-city-link {
+  //  background: url(/images/design/locationMarker.png) no-repeat;
+  //  width: 2px;
+  //  overflow: hidden
+  //}
 
-  .b-tsd-cities {
-    margin-left: 10vw;
-    padding: 0
-  }
-
-  .phone-and-mail {
-    margin-left: -18vw
-  }
+  //.b-tsd-cities {
+  //  margin-left: 10vw;
+  //  padding: 0
+  //}
 
   .mail {
     margin: 0 2vw 0 0
@@ -1031,7 +957,7 @@
   }
 
   .b-msd-shedule {
-    left: 15vw
+    left: 15%
   }
 
   .b-msd-logo {
@@ -1161,17 +1087,6 @@
     padding-left: 55px
   }
 
-  .b-msd-logo::after {
-    left: 181px;
-    height: 9px;
-    bottom: 31px
-  }
-
-  .b-msd-logo::before {
-    left: -50%;
-    bottom: 31px
-  }
-
   .small-info__bigServiceInfo p {
     font-size: 13px
   }
@@ -1278,16 +1193,8 @@
     font-size: 13px
   }
 
-  .b-msd-shedule {
-    margin: 0
-  }
-
   .b-msd-logo {
     width: 20%
-  }
-
-  .b-msd-shedule {
-    left: 18vw
   }
 }
 
