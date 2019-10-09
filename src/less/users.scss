@@ -106,10 +106,6 @@ body, html {
   text-decoration: none
 }
 
-.b-tsd-user {
-  width: auto
-}
-
 .b-prod-carousel .slick-track .slick-active:hover {
   position: relative;
   cursor: pointer;
@@ -155,18 +151,6 @@ body, html {
   border-radius: 3px;
 }
 
-.b-list .b-item .b-btn-send {
-  background: 0 0;
-  background-color: #ad1318;
-  font-weight: 400;
-  position: absolute;
-  padding: 10px 32px;
-  right: 2px;
-  top: 2px;
-  width: auto;
-  height: auto
-}
-
 .b-bsd-search .b-list .b-item-send {
   position: absolute;
   width: 0
@@ -198,14 +182,8 @@ table.logo-table td div.logotype {
 .b-bsd-cat-label {
   padding: 11px 13px 11px 39px;
   border: 1px solid #fff;
-  margin: 0;
-  background: 0 0;
   line-height: 19px;
   text-transform: uppercase;
-  font-weight: 400
-}
-
-.b-bsd-cat-label {
   background-color: #ad1318
 }
 
@@ -338,6 +316,7 @@ table.logo-table td div.logotype {
 
 .b-bsd-search .b-list {
   display: flex;
+  list-style: none;
 }
 
 .b-bsd-tb {
@@ -355,10 +334,8 @@ table.logo-table td div.logotype {
 }
 
 .b-bsd-cat-td {
-  padding: 0;
   position: relative;
   flex-basis: 145px;
-  margin: 0
 }
 
 .b-bot-side {
@@ -394,11 +371,6 @@ table.logo-table td div.logotype {
 .b-item-vin::after {
   top: 7px;
   left: -20px
-}
-
-.b-bsd-cat {
-  margin: 0;
-  padding: 0
 }
 
 .b-content {
@@ -747,7 +719,7 @@ address {
 //}
 
 .b-tsd-cities, .b-tsd-user {
-  display: flex !important;
+  display: flex;
   align-items: center;
   height: 100%;
 }
@@ -953,7 +925,7 @@ address {
   background-color: #ad1318
 }
 
-.b-about p, .b-bsd-cat-label, .b-btn-all-news, .b-btn-send, .b-btn-vin, .b-head, .b-head a, .b-news-head a, .b-price, .b-prod-carousel .b-btn-add2b::after, .b-tsd-nav-list li a, .b-userbox a, .big-service__btn span, .phone-and-mail a, .phone-and-mail div a, address a, input[type=text] {
+.b-about p, .b-btn-all-news, .b-btn-send, .b-btn-vin, .b-head, .b-head a, .b-news-head a, .b-price, .b-prod-carousel .b-btn-add2b::after, .b-tsd-nav-list li a, .b-userbox a, .big-service__btn span, .phone-and-mail a, .phone-and-mail div a, address a, input[type=text] {
   font-family: MyriadPro
 }
 
@@ -1528,12 +1500,6 @@ address {
   display: flex;
   height: 100%;
   background-position: center
-}
-
-.b-bsd-cat-popup {
-  left: 0;
-  top: 45px;
-  width: 320px
 }
 
 .b-bsd-cat-popup .b-list > .nav-hover-li > a, .b-bsd-cat-popup .b-list > li ul li:hover, .b-bsd-cat-popup .b-list > li > a:hover {
@@ -2989,9 +2955,6 @@ p img, span img, div img {
 .b-item-search {
   flex-grow: 1;
   position: relative;
-}
-.b-bot-side-inner {
-  min-width: unset;
 }
 .registration-nav-wrapper {
   height: 100%;

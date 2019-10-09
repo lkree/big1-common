@@ -19,15 +19,14 @@
 .main-news__news-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
+  justify-content: space-around
 }
 
 .main-news__item {
   width: 269px;
   height: 406px;
-  display: inline-block;
   overflow: hidden;
-  margin: 0 1% 19px;
+  margin: 0 0 19px;
   position: relative;
   border: 1px solid gray;
   top: 0;

@@ -26,10 +26,6 @@
 }
 
 @media (max-width: 1168px) {
-  .phone-and-mail {
-    margin-right: 30px
-  }
-
   .phone-and-mail::after {
     right: -17px
   }
@@ -78,12 +74,6 @@
   .averages__service-pe {
     padding: 25px 0 0 21%;
     background-position: 165px 17px
-  }
-}
-
-@media (max-width: 1112px) {
-  .phone-and-mail {
-    margin-right: 10px
   }
 }
 
@@ -145,11 +135,6 @@
 
   .mail {
     margin: 5px 0 -5px
-  }
-
-  .phone-and-mail {
-    padding-top: 8px;
-    margin-right: 20px
   }
 
   .callBack {
@@ -367,10 +352,6 @@
     flex-direction: column
   }
 
-  .b-bsd-cat-label {
-    margin-bottom: 0
-  }
-
   .b-msd-logo::after {
     bottom: 8px;
     left: 191px
@@ -446,11 +427,6 @@
     background-size: 20px;
   }
 
-  .phone-and-mail {
-    padding: 0;
-    margin: 0
-  }
-
   .phone-and-mail::after {
     top: 1px;
     right: -6vw
@@ -462,7 +438,6 @@
 
   .b-bsd-cat-label {
     padding: 0;
-    margin: 0;
     width: 0;
     height: 0;
     overflow: hidden;
@@ -666,7 +641,6 @@
 
 @media (max-width: 673px) {
   .b-bsd-tb {
-    display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
@@ -681,13 +655,10 @@
 
   .b-bsd-search-td {
     margin: 0;
-  }
-
-  .b-bsd-search .b-input {
     width: 100%
   }
 
-  .b-item-vin .b-btn-vin, .big-service__btn {
+  .b-bsd-search .b-input, .b-item-vin .b-btn-vin, .big-service__btn {
     width: 100%
   }
 
@@ -1043,10 +1014,6 @@
 @media (max-width: 380px) {
   .b-prod-carousel .slick-dots li {
     margin-bottom: 10px
-  }
-
-  .b-bsd-cat-td {
-    display: none
   }
 
   .small-info__about-store {
