@@ -55,20 +55,11 @@ module.exports = function(grunt) {
         }
       },
     },
-    watch: {
-      css: {
-        files: ['src/css/*.less', "src/css/blocks/*.less"],
-        tasks: ['cssmin', 'less']
-      },
-      html: {
-        files: 'build/index.html'
-      }
-    },
     uglify: {
-      mainPage: {
-        src: 'build/js/main-page-script.js',
-        dest: 'build/js/main-page-script.js'
-      },
+      // mainPage: {
+      //   src: 'build/js/main-page-script.js',
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'build/js/any-autos-page-script.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -97,10 +88,10 @@ module.exports = function(grunt) {
       //   src: 'build/js/parts-soft-script.js',
       //   dest: 'build/js/parts-soft-script.js'
       // },
-      // seoCatalog: {
-      //   src: 'build/js/catalog-seo-script.js',
-      //   dest: 'build/js/catalog-seo-script.js'
-      // }
+      seoCatalog: {
+        src: 'build/js/catalog-seo-script.js',
+        dest: 'build/js/catalog-seo-script.js'
+      }
     },
     "babel": {
       options: {
@@ -108,7 +99,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "build/js/main-page-script.js" : "build/js/main-page-script.js",
+          // "build/js/main-page-script.js" : "build/js/main-page-script.js",
           // "build/js/any-autos-page-script.js": "build/js/any-autos-page-script.js",
           // "build/js/autos-page-script.js": "build/js/autos-page-script.js",
           // 'build/js/delivery-page-script.js' : 'build/js/delivery-page-script.js',
@@ -116,7 +107,7 @@ module.exports = function(grunt) {
           // 'build/js/product-card-script.js' : 'build/js/product-card-script.js',
           // 'build/js/trackers-script.js' : 'build/js/trackers-script.js',
           // 'build/js/parts-soft-script.js' : 'build/js/parts-soft-script.js',
-          // 'build/js/catalog-seo-script.js' : 'build/js/catalog-seo-script.js'
+          'build/js/catalog-seo-script.js' : 'build/js/catalog-seo-script.js'
         }
       }
     },
@@ -124,14 +115,14 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
-      mainPage: {
-        src: [
-          // 'src/js/main-page/loading.js',
-          'src/js/main-page/href-checker.js',
-          'src/js/main-page/laximoGetter.js'
-          ],
-        dest: 'build/js/main-page-script.js'
-      },
+      // mainPage: {
+      //   src: [
+      //     // 'src/js/main-page/loading.js',
+      //     'src/js/main-page/href-checker.js',
+      //     'src/js/main-page/laximoGetter.js'
+      //     ],
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'src/js/any-autos-page/vinAutoInfoGetter.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -168,10 +159,10 @@ module.exports = function(grunt) {
       //   src: 'src/js/parts-soft/parts-soft.js',
       //   dest: 'build/js/parts-soft-script.js'
       // },
-      // seoCatalog: {
-      //   src: 'src/js/catalog-seo/catalog-seo-script.js',
-      //   dest: 'build/js/catalog-seo-script.js'
-      // }
+      seoCatalog: {
+        src: 'src/js/catalog-seo/catalog-seo-script.js',
+        dest: 'build/js/catalog-seo-script.js'
+      }
     },
     imagemin: {
       static: {

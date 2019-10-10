@@ -317,7 +317,8 @@ if(hrefChecker.registrationForm()) {
         'padding': '6px 15px 11px',
         'top': '40px',
         'left': '50%',
-        'transform': 'translateX(-50%)'
+        'transform': 'translateX(-50%)',
+        'width': '100%'
       });
 
       headerMenu.css({
@@ -328,14 +329,14 @@ if(hrefChecker.registrationForm()) {
         'max-width': '1200px'
       });
 
-      leftMenuTab.css('border-left', '1px solid gray');
-      rightMenuTab.css('border-right', '1px solid gray');
+      // leftMenuTab.css('border-left', '1px solid gray');
+      // rightMenuTab.css('border-right', '1px solid gray');
 
       n = 1;
     };
     const hideMenu = () => {
-      leftMenuTab.css('border-left', 'none');
-      rightMenuTab.css('border-right', 'none');
+      // leftMenuTab.css('border-left', 'none');
+      // rightMenuTab.css('border-right', 'none');
 
       headerMenu.css({
         'max-width': 'unset',
@@ -475,11 +476,11 @@ document.addEventListener('DOMContentLoaded', function() {
  * @return {void}
  * placeHolderChanger depends on resolution
  */
-(function() {
-  if(window.innerWidth <= 430) {
-    document.querySelector('#oem').placeholder = 'Поиск по VIN и номеру детали';
-  }
-})();
+// (function() {
+//   if(window.innerWidth <= 430) {
+//     document.querySelector('#oem').placeholder = 'Поиск по VIN и номеру детали';
+//   }
+// })();
 
 /**
  * @return {{void}}

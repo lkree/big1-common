@@ -176,6 +176,15 @@
       $(form).html('');
 
   };
+  const scrollToForm = () => {
+    const formY = $('.b-content')[0].offsetTop - 10;
+    $('html').animate({scrollTop: formY}, 500);
+
+    setTimeout(() => {
+      $('.fast-menu-tabs__ul-first-level').removeAttr('style'); // removes top menu
+      $('.b-bot-side').removeAttr('style'); // same thing
+    }, 500);
+  };
   const laximoWizardyController = chooseCurrentModel();
   // const laxFormInitialization = () => {
   //   const catalogs = document.querySelectorAll('[data-catalog-type]'),
@@ -403,6 +412,11 @@
           $rightBtns   = $('.tecdoc-cars-btns-wrapper__catalog-btn--second'),
           $btnsWrapper = $('.tecdoc-cars-btns-wrapper');
 
+        ;(function() {
+          $leftBtns.text('Каталоги');
+          $rightBtns.text('Помощь');
+        })(); // changes buttons text (temp version)
+
 
         function closeBigBtns(evt) {
           evt.stopImmediatePropagation();
@@ -422,12 +436,12 @@
             'font-family' : 'inherit'
           });
 
-          $leftBtns.text('Оригиналы');
-          $rightBtns.text('Аналоги');
+          $leftBtns.text('Каталоги');
+          $rightBtns.text('Помощь');
         };
 
         if ($leftBtns.hasClass('activated') && !evt.originalEvent.target.classList.contains('model-item')) closeBigBtns(evt);
-      })(); //works with tecdoc cars
+      })(); //works with tecdoc buttons && changes buttons text (temp version)
       ;(function() {
         if (!evt.originalEvent.target.classList.contains('laximo-div-selector')) return;
         laximo.init(evt.originalEvent.target.dataset.id);
@@ -469,8 +483,8 @@
           'font-family' : 'MyriadPro'
         });
 
-        $leftBtn.text('Каталог оригинальных запчастей');
-        $rightBtn.text('Каталог неоригинальных запчастей');
+        $leftBtn.text('Каталог запчастей');
+        $rightBtn.text('Задать вопрос специалисту');
 
         $leftBtn.addClass('activated');
       })(); //shows full buttons
@@ -483,8 +497,29 @@
 
         if (evt.originalEvent.target.classList.contains('tecdoc-cars-btns-wrapper__catalog-btn--second')) {
           (function() {
-            const link = $(evt.originalEvent.target).parent().prev().data('href');
-            window.location.assign(link);
+            // const link = $(evt.originalEvent.target).parent().prev().data('href');
+            // window.location.assign(link);
+            const $pcChat = $('.chat_2j'),
+                  $mobileChat = $('.menuWrap_2V');
+            if (isAvailable$($pcChat)) $pcChat[0].click();
+            if (isAvailable$($mobileChat)) {
+              $('.container_3P').css({
+                'display' : 'block',
+                'opacity' : '1',
+                'top' : '25px',
+                'z-index' : '12312313'
+              });
+              $('.wrap_2g').addClass('_show_10');
+              $mobileChat.css('left', '100%');
+              const windowUnlocker = () => {
+                $('.container_3P').css({
+                  'display' : 'none',
+                  'opacity' : '0'
+                });
+                document.removeEventListener('touchstart', windowUnlocker);
+              };
+              document.addEventListener('touchstart', windowUnlocker);
+            };
           })(); //tecdoc btn handler (redirects to tecdoc car page)
         } else {
           (function() {
@@ -503,6 +538,7 @@
 
             bodyResizer();
             $form.slideDown(500);
+            scrollToForm();
           })(); //laximo btn handler (shows form)
         }
       })(); //laximo tecdoc btns handler into li
