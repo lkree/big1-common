@@ -55,9 +55,11 @@
            $carList = $('.td-model');
 
     if (goBack) {
-      $carList.css('min-height', 'unset');
+      $carList.css('min-height', '600px');
       return;
     }
+
+    if ($formWrapper.innerHeight() - 200 < 600) return;
 
     $carList.attr('style', `min-height: ${$formWrapper.innerHeight() - 200}px`);
   }; //calculates form height and adds to td model (needed to autoresize page)
@@ -494,6 +496,7 @@
 
       (function() {
         evt.originalEvent.stopPropagation();
+        const $ul = $('.td-model');
 
         if (evt.originalEvent.target.classList.contains('tecdoc-cars-btns-wrapper__catalog-btn--second')) {
           (function() {
@@ -501,6 +504,7 @@
             // window.location.assign(link);
             const $pcChat = $('.chat_2j'),
                   $mobileChat = $('.menuWrap_2V');
+
             if (isAvailable$($pcChat)) $pcChat[0].click();
             if (isAvailable$($mobileChat)) {
               $('.container_3P').css({
@@ -520,10 +524,12 @@
               };
               document.addEventListener('touchstart', windowUnlocker);
             };
+            $ul.css({'background' : 'url(/images/another-images/seo-catalogs/seo-catalogs-girl-bg-4.png) no-repeat right top'});
           })(); //tecdoc btn handler (redirects to tecdoc car page)
         } else {
           (function() {
             const $enterLink = $('.b-enter-link');
+
             if (isAvailable$($enterLink)) {
               showRegistrationInfo();
               return;
@@ -539,6 +545,7 @@
             bodyResizer();
             $form.slideDown(500);
             scrollToForm();
+            $ul.css({'background' : 'url(/images/another-images/seo-catalogs/seo-catalogs-girl-bg-3.png) no-repeat right top'});
           })(); //laximo btn handler (shows form)
         }
       })(); //laximo tecdoc btns handler into li
@@ -591,15 +598,20 @@
     const carController = (clickedElement) => {
       if (!isAvailable(clickedElement.classList.contains('car-chooser-list-tecdoc__point'))) return;
 
-      const carShowBtns = document.querySelectorAll('.car-chooser-list-tecdoc__point');
+      const carShowBtns = document.querySelectorAll('.car-chooser-list-tecdoc__point'),
+            $ul = $('.td-model'),
+            $form = $('.laximo-in-laxTecdoc');
 
       hideAllCars();
+      $ul.css({'background' : 'url(/images/another-images/seo-catalogs/seo-catalogs-girl-bg-1.png) no-repeat right top'});
+      $form.slideUp(500);
 
       Array.from(carShowBtns)
         .forEach((el) => {
           if (el.dataset.status === '1') {
             el.dataset.status = '0';
           } else if (el.dataset.status === '0' && el === clickedElement) {
+            $ul.css({'background' : 'url(/images/another-images/seo-catalogs/seo-catalogs-girl-bg-2.png) no-repeat right top'});
             clickedElement.dataset.status = '1';
             el.classList.toggle('active');
             carSorter(clickedElement.textContent);

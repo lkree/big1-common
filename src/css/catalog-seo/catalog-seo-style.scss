@@ -1,7 +1,4 @@
 @import "../../less/mixins.scss";
-.b-content {
-  min-height: 1000px;
-}
 .laximo-tecdoc-page__small-tip-wrapper {
   padding: 0 15px;
 }
@@ -241,6 +238,19 @@ div.car-chooser-list-tecdoc__point:first-of-type {
   cursor: pointer;
   color: #fff;
   background-color: #1c4254;
+}
+@media (min-width: 1200px) {
+  ul.td-model {
+    min-height: 600px;
+    padding-right: 30%;
+    background: url(/images/another-images/seo-catalogs/seo-catalogs-girl-bg-1.png) no-repeat right top;
+  }
+  ul.td-model li {
+    width: 30% !important;
+  }
+  .laximo-in-laxTecdoc {
+    left: 48%
+  }
 }
 @media (max-width: 1000px) {
   ul.td-model li .model-link-div {
