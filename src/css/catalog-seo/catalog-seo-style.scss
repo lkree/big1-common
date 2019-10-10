@@ -252,6 +252,11 @@ div.car-chooser-list-tecdoc__point:first-of-type {
     left: 48%
   }
 }
+@media (max-width: 1199px) {
+  ul.td-model {
+    background: none !important;
+  }
+}
 @media (max-width: 1000px) {
   ul.td-model li .model-link-div {
     padding: 0;
