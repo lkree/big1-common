@@ -514,7 +514,11 @@
                 'z-index' : '12312313'
               });
               $('.wrap_2g').addClass('_show_10');
-              $mobileChat.css('left', '100%');
+              $mobileChat.css({
+                'position' : 'fixed',
+                'bottom' : '0',
+                'left' : '0'
+              });
               const windowUnlocker = () => {
                 $('.container_3P').css({
                   'display' : 'none',
