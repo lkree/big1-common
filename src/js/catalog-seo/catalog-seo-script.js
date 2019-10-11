@@ -532,12 +532,12 @@
           })(); //tecdoc btn handler (redirects to tecdoc car page)
         } else {
           (function() {
-            const $enterLink = $('.b-enter-link');
-
-            if (isAvailable$($enterLink)) {
-              showRegistrationInfo();
-              return;
-            };
+            // const $enterLink = $('.b-enter-link');
+            //
+            // if (isAvailable$($enterLink)) {
+            //   showRegistrationInfo();
+            //   return;
+            // };
 
             const $form = $('.laximo-in-laxTecdoc');
             if (isAvailable$($form) && $form[0].style.display !== 'none') {
