@@ -15,10 +15,10 @@ module.exports = function(grunt) {
           'no-source-map' : ''
         },
         files: {
-          // 'build/css/users-styles.css': 'src/less/style.scss'
+          'build/css/users-styles.css': 'src/less/style.scss'
           // 'build/css/lax-tecDoc-pages/style.css' : 'src/css/lax-tecDoc-pages/style.scss'
           // 'build/css/delivery/delivery--style.css' : 'src/css/delivery/delivery--style.scss'
-          'build/css/catalog-seo/catalog-seo-style.css' : 'src/css/catalog-seo/catalog-seo-style.scss'
+          // 'build/css/catalog-seo/catalog-seo-style.css' : 'src/css/catalog-seo/catalog-seo-style.scss'
         }
       }
     },
@@ -35,10 +35,10 @@ module.exports = function(grunt) {
     cssmin: {
       target: {
         files: {
-          // 'build/css/users-styles.css': 'build/css/users-styles.css'
+          'build/css/users-styles.css': 'build/css/users-styles.css'
           // 'build/css/lax-tecDoc-pages/style.css' : 'build/css/lax-tecDoc-pages/style.css'
           // 'build/css/delivery/delivery--style.css' : 'build/css/delivery/delivery--style.css'
-          'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
+          // 'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
         }
       }
     },
@@ -48,10 +48,10 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          // 'build/css/users-styles.css': 'build/css/users-styles.css'
+          'build/css/users-styles.css': 'build/css/users-styles.css'
           // 'build/css/lax-tecDoc-pages/style.css' : 'build/css/lax-tecDoc-pages/style.css'
           // 'build/css/delivery/delivery--style.css' : 'build/css/delivery/delivery--style.css'
-          'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
+          // 'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
         }
       },
     },

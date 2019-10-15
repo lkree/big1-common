@@ -948,10 +948,6 @@ address {
   left: 0;
   top: 0;
   transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden
 }
@@ -965,10 +961,6 @@ address {
   background-image: url(/images/design/bgCarsMiniHover.jpg);
   background-size: cover;
   transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg)
 }
 
 #main-slider-truck li a:last-of-type span i img {
@@ -1031,18 +1023,10 @@ address {
 
 .b-yel-cat-list li:hover a:first-of-type {
   transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg)
 }
 
 .b-yel-cat-list li:hover a:last-of-type {
   transform: rotateY(360deg);
-  -webkit-transform: rotateY(360deg);
-  -moz-transform: rotateY(360deg);
-  -ms-transform: rotateY(360deg);
-  -o-transform: rotateY(360deg)
 }
 
 .b-yel-cat-list {
@@ -1102,10 +1086,6 @@ address {
   color: #fff;
   border-right: 2px solid #fff;
   border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
   font-family: MyriadPro, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -1197,10 +1177,6 @@ address {
   display: block;
   height: 96px;
   border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px
 }
 
 .small-info__about-store, .small-info__about-store--cars {
@@ -1344,7 +1320,6 @@ address {
   flex-wrap: wrap;
   max-width: 40vw;
   margin-top: 10px;
-  justify-content: space-between;
   right: 0;
   position: absolute;
   justify-content: flex-end
@@ -1972,7 +1947,7 @@ ul.newList li a:hover {
   }
 }
 
-.loading-window .text {
+/* .loading-window .text {
   font-size: 16px;
   width: auto
 }
@@ -2115,7 +2090,7 @@ ul.newList li a:hover {
   justify-content: center;
   font-family: Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   flex-direction: column
-}
+} */
 
 .copyright__parts-soft {
   display: block;
@@ -2169,10 +2144,6 @@ ul.newList li a:hover {
   margin-left: 15px;
   background: #ad1318;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px
 }
 
 .btn-reg:hover {
@@ -2236,10 +2207,6 @@ p a {
   width: 100%;
   justify-content: center;
   transition: all .5s ease;
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -ms-transition: all .5s ease;
-  -o-transition: all .5s ease;
   bottom: 225px;
   left: 19px
 }
@@ -2453,6 +2420,7 @@ p a {
 }
 
 .main-popup-reg__title {
+  color: #fff;
   margin-bottom: 5px;
   font-size: 16px
 }
@@ -2474,10 +2442,6 @@ p a {
   width: 305px;
   border: 1px solid #fff;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px
 }
 
 .b-popup-enter .b-inp-pass {
@@ -2500,14 +2464,11 @@ p a {
   background-color: #ad1318;
   border: 1px solid #fff;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px
 }
 
 .main-popup-reg__separator {
   display: inline-block;
+  color: #fff;
   margin: 0 5px;
   cursor: default
 }
@@ -2521,10 +2482,6 @@ p a {
   color: #fff;
   border: 1px solid #fff;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px
 }
 
 .main-popup-reg__password-reset-link {
@@ -2590,10 +2547,6 @@ p a {
   border-radius: 10px;
   display: inline-block;
   font-size: 16px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px
 }
 
 .promo-app-btns__text1 {
@@ -2895,7 +2848,6 @@ p img, span img, div img {
   position: absolute;
   top: 0;
   height: 100%;
-  padding: 0 0 0 15px;
   border-top: none;
   border-bottom: none;
   width: 177px;
