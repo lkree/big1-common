@@ -70,10 +70,6 @@ body, html {
   height: 2px;
   background-color: #ad1318;
   transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%)
 }
 
 .b-subpd::before {
@@ -125,10 +121,6 @@ body, html {
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%)
 }
 
 .b-prod-carousel .slick-dots {
@@ -241,10 +233,6 @@ table.logo-table td div.logotype {
 
 .b-mslider .slick-dots > li button, .b-prod-carousel .slick-dots button {
   border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
   border: 1px solid #1c4254
 }
 
@@ -684,10 +672,6 @@ address {
   width: 100vw;
   height: 10px;
   transform: skewX(-10deg);
-  -webkit-transform: skewX(-10deg);
-  -moz-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  -o-transform: skewX(-10deg)
 }
 
 .b-msd-logo::before {
@@ -818,10 +802,6 @@ address {
   background-size: cover;
   background-position: center;
   transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
   font-size: 0;
 }
 
