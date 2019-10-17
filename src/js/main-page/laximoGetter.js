@@ -476,11 +476,29 @@ document.addEventListener('DOMContentLoaded', function() {
  * @return {void}
  * placeHolderChanger depends on resolution
  */
-// (function() {
-//   if(window.innerWidth <= 430) {
-//     document.querySelector('#oem').placeholder = 'Поиск по VIN и номеру детали';
-//   }
-// })();
+(function() {
+  const $select = $('#search_type'),
+        $searchPanel = $('#oem');
+  $searchPanel.attr({'placeholder' : 'Поиск по артикулу'});
+
+  const onSelectChange = () => {
+    switch(true) {
+      case $select.val() === 'name':
+        $searchPanel.attr({'placeholder' : 'Поиск по наименованию'});
+        return;
+      case $select.val() === 'vin':
+        $searchPanel.attr({'placeholder' : 'Поиск по VIN'});
+        return;
+      default:
+        $searchPanel.attr({'placeholder' : 'Поиск по артикулу'});
+    }
+  };
+  const onSelectClick = (evt) => {
+    if (evt.originalEvent.target === $select[0] || $select.hasClass('search-type-toggler--active')) $select.toggleClass('search-type-toggler--active');
+  };
+  $select.on('change', onSelectChange);
+  $(document).on('click', onSelectClick);
+})();
 
 /**
  * @return {{void}}

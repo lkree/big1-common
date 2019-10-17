@@ -1,0 +1,89 @@
+
+.big-service {
+  flex-basis: 116px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  white-space: nowrap;
+  position: relative;
+  height: 43px;
+}
+
+.big-service__btn {
+  display: flex;
+  color: #fff;
+  font-size: 0;
+  text-decoration: none;
+  height: 41px;
+  width: 114px
+}
+
+.big-service__btn:hover .big-service__btn--spanFirst {
+  background-color: #1c4254
+}
+
+.big-service__btn:hover .big-service__btn--spanSecond {
+  background-color: #ad1318
+}
+
+.big-service__btn--spanFirst {
+  background-color: #ad1318;
+  font-weight: 700;
+  width: 34%;
+  display: flex;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center
+}
+
+.big-service__btn--spanSecond {
+  background-color: #1c4254;
+  font-weight: 400;
+  width: 66%;
+  display: flex;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center
+}
+
+@media (max-width: 673px) {
+  .big-service__btn {
+    width: 100%
+  }
+
+  .big-service {
+    top: 4px;
+    width: 55%;
+    max-width: 127px;
+  }
+
+  .big-service__btn--spanFirst, .big-service__btn--spanSecond {
+    text-align: center
+  }
+}
+
+@media (max-width: 500px) {
+  .big-service {
+    right: 0
+  }
+}
+
+@media (max-width: 340px) {
+  .big-service {
+    flex-basis: 47px;
+    height: 42px;
+    background-image: url(/images/design/bsMiniIcon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    margin: 0
+  }
+
+  .big-service:hover {
+    background-image: url(/images/design/bsMiniIconHover.png)
+  }
+
+  .big-service span {
+    display: none
+  }
+}

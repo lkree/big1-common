@@ -19,17 +19,11 @@
   }
 }
 
-@media (max-width: 1104px) {
-  .b-msd-contact::after {
-    right: -27px
-  }
-}
-
 @media (max-width: 1100px) {
   .b-item-vin {
     display: none;
   }
-  b-bsd-cat-td::after, .b-item-vin::after, .b-item-vin::before {
+  .b-item-vin::after, .b-item-vin::before {
     display: none;
   }
 }
@@ -39,7 +33,7 @@
     display: flex
   }
 
-  .b-msd-contact::after, .b-userbox::before {
+  .b-userbox::before {
     display: none
   }
 }
@@ -175,7 +169,7 @@
 }
 
 @media (max-width: 846px) {
-  .b-bsd-cat-td::after, .b-item-vin::after, .b-item-vin::before {
+  .b-item-vin::after, .b-item-vin::before {
     display: none
   }
 }
@@ -252,23 +246,7 @@
     background-size: 20px;
   }
 
-  .b-bsd-cat-label {
-    padding: 0;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    border: none
-  }
-
-  .b-bsd-cat-label::before {
-    background-position: 8px;
-    left: 0;
-    top: 0;
-    border: 1px solid #fff;
-    padding: 8px
-  }
-
-  .b-bsd-cat-td::after, .b-item-vin::after, .b-item-vin::before {
+  .b-item-vin::after, .b-item-vin::before {
     display: none
   }
 
@@ -279,9 +257,11 @@
   #main-slider-car {
     width: 525%
   }
-  .b-bsd-cat-td {
-    flex-basis: 40px;
-    height: 40px;
+}
+
+@media (min-width: 769px) {
+  .b-msd-shedule {
+    top: -5px;
   }
 }
 
@@ -361,14 +341,6 @@
   .b-tsd-nav-list>li ul {
     position: static;
   }
-
-  .b-bsd-cat-td {
-    display: none;
-  }
-
-  .b-bsd-search-td {
-    margin-left: 0;
-  }
 }
 
 @media (max-width: 720px) {
@@ -392,11 +364,7 @@
 }
 
 @media (max-width: 673px) {
-  .b-bsd-tb {
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-  .b-bsd-search .b-list .b-item-vin, .b-bsd-cat-td {
+  .b-bsd-search .b-list .b-item-vin {
     display: none;
   }
 
@@ -405,32 +373,8 @@
     margin: 10px 10px 10px 0
   }
 
-  .b-bsd-search-td {
-    margin: 0;
+  .b-bsd-search .b-input, .b-item-vin .b-btn-vin {
     width: 100%
-  }
-
-  .b-bsd-search .b-input, .b-item-vin .b-btn-vin, .big-service__btn {
-    width: 100%
-  }
-
-  .big-service {
-    top: 4px;
-    width: 55%;
-    max-width: 127px;
-  }
-
-  .big-service__btn--spanFirst, .big-service__btn--spanSecond {
-    text-align: center
-  }
-  .b-list .b-item .b-btn-send {
-    left: 0;
-    bottom: -46px;
-    border: 1px solid;
-    width: 26vw;
-    right: unset;
-    top: unset;
-    min-width: 150px;
   }
 }
 
@@ -509,6 +453,19 @@
   .manager tbody tr td {
     width: 50%;
   }
+  .b-list .b-item .b-btn-send::after {
+    background: url(/images/design/searchButton--gray.png) no-repeat;
+    background-size: contain;
+  }
+  .b-list .b-item .b-btn-send:hover::after {
+    background: url(/images/design/searchButton--red.png) no-repeat;
+    background-size: contain;
+  }
+  .b-bsd-search .b-btn-send, .b-bsd-search .b-btn-send:hover {
+    font-size: 0;
+    background-color: transparent;
+    padding: 0;
+  }
 }
 
 @media (max-width: 539px) {
@@ -518,12 +475,12 @@
 }
 
 @media (max-width: 500px) {
-  #jcont {
-    left: 30px !important
+  .b-msd-shedule {
+    margin-left: auto;
   }
 
-  .big-service {
-    right: 0
+  #jcont {
+    left: 30px !important
   }
 
   .lx-sbm-list li a img {
@@ -643,24 +600,6 @@
   }
 
   .b-bsd-search .b-list .b-item-vin span {
-    display: none
-  }
-
-  .big-service {
-    flex-basis: 47px;
-    height: 42px;
-    background-image: url(/images/design/bsMiniIcon.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: none;
-    margin: 0
-  }
-
-  .big-service:hover {
-    background-image: url(/images/design/bsMiniIconHover.png)
-  }
-
-  .big-service span {
     display: none
   }
 }

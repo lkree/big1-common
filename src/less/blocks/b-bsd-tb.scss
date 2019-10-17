@@ -1,0 +1,43 @@
+.b-bsd-tb {
+  @include flex(space-between, center);
+}
+
+@media (max-width: 880px) {
+  .b-bsd-tb__header-registration-button {
+    display: none;
+  }
+
+  .b-bsd-search-td {
+    margin: 0 0 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .b-bsd-tb__search-panel-description {
+    display: none;
+  }
+
+  .b-bsd-search-td {
+    margin: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .b-bsd-tb__search-panel-description {
+    display: block;
+  }
+
+  .b-bsd-tb__header-registration-button {
+    display: flex;
+  }
+
+  .b-bsd-tb {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .b-bsd-search-td {
+    margin: 10px 0 20px;
+    flex-basis: 100%;
+  }
+}
