@@ -202,7 +202,7 @@ if(hrefChecker.autoChooser()) {
       catalogs = document.querySelector('.b-bsd-cat-popup .b-list').children,
       mobileMenu = document.querySelector('.b-tsd-nav .b-tsd-nav-list');
 
-  if (window.innerWidth <= 380) {
+  if (window.innerWidth <= 768) {
     n = 0;
     let asd = mobileMenu.children[0],
         index = 0,
@@ -217,7 +217,7 @@ if(hrefChecker.autoChooser()) {
   };
 
   window.addEventListener('resize', (e) => {
-    if (window.outerWidth > 380 && n === 0) {
+    if (window.outerWidth > 768 && n === 0) {
       n = 1;
 
       for (let i = 0; i < catalogs.length; ++i) {
@@ -225,7 +225,7 @@ if(hrefChecker.autoChooser()) {
       }
     };
 
-    if (window.outerWidth <= 380 && n !== 0) {
+    if (window.outerWidth <= 768 && n !== 0) {
       n = 0;
 
       let asd = mobileMenu.children[0],
@@ -866,3 +866,21 @@ if (hrefChecker.mainPage()) {
     $('.b-popup-enter').hide();
   });
 })(); //close reg form (mini-form)
+
+(function() {
+  const $openButton = $('.mobile-menu'),
+        $closeButton = $('.b-tsd-tb__close');
+
+  const popupController = () => {
+    const $menu = $('.b-tsd-tb');
+    if ($menu.css('display') === 'none') {
+      $menu.slideDown(500);
+      $menu.css({'display' : 'flex'});
+      return;
+    }
+
+    $menu.slideUp(500);
+  };
+  $openButton.on('click', popupController);
+  $closeButton.on('click', popupController)
+})(); //header menu controller (popup open / close)

@@ -10,12 +10,6 @@
   }
 }
 
-@media (max-width: 1186px) {
-  .header__info {
-    font-size: 35px
-  }
-}
-
 @media (max-width: 1182px) {
   .b-nep-tbres .b-nep-msth-21 {
     font-size: 0;
@@ -25,63 +19,7 @@
   }
 }
 
-@media (max-width: 1168px) {
-  .phone-and-mail::after {
-    right: -17px
-  }
-
-  .phone-and-mail::before, .phone-and-mail::after, address::after {
-    display: none
-  }
-}
-
-@media (max-width: 1148px) {
-  .b-tsd-nav {
-    margin-right: 10px
-  }
-}
-
-@media (max-width: 1145px) {
-  .header__info {
-    font-size: 34px
-  }
-}
-
-@media (max-width: 1132px) {
-  .averages {
-    flex-wrap: wrap
-  }
-
-  .averages__producers, .averages__service-pe, .averages__spare-parts, .averages__truck-motors {
-    width: 50%
-  }
-
-  .averages__producers {
-    padding: 27px 0 0 14%;
-    background-position: 275px 25px
-  }
-
-  .averages__spare-parts {
-    padding: 29px 0 0 14%;
-    background-position: 300px 25px
-  }
-
-  .averages__truck-motors {
-    padding: 24px 0 0 14%;
-    background-position: 245px 27px
-  }
-
-  .averages__service-pe {
-    padding: 25px 0 0 21%;
-    background-position: 165px 17px
-  }
-}
-
 @media (max-width: 1104px) {
-  .header__info {
-    font-size: 33px
-  }
-
   .b-msd-contact::after {
     right: -27px
   }
@@ -96,57 +34,12 @@
   }
 }
 
-@media (max-width: 1080px) {
-  .small-info {
-    flex-wrap: wrap
-  }
-
-  .small-info__about-store {
-    width: 50%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center
-  }
-
-  .small-info__serviceImg {
-    display: none
-  }
-
-  .small-info__bigServiceInfo {
-    width: 50%
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 16px
-  }
-}
-
-@media (max-width: 1062px) {
-  .header__info {
-    font-size: 32px
-  }
-}
-
 @media (max-width: 1024px) {
   .b-tsd-nav-list {
     display: flex
   }
 
-  .mail {
-    margin: 5px 0 -5px
-  }
-
-  .callBack {
-    padding: 2px 5px 5px 5px;
-    margin-left: 10px
-  }
-
-  .callBack, .mail {
-    font-size: 14px
-  }
-
-  .b-msd-contact::after, .b-userbox::before, .mail::before, .popup-overlay::before {
+  .b-msd-contact::after, .b-userbox::before {
     display: none
   }
 }
@@ -154,10 +47,6 @@
 @media (max-width: 1021px) {
   .big1-app-news-img {
     max-width: 90vw !important
-  }
-
-  .header__info {
-    font-size: 31px
   }
 
   .b-mslider img {
@@ -180,27 +69,9 @@
 }
 
 @media (max-width: 980px) {
-  .b-tsd-nav {
-    top: 40px;
-    left: -15px;
-    position: absolute
-  }
-
   ////.b-tsd-cities {
   ////  padding-left: 25px
   ////}
-
-  .mail::before {
-    display: none
-  }
-
-  .header__info {
-    font-size: 30px
-  }
-
-  .phone-and-mail::after, address::after {
-    display: none
-  }
 }
 
 @media (max-width: 960px) {
@@ -210,26 +81,6 @@
 
   .b-content {
     padding-top: 0
-  }
-}
-
-@media (max-width: 938px) {
-  .header__info {
-    font-size: 29px
-  }
-}
-
-@media (max-width: 923px) {
-  .header__info-textModify {
-    display: none
-  }
-
-  .b-msd-contact {
-    width: 53%
-  }
-
-  .b-msd-logo {
-    width: 197px
   }
 }
 
@@ -269,10 +120,6 @@
 }
 
 @media (max-width: 900px) {
-  .small-info__bigServiceInfo p {
-    font-size: 14px
-  }
-
   .articles-list-itemLink, .news-list-itemLink {
     width: 30%
   }
@@ -287,12 +134,6 @@
 
   .b-mp-form .b-list .b-item:last-of-type {
     margin: 10px 0
-  }
-}
-
-@media (max-width: 897px) {
-  .header__info {
-    font-size: 28px
   }
 }
 
@@ -364,14 +205,6 @@
   .b-list-subpd li:first-of-type {
     display: none
   }
-
-  .small-info__about-store {
-    font-size: 20px
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 12px
-  }
   .dcr-wrap {
     margin-top: 20px;
     width: 50%
@@ -385,10 +218,6 @@
 }
 
 @media (max-width: 809px) {
-  .b-msd-contact {
-    width: 52%
-  }
-
   .b-bsd-search .b-list .b-item-vin {
     margin: 0
   }
@@ -415,25 +244,12 @@
   //  display: inline-block
   //}
 
-  .b-userbox::before, .popup-overlay::before {
+  .b-userbox::before {
     display: none
-  }
-
-  .callBack {
-    padding: 7px 5px
   }
 
   .b-userbox {
     background-size: 20px;
-  }
-
-  .phone-and-mail::after {
-    top: 1px;
-    right: -6vw
-  }
-
-  address::after {
-    right: -6vw
   }
 
   .b-bsd-cat-label {
@@ -456,18 +272,6 @@
     display: none
   }
 
-  .header__info-textModify, .header__info-textModifyOne {
-    display: none
-  }
-
-  .b-msd-logo {
-    width: 26%
-  }
-
-  .b-msd-contact {
-    width: 48%
-  }
-
   .b-yel-cat-list {
     width: 350%
   }
@@ -481,51 +285,13 @@
   }
 }
 
-@media (max-width: 786px) {
-  .b-logo-link {
-    width: 197px
-  }
-}
-
-@media (max-width: 780px) {
-  .averages__producers, .averages__service-pe, .averages__spare-parts, .averages__truck-motors {
-    width: 100%
-  }
-
-  .averages {
-    justify-content: center
-  }
-
-  .small-info__about-store {
-    width: 100%;
-    font-size: 26px;
-    margin-bottom: 2px
-  }
-
-  .small-info__bigServiceInfo {
-    width: 100%
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 23px
-  }
-}
-
 @media (max-width: 768px) {
+  .b-msd-contact {
+    display: none;
+  }
+
   .b-c-left {
     padding: 0
-  }
-
-  .header__info {
-    font-size: 40px
-  }
-
-  .b-msd-logo {
-    width: 31%
-  }
-
-  .b-msd-contact {
-    width: 40%
   }
 
   .b-msd-logo::after {
@@ -546,11 +312,62 @@
   .articles-list-item__description p, .main-news__description p, .news-list-item__description p {
     font-size: 13px
   }
-}
 
-@media (max-width: 721px) {
-  .b-logo-link {
-    width: auto
+  .b-top-side {
+    background: transparent;
+    height: 0;
+  }
+
+  .b-tsd-tb {
+    display: none;
+    height: auto;
+    flex-direction: column;
+    position: absolute;
+    right: -15px;
+    z-index: 15;
+    max-width: 320px;
+    background-color: #000;
+    padding: 35px 10px;
+  }
+
+  .b-userbox {
+    background: none;
+  }
+
+  .b-tsd-nav {
+    display: block;
+    position: static;
+    margin: 0;
+    background: none;
+  }
+
+  .b-tsd-nav-list {
+    flex-direction: column;
+  }
+
+  .b-tsd-nav-list>li ul {
+    background: none;
+    margin-left: 35px;
+  }
+
+  .b-msd-contact, .b-msd-logo::after, .b-msd-logo::before {
+    display: none;
+  }
+
+  .b-tsd-tb__close {
+    display: block;
+  }
+
+  .b-tsd-nav-list>li ul {
+    position: static;
+  }
+
+  .b-bsd-cat-td {
+    display: none;
+  }
+
+  .b-bsd-search-td {
+    margin-left: 0;
   }
 }
 
@@ -562,74 +379,9 @@
   .b-yel-cat-list li:last-of-type {
     border-bottom: none
   }
-
-  .b-msd-contact, .b-msd-logo {
-    width: 49%
-  }
-
-  .b-msd-contact {
-    text-align: right
-  }
-
-  .phone-and-mail {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 9vw
-  }
-
-  .mail, .popup-overlay {
-    display: inline-block;
-    overflow: hidden;
-    padding: 0 0 0 20px;
-    margin: 0
-  }
-
-  .callBack {
-    background-color: transparent;
-    margin: 0;
-    padding: 0
-  }
-
-  .popup-overlay {
-    height: 21px;
-    width: 20px;
-    background: url(/images/design/callBackLogo.png) no-repeat 0 0
-  }
-
-  .mail {
-    width: 20px;
-    height: 16px;
-    background: url(/images/design/mailLogo.png) no-repeat 0 0
-  }
-
-  .b-msd-shedule {
-    width: 20px;
-    height: 20px;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 9px;
-    left: calc(50% + 50px);
-    z-index: 10
-  }
-
-  .b-basket-link {
-    background: url(/images/design/miniBasketLogo.png) no-repeat;
-    background-size: 20px 20px
-  }
 }
 
 @media (max-width: 700px) {
-  .small-info__bigServiceInfo p {
-    font-size: 20px
-  }
-
-  .averages__service-pe {
-    padding-left: 23%
-  }
-
   .articles-list-itemLink, .main-news__item, .news-list-itemLink {
     width: 48%
   }
@@ -698,14 +450,6 @@
 }
 
 @media (max-width: 600px) {
-  .phone-and-mail::after {
-    right: -2vw
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 17px
-  }
-
   .lx-sbm-list li {
     width: 47%
   }
@@ -727,18 +471,6 @@
   }
 }
 
-@media (max-width: 570px) {
-  .b-msd-shedule {
-    left: calc(50% - 15px)
-  }
-}
-
-@media (max-width: 568px) {
-  .header__info {
-    font-size: 39px
-  }
-}
-
 @media (max-width: 560px) {
   .text .no-list-style li {
     display: block
@@ -754,10 +486,6 @@
   //  margin-left: 10vw;
   //  padding: 0
   //}
-
-  .mail {
-    margin: 0 2vw 0 0
-  }
 
   .b-tsd-nav-list {
     display: block
@@ -778,43 +506,20 @@
   .b-yel-cat-list li:last-of-type {
     border-bottom: 1px solid #fff
   }
-
-  .header__info {
-    font-size: 38px
-  }
-
   .manager tbody tr td {
     width: 50%;
   }
 }
 
 @media (max-width: 539px) {
-  .header__info {
-    font-size: 36px
-  }
-
   .footerDown__mark {
     background-size: contain
-  }
-}
-
-@media (max-width: 501px) {
-  .header__info {
-    font-size: 34px
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 14px
   }
 }
 
 @media (max-width: 500px) {
   #jcont {
     left: 30px !important
-  }
-
-  .phone-and-mail::after, address::after {
-    display: none
   }
 
   .big-service {
@@ -827,6 +532,18 @@
 
   .logo-table tbody tr td {
     width: 100%
+  }
+
+  .b-basket-link {
+    background: url(/images/design/miniBasketLogoNew.png) no-repeat;
+    background-size: cover;
+    width: 36px;
+    height: 33px;
+    padding: 0;
+  }
+
+  .b-basket-link .b-label, .b-basket-link .b-bascon, .b-basket-link i {
+    display: none;
   }
 }
 
@@ -847,56 +564,13 @@
     margin: 0 10px 50px 0
   }
 }
-
-@media (max-width: 469px) {
-  .header__info {
-    font-size: 33px
-  }
-
-  .averages__service-pe {
-    padding-left: 28%
-  }
-}
-
 @media (min-width: 425px) and (max-width: 456px) {
-  .header__info {
-    text-align: center
-  }
-
   .b-msd-logo::after {
     left: 191px
   }
 }
 
-@media (max-width: 453px) {
-  .header__info {
-    font-size: 32px
-  }
-}
-
 @media (max-width: 450px) {
-  .b-msd-contact {
-    text-align: left;
-    padding: 0
-  }
-
-  .b-msd-contact, .b-msd-logo {
-    width: 99%
-  }
-
-  .b-msd-contact {
-    text-align: left;
-    margin: 10px 0 20px
-  }
-
-  .small-info__about-store--cars {
-    display: block
-  }
-
-  .small-info__about-store {
-    display: none
-  }
-
   .b-yel-cat-list {
     width: 1000%
   }
@@ -912,44 +586,16 @@
   }
 }
 
-@media (max-width: 445px) {
-  .small-info__about-store {
-    font-size: 22px
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 13px
-  }
-}
-
 @media (max-width: 425px) {
-  .b-msd-logo::after, .b-msd-logo::before, .phone-and-mail {
+  .b-msd-logo::after, .b-msd-logo::before {
     display: none
   }
 
-  .b-msd-shedule {
-    left: 15%
-  }
-
-  .b-msd-logo {
-    width: 20%
-  }
-
-  .b-logo-link {
-    background: url(/images/design/mobileLogo.png) no-repeat;
-    width: 72px;
-    height: 77px
-  }
-
-  .b-msd-contact {
-    width: 72%;
-    text-align: unset;
-    margin: 25px 0 0 25px
-  }
-
-  .b-tsd-tb {
-    justify-content: space-between
-  }
+  //.b-logo-link {
+  //  background: url(/images/design/mobileLogo.png) no-repeat;
+  //  width: 72px;
+  //  height: 77px
+  //}
 }
 
 @media (max-width: 420px) {
@@ -960,37 +606,6 @@
 
   .b-list-subpd li {
     width: 50%
-  }
-
-  .small-info__bigServiceInfo img {
-    display: none
-  }
-
-  .small-info__bigServiceInfo {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0
-  }
-
-  .small-info__bigServiceInfo p {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    width: 80%;
-    position: relative;
-    font-size: 16px
-  }
-
-  .small-info__bigServiceInfo p::before {
-    display: block
-  }
-
-  .small-info__bigServiceInfo:hover .small-info__bsImgLast {
-    display: none
-  }
-
-  .small-info__bigServiceInfo:hover {
-    background-color: #1c4254
   }
 
   .lx-sbm-list li {
@@ -1016,91 +631,8 @@
     margin-bottom: 10px
   }
 
-  .small-info__about-store {
-    font-size: 19px
-  }
-
   .b-tsd-nav {
     width: auto
-  }
-
-  .small-info__about-store--cars {
-    background-size: 100% 100%
-  }
-}
-
-@media (max-width: 375px) {
-  .header__info {
-    font-size: 37px
-  }
-
-  .b-msd-logo {
-    width: 22%
-  }
-
-  .b-msd-contact {
-    width: 69%
-  }
-}
-
-@media (max-width: 370px) {
-  .header__info {
-    font-size: 35px
-  }
-}
-
-@media (max-width: 360px) {
-  .b-basket-link {
-    padding-left: 55px
-  }
-
-  .small-info__bigServiceInfo p {
-    font-size: 13px
-  }
-}
-
-@media (max-width: 350px) {
-  .averages a {
-    background-repeat: no-repeat;
-    background-position: center
-  }
-
-  .averages a p {
-    display: none
-  }
-
-  .averages__producers {
-    background-size: 42px 41px;
-    background-image: url(/images/design/producersIcon.png)
-  }
-
-  .averages__spare-parts {
-    background-size: 81px 53px;
-    background-image: url(/images/design/sparePartsIcon.png)
-  }
-
-  .averages__truck-motors {
-    background-size: 173px 40px;
-    background-image: url(/images/design/truckMotorsLogo.png)
-  }
-
-  .averages__service-pe {
-    background-size: 55px;
-    background-image: url(/images/design/servicePeIcon.png)
-  }
-
-  .small-info__bigServiceInfo p {
-    width: 70%
-  }
-}
-
-@media (max-width: 344px) {
-  .b-msd-contact {
-    width: 68%
-  }
-
-  .header__info {
-    font-size: 34px
   }
 }
 
@@ -1133,35 +665,9 @@
   }
 }
 
-@media (max-width: 335px) {
-  .small-info__about-store {
-    font-size: 18px
-  }
-}
-
-@media (max-width: 331px) {
-  .header__info {
-    font-size: 32px
-  }
-}
-
-@media (max-width: 330px) {
-  .small-info__bigServiceInfo p {
-    width: 75%
-  }
-}
-
 @media (max-width: 320px) {
-  .b-basket-link {
-    padding-left: 65px
-  }
-
   .b-basket-link .b-bascon, .b-basket-link .b-label {
     font-size: 13px
-  }
-
-  .b-msd-logo {
-    width: 20%
   }
 }
 

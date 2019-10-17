@@ -1,0 +1,29 @@
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: flex;
+    padding-left: 40px;
+    height: 20px;
+    background: url(/images/design/mobile-menu/icon.svg) no-repeat 10px -2px;
+  }
+  .mobile-menu__link {
+    border: none;
+    background: transparent;
+    color: #1c4254;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: MyriadPro, serif;
+  }
+  .mobile-menu:hover {
+    background-position: 10px -26px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mobile-menu__link {
+    font-size: 0;
+  }
+}

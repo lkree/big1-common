@@ -40,10 +40,6 @@ body, html {
   padding-bottom: 19px
 }
 
-.b-msd-contact, .b-msd-shedule {
-  vertical-align: middle
-}
-
 .b-bot-side {
   z-index: -1;
   position: relative;
@@ -59,26 +55,6 @@ body, html {
   padding: 0;
   position: relative;
   overflow: hidden
-}
-
-.b-subpd::after, .b-subpd::before, .small-info::after {
-  content: '';
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  width: 100%;
-  height: 2px;
-  background-color: #ad1318;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%)
-}
-
-.b-subpd::before {
-  bottom: unset;
-  top: -18px
 }
 
 .b-yel-cat-list li {
@@ -125,10 +101,6 @@ body, html {
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%)
 }
 
 .b-prod-carousel .slick-dots {
@@ -204,19 +176,6 @@ table.logo-table td div.logotype {
 }
 
 .b-msd-contact, .b-msd-logo, .b-msd-shedule {
-  display: inline-block;
-  position: relative
-}
-
-.b-msd-logo {
-  text-align: left;
-  width: 22%;
-  padding: 0
-}
-
-.b-msd-contact {
-  text-align: center;
-  width: 59%;
   position: relative
 }
 
@@ -230,21 +189,12 @@ table.logo-table td div.logotype {
   right: -19px
 }
 
-.b-msd-shedule {
-  width: 146px;
-  margin-left: 70px
-}
-
 .b-promo-tms {
   margin-top: 40px
 }
 
 .b-mslider .slick-dots > li button, .b-prod-carousel .slick-dots button {
   border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
   border: 1px solid #1c4254
 }
 
@@ -408,84 +358,15 @@ table.logo-table td div.logotype {
   justify-content: space-between;
   height: 100%;
   align-items: center;
+  position: relative;
 }
 
 .b-tsd-nav-list > li > a {
   text-transform: none
 }
 
-address {
-  position: relative
-}
-
-.phone-and-mail {
-  position: relative
-}
-
-.mail {
-  color: #fff;
-  font-size: 14px;
-  position: relative;
-  margin: 0 20px
-}
-
-.mail::before {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  background: url(/images/design/mailLogo.png) no-repeat;
-  width: 20px;
-  height: 16px;
-  top: 0;
-  left: -30px
-}
-
-.callBack {
-  display: inline-block;
-  padding: 7px 5px 5px 35px;
-  background-color: #ad1318
-}
-
-.popup-overlay {
-  color: #fff;
-  font-size: 15px;
-  position: relative
-}
-
-.popup-overlay::before {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  width: 20px;
-  height: 21px;
-  background: url(/images/design/callBackLogo.png) no-repeat;
-  top: -3px;
-  left: -27px
-}
-
-.phone-and-mail::before, .phone-and-mail::after, address::after {
-  display: inline-block;
-  content: '';
-  position: absolute;
-  height: 25px;
-  width: 1px;
-  top: -1px;
-  background-color: #fff;
-  right: -20px
-}
-
 .b-tsd-nav {
   position: relative;
-}
-
-.phone-and-mail::before {
-  top: 3px;
-  left: -53px
-}
-
-.phone-and-mail::after {
-  top: 3px;
-  right: -53px
 }
 
 @keyframes fade {
@@ -666,14 +547,6 @@ address {
   display: none
 }
 
-.b-logo-link {
-  width: auto
-}
-
-.b-link-perscab {
-  max-width: 6vw
-}
-
 .b-msd-logo::after {
   content: '';
   display: inline-block;
@@ -684,10 +557,6 @@ address {
   width: 100vw;
   height: 10px;
   transform: skewX(-10deg);
-  -webkit-transform: skewX(-10deg);
-  -moz-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  -o-transform: skewX(-10deg)
 }
 
 .b-msd-logo::before {
@@ -701,32 +570,13 @@ address {
   bottom: 8px
 }
 
-.header__info {
-  color: #ad1318;
-  font-size: 36px;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap
-}
-
-.header__info:hover {
-  cursor: context-menu
-}
-
 //.b-tsd-cities {
 //  padding: 0
 //}
 
 .b-tsd-cities, .b-tsd-user {
-  display: flex;
-  align-items: center;
+  @include flex(flex-end);
   height: 100%;
-}
-
-.header__info-textModify {
-  color: #1c4254;
-  text-transform: uppercase
 }
 
 .b-basket-link {
@@ -818,10 +668,6 @@ address {
   background-size: cover;
   background-position: center;
   transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
   font-size: 0;
 }
 
@@ -925,12 +771,8 @@ address {
   background-color: #ad1318
 }
 
-.b-about p, .b-btn-all-news, .b-btn-send, .b-btn-vin, .b-head, .b-head a, .b-news-head a, .b-price, .b-prod-carousel .b-btn-add2b::after, .b-tsd-nav-list li a, .b-userbox a, .big-service__btn span, .phone-and-mail a, .phone-and-mail div a, address a, input[type=text] {
+.b-about p, .b-btn-all-news, .b-btn-send, .b-btn-vin, .b-head, .b-head a, .b-news-head a, .b-price, .b-prod-carousel .b-btn-add2b::after, .b-tsd-nav-list li a, .b-userbox a, .big-service__btn span, input[type=text] {
   font-family: MyriadPro
-}
-
-.header__info span {
-  font-family: MyriadProCond
 }
 
 .b-yel-cat-list li {
@@ -1047,190 +889,6 @@ address {
   justify-content: space-evenly
 }
 
-.b-subpd {
-  margin: 28px 0 18px;
-  position: relative
-}
-
-.b-subpd-toggler {
-  background: 0 0;
-  position: relative
-}
-
-.b-subpd-toggler::before {
-  content: '';
-  position: absolute;
-  top: -12px;
-  left: 0;
-  width: 60px;
-  height: 39px;
-  background-image: url(/system/free_files/75/td.png?1547811924);
-  background-repeat: no-repeat;
-  background-size: contain
-}
-
-.averages {
-  display: flex;
-  margin: 41px 0 24px
-}
-
-.averages a p {
-  display: inline-block
-}
-
-.averages__producers, .averages__service-pe, .averages__spare-parts, .averages__truck-motors {
-  display: block;
-  background-color: #1c4254;
-  height: 96px;
-  text-decoration: none;
-  color: #fff;
-  border-right: 2px solid #fff;
-  border-radius: 4px;
-  font-family: MyriadPro, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  text-transform: uppercase;
-  background-repeat: no-repeat;
-  margin-bottom: 2px
-}
-
-.averages__producers:hover, .averages__service-pe:hover, .averages__spare-parts:hover, .averages__truck-motors:hover {
-  background-color: #ad1318
-}
-
-.averages a p {
-  position: relative
-}
-
-.averages a:nth-of-type(1) p::after, .averages a:nth-of-type(2) p::after, .averages a:nth-of-type(3) p::after, .averages a:nth-of-type(4) p::before {
-  content: '';
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  top: 0
-}
-
-.averages a:nth-of-type(1) p::after {
-  background-image: url(/images/design/producersIcon.png);
-  left: 100%
-}
-
-.averages a:nth-of-type(2) p::after {
-  background-image: url(/images/design/sparePartsIcon.png);
-  left: 115%;
-  height: 118%
-}
-
-.averages a:nth-of-type(3) p::after {
-  background-image: url(/images/design/truckMotorsLogo.png);
-  left: 115%;
-  width: 212%
-}
-
-.averages a:nth-of-type(4) p::before {
-  background-image: url(/images/design/servicePeIcon.png);
-  left: -65px;
-  height: 125%;
-  top: -7px
-}
-
-.wrap {
-  display: block
-}
-
-.averages__producers {
-  width: 19%;
-  padding: 27px 0 0 22px
-}
-
-.averages__spare-parts {
-  width: 25%;
-  padding: 29px 0 0 25px
-}
-
-.averages__truck-motors {
-  width: 28%;
-  padding: 24px 0 0 29px
-}
-
-.averages__service-pe {
-  width: 28%;
-  padding: 27px 0 0 95px
-}
-
-.small-info {
-  display: flex;
-  margin-bottom: 25px;
-  position: relative
-}
-
-.small-info::after {
-  height: 6px;
-  background-color: transparent;
-  background-image: url(/images/design/separatorGray.png);
-  bottom: -21px
-}
-
-.small-info__about-store, .small-info__about-store--cars, .small-info__bigServiceInfo, .small-info__serviceImg {
-  display: block;
-  height: 96px;
-  border-radius: 4px;
-}
-
-.small-info__about-store, .small-info__about-store--cars {
-  width: 28%;
-  border-right: 2px solid #fff;
-  background-image: url(/images/design/newCarsLogoBeforeFooter.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 0;
-  padding: 17px 0 0 18px;
-}
-
-.small-info__about-store--cars {
-  display: none;
-  width: 100%;
-  margin: 10px 0 5px 0
-}
-
-.small-info__serviceImg {
-  width: 21%;
-  display: inline-block
-}
-
-.small-info__bigServiceInfo {
-  width: 51%;
-  background-color: #1c4254;
-  padding: 22px 22px 25px;
-  display: flex;
-  position: relative
-}
-
-.small-info__bigServiceInfo img:first-of-type {
-  margin: 0 0 0 19px
-}
-
-.small-info__bsImgLast {
-  position: absolute;
-  display: none;
-  width: 166px;
-  height: 51px;
-  left: 41px;
-  top: 22px
-}
-
-.small-info__bigServiceInfo p {
-  font-size: 19px;
-  color: #fff;
-  font-family: MyriadProCond;
-  font-weight: 400;
-  margin-left: 12px;
-  text-transform: uppercase;
-  cursor: default
-}
-
 .top-goodies-header {
   font-size: 24px;
   color: #1c4254;
@@ -1244,19 +902,6 @@ address {
 
 .b-all-news .b-btn-all-news:hover {
   background-color: #ad1318
-}
-
-.small-info__bigServiceInfo p::before {
-  display: none;
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 50px;
-  left: -60px;
-  top: 24px;
-  background-image: url(/images/design/bsMiniIcon.png);
-  background-repeat: no-repeat;
-  background-size: contain
 }
 
 .b-list-subpd li:hover span {
@@ -2888,11 +2533,23 @@ p img, span img, div img {
   flex-grow: 1;
   position: relative;
 }
-.registration-nav-wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
+//.registration-nav-wrapper {
+//  height: 100%;
+//  display: flex;
+//  align-items: center;
+//}
 .b-msd-tb {
-  @include flex();
+  @include flex(space-between, center);
+}
+.b-tsd-tb__close {
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: url(/images/another-images/icons/close-icon--white.png) no-repeat;
+}
+.b-tsd-tb__close:hover {
+  background: url(/images/another-images/icons/close-icon--red.png) no-repeat;
 }

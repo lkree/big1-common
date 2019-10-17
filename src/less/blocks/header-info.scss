@@ -1,0 +1,153 @@
+.header-info {
+  color: #ad1318;
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap
+}
+
+.header-info:hover {
+  cursor: context-menu
+}
+
+.header-info__textModify {
+  color: #1c4254;
+  text-transform: uppercase
+}
+
+.header-info span {
+  font-family: MyriadProCond
+}
+
+@media (max-width: 1186px) {
+  .header-info {
+    font-size: 35px
+  }
+}
+
+@media (max-width: 1145px) {
+  .header-info {
+    font-size: 34px
+  }
+}
+
+@media (max-width: 1104px) {
+  .header-info {
+    font-size: 33px
+  }
+}
+
+@media (max-width: 1062px) {
+  .header-info {
+    font-size: 32px
+  }
+}
+
+@media (max-width: 1021px) {
+  .header-info {
+    font-size: 31px
+  }
+}
+
+@media (max-width: 980px) {
+  .header-info {
+    font-size: 30px
+  }
+}
+
+@media (max-width: 938px) {
+  .header-info {
+    font-size: 29px
+  }
+}
+
+@media (max-width: 923px) {
+  .header-info__textModify {
+    display: none
+  }
+}
+
+@media (max-width: 897px) {
+  .header-info {
+    font-size: 28px
+  }
+}
+
+@media (max-width: 800px) {
+  .header-info__textModify, .header-info__textModifyOne {
+    display: none
+  }
+}
+
+//@media (max-width: 768px) {
+//  .header-info {
+//    font-size: 40px
+//  }
+//}
+//
+//@media (max-width: 568px) {
+//  .header-info {
+//    font-size: 39px
+//  }
+//}
+//
+//@media (max-width: 550px) {
+//  .header-info {
+//    font-size: 38px
+//  }
+//}
+//
+//@media (max-width: 539px) {
+//  .header-info {
+//    font-size: 36px
+//  }
+//}
+//
+//@media (max-width: 501px) {
+//  .header-info {
+//    font-size: 34px
+//  }
+//}
+//
+//@media (max-width: 469px) {
+//  .header-info {
+//    font-size: 33px
+//  }
+//}
+//
+//@media (min-width: 425px) and (max-width: 456px) {
+//  .header-info {
+//    text-align: center
+//  }
+//}
+//
+//@media (max-width: 453px) {
+//  .header-info {
+//    font-size: 32px
+//  }
+//}
+//
+//@media (max-width: 375px) {
+//  .header-info {
+//    font-size: 37px
+//  }
+//}
+//
+//@media (max-width: 370px) {
+//  .header-info {
+//    font-size: 35px
+//  }
+//}
+//
+//@media (max-width: 344px) {
+//  .header-info {
+//    font-size: 34px
+//  }
+//}
+//
+//@media (max-width: 331px) {
+//  .header-info {
+//    font-size: 32px
+//  }
+//}
