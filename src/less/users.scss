@@ -2407,7 +2407,7 @@ p img, span img, div img {
   appearance: none;
   background: url(/images/design/arrow-icon--black-red.png) no-repeat center 17px;
   background-size: 30px 55px;
-  transition: 0.5s linear background;
+  transition: unset;
   font-size: 16px;
   position: absolute;
   top: 0;
@@ -2481,4 +2481,7 @@ p img, span img, div img {
 }
 .b-tsd-tb__close:hover {
   background: url(/images/another-images/icons/close-icon--red.png) no-repeat;
+}
+.b-content__app-banner {
+  margin-top: 28px;
 }
