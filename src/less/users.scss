@@ -65,16 +65,23 @@ body, html {
   background-color: transparent;
   position: relative;
   height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 35px;
+  @include flex(center, center);
+}
+
+.b-userbox::before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: 0;
+  width: 25px;
+  height: 34px;
+
   background: url(/images/key_icon1.png) no-repeat 5px 9px
 }
 
 .b-userbox a {
   height: 100%;
-  display: flex;
-  align-items: center
+  @include flex(false, center);
 }
 
 .b-userbox a:hover {
@@ -188,10 +195,6 @@ table.logo-table td div.logotype {
 .b-tb-inner a:hover {
   text-decoration: underline;
   color: #1c4254
-}
-
-.b-footer {
-  background-color: #1c4254
 }
 
 .b-foot-logo-link {
@@ -439,25 +442,12 @@ table.logo-table td div.logotype {
 }
 
 .b-foot-tb {
-  display: flex;
-  width: 100%;
-  align-items: flex-end
-}
-
-.b-foot-logo, .b-foot-nav-td, .b-foot-soc-td {
-  display: block
-}
-
-.b-foot-logo {
-  width: auto;
-  padding: 0;
-  text-align: left
+  @include flex(space-between, flex-end);
 }
 
 .b-foot-socials {
-  display: inline-block;
+  margin-top: 10px;
   width: 134px;
-  margin: 0 62px 0 30px
 }
 
 .b-foot-socials ul {
@@ -560,111 +550,7 @@ table.logo-table td div.logotype {
 }
 
 .b-footer .footer__upper {
-  padding-bottom: 22px;
-  border-bottom: 5px solid #fff
-}
-
-.footerDown {
-  display: flex;
-  padding: 17px 15px 4px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: space-between
-}
-
-.footerDown__mark {
-  display: inline-block;
-  width: 9%;
-  background-repeat: no-repeat;
-  height: 25px;
-  background-size: cover;
-  background-position: center;
-  transition: .5s;
-  font-size: 0;
-}
-
-.footerDown__mark:hover {
-  background-size: contain
-}
-
-.footerDown__mark1 {
-  background-image: url(/images/design/footerBrands/_man.png)
-}
-
-.footerDown__mark2 {
-  background-image: url(/images/design/footerBrands/_daf.png)
-}
-
-.footerDown__mark3 {
-  background-image: url(/images/design/footerBrands/_renault.png)
-}
-
-.footerDown__mark4 {
-  background-image: url(/images/design/footerBrands/_volvo.png)
-}
-
-.footerDown__mark5 {
-  background-image: url(/images/design/footerBrands/_mercedes.png)
-}
-
-.footerDown__mark6 {
-  background-image: url(/images/design/footerBrands/_scania.png)
-}
-
-.footerDown__mark7 {
-  background-image: url(/images/design/footerBrands/_iveco.png)
-}
-
-.footerDown__mark8 {
-  background-image: url(/images/design/footerBrands/_isuzu.png)
-}
-
-.footerDown__mark9 {
-  background-image: url(/images/design/footerBrands/_hyundai.png)
-}
-
-.footerDown__mark10 {
-  background-image: url(/images/design/footerBrands/_kia.png)
-}
-
-.footerDown__mark1:hover {
-  background-image: url(/images/design/footerBrands/_manHover.png)
-}
-
-.footerDown__mark2:hover {
-  background-image: url(/images/design/footerBrands/_dafHover.png)
-}
-
-.footerDown__mark3:hover {
-  background-image: url(/images/design/footerBrands/_renaultHover.png)
-}
-
-.footerDown__mark4:hover {
-  background-image: url(/images/design/footerBrands/_volvoHover.png)
-}
-
-.footerDown__mark5:hover {
-  background-image: url(/images/design/footerBrands/_mercedesHover.png)
-}
-
-.footerDown__mark6:hover {
-  background-image: url(/images/design/footerBrands/_scaniaHover.png)
-}
-
-.footerDown__mark7:hover {
-  background-image: url(/images/design/footerBrands/_ivecoHover.png)
-}
-
-.footerDown__mark8:hover {
-  background-image: url(/images/design/footerBrands/_isuzuHover.png)
-}
-
-.footerDown__mark9:hover {
-  background-image: url(/images/design/footerBrands/_hyundaiHover.png)
-}
-
-.footerDown__mark10:hover {
-  background-image: url(/images/design/footerBrands/_kiaHover.png)
+  padding-bottom: 52px;
 }
 
 .b-mslider {
@@ -2414,13 +2300,13 @@ p img, span img, div img {
   height: 100%;
   border-top: none;
   border-bottom: none;
-  background-color: lightgray;
+  background-color: #FED65D;
   line-height: 16px;
 }
 .search-type-toggler--active {
   background: url(/images/design/arrow-icon--black-red.png) no-repeat center -25px;
   background-size: 30px 55px;
-  background-color: lightgray;
+  background-color: #FED65D;
 }
 //.search-type-toggler:active {
 //  background: url(/images/design/arrow-icon--black-red.png) no-repeat center -25px;
@@ -2482,6 +2368,6 @@ p img, span img, div img {
 .b-tsd-tb__close:hover {
   background: url(/images/another-images/icons/close-icon--red.png) no-repeat;
 }
-.b-content__app-banner {
+.b-content__app-banner, .b-content__main-categories {
   margin-top: 28px;
 }

@@ -32,10 +32,6 @@
   .b-tsd-nav-list {
     display: flex
   }
-
-  .b-userbox::before {
-    display: none
-  }
 }
 
 @media (max-width: 1021px) {
@@ -138,11 +134,6 @@
 }
 
 @media (max-width: 880px) {
-  .b-copyright {
-    margin: 0 auto;
-    font-size: 16px
-  }
-
   .b-foot-nav-list .b-head {
     font-size: 18px
   }
@@ -239,11 +230,9 @@
   //}
 
   .b-userbox::before {
-    display: none
-  }
-
-  .b-userbox {
     background-size: 20px;
+    left: -30px;
+    top: 2px;
   }
 
   .b-item-vin::after, .b-item-vin::before {
@@ -310,7 +299,7 @@
     padding: 35px 10px;
   }
 
-  .b-userbox {
+  .b-userbox::before {
     background: none;
   }
 
@@ -375,21 +364,6 @@
 
   .b-bsd-search .b-input, .b-item-vin .b-btn-vin {
     width: 100%
-  }
-}
-
-@media (max-width: 640px) {
-  .b-foot-tb {
-    align-items: center;
-    flex-direction: column
-  }
-
-  .b-foot-socials {
-    margin: 20px 0
-  }
-
-  .b-foot-logo {
-    margin: 0
   }
 }
 
@@ -466,11 +440,13 @@
     background-color: transparent;
     padding: 0;
   }
-}
-
-@media (max-width: 539px) {
-  .footerDown__mark {
-    background-size: contain
+  .b-foot-nav-td {
+    display: none;
+  }
+  .b-foot-tb {
+    min-height: 380px;
+    align-items: center;
+    flex-direction: column;
   }
 }
 

@@ -494,6 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
   const onSelectClick = (evt) => {
+    if (!evt.originalEvent) return;
     if (evt.originalEvent.target === $select[0] || $select.hasClass('search-type-toggler--active')) $select.toggleClass('search-type-toggler--active');
   };
   $select.on('change', onSelectChange);
@@ -529,14 +530,14 @@ document.addEventListener('DOMContentLoaded', function() {
  * changes button 'Подбор по Вин' in header for mobiles
  * changes text and link
  */
-(function() {
-  if(window.outerWidth <= 480 && !hrefChecker.mainPage()) {
-    const btn = document.querySelector('.b-btn-vin');
-
-    btn.textContent = 'Вернуться назад';
-    btn.href = document.referrer;
-  }
-})();
+// (function() {
+//   if(window.outerWidth <= 480 && !hrefChecker.mainPage()) {
+//     const btn = document.querySelector('.b-btn-vin');
+//
+//     btn.textContent = 'Вернуться назад';
+//     btn.href = document.referrer;
+//   }
+// })();
 
 //(function(){document.querySelector('.fast-menu-tabs__ul-first-level').classList.remove('hidden')}());
 
@@ -884,7 +885,6 @@ if (hrefChecker.mainPage()) {
     $('.b-popup-enter').hide();
   });
 })(); //close reg form (mini-form)
-
 (function() {
   const $openButton = $('.mobile-menu'),
         $closeButton = $('.b-tsd-tb__close');
@@ -902,3 +902,18 @@ if (hrefChecker.mainPage()) {
   $openButton.on('click', popupController);
   $closeButton.on('click', popupController)
 })(); //header menu controller (popup open / close)
+(function() {
+  const onDomContentLoaded = () => {
+    const $enterLink = $('.b-enter-link');
+
+    if (!$enterLink[0]) {
+      const $loginButtons = [$('.b-bsd-tb__b-tsd-user'), $('.b-bsd-tb__header-registration-button')];
+
+      $loginButtons.forEach((el) => el.remove());
+    };
+
+    $(document).off('DOMContentLoaded', onDomContentLoaded);
+  };
+
+  $(document).on('DOMContentLoaded', onDomContentLoaded);
+})(); // login / registration buttons (in header search menu) controller

@@ -6,8 +6,8 @@
   .mobile-menu {
     display: flex;
     padding-left: 40px;
-    height: 20px;
-    background: url(/images/design/mobile-menu/icon.svg) no-repeat 10px -2px;
+    height: 33px;
+    background: url(/images/design/mobile-menu/catalog-icon.png) no-repeat;
   }
   .mobile-menu__link {
     border: none;
@@ -18,11 +18,15 @@
     font-family: MyriadPro, serif;
   }
   .mobile-menu:hover {
-    background-position: 10px -26px;
+    //background-position: 10px -26px;
+    cursor: pointer;
   }
 }
 
 @media (max-width: 500px) {
+  .mobile-menu {
+    margin-left: 15px;
+  }
   .mobile-menu__link {
     font-size: 0;
   }

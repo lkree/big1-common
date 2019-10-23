@@ -1,0 +1,80 @@
+.main-categories {
+  width: 100%;
+
+  @include flex(space-between);
+}
+.main-categories__item {
+  @include flex(flex-end, flex-start);
+  flex-basis: 19.2%;
+  height: 80px;
+  padding: 5px 10px 0 10%;
+  margin-top: 10px;
+
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 0 10px -5px #000;
+  color: inherit;
+  text-decoration: none;
+}
+.main-categories__item:hover {
+  background-color: #ad1318;
+}
+.main-categories__item:hover .main-categories__description {
+  color: #fff;
+}
+.main-categories__description {
+  color: #000;
+  font-size: 16px;
+}
+.main-categories__item--oil {
+  background: url('/images/design/main-categories/oil-bg.png') no-repeat;
+}
+.main-categories__item--tires {
+  background: url('/images/design/main-categories/wheels-bg.png') no-repeat;
+}
+.main-categories__item--lamp {
+  background: url('/images/design/main-categories/car-light-bg.png') no-repeat;
+}
+.main-categories__item--chemicals {
+  background: url('/images/design/main-categories/chemicals-bg.png') no-repeat;
+}
+.main-categories__item--all {
+  background: url('/images/design/main-categories/all-bg.png') no-repeat 5px 0;
+}
+
+@media (max-width: 1100px) {
+  .main-categories {
+    flex-wrap: wrap;
+  }
+  .main-categories__item {
+    flex-basis: 24.2%;
+  }
+}
+@media (max-width: 800px) {
+  .main-categories__item {
+    flex-basis: 31.2%;
+  }
+}
+@media (max-width: 750px) {
+  .main-categories__item {
+    flex-basis: 48.2%;
+  }
+}
+@media (max-width: 550px) {
+  .main-categories__item {
+    background-position: center;
+  }
+  .main-categories__description {
+    display: none;
+  }
+  .main-categories__item--all {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: none;
+    flex-basis: 100%;
+  }
+  .main-categories__description--all {
+    display: block;
+  }
+}

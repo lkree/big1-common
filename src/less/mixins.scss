@@ -5,3 +5,6 @@
   @if $direction { flex-direction: $direction; }
   @if $wrap { flex-wrap: $wrap; }
 }
+@mixin ul-style-off() {
+  list-style-type: none;
+}

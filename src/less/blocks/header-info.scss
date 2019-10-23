@@ -1,82 +1,39 @@
 .header-info {
-  color: #ad1318;
-  font-size: 36px;
-  margin: 0;
-  padding: 0;
+  color: #000;
+  font-size: 22px;
   overflow: hidden;
-  white-space: nowrap
+  font-family: Arial, sans-serif;
+  position: relative;
+  bottom: 7px;
 }
 
 .header-info:hover {
   cursor: context-menu
 }
 
-.header-info__textModify {
-  color: #1c4254;
-  text-transform: uppercase
-}
-
-.header-info span {
-  font-family: MyriadProCond
-}
-
-@media (max-width: 1186px) {
+@media (max-width: 1000px) {
   .header-info {
-    font-size: 35px
+    font-size: 20px;
   }
 }
-
-@media (max-width: 1145px) {
+@media (max-width: 900px) {
   .header-info {
-    font-size: 34px
+    font-size: 18px;
   }
 }
-
-@media (max-width: 1104px) {
+@media (max-width: 850px) {
   .header-info {
-    font-size: 33px
+    font-size: 16px;
   }
 }
-
-@media (max-width: 1062px) {
-  .header-info {
-    font-size: 32px
-  }
-}
-
-@media (max-width: 1021px) {
-  .header-info {
-    font-size: 31px
-  }
-}
-
-@media (max-width: 980px) {
-  .header-info {
-    font-size: 30px
-  }
-}
-
-@media (max-width: 938px) {
-  .header-info {
-    font-size: 29px
-  }
-}
-
-@media (max-width: 923px) {
-  .header-info__textModify {
-    display: none
-  }
-}
-
-@media (max-width: 897px) {
-  .header-info {
-    font-size: 28px
-  }
-}
-
 @media (max-width: 800px) {
-  .header-info__textModify, .header-info__textModifyOne {
-    display: none
+  .header-info {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .header-info {
+    display: none;
   }
 }
 
