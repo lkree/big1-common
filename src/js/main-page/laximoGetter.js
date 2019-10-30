@@ -272,19 +272,19 @@ if(hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling()) {
 //   })()
 // };
 
-if(hrefChecker.laximoCatalogs()) {
-  function tggActivate() {
-    function tggl(evt) {
-      evt.preventDefault();
-    };
-    let l = $('#js-lx-common-catalog li');
-    for(let i = 0; i < l.length; ++i) {
-      l[i].addEventListener('click', tggl);
-    }
-    ;
-  };
-  setInterval(tggActivate, 5000);
-};
+// if(hrefChecker.laximoCatalogs()) {
+//   function tggActivate() {
+//     function tggl(evt) {
+//       evt.preventDefault();
+//     };
+//     let l = $('#js-lx-common-catalog li');
+//     for(let i = 0; i < l.length; ++i) {
+//       l[i].addEventListener('click', tggl);
+//     }
+//     ;
+//   };
+//   setInterval(tggActivate, 5000);
+// };
 
 if(hrefChecker.registrationForm()) {
   (function() {

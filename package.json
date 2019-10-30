@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "babel-cli": "^6.26.0",
     "babel-preset-minify": "^0.5.0",
     "grunt": "^1.0.4",
     "grunt-autoprefixer": "^3.0.4",
@@ -31,7 +31,5 @@
     "imagemin-svgo": "^7.0.0",
     "load-grunt-tasks": "^5.0.0"
   },
-  "dependencies": {
-    "babel": "^6.23.0"
-  }
+  "dependencies": {}
 }

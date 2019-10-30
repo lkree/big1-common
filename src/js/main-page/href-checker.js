@@ -88,10 +88,10 @@ window.hrefChecker = {
   vinAutoInfoGetter: function() {
     return href[3].slice(0, 9) === 'any_autos';
   },
-  laximoCatalogs: function() {
-      const getParams = new URL(document.location).searchParams;
-      return href[3] === 'laximo' && href[4] !== undefined && href[5] !== undefined && href[6] !== undefined && getParams.get('vin') !== null;
-  },
+  // laximoCatalogs: function() {
+  //     const getParams = new URL(document.location).searchParams;
+  //     return href[3] === 'laximo' && href[4] !== undefined && href[5] !== undefined && href[6] !== undefined && getParams.get('vin') !== null;
+  // },
   registrationForm: function() {
       return href[3].slice(0,9) === 'customers' && href[4] === undefined;
   }

@@ -519,11 +519,11 @@ table.logo-table td div.logotype {
   bottom: 8px
 }
 
-//.b-tsd-cities {
-//  padding: 0
-//}
+.b-tsd-cities {
+  height: 100%;
+}
 
-.b-tsd-cities, .b-tsd-user {
+.b-tsd-user {
   @include flex(flex-end);
   height: 100%;
 }
@@ -2228,9 +2228,6 @@ p img, span img, div img {
   text-align: center;
   min-height: 24px;
 }
-.dcr-wrap {
-  padding: 0 10px 15px;
-}
 .b-nep-mstd-pic {
   box-shadow: 5px 8px 7px -5px #000;
 }
@@ -2370,4 +2367,7 @@ p img, span img, div img {
 }
 .b-content__app-banner, .b-content__main-categories {
   margin-top: 28px;
+}
+.b-nep-prodch-container {
+  @include flex(space-between);
 }

@@ -15,30 +15,22 @@ module.exports = function(grunt) {
           'no-source-map' : ''
         },
         files: {
-          'build/css/users-styles.css': 'src/less/style.scss'
+          // 'build/css/users-styles.css': 'src/less/style.scss'
           // 'build/css/lax-tecDoc-pages/style.css' : 'src/css/lax-tecDoc-pages/style.scss'
           // 'build/css/delivery/delivery--style.css' : 'src/css/delivery/delivery--style.scss'
           // 'build/css/catalog-seo/catalog-seo-style.css' : 'src/css/catalog-seo/catalog-seo-style.scss'
+          'build/css/test/catalog-seo-style.css': 'src/css/catalog-seo/test/catalog-seo-style.scss'
         }
       }
     },
-    // less: {
-    //   style: {
-    //     files: {
-    //       'build/css/users-styles.css': 'src/less/style.less'
-    //       // 'build/css/lax-tecDoc-pages/style.css' : 'src/css/lax-tecDoc-pages/style.less'
-    //       // 'build/css/delivery/delivery--style.css' : 'src/css/delivery/delivery--style.less'
-    //       'build/css/catalog-seo/catalog-seo-style.css' : 'src/css/catalog-seo/catalog-seo-style.less'
-    //     }
-    //   }
-    // },
     cssmin: {
       target: {
         files: {
-          'build/css/users-styles.css': 'build/css/users-styles.css'
+          // 'build/css/users-styles.css': 'build/css/users-styles.css'
           // 'build/css/lax-tecDoc-pages/style.css' : 'build/css/lax-tecDoc-pages/style.css'
           // 'build/css/delivery/delivery--style.css' : 'build/css/delivery/delivery--style.css'
           // 'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
+          'build/css/test/catalog-seo-style.css' : 'build/css/test/catalog-seo-style.css'
         }
       }
     },
@@ -48,18 +40,19 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'build/css/users-styles.css': 'build/css/users-styles.css'
+          // 'build/css/users-styles.css': 'build/css/users-styles.css'
           // 'build/css/lax-tecDoc-pages/style.css' : 'build/css/lax-tecDoc-pages/style.css'
           // 'build/css/delivery/delivery--style.css' : 'build/css/delivery/delivery--style.css'
           // 'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
+          'build/css/test/catalog-seo-style.css' : 'build/css/test/catalog-seo-style.css'
         }
       },
     },
     uglify: {
-      mainPage: {
-        src: 'build/js/main-page-script.js',
-        dest: 'build/js/main-page-script.js'
-      },
+      // mainPage: {
+      //   src: 'build/js/main-page-script.js',
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'build/js/any-autos-page-script.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -92,6 +85,10 @@ module.exports = function(grunt) {
       //   src: 'build/js/catalog-seo-script.js',
       //   dest: 'build/js/catalog-seo-script.js'
       // }
+      seoCatalogTest: {
+        src: 'build/js/test/catalog-seo-script.js',
+        dest: 'build/js/test/catalog-seo-script.js'
+      }
     },
     "babel": {
       options: {
@@ -99,7 +96,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "build/js/main-page-script.js" : "build/js/main-page-script.js",
+          // "build/js/main-page-script.js" : "build/js/main-page-script.js",
           // "build/js/any-autos-page-script.js": "build/js/any-autos-page-script.js",
           // "build/js/autos-page-script.js": "build/js/autos-page-script.js",
           // 'build/js/delivery-page-script.js' : 'build/js/delivery-page-script.js',
@@ -108,6 +105,7 @@ module.exports = function(grunt) {
           // 'build/js/trackers-script.js' : 'build/js/trackers-script.js',
           // 'build/js/parts-soft-script.js' : 'build/js/parts-soft-script.js',
           // 'build/js/catalog-seo-script.js' : 'build/js/catalog-seo-script.js'
+          'build/js/test/catalog-seo-script.js' : 'build/js/test/catalog-seo-script.js'
         }
       }
     },
@@ -115,14 +113,14 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
-      mainPage: {
-        src: [
-          // 'src/js/main-page/loading.js',
-          'src/js/main-page/href-checker.js',
-          'src/js/main-page/laximoGetter.js'
-          ],
-        dest: 'build/js/main-page-script.js'
-      },
+      // mainPage: {
+      //   src: [
+      //     // 'src/js/main-page/loading.js',
+      //     'src/js/main-page/href-checker.js',
+      //     'src/js/main-page/laximoGetter.js'
+      //     ],
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'src/js/any-autos-page/vinAutoInfoGetter.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -163,6 +161,10 @@ module.exports = function(grunt) {
       //   src: 'src/js/catalog-seo/catalog-seo-script.js',
       //   dest: 'build/js/catalog-seo-script.js'
       // }
+      seoCatalog: {
+        src: 'src/js/catalog-seo/test/catalog-seo-script.js',
+        dest: 'build/js/test/catalog-seo-script.js'
+      }
     },
     imagemin: {
       static: {
