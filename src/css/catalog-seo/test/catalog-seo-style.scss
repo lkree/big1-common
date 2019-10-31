@@ -157,6 +157,9 @@
   cursor: default;
   position: relative;
 }
+.laximo-div-selector--no-hover {
+  padding: 0;
+}
 .laximo-div-selector::before, .laximo-div-selector--no-hover::before {
   content: '';
   position: absolute;
@@ -257,6 +260,10 @@
   width: 80px;
   font-weight: 400;
   text-transform: unset;
+
+  &:hover {
+    background-color: #1c4254;
+  }
 }
 .lx-sel-or {
   background: url(/images/design/line.png) 0 9px repeat-x;

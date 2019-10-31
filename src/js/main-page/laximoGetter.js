@@ -479,15 +479,12 @@ document.addEventListener('DOMContentLoaded', function() {
 (function() {
   const $select = $('#search_type'),
         $searchPanel = $('#oem');
-  $searchPanel.attr({'placeholder' : 'Поиск по артикулу'});
+  $searchPanel.attr({'placeholder' : 'Общий поиск'});
 
   const onSelectChange = () => {
     switch(true) {
-      case $select.val() === 'name':
-        $searchPanel.attr({'placeholder' : 'Поиск по наименованию'});
-        return;
-      case $select.val() === 'vin':
-        $searchPanel.attr({'placeholder' : 'Поиск по VIN'});
+      case $select.val() === 'common':
+        $searchPanel.attr({'placeholder' : 'Общий поиск'});
         return;
       default:
         $searchPanel.attr({'placeholder' : 'Поиск по артикулу'});
@@ -884,7 +881,7 @@ if (hrefChecker.mainPage()) {
   $('.main-popup-reg__close').on('click', function() {
     $('.b-popup-enter').hide();
   });
-})(); //close reg form (mini-form)
+})(); // close reg form (mini-form)
 (function() {
   const $openButton = $('.mobile-menu'),
         $closeButton = $('.b-tsd-tb__close');
@@ -901,7 +898,7 @@ if (hrefChecker.mainPage()) {
   };
   $openButton.on('click', popupController);
   $closeButton.on('click', popupController)
-})(); //header menu controller (popup open / close)
+})(); // header menu controller (popup open / close)
 (function() {
   const onDomContentLoaded = () => {
     const $enterLink = $('.b-enter-link');
@@ -917,3 +914,10 @@ if (hrefChecker.mainPage()) {
 
   $(document).on('DOMContentLoaded', onDomContentLoaded);
 })(); // login / registration buttons (in header search menu) controller
+(function() {
+  let contactsLink = '';
+   $('.b-tsd-nav-list > li a').each(function() {
+    if ($(this).text() === 'Контакты') contactsLink = $(this).attr('href');
+  });
+   if (contactsLink) $('.fast-menu-tabs__li-first-level:last-of-type a').attr('href', contactsLink);
+})(); // changes link kontakty in self-made menu

@@ -66,6 +66,7 @@ body, html {
   position: relative;
   height: 100%;
   @include flex(center, center);
+  overflow: hidden;
 }
 
 .b-userbox::before {
@@ -526,6 +527,7 @@ table.logo-table td div.logotype {
 .b-tsd-user {
   @include flex(flex-end);
   height: 100%;
+  max-width: 300px;
 }
 
 .b-basket-link {
@@ -915,6 +917,7 @@ table.logo-table td div.logotype {
 
 .b-userbox .b-link-exit {
   min-height: 23px;
+  min-width: 20px;
   display: flex;
   height: 100%;
   background-position: center
@@ -1638,7 +1641,7 @@ p a {
 .b-nep-col-tchars {
   position: relative;
   display: flex;
-  padding: 0 28px 58px 28px;
+  padding: 0 28px 0 28px;
   flex-direction: column;
   align-items: center;
   max-width: 636px
@@ -2370,4 +2373,8 @@ p img, span img, div img {
 }
 .b-nep-prodch-container {
   @include flex(space-between);
+  margin-bottom: 15px;
+}
+.scrll {
+  max-height: 180px !important;
 }

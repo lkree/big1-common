@@ -1,6 +1,9 @@
 .header-wrapper {
   @include flex(space-between, center);
 }
+header-wrapper__user-login {
+  margin-left: 15px;
+}
 .header-wrapper__phone {
   margin: 0 30px;
   position: relative
@@ -19,6 +22,12 @@
   right: -15px
 }
 
+@media (max-width: 1100px) {
+  .header-wrapper__phone {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .header-wrapper {
     flex-direction: column;
@@ -28,8 +37,6 @@
 
   .header-wrapper__user-login {
     flex-basis: 100%;
-  }
-  .header-wrapper__user-login {
     flex-grow: 1;
     order: -1;
   }
