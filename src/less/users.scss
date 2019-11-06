@@ -1,36 +1,4 @@
 @charset "utf-8";
-@font-face {
-  font-family: MyriadProCond;
-  src: url(/fonts/MyriadPro-Cond.woff2);
-  src: url(/fonts/MyriadPro-Cond.woff);
-
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: MyriadPro;
-  src: url(/fonts/MyriadPro.woff2);
-  src: url(/fonts/MyriadPro.woff);
-
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: MyriadPro
-}
-
-:focus {
-  outline: 5px auto #ff0
-}
-
-body, html {
-  height: auto
-}
 
 .b-msd-contact .b-phone a span {
   font-size: inherit
@@ -49,16 +17,6 @@ body, html {
 .b-copyright, .b-foot-nav-list a {
   color: #fff;
   font-size: 13px
-}
-
-.b-yel-cat {
-  padding: 0;
-  position: relative;
-  overflow: hidden
-}
-
-.b-yel-cat-list li {
-  height: 200px
 }
 
 .b-userbox {
@@ -573,109 +531,6 @@ table.logo-table td div.logotype {
 
 .b-about p, .b-btn-all-news, .b-btn-send, .b-btn-vin, .b-head, .b-head a, .b-news-head a, .b-price, .b-prod-carousel .b-btn-add2b::after, .b-tsd-nav-list li a, .b-userbox a, .big-service__btn span, input[type=text] {
   font-family: MyriadPro
-}
-
-.b-yel-cat-list li {
-  position: relative;
-  background-color: #1c4254;
-  perspective: 1000px;
-  width: 10%
-}
-
-.b-yel-cat-list li a {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  transition: 1s;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden
-}
-
-.b-yel-cat-list li a:first-of-type {
-  background-image: url(/images/design/bgCarsMini.jpg);
-  background-size: contain
-}
-
-.b-yel-cat-list li a:last-of-type {
-  background-image: url(/images/design/bgCarsMiniHover.jpg);
-  background-size: cover;
-  transform: rotateY(180deg);
-}
-
-#main-slider-truck li a:last-of-type span i img {
-  display: none
-}
-
-.b-yel-cat-list li a:last-of-type span:first-of-type i {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain
-}
-
-#main-slider-truck li:first-of-type a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/manHover.png);
-  background-position: center 7px
-}
-
-#main-slider-truck li:nth-of-type(2) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/dafHover.png);
-  background-position: center 18px
-}
-
-#main-slider-truck li:nth-of-type(3) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/renaultHover.png);
-  background-position: center 10px
-}
-
-#main-slider-truck li:nth-of-type(4) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/volvoHover.png);
-  background-position: center 11px
-}
-
-#main-slider-truck li:nth-of-type(5) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/mercedesHover.png);
-  background-position: center 10px
-}
-
-#main-slider-truck li:nth-of-type(6) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/scaniaHover.png);
-  background-position: center 6px
-}
-
-#main-slider-truck li:nth-of-type(7) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/ivecoHover.png);
-  background-position: center 8px
-}
-
-#main-slider-truck li:nth-of-type(8) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/isuzuHover.png)
-}
-
-#main-slider-truck li:nth-of-type(9) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/hyundaiHover.png)
-}
-
-#main-slider-truck li:nth-of-type(10) a:last-of-type span:first-of-type i {
-  background-image: url(/images/design/brandsLaximoHover/kiaHover.png);
-  background-position: center 12px
-}
-
-.b-yel-cat-list li:hover a:first-of-type {
-  transform: rotateY(180deg);
-}
-
-.b-yel-cat-list li:hover a:last-of-type {
-  transform: rotateY(360deg);
-}
-
-.b-yel-cat-list {
-  background: #1c4254;
-  display: flex;
-  width: 200%;
-  transition: 0.5s transform linear
 }
 
 .b-prod-carousel .slick-dots button {
@@ -2061,47 +1916,6 @@ p img, span img, div img {
   max-width: calc(100vw - 30px)
 }
 
-.b-yel-cat__slider-btn {
-  width: 50px;
-  height: 50px;
-  border: none;
-  background-color: unset;
-  background: url(/images/design/brandsLaximoHover/slider-btn--active.svg) no-repeat center center;
-  position: absolute;
-  top: calc(50% - 25px);
-  right: 0;
-  font-size: 0;
-}
-
-.b-yel-cat__slider-btn--prev {
-  transform: rotate(180deg);
-  left: 0
-}
-
-.b-yel-cat__slider-btn--deactive {
-  background: url(/images/design/brandsLaximoHover/slider-btn--deactive.svg) no-repeat center center;
-  opacity: 0.3
-}
-
-#main-slider-car li:nth-of-type(5) a:last-of-type img {
-  object-position: 0 20px
-}
-
-#main-slider-car li a:first-of-type img {
-  object-position: 0 30px
-}
-
-#main-slider-car li:nth-of-type(10) a:last-of-type img, #main-slider-car li:nth-of-type(8) a:last-of-type img {
-  object-position: 0 10px
-}
-
-#main-slider-car li:nth-of-type(1) a:last-of-type img, #main-slider-car li:nth-of-type(2) a:last-of-type img {
-  object-position: 0 15px
-}
-
-#main-slider-car {
-  width: 300%
-}
 .b-nep-add2bask,.b-nep-filter-reset-btn {
   background-color:#1c4254;
 }
@@ -2308,11 +2122,6 @@ p img, span img, div img {
   background-size: 30px 55px;
   background-color: #FED65D;
 }
-//.search-type-toggler:active {
-//  background: url(/images/design/arrow-icon--black-red.png) no-repeat center -25px;
-//  background-size: 30px 55px;
-//  background-color: lightgray;
-//}
 .main-popup-reg__close {
   position: absolute;
   width: 20px;
@@ -2348,11 +2157,6 @@ p img, span img, div img {
   flex-grow: 1;
   position: relative;
 }
-//.registration-nav-wrapper {
-//  height: 100%;
-//  display: flex;
-//  align-items: center;
-//}
 .b-msd-tb {
   @include flex(space-between, center);
 }

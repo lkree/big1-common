@@ -2,6 +2,8 @@
   $(document).on('DOMContentLoaded', function() {
     let formStatus = 'closed';
     let currentStatus = window.type;
+    const delay = 500, // delay for hide show operations
+          resizeDelay = delay + 1;
 
     const h = {
       isAvailable: function(el) {
@@ -15,7 +17,52 @@
       },
       cacheExtractor: function(cache, cellName) {
         cache[cellName];
-      }
+      },
+      isNull: function(el) {
+        return el === null;
+      },
+      templateSearch: function(onSuccess, onFail) {
+        try {
+          return onSuccess();
+        } catch(e) {
+          return onFail();
+        }
+      } //ie polyfill
+    };
+    const contentController = (show = true) => {
+      const content = $('#js-laximo-chassis-options, #js-laximo-wizard-options, .laximo');
+
+      content.each(function() {
+        if (show) $(this).slideDown(delay);
+        else $(this).css('display', 'none');
+      });
+    };
+    const wrapperController = () => {
+      let $wrapper = {};
+
+      const optionsWrapperMake = () => {
+        $wrapper = $('<div>', {
+            text: 'Подбор по параметрам',
+            class: 'options-wrapper'
+          });
+        const $separator = $('.lx-sel-or').first();
+
+        if ($('.options-wrapper').css('display') === 'block') return;
+        $separator.after($wrapper);
+      }; // makes wrapper on form
+      const onWrapperClick = () => {
+        contentController(true);
+
+        const $wrapper = $('.options-wrapper');
+        $wrapper.slideUp();
+        setTimeout(bodyResizer, resizeDelay);
+        $wrapper.off('click', onWrapperClick);
+        $wrapper.remove();
+      };
+
+      optionsWrapperMake();
+      contentController(false);
+      $wrapper.on('click', onWrapperClick);
     };
     const formCleaner = (form) => {
       Array.isArray(form) ?
@@ -26,6 +73,11 @@
       let values = [];
 
       return function(name, options) {
+        if (name === 'другие модели') {
+          const catalogId = h.templateSearch(() => document.querySelector(`.text__template--${currentStatus}`).content.querySelector('section').dataset.catalogType, () => document.querySelector(`.text__template--${currentStatus}`).querySelector('section').dataset.catalogType);
+          return $('<option>', {value : catalogId});
+        }
+
         [...options].forEach((el) => {
           name = name.toLowerCase();
           const laxName = el.textContent.toLowerCase();
@@ -54,13 +106,14 @@
         $separator.remove();
       }
 
-      $laxForm[0].prepend($description[0]);
+      $laxForm.prepend($description);
     }; //clean lax separator and removes select
     const optionsChanger = (options) => {
       let hasResult = h.isAvailable(options[0].value); //if no value => no result found
       const $wrapper = $('<div>', {
         class: 'laximo-div-selectors-wrapper'
-      });
+      }),
+            $commonWrapper = $('<div>', {class: 'lx-b-sel-tm'});
 
       $(options).each(function() {
         const option = $('<div>', {
@@ -72,7 +125,7 @@
         option.appendTo($wrapper);
       });
 
-      const $laxForm = $('#js-laximo-wizard-options .lx-b-sel-tm');
+      const $laxForm = $('#js-laximo-wizard-options');
 
       if (!h.isAvailable$($laxForm)) return; //if no laxOptions -> exit
       if (hasResult) { //if no id => no result found
@@ -82,18 +135,19 @@
         formCleaner(previousData);
       }
 
-      $laxForm[0].prepend($wrapper[0]);
+
+      $commonWrapper.append($wrapper);
+      $laxForm.prepend($commonWrapper);
       optionsChangerHelper(hasResult);
     }; //transfers options to divs (handmade selfopen select)
     const bodyResizer = (goBack = false) => {
-      const $formWrapper = $('.text'),
+      const $formWrapper = $('.laximo-in-laxTecdoc'),
         $carList = $('.cars-catalog');
       if (typeof goBack === 'string') goBack = goBack === 'closed';
       if (goBack) {
-        $carList.css('min-height', '600px');
+        $carList.css('min-height', 'unset');
         return;
       }
-      if ($formWrapper.innerHeight() - 200 < 600) return;
 
       $carList.attr('style', `min-height: ${$formWrapper.innerHeight() - 200}px`);
     }; //calculates form height and adds to td model (needed to autoresize page)
@@ -102,24 +156,17 @@
 
       if (h.isAvailable$($form)) {
         if ($form.css('display') !== 'none' && status === 'close') {
-          $form.slideUp(500);
+          $form.slideUp(delay);
           formStatus = "closed";
+          setTimeout(() => bodyResizer(formStatus), resizeDelay);
         } else {
-          $form.slideDown(500);
+          wrapperController();
+          $form.slideDown(delay);
           formStatus = "opened";
+          setTimeout(() => bodyResizer(formStatus), resizeDelay);
         }
       }
     };
-    const onLiClick = (evt) => {
-      laximoWizardyController(evt.currentTarget.querySelector('.cars-catalog__name').textContent);
-      formController();
-      scrollToForm(formStatus);
-      bodyResizer(formStatus);
-    };
-    /**
-     * @param status {string}
-     * if @param 'closed' === return
-     */
     const scrollToForm = (status) => {
       if (status === 'closed') return;
 
@@ -131,6 +178,15 @@
         $('.b-bot-side').removeAttr('style'); // same thing
       }, 500);
     };
+    const onLiClick = (evt) => {
+      laximoWizardyController(evt.currentTarget.querySelector('.cars-catalog__name').textContent);
+      formController();
+      scrollToForm(formStatus);
+    };
+    /**
+     * @param status {string}
+     * if @param 'closed' === return
+     */
     class LaximoWizardy {
       init(e) {
         if (!e) return;
@@ -163,7 +219,7 @@
     const laxFormInitialization = () => {
       const selectedType = `.text__template--${currentStatus}`;
 
-      const value = document.querySelector(selectedType).content.querySelector('.cloned-lax-list').dataset.catalogType;
+      const value = h.templateSearch(() => document.querySelector(selectedType).content.querySelector('.cloned-lax-list').dataset.catalogType, () => document.querySelector(selectedType).querySelector('.cloned-lax-list').dataset.catalogType);
       laximo.init(value);
     };
     const chooseCurrentModel = () => {
@@ -188,7 +244,7 @@
         }
         else {
           const selectedType = `.text__template--${currentStatus}`,
-            options = document.querySelector(selectedType).content.querySelectorAll('.cloned-lax-list option'),
+            options = h.templateSearch(() => document.querySelector(selectedType).content.querySelectorAll('.cloned-lax-list option'), () => document.querySelector(selectedType).querySelectorAll('.cloned-lax-list option')),
             values = compareModels()(name, options),
             resultsCount = values.length;
 
@@ -220,6 +276,7 @@
       ;(function() {
         if (!evt.originalEvent.target.classList.contains('laximo-div-selector')) return;
         laximo.init(evt.originalEvent.target.dataset.id);
+        setTimeout(bodyResizer, resizeDelay);
       })(); //opens lax-form when click on div-options
       ;(function() {
         if (!evt.target.classList.contains('lx-wrap-btn-sm--help-btn')) return;

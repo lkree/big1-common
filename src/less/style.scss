@@ -1,4 +1,6 @@
 /* common styles rules*/
+@import "common-rules.scss";
+@import "fonts.scss";
 @import "constants.scss";
 @import "mixins.scss";
 @import "users.scss";
@@ -6,8 +8,8 @@
 
 
 /*blocks rules */
-@import "blocks/car-type-chooser-modal-window.scss";
-@import "blocks/car-type-chooser-preloader.scss";
+//@import "blocks/car-type-chooser-modal-window.scss";
+//@import "blocks/car-type-chooser-preloader.scss";
 @import "blocks/garage-auto.scss";
 @import "blocks/customer-session-form.scss";
 @import "blocks/main-news.scss";
@@ -31,3 +33,4 @@
 @import "blocks/payment-delivery.scss";
 @import "blocks/payment-methods.scss";
 @import "blocks/delivery-methods.scss";
+@import "blocks/b-yel-cat.scss";

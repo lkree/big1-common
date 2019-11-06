@@ -9,6 +9,9 @@
   text-transform: uppercase;
   padding: 0 !important;
 }
+.app-banner__message:hover {
+  cursor: default;
+}
 .app-banner__link {
   width: 110px;
   height: 32px;

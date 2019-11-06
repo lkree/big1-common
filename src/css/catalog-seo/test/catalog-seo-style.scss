@@ -82,15 +82,12 @@
 }
 
 /* cars-catalog */
-.cars-catalog {
-  padding-right: 30%;
-}
 .cars-catalog__list {
   @include ul-style-off();
   @include flex(false, false, false, wrap);
 }
 .cars-catalog__item {
-  flex-basis: 24%;
+  flex-basis: 19%;
   @include flex(space-between, false, column);
   padding: 0 !important;
   height: 140px;
@@ -125,12 +122,15 @@
 
 @media (max-width: 950px) {
   .cars-catalog__item {
-    flex-basis: 32%;
+    flex-basis: 24%;
   }
 }
 @media (max-width: 768px) {
   .cars-catalog {
     padding: 0;
+  }
+  .cars-catalog__item {
+    flex-basis: 32%;
   }
 }
 @media (max-width: 550px) {
@@ -178,13 +178,16 @@
   text-decoration: underline;
 }
 .lx-b-lax-col-close {
+  width: 20px;
+  height: 20px;
+
   position: absolute;
   top: 5px;
   right: 5px;
-  font-size: 20px;
+  background: url(/images/another-images/icons/close-icon.png) no-repeat;
 }
 .lx-b-lax-col-close:hover {
-  color: red;
+  background: url(/images/another-images/icons/close-icon--red.png) no-repeat;
   cursor: pointer;
 }
 
@@ -322,30 +325,44 @@
   font-weight: 400;
   background-color: #1c4254;
   color: #fff;
-  border-radius: 0;
-  padding: 0 0 0 10px;
+  border-radius: 3px;
+  justify-content: center;
 }
 .lx-wrap-btn-sm--help-btn {
   flex-basis: 48%;
   background-color: #ad1318;
   color: #fff;
-  padding: 0 0 0 10px;
+  justify-content: center;
   font-size: 14px;
   border: none;
-  text-align: left;
-  display: block !important;
+  display: flex !important; //нужно убрать display none из ruby
   position: relative;
+  padding-right: 15px;
+  border-radius: 3px;
+  align-items: center;
 }
 .lx-wrap-btn-sm--help-btn::after {
   content: '';
   position: absolute;
   top: 9px;
-  right: 40px;
+  right: 15px;
   width: 20px;
   height: 20px;
   background: url(/images/another-images/icons/question-icon.png) no-repeat;
 }
 .lx-wrap-btn-sm--help-btn:hover {
+  cursor: pointer;
+}
+.options-wrapper {
+  flex-basis: 90%;
+  background-color: #1c4254;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.options-wrapper:hover {
   cursor: pointer;
 }
 @media (max-width: 400px) {
@@ -357,6 +374,9 @@
   }
   .lx-wrap-ss .js-laximo-wizard-select {
     background-position: 250px center;
+  }
+  .lx-wrap-btn-sm--help-btn {
+    padding-right: 0;
   }
   .lx-wrap-btn-sm--help-btn::after {
     display: none;
