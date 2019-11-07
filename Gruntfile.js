@@ -49,10 +49,10 @@ module.exports = function(grunt) {
       },
     },
     uglify: {
-    //   mainPage: {
-    //     src: 'build/js/main-page-script.js',
-    //     dest: 'build/js/main-page-script.js'
-    //   },
+      // mainPage: {
+      //   src: 'build/js/main-page-script.js',
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'build/js/any-autos-page-script.js',
       //   dest: 'build/js/any-autos-page-script.js'

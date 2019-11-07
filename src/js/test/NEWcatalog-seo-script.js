@@ -1,7 +1,7 @@
 (function() {
   $(document).on('DOMContentLoaded', function() {
     let formStatus = 'closed';
-    let currentStatus = window.type;
+    let currentStatus = window.type || 'car';
     const delay = 500, // delay for hide show operations
           resizeDelay = delay + 1;
 
@@ -93,12 +93,12 @@
     const optionsChangerHelper = (result = true) => {
       const $select = $('.lx-vin-search-module .js-laximo-wizard-select'),
         $separator = $('.lx-wrap-ss'),
-        $laxForm = $('#js-laximo-wizard-options .lx-b-sel-tm'),
         $acceptButton = $('.lx-wrap-btn-sm'),
         $description = $('<label>', {
           text: 'Выберите модификацию',
-          class: 'laximo-div-desctipion'
-        });
+          class: 'laximo-div-description'
+        }),
+        $laxForm = $('#js-laximo-wizard-options .lx-b-sel-tm');
 
       if (result) {
         $select.remove();
@@ -107,6 +107,7 @@
       }
 
       $laxForm.prepend($description);
+      if (!result) $laxForm.find('label').first().hide();
     }; //clean lax separator and removes select
     const optionsChanger = (options) => {
       let hasResult = h.isAvailable(options[0].value); //if no value => no result found
@@ -131,7 +132,7 @@
       if (hasResult) { //if no id => no result found
         formCleaner($laxForm);
       } else {
-        const previousData = [$('.laximo-div-selectors-wrapper'), $('.laximo-div-desctipion')];
+        const previousData = [$('.laximo-div-selectors-wrapper'), $('.laximo-div-description')];
         formCleaner(previousData);
       }
 
@@ -310,6 +311,7 @@
       })(); //onHelpButtonClick
     };
     const onTogglerChange = (changeStatus = true) => {
+      if (!h.isAvailable$($('.cars-catalog__list--truck')) || !h.isAvailable$($('.cars-catalog__list--car'))) return;
       hideAllCars();
       (function() {
         try {
@@ -324,12 +326,20 @@
     };
     ;(function() {
       onTogglerChange(false);
-      ;(function() {
+      (function() {
         $(document).ready(function(){
           var laximo_wizard = new LaximoWizard();
           laximo_wizard.init();
         });
       })(); //parts-soft laximo initialization
+      (function() {
+        const carImgs = document.querySelectorAll('.cars-catalog__list li img');
+
+        [...carImgs]
+          .map((img) => {
+            img.removeAttribute('style');
+          });
+      })(); // car styles cleaner
     })();
 
     (function() {
@@ -344,20 +354,42 @@
 
 
 
-
-
-
-
-// result = $(document.createElement('main')).append([...document.querySelectorAll('.cars-catalog__item')].map((el) => {
+// arr = [];
+// carSorter = (carMark) => {
+//   const carsWrapper = document.querySelector('.td-model');
+//
+//   const cars = carsWrapper.querySelectorAll('li');
+//   carMark = carMark
+//     .toUpperCase()
+//     .replace('-', '')
+//     .replace(' ', '');
+//
+//   [...cars]
+//     .map((el) => {
+//       if (~el.dataset.name.indexOf(carMark)) arr.push(el);
+//     });
+// };
+// points = document.querySelectorAll('.tabn:not(.hidden) div.car-chooser-list-tecdoc__point');
+// [...points].forEach((point) => carSorter(point.textContent));
+// arr.sort();
+//
+//
+// $(document.body).append($(document.createElement('main')).append([...arr].map((el) => {
 //   wrapper = el.cloneNode();
 //   imgWrapper = el.querySelector('.model-link-div').cloneNode();
 //   img = el.querySelector('img').cloneNode();
 //   carName = el.querySelector('.car-base-list-name').cloneNode();
 //
-//   carName.textContent = carName.textContent.split(' ')[0];
+//   wrapper.classList.replace('model-item', 'cars-catalog__item');
+//   imgWrapper.classList.replace('model-link-div', 'cars-catalog__img-wrapper');
+//   img.classList.add('cars-catalog__img');
+//   carName.classList.replace('model-link-div', 'cars-catalog__name');
+//
+//   carName.textContent = el.querySelector('.car-base-list-name').textContent.split(' ')[1];
 //
 //   imgWrapper.append(img);
 //   wrapper.append(imgWrapper);
 //   wrapper.append(carName);
+//   wrapper.removeAttribute('style');
 //   return wrapper;
-// }));
+// })));
