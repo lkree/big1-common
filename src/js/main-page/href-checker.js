@@ -5,7 +5,12 @@ window.hrefChecker = {
   //Проверка на соответствие ссылки заданным параметрам
   laximoBreadcrumbs: function() {
     const brands = ['isuzu', 'kia', 'mercedes', 'daf', 'man', 'volvo', 'hyundai', 'iveco', 'renault', 'scania', 'toyota', 'bmw', 'mitsubishi', 'skoda', 'volkswagen', 'ford', 'nissan', 'audi', 'mazda', 'chevrolet', 'opel'];
-    const brandHref = href[4].split('?')[0] || href[4];
+    let brandHref;
+    try {
+      brandHref = href[4].split('?')[0]
+    } catch {
+      brandHref = href[4];
+    }
       if (href[3] === 'original-catalog') return brands.includes(brandHref) && !href[5];
       if (
           href[3] === 'original-catalog' && 

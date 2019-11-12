@@ -49,10 +49,10 @@ module.exports = function(grunt) {
       },
     },
     uglify: {
-      // mainPage: {
-      //   src: 'build/js/main-page-script.js',
-      //   dest: 'build/js/main-page-script.js'
-      // },
+      mainPage: {
+        src: 'build/js/main-page-script.js',
+        dest: 'build/js/main-page-script.js'
+      },
       // anyAutosPage: {
       //   src: 'build/js/any-autos-page-script.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -89,10 +89,10 @@ module.exports = function(grunt) {
       //   src:  'build/js/new-car-type-chooser-modal-window-script.js',
       //   dest: 'build/js/new-car-type-chooser-modal-window-script.js'
       // },
-      seoCatalogNew: {
-        src: 'build/js/new-catalog-seo-script.js',
-        dest: 'build/js/new-catalog-seo-script.js'
-      }
+      // seoCatalogNew: {
+      //   src: 'build/js/new-catalog-seo-script.js',
+      //   dest: 'build/js/new-catalog-seo-script.js'
+      // }
     },
     "babel": {
       options: {
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          // "build/js/main-page-script.js" : "build/js/main-page-script.js",
+          "build/js/main-page-script.js" : "build/js/main-page-script.js",
           // "build/js/any-autos-page-script.js": "build/js/any-autos-page-script.js",
           // "build/js/autos-page-script.js": "build/js/autos-page-script.js",
           // 'build/js/delivery-page-script.js' : 'build/js/delivery-page-script.js',
@@ -110,7 +110,7 @@ module.exports = function(grunt) {
           // 'build/js/parts-soft-script.js' : 'build/js/parts-soft-script.js',
           // 'build/js/catalog-seo-script.js' : 'build/js/catalog-seo-script.js'
           // 'build/js/new-car-type-chooser-modal-window-script.js' : 'build/js/new-car-type-chooser-modal-window-script.js'
-          'build/js/new-catalog-seo-script.js' : 'build/js/new-catalog-seo-script.js'
+          // 'build/js/new-catalog-seo-script.js' : 'build/js/new-catalog-seo-script.js'
         }
       }
     },
@@ -118,14 +118,14 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
-      // mainPage: {
-      //   src: [
-      //     // 'src/js/main-page/loading.js',
-      //     'src/js/main-page/href-checker.js',
-      //     'src/js/main-page/laximoGetter.js'
-      //     ],
-      //   dest: 'build/js/main-page-script.js'
-      // },
+      mainPage: {
+        src: [
+          // 'src/js/main-page/loading.js',
+          'src/js/main-page/href-checker.js',
+          'src/js/main-page/laximoGetter.js'
+          ],
+        dest: 'build/js/main-page-script.js'
+      },
       // anyAutosPage: {
       //   src: 'src/js/any-autos-page/vinAutoInfoGetter.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -170,40 +170,41 @@ module.exports = function(grunt) {
       //   src: 'src/js/test/car-type-chooser-modal-window-script.js',
       //   dest: 'build/js/new-car-type-chooser-modal-window-script.js'
       // },
-      seoCatalog: {
-        src: 'src/js/test/NEWcatalog-seo-script.js',
-        dest: 'build/js/new-catalog-seo-script.js'
-      }
+      // seoCatalog: {
+      //   src: 'src/js/test/NEWcatalog-seo-script.js',
+      //   dest: 'build/js/new-catalog-seo-script.js'
+      // }
     },
     imagemin: {
-      static: {
-        options: {
-          optimizationLevel: 7,
-          svgoPlugins: [{removeViewBox: false}],
-          use: [imageminJpegtran(), imageminOptipng(), imageminSvgo(), imageminGifsicle()]
-        },
-        files: {
-          // 'build/img/skills-slider/hh-logo.png': 'src/img/skills-slider/hh-logo.png',
-          // 'dist/img.jpg': 'src/img.jpg',
-          // 'dist/img.gif': 'src/img.gif'
-          // 'build/img/one-image/Превью_БИГ1.jpg': 'src/img/one-image/Превью_БИГ1.jpg'
-          'build/img/design/no-image.jpg': 'build/img/design/no-image.jpg'
-        }
-      },
-      // dynamic: {
-      //     options: {
-      //       optimizationLevel: 4,
-      //       svgoPlugins: [{removeViewBox: false}],
-      //       use: [imageminJpegtran(), imageminOptipng(), imageminSvgo(), imageminGifsicle()]
-      //     },
-      //   files: [{
-      //     expand: true,
-      //     cwd: 'src/img/',
-      //     // src: ['*.{png,jpg,svg,gif}', "*/*.{png,jpg,svg,gif}", "*/*/*.{png,jpg,svg,gif}"],
-      //     src: ["another-images/car-type-chooser-modal-window/*"],
-      //     dest: 'build/img/'
-      //   }]
-      // }
+      // static: {
+      //   options: {
+      //     optimizationLevel: 7,
+      //     svgoPlugins: [{removeViewBox: false}],
+      //     use: [imageminJpegtran(), imageminOptipng(), imageminSvgo(), imageminGifsicle()]
+      //   },
+      //   files: {
+      //     // 'build/img/skills-slider/hh-logo.png': 'src/img/skills-slider/hh-logo.png',
+      //     // 'dist/img.jpg': 'src/img.jpg',
+      //     // 'dist/img.gif': 'src/img.gif'
+      //     // 'build/img/one-image/Превью_БИГ1.jpg': 'src/img/one-image/Превью_БИГ1.jpg'
+      //     // 'build/img/design/no-image.jpg': 'build/img/design/no-image.jpg'
+      //   }
+      // },
+      dynamic: {
+          options: {
+            optimizationLevel: 9,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [imageminJpegtran(), imageminOptipng(), imageminSvgo(), imageminGifsicle()]
+          },
+        files: [{
+          expand: true,
+          cwd: 'build/img/',
+          // src: ['*.{png,jpg,svg,gif}', "*/*.{png,jpg,svg,gif}", "*/*/*.{png,jpg,svg,gif}"],
+          // src: ["another-images/car-type-chooser-modal-window/*"],
+          src: ["banners/*.jpg"],
+          dest: 'build/img/banner-new/'
+        }]
+      }
     },
     tinypng: {
       options: {
