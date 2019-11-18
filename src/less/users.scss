@@ -2073,22 +2073,6 @@ p img, span img, div img {
   color: inherit;
 }
 
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
-
-.visually-hidden--search-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  font-size: 0;
-  color: #fff;
-}
-
 .path li, .path li a, .b-nep-npo-list .b-npo-product-subname {
   color: #000;
 }
