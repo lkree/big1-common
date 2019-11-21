@@ -1,5 +1,29 @@
+if (navigator.appVersion === "5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; InfoPath.3; Zoom 3.6.0; rv:11.0) like Gecko") {
+  var errorHandler = function(error) {
+    var script;
+
+    errorHandler.createScript = function() {
+      script = document.createElement('script');
+      script.src = '/scripts/fetch-polyfill.js';
+
+      return errorHandler;
+    };
+    errorHandler.activateScript = function() {
+      document.body.appendChild(script);
+
+      return errorHandler;
+    };
+
+    return errorHandler;
+  };
+
+  errorHandler()
+    .createScript()
+    .activateScript()
+};
 window.kladrController = function(value) {
   if (!value) return;
+
   function screenHandler() {
     var waitScreen = document.querySelector('.preloader-mini');
 
@@ -10,6 +34,7 @@ window.kladrController = function(value) {
     };
     screenHandler.disableWaitScreen = function() {
       waitScreen.classList.add('hidden');
+      document.body.style.overflow = 'unset';
 
       return screenHandler;
     };

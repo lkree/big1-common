@@ -318,7 +318,8 @@ if(hrefChecker.registrationForm()) {
         'top': '40px',
         'left': '50%',
         'transform': 'translateX(-50%)',
-        'width': '100%'
+        'width': '100%',
+        'z-index' : '2',
       });
 
       headerMenu.css({
@@ -326,7 +327,8 @@ if(hrefChecker.registrationForm()) {
         'left': '50%',
         'transform': 'translateX(-50%)',
         'top': '0',
-        'max-width': '1200px'
+        'max-width': '1200px',
+        'z-index' : '2',
       });
 
       // leftMenuTab.css('border-left', '1px solid gray');
@@ -341,12 +343,14 @@ if(hrefChecker.registrationForm()) {
       headerMenu.css({
         'max-width': 'unset',
         'position': 'relative',
-        'top': '0'
+        'top': '0',
+        'z-index' : 'unset',
       });
       scrollingPanel.css({
         'padding': '6px 0 11px',
         'position': 'relative',
-        'top': '0'
+        'top': '0',
+        'z-index' : 'unset',
       });
 
       n = 0;
