@@ -7,61 +7,61 @@ const href = window.location.href.split('/');
  * предотвращает включение каталога в топ товары (чистит количество пунктов для
  *   листания) topGoodiesCleaner
  */
-if (hrefChecker.mainPage()) {
-  (function() {
-    document.addEventListener('DOMContentLoaded', function() {
-      let firstItem = document.querySelectorAll('.b-prod-carousel .slick-list .slick-track .slick-slide'),
-        secondItem = document.querySelectorAll('.b-prod-carousel .slick-dots li');
-
-      if(firstItem.length > 26) {
-        for(let i = 26; i < firstItem.length; ++i) {
-          firstItem[i].remove();
-        }
-
-        for(let i = 8; i < secondItem.length; ++i) {
-          secondItem[i].remove();
-        }
-      }
-    });
-  })();
-  /**
-   * @return {void}
-   * tabIndexRemover remove tabs from slider btns & mainPage->brands->li
-   */
-  try {
-    (function() {
-      let btns = document.querySelectorAll('.slick-dots li button'),
-        lis = document.querySelectorAll('.b-yel-cat-list li');
-
-      for(const btn of btns) {
-        btn.setAttribute('tabindex', -1);
-      }
-
-      for(const li of lis) {
-        li.children[1].setAttribute('tabindex', -1);
-      }
-    })();
-  } catch(e) {
-    console.log(e.message);
-  };
-
+// if (hrefChecker.mainPage()) {
+//   (function() {
 //     document.addEventListener('DOMContentLoaded', function() {
-//         let els = document.querySelectorAll('.b-price');
-
-//         for(let i=0;i<els.length;++i) {
-//             let f = els[i].textContent.split('.'),
-//                 s = f[0].split(''),
-//             t = s.slice(-3);
-//             s = s.slice(0,-3);
-//             t.unshift(' ');
-//             s = s.join('');
-//             t = t.join('');
-//             s = s.concat(t);
-//             f[0] = s;
-//             els[i].textContent = f.join('.');
-//         };
+//       let firstItem = document.querySelectorAll('.b-prod-carousel .slick-list .slick-track .slick-slide'),
+//         secondItem = document.querySelectorAll('.b-prod-carousel .slick-dots li');
+//
+//       if(firstItem.length > 26) {
+//         for(let i = 26; i < firstItem.length; ++i) {
+//           firstItem[i].remove();
+//         }
+//
+//         for(let i = 8; i < secondItem.length; ++i) {
+//           secondItem[i].remove();
+//         }
+//       }
 //     });
-}
+//   })();
+//   /**
+//    * @return {void}
+//    * tabIndexRemover remove tabs from slider btns & mainPage->brands->li
+//    */
+//   // try {
+//   //   (function() {
+//   //     let btns = document.querySelectorAll('.slick-dots li button'),
+//   //       lis = document.querySelectorAll('.b-yel-cat-list li');
+//   //
+//   //     for(const btn of btns) {
+//   //       btn.setAttribute('tabindex', -1);
+//   //     }
+//   //
+//   //     for(const li of lis) {
+//   //       li.children[1].setAttribute('tabindex', -1);
+//   //     }
+//   //   })();
+//   // } catch(e) {
+//   //   console.log(e.message);
+//   // };
+//
+// //     document.addEventListener('DOMContentLoaded', function() {
+// //         let els = document.querySelectorAll('.b-price');
+//
+// //         for(let i=0;i<els.length;++i) {
+// //             let f = els[i].textContent.split('.'),
+// //                 s = f[0].split(''),
+// //             t = s.slice(-3);
+// //             s = s.slice(0,-3);
+// //             t.unshift(' ');
+// //             s = s.join('');
+// //             t = t.join('');
+// //             s = s.concat(t);
+// //             f[0] = s;
+// //             els[i].textContent = f.join('.');
+// //         };
+// //     });
+// }
 
 /**
  * @return void
@@ -153,43 +153,45 @@ if(hrefChecker.autoChooser()) {
   breadCrumbsAutoChooser = null;
 };
 //Заменяет ссылку в каталогах (по умолчанию неправильная стоит)
-(function() {
-  let ul = document.querySelector('.b-bsd-cat .b-bsd-cat-popup .b-list').children;
-
-  for(let i = 0; i < ul.length; ++i) {
-    if(ul[i].children[0].textContent === 'Масла и Автохимия') {
-      ul[i].children[0].href = '/catalogs/vse-katalogi-masla-i-avtohimiya.html';
-    }
-  }
-})();
+// (function() {
+//   let ul = document.querySelector('.b-bsd-cat .b-bsd-cat-popup .b-list').children;
+//
+//   for(let i = 0; i < ul.length; ++i) {
+//     if(ul[i].children[0].textContent === 'Масла и Автохимия') {
+//       ul[i].children[0].href = '/catalogs/vse-katalogi-masla-i-avtohimiya.html';
+//     }
+//   }
+// })();
 
 (function() { //menu
-  const ul = $('.b-bsd-cat .b-bsd-cat-popup .b-list');
+  if (innerWidth > 768) return;
+
+  const ul = $('.header-wrapper .b-tsd-nav-list');
 
   ul.prepend(
     `<li>
-      <a href="/laximo">Каталоги оригинальных запчастей</a> 
+      <a href="/laximo">Каталоги оригинальных запчастей</a>
       <ul>
         <li><a href="/original-catalog/truck-parts">Грузовой</a></li>
         <li><a href="/original-catalog/car-parts">Легковой</a></li>
         <li><a href="/laximo">Общий</a></li>
-      </ul> 
+      </ul>
     </li>
     <li>
-      <a href="/car_base.html">Каталоги неоригинальных запчастей</a> 
+      <a href="/car_base.html">Каталоги неоригинальных запчастей</a>
       <ul>
         <li><a href="/car_base/truck-parts">Грузовой</a></li>
         <li><a href="/car_base/car-parts">Легковой</a></li>
         <li><a href="/car_base.html">Общий</a></li>
-      </ul> 
+      </ul>
     </li>
     <li>
-      <a href="/fast-auto-chooser/">Подобрать свой автомобиль</a> 
+      <a href="/fast-auto-chooser/">Подобрать свой автомобиль</a>
       <ul>
         <li><a href="/fast-auto-chooser/truck">Грузовой</a></li>
         <li><a href="/fast-auto-chooser/car">Легковой</a></li>
         <li><a href="/fast-auto-chooser/">Общий</a></li>
-      </ul> 
+      </ul>
     </li>
     <li>
       <a href="/catalog/to.html">Каталог ТО</a>
@@ -197,49 +199,49 @@ if(hrefChecker.autoChooser()) {
 })();
 
 //mobileCatalogsReplacer()
-(function() {
-  let n = 1,
-      catalogs = document.querySelector('.b-bsd-cat-popup .b-list').children,
-      mobileMenu = document.querySelector('.b-tsd-nav .b-tsd-nav-list');
-
-  if (window.innerWidth <= 768) {
-    n = 0;
-    let asd = mobileMenu.children[0],
-        index = 0,
-        ind = null;
-
-    for (let i = catalogs.length; i > 0; --i) {
-      ind = catalogs[index].cloneNode(true);
-      mobileMenu.insertBefore(ind, asd);
-      ++index;
-      n = 0;
-    }
-  };
-
-  window.addEventListener('resize', (e) => {
-    if (window.outerWidth > 768 && n === 0) {
-      n = 1;
-
-      for (let i = 0; i < catalogs.length; ++i) {
-        mobileMenu.children[0].remove();
-      }
-    };
-
-    if (window.outerWidth <= 768 && n !== 0) {
-      n = 0;
-
-      let asd = mobileMenu.children[0],
-          index = 0,
-          ind = null;
-
-      for (let i = catalogs.length; i > 0; --i) {
-        ind = catalogs[index].cloneNode(true);
-        mobileMenu.insertBefore(ind, asd);
-        ++index;
-      }
-    }
-  });
-})();
+// (function() {
+//   let n = 1,
+//       catalogs = document.querySelector('.b-bsd-cat-popup .b-list').children,
+//       mobileMenu = document.querySelector('.b-tsd-nav .b-tsd-nav-list');
+//
+//   if (window.innerWidth <= 768) {
+//     n = 0;
+//     let asd = mobileMenu.children[0],
+//         index = 0,
+//         ind = null;
+//
+//     for (let i = catalogs.length; i > 0; --i) {
+//       ind = catalogs[index].cloneNode(true);
+//       mobileMenu.insertBefore(ind, asd);
+//       ++index;
+//       n = 0;
+//     }
+//   };
+//
+//   window.addEventListener('resize', (e) => {
+//     if (window.outerWidth > 768 && n === 0) {
+//       n = 1;
+//
+//       for (let i = 0; i < catalogs.length; ++i) {
+//         mobileMenu.children[0].remove();
+//       }
+//     };
+//
+//     if (window.outerWidth <= 768 && n !== 0) {
+//       n = 0;
+//
+//       let asd = mobileMenu.children[0],
+//           index = 0,
+//           ind = null;
+//
+//       for (let i = catalogs.length; i > 0; --i) {
+//         ind = catalogs[index].cloneNode(true);
+//         mobileMenu.insertBefore(ind, asd);
+//         ++index;
+//       }
+//     }
+//   });
+// })();
 
 
 if(hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling()) {
@@ -285,139 +287,128 @@ if(hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling()) {
 //   };
 //   setInterval(tggActivate, 5000);
 // };
-
-if(hrefChecker.registrationForm()) {
-  (function() {
-    const confirmBtn = document.querySelector('.btn-reg');
-
-    confirmBtn.addEventListener('click', function() {
-      ym(49968697, 'reachGoal', 'onRegistrationEvent');
-      return true;
-    })
-  })();
-}
 /**
  * @return {void}
  * makes header sticky
  * 900+ resolutions
  */
-(function() {
-  let currentScroll = window.scrollY,
-      n = 0;
-
-  function onScrollingPage(evt) {
-    const scrollingPanel = $('.b-bot-side'),
-          headerMenu = $('.fast-menu-tabs__ul-first-level'),
-          leftMenuTab = $('.fast-menu-tabs__ul-first-level .fast-menu-tabs__li-first-level:first-of-type'),
-          rightMenuTab = $('.fast-menu-tabs__ul-first-level .fast-menu-tabs__li-first-level:last-of-type');
-
-    const showMenu = () => {
-      scrollingPanel.css({
-        'position': 'fixed',
-        'padding': '6px 15px 11px',
-        'top': '40px',
-        'left': '50%',
-        'transform': 'translateX(-50%)',
-        'width': '100%',
-        'z-index' : '2',
-      });
-
-      headerMenu.css({
-        'position': 'fixed',
-        'left': '50%',
-        'transform': 'translateX(-50%)',
-        'top': '0',
-        'max-width': '1200px',
-        'z-index' : '2',
-      });
-
-      // leftMenuTab.css('border-left', '1px solid gray');
-      // rightMenuTab.css('border-right', '1px solid gray');
-
-      n = 1;
-    };
-    const hideMenu = () => {
-      // leftMenuTab.css('border-left', 'none');
-      // rightMenuTab.css('border-right', 'none');
-
-      headerMenu.css({
-        'max-width': 'unset',
-        'position': 'relative',
-        'top': '0',
-        'z-index' : 'unset',
-      });
-      scrollingPanel.css({
-        'padding': '6px 0 11px',
-        'position': 'relative',
-        'top': '0',
-        'z-index' : 'unset',
-      });
-
-      n = 0;
-    };
-    // const showMobileMenu = () => {
-    //   $('.b-bot-side').css({
-    //     'position': 'fixed',
-    //     'padding': '6px 15px 11px',
-    //     'top': '40px',
-    //     'left': '50%',
-    //     'transform': 'translateX(-50%)'
-    //   });
-    //
-    //   $('.fast-menu-tabs__ul-first-level').css({
-    //     'position': 'fixed',
-    //     'top': '0px',
-    //     'left': '50%',
-    //     'transform': 'translateX(-50%)'
-    //   });
-    //
-    //   $('.b-item-vin, .big-service').addClass('hidden');
-    //
-    //   n = 1;
-    // };
-    // const hideMobileMenu = () => {
-    //   $('.b-item-vin, .big-service').removeClass('hidden');
-    //
-    //   $('.b-bot-side, .fast-menu-tabs__ul-first-level').css({
-    //     'position': 'relative',
-    //     'top': '0'
-    //   });
-    //
-    //   $('.b-bot-side').css('padding', '6px 0 11px');
-    //
-    //   n = 0;
-    // };
-
-    if (currentScroll < window.scrollY) {
-      currentScroll = window.scrollY;
-      if (n > 0) {
-        hideMenu();
-        // hideMobileMenu();
-      }
-      return;
-    }
-
-    currentScroll = window.scrollY;
-
-      if (window.scrollY >= 146 && n === 0 && window.outerWidth >= 900) {
-        showMenu();
-      }
-
-      // if (window.scrollY >= 324 && n === 0 && window.outerWidth <= 900) {
-      //   showMobileMenu();
-      // }
-      //
-      // if (window.scrollY <= 324 && window.outerWidth <= 900) {
-      //   hideMobileMenu();
-      // }
-
-      if (window.scrollY <= 146 && window.outerWidth >= 900) {
-        hideMenu();
-      }
-  }
-
-  document.addEventListener('scroll', onScrollingPage);
-})();
+// (function() {
+//   let currentScroll = window.scrollY,
+//       n = 0;
+//
+//   function onScrollingPage(evt) {
+//     const scrollingPanel = $('.b-bot-side'),
+//           headerMenu = $('.fast-menu-tabs__ul-first-level'),
+//           leftMenuTab = $('.fast-menu-tabs__ul-first-level .fast-menu-tabs__li-first-level:first-of-type'),
+//           rightMenuTab = $('.fast-menu-tabs__ul-first-level .fast-menu-tabs__li-first-level:last-of-type');
+//
+//     const showMenu = () => {
+//       scrollingPanel.css({
+//         'position': 'fixed',
+//         'padding': '6px 15px 11px',
+//         'top': '40px',
+//         'left': '50%',
+//         'transform': 'translateX(-50%)',
+//         'width': '100%',
+//         'z-index' : '2',
+//       });
+//
+//       headerMenu.css({
+//         'position': 'fixed',
+//         'left': '50%',
+//         'transform': 'translateX(-50%)',
+//         'top': '0',
+//         'max-width': '1200px',
+//         'z-index' : '2',
+//       });
+//
+//       // leftMenuTab.css('border-left', '1px solid gray');
+//       // rightMenuTab.css('border-right', '1px solid gray');
+//
+//       n = 1;
+//     };
+//     const hideMenu = () => {
+//       // leftMenuTab.css('border-left', 'none');
+//       // rightMenuTab.css('border-right', 'none');
+//
+//       headerMenu.css({
+//         'max-width': 'unset',
+//         'position': 'relative',
+//         'top': '0',
+//         'z-index' : 'unset',
+//       });
+//       scrollingPanel.css({
+//         'padding': '6px 0 11px',
+//         'position': 'relative',
+//         'top': '0',
+//         'z-index' : 'unset',
+//       });
+//
+//       n = 0;
+//     };
+//     // const showMobileMenu = () => {
+//     //   $('.b-bot-side').css({
+//     //     'position': 'fixed',
+//     //     'padding': '6px 15px 11px',
+//     //     'top': '40px',
+//     //     'left': '50%',
+//     //     'transform': 'translateX(-50%)'
+//     //   });
+//     //
+//     //   $('.fast-menu-tabs__ul-first-level').css({
+//     //     'position': 'fixed',
+//     //     'top': '0px',
+//     //     'left': '50%',
+//     //     'transform': 'translateX(-50%)'
+//     //   });
+//     //
+//     //   $('.b-item-vin, .big-service').addClass('hidden');
+//     //
+//     //   n = 1;
+//     // };
+//     // const hideMobileMenu = () => {
+//     //   $('.b-item-vin, .big-service').removeClass('hidden');
+//     //
+//     //   $('.b-bot-side, .fast-menu-tabs__ul-first-level').css({
+//     //     'position': 'relative',
+//     //     'top': '0'
+//     //   });
+//     //
+//     //   $('.b-bot-side').css('padding', '6px 0 11px');
+//     //
+//     //   n = 0;
+//     // };
+//
+//     if (currentScroll < window.scrollY) {
+//       currentScroll = window.scrollY;
+//       if (n > 0) {
+//         hideMenu();
+//         // hideMobileMenu();
+//       }
+//       return;
+//     }
+//
+//     currentScroll = window.scrollY;
+//
+//       if (window.scrollY >= 146 && n === 0 && window.outerWidth >= 900) {
+//         showMenu();
+//       }
+//
+//       // if (window.scrollY >= 324 && n === 0 && window.outerWidth <= 900) {
+//       //   showMobileMenu();
+//       // }
+//       //
+//       // if (window.scrollY <= 324 && window.outerWidth <= 900) {
+//       //   hideMobileMenu();
+//       // }
+//
+//       if (window.scrollY <= 146 && window.outerWidth >= 900) {
+//         hideMenu();
+//       }
+//   }
+//
+//   document.addEventListener('scroll', onScrollingPage);
+// })();
 
 document.addEventListener('DOMContentLoaded', function() {
   if(hrefChecker.mainPage()) {
@@ -480,37 +471,37 @@ document.addEventListener('DOMContentLoaded', function() {
  * @return {void}
  * placeHolderChanger depends on resolution
  */
-(function() {
-  const $select = $('#search_type'),
-        $searchPanel = $('#oem');
-  $searchPanel.attr({'placeholder' : 'Общий поиск'});
-
-  const onSelectChange = () => {
-    switch(true) {
-      case $select.val() === 'common':
-        $searchPanel.attr({'placeholder' : 'Общий поиск'});
-        return;
-      default:
-        $searchPanel.attr({'placeholder' : 'Поиск по артикулу'});
-    }
-  };
-  const onSelectClick = (evt) => {
-    if (!evt.originalEvent) return;
-    if (evt.originalEvent.target === $select[0] || $select.hasClass('search-type-toggler--active')) $select.toggleClass('search-type-toggler--active');
-  };
-  $select.on('change', onSelectChange);
-  $(document).on('click', onSelectClick);
-})();
+// (function() {
+//   const $select = $('#search_type'),
+//         $searchPanel = $('#oem');
+//   $searchPanel.attr({'placeholder' : 'Общий поиск'});
+//
+//   const onSelectChange = () => {
+//     switch(true) {
+//       case $select.val() === 'common':
+//         $searchPanel.attr({'placeholder' : 'Общий поиск'});
+//         return;
+//       default:
+//         $searchPanel.attr({'placeholder' : 'Поиск по артикулу'});
+//     }
+//   };
+//   const onSelectClick = (evt) => {
+//     if (!evt.originalEvent) return;
+//     if (evt.originalEvent.target === $select[0] || $select.hasClass('search-type-toggler--active')) $select.toggleClass('search-type-toggler--active');
+//   };
+//   $select.on('change', onSelectChange);
+//   $(document).on('click', onSelectClick);
+// })();
 
 /**
  * @return {{void}}
  * keyIconRemover
  */
-(function() {
-  const iconWrapper = document.querySelector('.b-tsd-user .b-userbox');
-
-  iconWrapper.children[0].classList.contains('b-link-perscab') ? iconWrapper.style.background = 'none' : undefined;
-})();
+// (function() {
+//   const iconWrapper = document.querySelector('.b-tsd-user .b-userbox');
+//
+//   iconWrapper.children[0].classList.contains('b-link-perscab') ? iconWrapper.style.background = 'none' : undefined;
+// })();
 
 /**
  * @return {number}
@@ -903,21 +894,21 @@ if (hrefChecker.mainPage()) {
   $openButton.on('click', popupController);
   $closeButton.on('click', popupController)
 })(); // header menu controller (popup open / close)
-(function() {
-  const onDomContentLoaded = () => {
-    const $enterLink = $('.b-enter-link');
-
-    if (!$enterLink[0]) {
-      const $loginButtons = [$('.b-bsd-tb__b-tsd-user'), $('.b-bsd-tb__header-registration-button')];
-
-      $loginButtons.forEach((el) => el.remove());
-    };
-
-    $(document).off('DOMContentLoaded', onDomContentLoaded);
-  };
-
-  $(document).on('DOMContentLoaded', onDomContentLoaded);
-})(); // login / registration buttons (in header search menu) controller
+// (function() {
+//   const onDomContentLoaded = () => {
+//     const $enterLink = $('.b-enter-link');
+//
+//     if (!$enterLink[0]) {
+//       const $loginButtons = [$('.b-bsd-tb__b-tsd-user'), $('.b-bsd-tb__header-registration-button')];
+//
+//       $loginButtons.forEach((el) => el.remove());
+//     };
+//
+//     $(document).off('DOMContentLoaded', onDomContentLoaded);
+//   };
+//
+//   $(document).on('DOMContentLoaded', onDomContentLoaded);
+// })(); // login / registration buttons (in header search menu) controller
 (function() {
   let contactsLink = '';
    $('.b-tsd-nav-list > li a').each(function() {
