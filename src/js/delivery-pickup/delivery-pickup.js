@@ -1,258 +1,358 @@
 {
-const option = {
-  pickupModule: document.querySelector('.delivery-pickup')
-};
-const options = _.extend(option, {
-  pointsWrapper: options.pickupModule.querySelector('.delivery-pickup__points-list'),
-  input:  options.pickupModule.querySelector('.delivery-pickup__input'),
-  close:  options.pickupModule.querySelector('.delivery-pickup__close'),
-  deliveryPoints: {
-    'city': ['Ярославль', 'Москва', 'Астрахань', 'Оренбург', 'Бузулук', 'Химки', 'Санкт-Петербург', 'Горький', 'Одесса', 'Мурманск', 'Алма-Ата'],
-    'address': ['Полушкина Роща 16Л', 'Пушкина 30', 'Власова 61б', 'Зелинского 10', 'Соловьёва 90', 'Babel 76', 'Fallout 77', 'Королёва 35', 'Бурмистрова 16', 'Сидорова 47/4', 'Кирова 11'],
-  },
-  handleClass: (el, action, className) => el.classList[action](className),
-  escapeHtml: (text) => {
-    const map = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#039;'
+  const option = {
+    pickupModule: document.querySelector('.delivery-pickup')
+  };
+  window.options = _.extend(option, {
+    pointsWrapper: option.pickupModule.querySelector('.delivery-pickup__points-list'),
+    input:  option.pickupModule.querySelector('.delivery-pickup__input'),
+    close:  option.pickupModule.querySelector('.delivery-pickup__close'),
+    blockScreen: document.querySelector('.basket__display-block'),
+    confirmButton: option.pickupModule.querySelector('.delivery-pickup__confirm-btn'),
+    deliveryPoints: {
+      'city': ['Ярославль', 'Москва', 'Астрахань', 'Оренбург', 'Бузулук', 'Химки', 'Санкт-Петербург', 'Горький', 'Одесса', 'Мурманск', 'Алма-Ата'],
+      'address': ['Полушкина Роща 16Л', 'Пушкина 30', 'Власова 61б', 'Зелинского 10', 'Соловьёва 90', 'Babel 76', 'Fallout 77', 'Королёва 35', 'Бурмистрова 16', 'Сидорова 47/4', 'Кирова 11'],
+    },
+  });
+  const buttonHandler = (options) => {
+    const h = {
+      handleClass: (el, action, className) => el.classList[action](className),
+      escapeHtml: (text) => {
+        const map = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        };
+
+        return text.replace(/[&<>"']/g, (m) => map[m]);
+      },
+      activateButton: (button) => {
+        button.disabled = false;
+        h.handleClass(button, 'remove', 'delivery-pickup__confirm-btn--deactive');
+      },
+      disableButton: (button) => {
+        button.disabled = true;
+        h.handleClass(button, 'add', 'delivery-pickup__confirm-btn--deactive')
+      },
+      setDataSet: (el, dataType, value) => el.dataset[dataType] = value,
+      clearEl: (el) => el = null,
     };
+    const module = ({pickupModule, pointsWrapper, deliveryPoints, blockScreen}) => {
+      module.initiate = () => {
+        const handle = (pickupModule, pointsWrapper, deliveryPoints, blockScreen) => {
+          const waitScreen = pickupModule.querySelector('.delivery-pickup__wait-screen');
+          const createPoint = (city, address) => {
+            const point = document.createElement('p');
+            point.classList.add('delivery-pickup__point');
+            point.textContent = `${city}, ${address}`;
 
-    return text.replace(/[&<>"']/g, (m) => map[m]);
-  },
-});
-const buttonHandler = (options) => {
-  const module = ({pickupModule, pointsWrapper, deliveryPoints, handleClass}) => {
-    module.initiate = () => {
-      const handle = (pickupModule, pointsWrapper, deliveryPoints) => {
-        const waitScreen = pickupModule.querySelector('.delivery-pickup__wait-screen');
-        const createPoint = (city, address) => {
-          const point = document.createElement('p');
-          point.classList.add('delivery-pickup__point');
-          point.textContent = `${city}, ${address}`;
+            return point;
+          };
+          let isRendered = false;
 
-          return point;
-        };
-        let isRendered = false;
+          handle.setBlockScreen = () => {
+            h.handleClass(blockScreen, 'remove', 'hidden');
 
-        handle.showModule = () => {
-          handleClass(pickupModule, 'remove', 'hidden');
+            return handle;
+          };
+          handle.showModule = () => {
+            h.handleClass(pickupModule, 'remove', 'hidden');
+
+            return handle;
+          };
+          handle.setWaitScreen = () => {
+            h.handleClass(waitScreen, 'remove', 'hidden');
+
+            return handle;
+          };
+          handle.checkRender = () => {
+            isRendered = pickupModule.dataset.rendered;
+
+            return handle;
+          };
+          handle.fillModule = () => {
+            if (!isRendered) {
+              deliveryPoints['city'].forEach((el, i) => pointsWrapper.append(createPoint(el, deliveryPoints['address'][i])));
+              pickupModule.dataset.rendered = '1';
+            }
+
+            return handle;
+          };
+          handle.disableWaitScreen = () => {
+            h.handleClass(waitScreen, 'add', 'hidden');
+
+            return handle;
+          };
 
           return handle;
         };
-        handle.setWaitScreen = () => {
-          handleClass(waitScreen, 'remove', 'hidden');
 
-          return handle;
-        };
-        handle.checkRender = () => {
-          isRendered = pickupModule.dataset.rendered;
+        handle(pickupModule, pointsWrapper, deliveryPoints, blockScreen)
+          .setBlockScreen()
+          .showModule()
+          .setWaitScreen()
+          .checkRender()
+          .fillModule()
+          .disableWaitScreen();
 
-          return handle;
-        };
-        handle.fillModule = () => {
-          if (!isRendered) {
-            deliveryPoints['city'].forEach((el, i) => pointsWrapper.append(createPoint(el, deliveryPoints['address'][i])));
-            pickupModule.dataset.rendered = '1';
-          }
-
-          return handle;
-        };
-        handle.disableWaitScreen = () => {
-          handleClass(waitScreen, 'add', 'hidden');
-
-          return handle;
-        };
-
-        return handle;
+        return module;
       };
-
-      handle(pickupModule, pointsWrapper, deliveryPoints)
-        .showModule()
-        .setWaitScreen()
-        .checkRender()
-        .fillModule()
-        .disableWaitScreen();
 
       return module;
     };
+    const eventListeners = ({input, pointsWrapper, close, pickupModule, blockScreen, confirmButton}) => {
+      let onSearchInput = () => {};
+      let onPointClick = () => {};
+      let onCloseClick = () => {};
+      let onBlockScreenClick = () => {};
+      let onConfirmClick = () => {};
+      let customEvent = new Event('ClosePickupModule', {bubbles: true});
+      let listenersList = [];
+      let renderedPoints;
+      let filterFlag;
+      let chosenPoint;
+      const eventAdd = (el, event, handler) => el.addEventListener(event, handler);
+      const eventRemove = (el, event, handler) => el.removeEventListener(event, handler);
 
-    return module;
-  };
-  const eventListeners = ({input, pointsWrapper, escapeHtml, handleClass, close, pickupModule}) => {
-    let onSearchInput = () => {};
-    let onPointClick = () => {};
-    let onCloseClick = () => {};
-    let onDocumentClick = () => {};
-    let listenersList = [];
-    let renderedPoints;
-    let filterFlag;
-    const eventAdd = (el, event, handler) => el.addEventListener(event, handler);
-    const eventRemove = (el, event, handler) => el.removeEventListener(event, handler);
+      eventListeners.create = () => {
+        onSearchInput = (evt) => {
+          const inputString = h.escapeHtml(evt.target.value);
 
-    eventListeners.create = () => {
-      onSearchInput = (evt) => {
-        const inputString = escapeHtml(evt.target.value);
+          const handle = (inputString) => {
+            const lowerCase = (el) => el.toLowerCase();
+            let fastExit;
 
-        const handle = (inputString) => {
-          const lowerCase = (el) => el.toLowerCase();
-          let fastExit;
+            handle.getAllPoints = () => {
+              renderedPoints = renderedPoints || [...pointsWrapper.querySelectorAll('.delivery-pickup__point')];
 
-          handle.getAllPoints = () => {
-            renderedPoints = renderedPoints || [...pointsWrapper.querySelectorAll('.delivery-pickup__point')];
+              return handle;
+            };
+            handle.inputString = () => {
+              if (inputString.length < 3) {
+                if (!filterFlag) {
+                  fastExit = true;
+                  return handle;
+                }
 
-            return handle;
-          };
-          handle.inputString = () => {
-            if (inputString.length < 3) {
-              if (!filterFlag) {
+                handle.filterPoints('remove');
+                filterFlag = false;
                 fastExit = true;
+
                 return handle;
               }
 
-              handle.filterPoints('remove');
-              filterFlag = false;
-              fastExit = true;
+              inputString = lowerCase(inputString);
 
               return handle;
-            }
+            };
+            handle.filterPoints = (action = 'add') => {
+              if (fastExit) return handle;
 
-            inputString = lowerCase(inputString);
+              [...renderedPoints].forEach((point) => {
+                const string = lowerCase(point.textContent);
+
+                if (inputString.length > 0 && ~string.indexOf(inputString)) {
+                  h.handleClass(point, 'remove', 'hidden');
+                  return;
+                }
+
+                h.handleClass(point, action, 'hidden');
+                filterFlag = true;
+              });
+
+              return handle;
+            };
 
             return handle;
           };
-          handle.filterPoints = (action = 'add') => {
-            if (fastExit) return handle;
 
-            [...renderedPoints].forEach((point) => {
-              const string = lowerCase(point.textContent);
+          handle(inputString)
+            .getAllPoints()
+            .inputString()
+            .filterPoints()
+        };
+        onSearchInput = _.debounce(onSearchInput, 300);
+        onPointClick = (evt) => {
+          const handle = (evt) => {
+            const target = evt.target;
+            let fastExit, prevEl, selected;
+            const w = () => {
+              w.setFastExit = (value) => {
+                fastExit = value;
 
-              if (inputString.length > 0 && ~string.indexOf(inputString)) {
-                handleClass(point, 'remove', 'hidden');
-                return;
+                return w;
+              };
+              w.setSelected = (value) => {
+                selected = value;
+
+                return w;
+              };
+              w.setPrevEl = (elem) => {
+                prevEl = elem;
+
+                return w;
+              };
+              w.clearSavedInfo = () => {
+                h.setDataSet(pickupModule, 'deliveryPoint', '');
+
+                return w;
+              };
+              w.clearChosenPoint = () => {
+                h.clearEl(chosenPoint);
+
+                return w;
+              };
+              w.disableButton = () => {
+                h.disableButton(confirmButton);
+
+                return w;
+              };
+              w.setChosenPoint = () => {
+                h.setDataSet(pickupModule, 'deliveryPoint', target.textContent);
+
+                return w;
+              };
+              w.activateButton = () => {
+                h.activateButton(confirmButton);
+
+                return w;
+              };
+
+              return w;
+            };
+
+            handle.checkEl = () => {
+              if (!target.classList.contains('delivery-pickup__point')) {
+                w()
+                  .setFastExit(true);
+
+                return handle;
+              }
+              if (target.classList.contains('delivery-pickup__point--active')) {
+                w()
+                  .setFastExit(true)
+                  .setSelected(true);
+              }
+              else w().setPrevEl(pointsWrapper.querySelector('.delivery-pickup__point--active'));
+
+              return handle;
+            };
+            handle.saveInfo = () => {
+              if (selected) {
+                w()
+                  .clearSavedInfo()
+                  .clearChosenPoint()
+                  .disableButton();
+
+                return handle;
+              }
+              if (!fastExit) {
+                w()
+                  .setChosenPoint()
+                  .activateButton()
               }
 
-              handleClass(point, action, 'hidden');
-              filterFlag = true;
-            });
-
-            return handle;
-          };
-
-          return handle;
-        };
-
-        handle(inputString)
-          .getAllPoints()
-          .inputString()
-          .filterPoints()
-      };
-      onSearchInput = _.debounce(onSearchInput, 300);
-      onPointClick = (evt) => {
-        const handle = (evt) => {
-          const target = evt.target;
-          let fastExit, prevEl, selected;
-
-          handle.checkEl = () => {
-            if (!target.classList.contains('delivery-pickup__point')) {
-              fastExit = true;
               return handle;
-            }
-            if (target.classList.contains('delivery-pickup__point--active')) {
-              fastExit = true;
-              selected = true;
-            }
-            else prevEl = pointsWrapper.querySelector('.delivery-pickup__point--active');
+            };
+            handle.setStatus = () => {
+              if (!fastExit) h.handleClass(target, 'add', 'delivery-pickup__point--active');
+              if (selected) h.handleClass(target, 'remove', 'delivery-pickup__point--active');
+              if (prevEl) h.handleClass(prevEl, 'remove', 'delivery-pickup__point--active');
 
-            return handle;
-          };
-          handle.saveInfo = () => {
-            if (selected) {
-              pickupModule.dataset.deliveryPoint = '';
               return handle;
-            }
-            if (!fastExit) pickupModule.dataset.deliveryPoint = target.textContent;
-
-            return handle;
-          };
-          handle.setStatus = () => {
-            if (!fastExit) handleClass(target, 'add', 'delivery-pickup__point--active');
-            if (selected) handleClass(target, 'remove', 'delivery-pickup__point--active');
-            if (prevEl) handleClass(prevEl, 'remove', 'delivery-pickup__point--active');
+            };
 
             return handle;
           };
 
-          return handle;
+          handle(evt)
+            .checkEl()
+            .saveInfo()
+            .setStatus()
+        };
+        onCloseClick = () => {
+          const module = () => {
+            module.restorePoints = () => {
+              [...pointsWrapper.children].forEach((point) => h.handleClass(point, 'remove', 'hidden'));
+
+              return module;
+            };
+            module.hide = () => {
+              h.handleClass(pickupModule, 'add', 'hidden');
+
+              return module;
+            };
+            module.inputClear = () => {
+              input.value = '';
+
+              return module;
+            };
+            module.removeListeners = () => {
+              listenersList.forEach((listenerOptions) => eventRemove(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
+
+              return module;
+            };
+            module.disableBlockScreen = () => {
+              h.handleClass(blockScreen, 'add', 'hidden');
+
+              return module;
+            };
+            module.blockConfirmButton = () => {
+              if (chosenPoint) h.disableButton(confirmButton);
+
+              return module;
+            };
+            module.callCustomEvent = () => {
+              pickupModule.dispatchEvent(customEvent);
+
+              return module;
+            };
+
+            return module;
+          };
+
+          module()
+            .hide()
+            .restorePoints()
+            .inputClear()
+            .removeListeners()
+            .blockConfirmButton()
+            .disableBlockScreen()
+            .callCustomEvent()
+        };
+        onBlockScreenClick = (evt) => {
+          onCloseClick();
+        };
+        onConfirmClick = (evt) => {
+          if (!evt.target.disabled) onCloseClick();
         };
 
-        handle(evt)
-          .checkEl()
-          .saveInfo()
-          .setStatus()
+        return eventListeners;
       };
-      onCloseClick = () => {
-        const module = () => {
-          module.restorePoints = () => {
-            [...pointsWrapper.children].forEach((point) => handleClass(point, 'remove', 'hidden'));
+      eventListeners.add = () => {
+        listenersList = [
+          [input, 'input', onSearchInput],
+          [pointsWrapper, 'click', onPointClick],
+          [close, 'click', onCloseClick],
+          [blockScreen, 'click', onBlockScreenClick],
+          [confirmButton, 'click', onConfirmClick]
+        ];
 
-            return module;
-          };
-          module.hide = () => {
-            handleClass(pickupModule, 'add', 'hidden');
+        listenersList.forEach((listenerOptions) => eventAdd(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
 
-            return module;
-          };
-          module.inputClear = () => {
-            input.value = '';
-
-            return module;
-          };
-          module.removeListeners = () => {
-            listenersList.forEach((listenerOptions) => eventRemove(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
-
-            return module;
-          };
-
-          return module;
-        };
-
-        module()
-          .hide()
-          .restorePoints()
-          .inputClear()
-          .removeListeners()
-      };
-      onDocumentClick = (evt) => {
-        if (evt.target.contains(pickupModule) && evt.target !== pickupModule) onCloseClick();
+        return eventListeners;
       };
 
       return eventListeners;
     };
-    eventListeners.add = () => {
-      listenersList = [
-        [input, 'input', onSearchInput],
-        [pointsWrapper, 'click', onPointClick],
-        [close, 'click', onCloseClick],
-        [document, 'click', onDocumentClick]
-      ];
 
-      listenersList.forEach((listenerOptions) => eventAdd(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
+    module(options)
+      .initiate();
 
-      return eventListeners;
-    };
-
-    return eventListeners;
+    eventListeners(options)
+      .create()
+      .add();
   };
-
-  module(options)
-    .initiate();
-
-  eventListeners(options)
-    .create()
-    .add();
-};
-window.onButtonClick = _.partial(buttonHandler, options);
+  window.deliveryPickup = _.partial(buttonHandler, options);
 }
