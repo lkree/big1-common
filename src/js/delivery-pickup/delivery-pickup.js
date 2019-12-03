@@ -1,31 +1,33 @@
-const buttonHandler = () => {
-  const deliveryModule = document.querySelector('.delivery-pickup');
-  const options = {
-    pickupModule: deliveryModule,
-    pointsWrapper: deliveryModule.querySelector('.delivery-pickup__points-list'),
-    input: deliveryModule.querySelector('.delivery-pickup__input'),
-    close: deliveryModule.querySelector('.delivery-pickup__close'),
-    deliveryPoints: {
-      'city': ['Ярославль', 'Москва', 'Астрахань', 'Оренбург', 'Бузулук', 'Химки', 'Санкт-Петербург', 'Ярославль', 'Ярославль', 'Ярославль', 'Ярославль'],
-      'address': ['Полушкина Роща 16Л', 'Пушкина 30', 'Власова 61б', 'Зелинского 10', 'Соловьёва 90', 'Babel 76', 'Fallout 77', 'Полушкина Роща 16Л', 'Полушкина Роща 16Л', 'Полушкина Роща 16Л', 'Полушкина Роща 16Л'],
-    },
-    handleClass: (el, action, className) => el.classList[action](className),
-    escapeHtml: (text) => {
-      const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-      };
+{
+const option = {
+  pickupModule: document.querySelector('.delivery-pickup')
+};
+const options = _.extend(option, {
+  pointsWrapper: options.pickupModule.querySelector('.delivery-pickup__points-list'),
+  input:  options.pickupModule.querySelector('.delivery-pickup__input'),
+  close:  options.pickupModule.querySelector('.delivery-pickup__close'),
+  deliveryPoints: {
+    'city': ['Ярославль', 'Москва', 'Астрахань', 'Оренбург', 'Бузулук', 'Химки', 'Санкт-Петербург', 'Горький', 'Одесса', 'Мурманск', 'Алма-Ата'],
+    'address': ['Полушкина Роща 16Л', 'Пушкина 30', 'Власова 61б', 'Зелинского 10', 'Соловьёва 90', 'Babel 76', 'Fallout 77', 'Королёва 35', 'Бурмистрова 16', 'Сидорова 47/4', 'Кирова 11'],
+  },
+  handleClass: (el, action, className) => el.classList[action](className),
+  escapeHtml: (text) => {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
 
-      return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-    },
-  };
+    return text.replace(/[&<>"']/g, (m) => map[m]);
+  },
+});
+const buttonHandler = (options) => {
   const module = ({pickupModule, pointsWrapper, deliveryPoints, handleClass}) => {
     module.initiate = () => {
-      const handle = (module, pointsWrapper, deliveryPoints) => {
-        const waitScreen = module.querySelector('.delivery-pickup__wait-screen');
+      const handle = (pickupModule, pointsWrapper, deliveryPoints) => {
+        const waitScreen = pickupModule.querySelector('.delivery-pickup__wait-screen');
         const createPoint = (city, address) => {
           const point = document.createElement('p');
           point.classList.add('delivery-pickup__point');
@@ -33,9 +35,10 @@ const buttonHandler = () => {
 
           return point;
         };
+        let isRendered = false;
 
         handle.showModule = () => {
-          handleClass(module, 'remove', 'hidden');
+          handleClass(pickupModule, 'remove', 'hidden');
 
           return handle;
         };
@@ -44,13 +47,16 @@ const buttonHandler = () => {
 
           return handle;
         };
-        handle.fillModule = () => {
-          deliveryPoints['city'].forEach((el, i) => {
-            if (module.dataset.deliveryPoint) {
+        handle.checkRender = () => {
+          isRendered = pickupModule.dataset.rendered;
 
-            };
-            pointsWrapper.append(createPoint(el, deliveryPoints['address'][i]))
-          });
+          return handle;
+        };
+        handle.fillModule = () => {
+          if (!isRendered) {
+            deliveryPoints['city'].forEach((el, i) => pointsWrapper.append(createPoint(el, deliveryPoints['address'][i])));
+            pickupModule.dataset.rendered = '1';
+          }
 
           return handle;
         };
@@ -66,6 +72,7 @@ const buttonHandler = () => {
       handle(pickupModule, pointsWrapper, deliveryPoints)
         .showModule()
         .setWaitScreen()
+        .checkRender()
         .fillModule()
         .disableWaitScreen();
 
@@ -78,9 +85,10 @@ const buttonHandler = () => {
     let onSearchInput = () => {};
     let onPointClick = () => {};
     let onCloseClick = () => {};
+    let onDocumentClick = () => {};
+    let listenersList = [];
     let renderedPoints;
     let filterFlag;
-    let selected = [];
     const eventAdd = (el, event, handler) => el.addEventListener(event, handler);
     const eventRemove = (el, event, handler) => el.removeEventListener(event, handler);
 
@@ -145,7 +153,7 @@ const buttonHandler = () => {
       onPointClick = (evt) => {
         const handle = (evt) => {
           const target = evt.target;
-          let fastExit;
+          let fastExit, prevEl, selected;
 
           handle.checkEl = () => {
             if (!target.classList.contains('delivery-pickup__point')) {
@@ -154,19 +162,25 @@ const buttonHandler = () => {
             }
             if (target.classList.contains('delivery-pickup__point--active')) {
               fastExit = true;
+              selected = true;
             }
+            else prevEl = pointsWrapper.querySelector('.delivery-pickup__point--active');
 
-            if (selected) selected.forEach((el) => {
-              handleClass(el, 'remove', 'delivery-pickup__point--active');
-              selected.splice(el);
-            });
+            return handle;
+          };
+          handle.saveInfo = () => {
+            if (selected) {
+              pickupModule.dataset.deliveryPoint = '';
+              return handle;
+            }
+            if (!fastExit) pickupModule.dataset.deliveryPoint = target.textContent;
+
             return handle;
           };
           handle.setStatus = () => {
-            if (!fastExit) {
-              handleClass(target, 'add', 'delivery-pickup__point--active');
-              selected.push(target);
-            }
+            if (!fastExit) handleClass(target, 'add', 'delivery-pickup__point--active');
+            if (selected) handleClass(target, 'remove', 'delivery-pickup__point--active');
+            if (prevEl) handleClass(prevEl, 'remove', 'delivery-pickup__point--active');
 
             return handle;
           };
@@ -176,12 +190,13 @@ const buttonHandler = () => {
 
         handle(evt)
           .checkEl()
+          .saveInfo()
           .setStatus()
       };
       onCloseClick = () => {
         const module = () => {
-          module.saveInfo = () => {
-            pickupModule.dataset.deliveryPoint = selected[0] ? selected[0].textContent : '';
+          module.restorePoints = () => {
+            [...pointsWrapper.children].forEach((point) => handleClass(point, 'remove', 'hidden'));
 
             return module;
           };
@@ -195,15 +210,8 @@ const buttonHandler = () => {
 
             return module;
           };
-          module.clear = () => {
-            [...pointsWrapper.children].forEach((el) => el.remove());
-
-            return module;
-          };
           module.removeListeners = () => {
-            eventRemove(input, 'input', onSearchInput);
-            eventRemove(pointsWrapper, 'click', onPointClick);
-            eventRemove(close, 'click', onCloseClick);
+            listenersList.forEach((listenerOptions) => eventRemove(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
 
             return module;
           };
@@ -212,19 +220,26 @@ const buttonHandler = () => {
         };
 
         module()
-          .saveInfo()
           .hide()
+          .restorePoints()
           .inputClear()
-          .clear()
           .removeListeners()
+      };
+      onDocumentClick = (evt) => {
+        if (evt.target.contains(pickupModule) && evt.target !== pickupModule) onCloseClick();
       };
 
       return eventListeners;
     };
     eventListeners.add = () => {
-      eventAdd(input, 'input', onSearchInput);
-      eventAdd(pointsWrapper, 'click', onPointClick);
-      eventAdd(close, 'click', onCloseClick);
+      listenersList = [
+        [input, 'input', onSearchInput],
+        [pointsWrapper, 'click', onPointClick],
+        [close, 'click', onCloseClick],
+        [document, 'click', onDocumentClick]
+      ];
+
+      listenersList.forEach((listenerOptions) => eventAdd(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
 
       return eventListeners;
     };
@@ -239,4 +254,5 @@ const buttonHandler = () => {
     .create()
     .add();
 };
-document.querySelector('button').addEventListener('click', buttonHandler);
+window.onButtonClick = _.partial(buttonHandler, options);
+}
