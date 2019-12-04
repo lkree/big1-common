@@ -1,4 +1,9 @@
-class shiptorPointsGetter {
+class ShiptorPointsGetter {
+  /**
+   *
+   * @param {string} usersCity (usersQuery string (getted from input))
+   * @param {string} fromCity kladrId
+   */
   constructor({usersCity, fromCity}) {
     this.usersCity = this._escapeHtml(usersCity);
     this.fromCity = fromCity;
@@ -20,41 +25,41 @@ class shiptorPointsGetter {
     return text.replace(/[&<>"']/g, (m) => map[m] );
   };
   _getData = async (data) => {
-   return await fetch('https://api.shiptor.ru/public/v1', {
+    return await fetch('https://api.shiptor.ru/public/v1', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: data,
     })
-     .then((result) => result.json())
+      .then((result) => result.json())
   };
+  /**
+   *
+   * @returns {Promise<*>}
+   */
   getDeliveryPoints = async () => {
-    this.usersCityKladr ? '' : await this._getUsersCityKladr();
-
-    const usersCityId = this.usersCityKladr, deliveryCityId = this.fromCity;
+    await this._getUsersCityKladr();
 
     const data = this._dataHandler({
-      method: "calculateShipping",
+      method: "getDeliveryPoints",
       params: {
+        kladr_id: `${this.usersCityKladr}`,
         courier: 'cdek',
-        length: 10,
-        width: 10,
-        height: 10,
-        weight: 10,
-        cod: 0,
-        declared_cost: 0,
-        kladr_id: `${usersCityId}`,
-        kladr_id_from: `${deliveryCityId}`,
       }
     });
     return await this._getData(data);
   };
   _getUsersCityKladr = async () => {
     const data = this._dataHandler({method: 'suggestSettlement', params: {query: this.usersCity, country_code: "RU"}});
-    const result = await this._getData(data);
-    console.log(result.result);
-    this.usersCityKladr = result.result[0].kladr_id;
+    let result = await this._getData(data);
+
+    try {
+      this.usersCityKladr = result.result[0].kladr_id;
+    } catch(e) {
+      this.usersCityKladr = '00000000000';
+    }
+
     return result;
   };
   _dataHandler = (properties) => {
@@ -63,44 +68,10 @@ class shiptorPointsGetter {
   };
 };
 
-const calculate = new shiptorPointsGetter({
-  usersCity: document.querySelector('.deliveryCalculator__users-city-input'),
-  fromCity: document.querySelector('.deliveryCalculator__delivery-city-input'),
+const calculate = new ShiptorPointsGetter({
+  usersCity: 'Ростов',
+  fromCity: '77000000000',
 });
 
-
-
-const getInputCity = (evt) => {
-  const render = ({ result }) => {
-    const select = document.querySelector('select');
-    result.forEach((el) => {
-      const option = document.createElement('option');
-      const region = el.readable_parents ? el.readable_parents + ', ' : '';
-      option.textContent = `${region}${el.name}`;
-      option.value = el.kladr_id;
-
-      select.append(option);
-    });
-  };
-  const data = JSON.stringify({
-    "id": "JsonRpcClient.js",
-    "jsonrpc": "2.0",
-    "method": "suggestSettlement",
-    "params": {
-      "query": `${evt.target.value}`,
-      "country_code": "RU"
-    }
-  });
-  fetch('https://api.shiptor.ru/public/v1', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: data,
-  })
-    .then((result) => (result.json()))
-    .then((result) => render(result));
-};
-const onInputChange = _.debounce(getInputCity, 100);
-const input = document.querySelector('input');
-input.addEventListener('change', onInputChange);
+calculate.getDeliveryPoints()
+  .then((result) => console.log(result.result.methods));
