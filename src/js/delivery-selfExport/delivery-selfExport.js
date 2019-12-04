@@ -41,7 +41,7 @@
     const module = ({ blockScreen, selfExportModule, waitScreen }) => {
       module.initiate = () => {
         const w = () => {
-          let renderedPoints, renderedCity, userCity, deliveryPoints;
+          let renderedPoints, renderedCity, userCity, deliveryPoi
 
           w.setBlockScreen = () => {
             h.show(blockScreen);
