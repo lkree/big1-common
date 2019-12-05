@@ -48,15 +48,16 @@ const onFormSubmit = (evt) => {
         };
         wrapper.prepareQuery = () => {
           let {name, email, phone, surname} = data;
-          let title;
+          let title, source;
 
           name = name ? `fields%5BNAME%5D=${name}&` : '';
           phone = phone ? `&fields%5BPHONE%5D%5B0%5D%5BVALUE%5D=${phone}&fields%5BPHONE%5D%5B0%5D%5BVALUE_TYPE%5D=WORK&` : '';
           email = email ? `fields%5BEMAIL%5D%5B0%5D%5BVALUE%5D=${email}&fields%5BEMAIL%5D%5B0%5D%5BVALUE_TYPE%5D=HOME&` : '';
+          source = 'fields%5BSOURCE_ID%5D=WEB&';
           title = `TITLE%5D=%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%BD%D0%B0+big1.ru+${data.name}&`;
           surname = `fields%5BLAST_NAME%5D=${surname}`;
 
-          sendData = _glueAll(_header, title, name, phone, email, surname);
+          sendData = _glueAll(_header, title, source, name, phone, email, surname);
 
           return wrapper;
         };

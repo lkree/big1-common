@@ -39,8 +39,7 @@ class ShiptorPointsGetter {
    * @returns {Promise<*>}
    */
   getDeliveryPoints = async () => {
-    await this._getUsersCityKladr();
-
+    console.log(this.usersCityKladr);
     const data = this._dataHandler({
       method: "getDeliveryPoints",
       params: {
@@ -50,15 +49,12 @@ class ShiptorPointsGetter {
     });
     return await this._getData(data);
   };
-  _getUsersCityKladr = async () => {
+  getUsersCityKladr = async () => {
     const data = this._dataHandler({method: 'suggestSettlement', params: {query: this.usersCity, country_code: "RU"}});
     let result = await this._getData(data);
 
-    try {
-      this.usersCityKladr = result.result[0].kladr_id;
-    } catch(e) {
-      this.usersCityKladr = '00000000000';
-    }
+    result
+      .then((result) => this.usersCityKladr = result.result[0].kladr_id || '00000000000');
 
     return result;
   };

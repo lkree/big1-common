@@ -324,8 +324,8 @@
         onBlockScreenClick = (evt) => {
           onCloseClick();
         };
-        onConfirmClick = (evt) => {
-          if (!evt.target.disabled) onCloseClick();
+        onConfirmClick = () => {
+          onCloseClick();
         };
 
         return eventListeners;

@@ -1,6 +1,7 @@
 {
   const option = {
     selfExportModule: document.querySelector('.delivery-selfExport'),
+    JCShiptorWidgetPvz: document.querySelector('#shiptor_widget_pvz'),
   };
   window.options = _.extend(option, {
     citiesList: option.selfExportModule.querySelector('.delivery-selfExport__cities-list'),
@@ -610,6 +611,10 @@
   });
   const handler = (options) => {
     const h = {
+      initiateApi: (usersCity, fromCity = '77000000000') => (new ShiptorPointsGetter({
+        usersCity: usersCity,
+        fromCity: fromCity,
+      })),
       handleClass: (el, action, className) => el.classList[action](className),
       hasClass: (el, className) => el.classList.contains(className),
       escapeHtml: (text) => {
@@ -638,9 +643,21 @@
       removeEl: (el) => el = null,
       hide: (el) => h.handleClass(el, 'add', 'hidden'),
       show: (el) => h.handleClass(el, 'remove', 'hidden'),
+      hideAll: (list) => [...list].forEach(h.hide),
+      showAll: (list) => [...list].forEach(h.show),
       setText: (el, text) => el.textContent = text,
       eventAdd: (el, event, handler) => el.addEventListener(event, handler),
       eventRemove: (el, event, handler) => el.removeEventListener(event, handler),
+      removeListOfEvents: (list, filter) => {
+        list
+          .filter((el) => el[filter])
+          .forEach((e) => h.eventRemove(e.el, e.ev, e.listener))
+      },
+      addListOfEvents: (list, filter) => {
+        list
+          .filter((el) => el[filter])
+          .forEach((e) => h.eventAdd(e.el, e.ev, e.listener))
+      },
       setWaitScreen: () => h.show(options.waitScreen),
       disableWaitScreen: () => h.hide(options.waitScreen),
       lowerCase: (el) => el.toLowerCase(),
@@ -721,19 +738,22 @@
       },
     }; //helpers
     const l = {
-      onCityChange: () => {},
+      onChangeCity: () => {},
       onShowMapClick: () => {},
-      onConfirmButtonClick: () => {},
+      onPickupConfirm: () => {},
       onCityConfirm: () => {},
       onCityClick: () => {},
       onCityInput: () => {},
       onPickupInput: () => {},
+      onPickupPointClick: () => {},
+      onCloseClick: () => {},
+      onBlockScreenClick: () => {},
     }; //listeners
-    const module = ({ blockScreen, selfExportModule, pickupList, chosenCity, pickupSection, confirmButton, pickupSearchInput }) => {
+    const module = ({ blockScreen, selfExportModule, pickupList, chosenCity, pickupSection, confirmButton, pickupSearchInput, JCShiptorWidgetPvz }) => {
       module.initiate = () => {
         const w = () => {
-          let renderedPoints, _renderedCity, userCity, deliveryPoints,
-            shiptorApi;
+          let _renderedCity, userCity, deliveryPoints,
+            shiptorApi, isRendered = false;
 
           w.setBlockScreen = () => {
             h.show(blockScreen);
@@ -777,7 +797,7 @@
           w.checkRender = () => {
             const s = () => {
               s.getRenderedPoints = () => {
-                renderedPoints = h.getDataSet(selfExportModule, 'renderedPoints');
+                isRendered = h.getDataSet(selfExportModule, 'renderedPoints');
 
                 return s;
               };
@@ -803,7 +823,7 @@
             return w;
           };
           w.handleDeliveryPoints = () => {
-            if (!renderedPoints || !_renderedCity) {
+            if (!isRendered || !_renderedCity) {
               const s = () => {
                 s.cleaPickupInput = () => {
                   h.clearInput(pickupSearchInput);
@@ -816,49 +836,79 @@
                   return s;
                 };
                 s.initiateApi = () => {
-                  shiptorApi = new ShiptorPointsGetter({
-                    usersCity: userCity,
-                    fromCity: '77000000000',
-                  });
+                  shiptorApi = h.initiateApi(userCity, '77000000000');
 
                   return s;
                 };
                 s.handleRequest = () => {
                   shiptorApi
-                    .getDeliveryPoints()
-                    .then((result) => {
-                      if (result.result.length < 1) h.showError();
-                      return s.filterPoints(result)
-                    })
+                    .getUsersCityKladr()
+                    .then((result) => h.setDataSet(selfExportModule, 'cityKladr', result.result[0].kladr_id))
+                    .then((result) => h.setDataSet(JCShiptorWidgetPvz, 'cityKladr', result))
                     .then(() => {
-                      h.setDataSet(selfExportModule, 'renderedPoints', 1);
-                      w.checkRender();
-                      _renderedCity = userCity;
-                    })
-                    .then(() => w.disableWaitScreen())
+                      shiptorApi
+                        .getDeliveryPoints()
+                        .then((result) => {
+                          if (result.result.length < 1) h.showError();
+                          return s.filterPoints(result)
+                        })
+                        .then(() => {
+                          h.setDataSet(selfExportModule, 'renderedPoints', 1);
+                          w.checkRender();
+                          _renderedCity = userCity;
+                        })
+                        .then(() => w.disableWaitScreen());
+                    });
                 };
-                s.filterPoints = async ({result}) => {
+                s.filterPoints = ({result}) => {
                   deliveryPoints = result.filter((point) => point.active);
-                  await deliveryPoints.forEach((el) => s.renderDeliveryPoints(el));
+                  s.renderDeliveryPoints(deliveryPoints);
 
                   return s;
                 };
-                s.renderDeliveryPoints = ({address, work_schedule}) => {
-                  const point = document.createElement('li');
-                  h.handleClass(point,'add', 'delivery-selfExport__pickup-point');
+                s.renderDeliveryPoints = (points) => {
+                  const handleAddress = (address, fallback) => {
+                    let street, house, value;
+                    try {
+                      address = address ? address : fallback;
+                      if (typeof address === 'object') {
+                        street = address.street, house = address.house;
+                        value = `${street} ${house}`;
+                      } else {
+                        value = fallback;
+                        value = value.split(', ');
+                        value = `${value[1]} ${value[2]}`;
+                      }
+                    } catch(e) {
 
-                  const pointAddress = document.createElement('p');
-                  h.handleClass(pointAddress,'add','delivery-selfExport__address');
-                  h.setText(pointAddress, address);
+                    }
 
-                  const schedule = document.createElement('p');
-                  h.handleClass(schedule,'add', 'delivery-selfExport__work-schedule');
-                  h.setText(schedule, work_schedule);
+                    return value;
+                  };
+                  const createDeliveryPoint = ({address, work_schedule, prepare_address }) => {
+                    const value = handleAddress(prepare_address, address);
 
-                  point.append(pointAddress);
-                  point.append(schedule);
+                    const point = document.createElement('li');
+                    h.handleClass(point,'add', 'delivery-selfExport__pickup-point');
+                    h.setDataSet(point, 'value', value);
 
-                  pickupList.append(point);
+                    const pointAddress = document.createElement('p');
+                    h.handleClass(pointAddress,'add','delivery-selfExport__address');
+                    h.setText(pointAddress, address);
+
+                    const schedule = document.createElement('p');
+                    h.handleClass(schedule,'add', 'delivery-selfExport__work-schedule');
+                    h.setText(schedule, work_schedule);
+
+                    point.append(pointAddress);
+                    point.append(schedule);
+
+                    return point;
+                  };
+                  const wrapper = document.createDocumentFragment();
+
+                  points.forEach((point) => wrapper.append(createDeliveryPoint(point)));
+                  pickupList.append(wrapper);
                 };
 
                 return s;
@@ -876,7 +926,7 @@
             return w;
           };
           w.disableWaitScreen = async () => {
-            if (renderedPoints && _renderedCity) await h.disableWaitScreen();
+            if (isRendered && _renderedCity) await h.disableWaitScreen();
 
             return w;
           };
@@ -899,29 +949,52 @@
 
       return module;
     };
-    const eventListeners = ({ changeCity, showMap, confirmButton, pickupSection, cities, citiesList, selfExportModule, citiesSection, citySearchInput, pickupSearchInput, chosenCity }) => {
+    const eventListeners = ({ changeCity, showMap, confirmButton, pickupSection, cities, citiesList, selfExportModule, citiesSection, citySearchInput, pickupSearchInput, chosenCity, pickupList, close, blockScreen }) => {
       let listenersList = [];
       let isCityRendered;
       let chosenPoint;
+      let customEvent = new Event('ClosePickupModule', {bubbles: true});
       
       eventListeners.create = () => {
         l.onCityConfirm = () => {
           const w = () => {
             w.removeEventListeners = () => {
-              h.eventRemove(confirmButton, 'click', l.onCityConfirm);
-              h.eventRemove(citiesList, 'click', l.onCityClick);
-              h.eventRemove(citySearchInput, 'input', l.onCityInput);
+              h.removeListOfEvents(listenersList, 'cityConfirmRemove');
 
               return w;
             };
             w.addEventListeners = () => {
-              h.eventAdd(changeCity, 'click', l.onCityChange);
-              h.eventAdd(pickupSearchInput, 'input', l.onPickupInput);
+              h.addListOfEvents(listenersList, 'cityConfirmAdd');
 
               return w;
             };
             w.showAllCities = () => {
-              [...citiesList.children].forEach((city) => h.show(city));
+              h.showAll(citiesList.children);
+
+              return w;
+            };
+            w.clearPickupData = () => {
+              if(!h.getDataSet(selfExportModule, 'deliveryPoint')) return w;
+
+              const wrapper = () => {
+                wrapper.clearDataSet = () => {
+                  h.setDataSet(selfExportModule, 'deliveryPoint', '');
+
+                  return wrapper;
+                };
+                wrapper.clearCheckedCity = () => {
+                  const checkedEl = [...pickupList.children].find((el) => h.hasClass(el, 'delivery-selfExport__pickup-point--active'));
+                  h.handleClass(checkedEl, 'remove', 'delivery-selfExport__pickup-point--active');
+
+                  return wrapper;
+                };
+
+                return wrapper;
+              };
+
+              wrapper()
+                .clearDataSet()
+                .clearCheckedCity();
 
               return w;
             };
@@ -937,6 +1010,7 @@
           w()
             .removeEventListeners()
             .showAllCities()
+            .clearPickupData()
             .addEventListeners()
             .hidePickupSection();
 
@@ -945,7 +1019,7 @@
         };
         l.onCityClick = (evt) => {
           const target = evt.target;
-          if (h.hasClass(target, 'delivery-selfExport__city') || h.hasClass(target, 'delivery-selfExport__city-wrapper')) {
+          if(h.hasClass(target, 'delivery-selfExport__city') || h.hasClass(target, 'delivery-selfExport__city-wrapper')) {
             const w = () => {
               w.setTextCity = () => {
                 h.setText(chosenCity, target.textContent);
@@ -972,7 +1046,7 @@
           wrapper: selfExportModule,
         });
         l.onCityInput = _.debounce(l.onCityInput(), 300);
-        l.onCityChange = () => {
+        l.onChangeCity = () => {
           const w = () => {
             w.setWaitScreen = () => {
               h.setWaitScreen();
@@ -1000,18 +1074,24 @@
               return w;
             };
             w.renderCitiesList = () => {
-              const createCity = (text) => {
-                const wrapper = document.createElement('li');
-                const city = document.createElement('p');
+              if(!isCityRendered) {
+                const createCity = (text) => {
+                  const wrapper = document.createElement('li');
+                  const city = document.createElement('p');
 
-                city.classList.add('delivery-selfExport__city');
-                wrapper.classList.add('delivery-selfExport__city-wrapper');
-                city.textContent = text;
-                wrapper.append(city);
+                  city.classList.add('delivery-selfExport__city');
+                  wrapper.classList.add('delivery-selfExport__city-wrapper');
+                  city.textContent = text;
+                  wrapper.append(city);
 
-                return wrapper;
-              };
-              if (!isCityRendered) cities.forEach((city) => citiesList.append(createCity(city)));
+                  return wrapper;
+                };
+                const wrapper = document.createDocumentFragment();
+
+                cities.forEach((city) => wrapper.append(createCity(city)));
+                citiesList.append(wrapper);
+              }
+
               h.setDataSet(selfExportModule, 'isCityRendered', 1);
 
               return w;
@@ -1032,15 +1112,12 @@
               return w;
             };
             w.removeEventListeners = () => {
-              h.eventRemove(changeCity, 'click', l.onCityChange);
-              h.eventRemove(pickupSearchInput, 'input', l.onPickupInput);
+              h.removeListOfEvents(listenersList, 'changeCityRemove');
 
               return w;
             };
             w.addEventListeners = () => {
-              h.eventAdd(confirmButton, 'click', l.onCityConfirm);
-              h.eventAdd(citiesList, 'click', l.onCityClick);
-              h.eventAdd(citySearchInput, 'input', l.onCityInput);
+              h.addListOfEvents(listenersList, 'changeCityAdd');
 
               return w;
             };
@@ -1067,17 +1144,257 @@
           wrapper: selfExportModule,
         });
         l.onPickupInput = _.debounce(l.onPickupInput(), 300);
+        l.onPickupPointClick = (evt) => {
+          const handle = (evt) => {
+            let target = evt.target;
+            let fastExit, prevEl, selected;
+            const helper = () => {
+              helper.setFastExit = (value) => {
+                fastExit = value;
+
+                return helper;
+              };
+              helper.setSelected = (value) => {
+                selected = value;
+
+                return helper;
+              };
+              helper.setPrevEl = (elem) => {
+                prevEl = elem;
+
+                return helper;
+              };
+              helper.clearSavedInfo = () => {
+                h.setDataSet(selfExportModule, 'deliveryPoint', '');
+
+                return helper;
+              };
+              helper.clearChosenPoint = () => {
+                h.removeEl(chosenPoint);
+
+                return helper;
+              };
+              helper.disableButton = () => {
+                h.disableButton(confirmButton);
+
+                return helper;
+              };
+              helper.setChosenPoint = () => {
+                h.setDataSet(selfExportModule, 'deliveryPoint', h.getDataSet(target, 'value'));
+
+                return helper;
+              };
+              helper.activateButton = () => {
+                h.activateButton(confirmButton);
+
+                return helper;
+              };
+
+              return helper;
+            };
+
+            handle.checkEl = () => {
+              const targetTag = h.lowerCase(target.tagName);
+              if(targetTag !== 'li' && targetTag !== 'p') {
+                helper()
+                  .setFastExit(true);
+
+                return handle;
+              }
+              if(targetTag === 'p') target = target.parentElement;
+              if(target.classList.contains('delivery-selfExport__pickup-point--active')) {
+                helper()
+                  .setFastExit(true)
+                  .setSelected(true);
+              } else helper().setPrevEl(pickupList.querySelector('.delivery-selfExport__pickup-point--active'));
+
+              return handle;
+            };
+            handle.saveInfo = () => {
+              if(selected) {
+                helper()
+                  .clearSavedInfo()
+                  .clearChosenPoint()
+                  .disableButton();
+
+                return handle;
+              }
+              if(!fastExit) {
+                helper()
+                  .setChosenPoint()
+                  .activateButton()
+              }
+
+              return handle;
+            };
+            handle.setStatus = () => {
+              if(!fastExit) h.handleClass(target, 'add', 'delivery-selfExport__pickup-point--active');
+              if(selected) h.handleClass(target, 'remove', 'delivery-selfExport__pickup-point--active');
+              if(prevEl) h.handleClass(prevEl, 'remove', 'delivery-selfExport__pickup-point--active');
+
+              return handle;
+            };
+
+            return handle;
+          };
+
+          handle(evt)
+            .checkEl()
+            .saveInfo()
+            .setStatus()
+        };
+        l.onCloseClick = () => {
+          const w = () => {
+            w.restorePoints = () => {
+              [...pickupList.children].forEach((point) => h.handleClass(point, 'remove', 'hidden'));
+
+              return w;
+            };
+            w.hide = () => {
+              [selfExportModule, pickupSection, citiesSection].forEach(h.hide);
+
+              return w;
+            };
+            w.inputClear = () => {
+              pickupSearchInput.value = '';
+
+              return w;
+            };
+            w.showAllCities = () => {
+              h.showAll(citiesList.children);
+
+              return w;
+            };
+            w.removeListeners = () => {
+              h.removeListOfEvents(listenersList, 'closeModule');
+
+              return w;
+            };
+            w.disableBlockScreen = () => {
+              h.hide(blockScreen);
+
+              return w;
+            };
+            w.blockConfirmButton = () => {
+              if(chosenPoint) h.disableButton(confirmButton);
+
+              return w;
+            };
+            w.callCustomEvent = () => {
+              selfExportModule.dispatchEvent(customEvent);
+
+              return w;
+            };
+
+            return w;
+          };
+
+          w()
+            .hide()
+            .restorePoints()
+            .inputClear()
+            .showAllCities()
+            .removeListeners()
+            .blockConfirmButton()
+            .disableBlockScreen()
+            .callCustomEvent()
+        };
+        l.onBlockScreenClick = () => {
+          l.onCloseClick();
+        };
+        l.onPickupConfirm = () => {
+          l.onCloseClick();
+        };
+        l.onShowMapClick = (evt) => {
+          const w = () => {
+            let cityKladr;
+
+            w.stopEventPropagation = (evt) => {
+              evt.stopImmediatePropagation();
+
+              return w;
+            };
+            w.setWaitScreen = () => {
+              h.setWaitScreen();
+
+              return w;
+            };
+            w.getCityKladr = () => {
+              cityKladr = h.getDataSet(selfExportModule, 'cityKladr');
+              if (!cityKladr) {
+                let shiptorApi;
+                const wrapper = () => {
+                  wrapper.initiate = () => {
+                    shiptorApi = h.initiateApi(userCity, '77000000000');
+
+                    return wrapper;
+                  };
+                  wrapper.getKladr = async () => {
+                    await shiptorApi._getUsersCityKladr()
+                      .then((result) => shiptorApi = result);
+
+                    console.log(cityKladr);
+
+                    return wrapper;
+                  };
+
+                  return wrapper;
+                };
+
+                wrapper()
+                  .initiate()
+                  .getKladr()
+              }
+
+              return w;
+            };
+            w.updatePVZModule = () => {
+              if(!cityKladr) {
+
+                return w;
+              }
+              ;
+              w.showPVZModule = () => {
+
+
+                return w;
+              };
+
+              return w;
+            };
+
+            return w;
+          };
+
+            w()
+              .stopEventPropagation(evt)
+              .setWaitScreen()
+              .getCityKladr()
+              .updatePVZModule()
+              .showPVZModule()
+          };
+
+        return eventListeners;
+      };
+
+      eventListeners.listInitiate = () => {
+        listenersList = [
+          {el: changeCity, ev: 'click', listener: l.onChangeCity, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
+          {el: showMap, ev: 'click', listener: l.onShowMapClick, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
+          {el: confirmButton, ev: 'click', listener: l.onPickupConfirm, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
+          {el: confirmButton, ev: 'click', listener: l.onCityConfirm, changeCityAdd: true, cityConfirmRemove: true, closeModule: true },
+          {el: pickupSearchInput, ev: 'input', listener: l.onPickupInput, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
+          {el: pickupList, ev: 'click', listener: l.onPickupPointClick, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
+          {el: citiesList, ev: 'click', listener: l.onCityClick, changeCityAdd: true, cityConfirmRemove: true, closeModule: true },
+          {el: citySearchInput, ev: 'input', listener: l.onCityInput, changeCityAdd: true, cityConfirmRemove: true, closeModule: true },
+          {el: close, ev: 'click', listener: l.onCloseClick, boot: true, closeModule: true },
+          {el: blockScreen, ev: 'click', listener: l.onBlockScreenClick, boot: true, closeModule: true },
+        ];
 
         return eventListeners;
       };
       eventListeners.add = () => {
-        listenersList = [
-          [changeCity, 'click', l.onCityChange],
-          [showMap, 'click', l.onShowMapClick],
-          [confirmButton, 'click', l.onConfirmButtonClick],
-          [pickupSearchInput, 'input', l.onPickupInput]
-        ];
-        listenersList.forEach((listenerOptions) => h.eventAdd(listenerOptions[0], listenerOptions[1], listenerOptions[2]));
+        h.addListOfEvents(listenersList, 'boot');
 
         return eventListeners;
       };
@@ -1090,6 +1407,7 @@
 
     eventListeners(options)
       .create()
+      .listInitiate()
       .add();
   };
 
