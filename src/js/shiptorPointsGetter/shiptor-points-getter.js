@@ -39,12 +39,12 @@ class ShiptorPointsGetter {
    * @returns {Promise<*>}
    */
   getDeliveryPoints = async () => {
-    console.log(this.usersCityKladr);
     const data = this._dataHandler({
       method: "getDeliveryPoints",
       params: {
         kladr_id: `${this.usersCityKladr}`,
         courier: 'cdek',
+        cod: '0',
       }
     });
     return await this._getData(data);
@@ -53,10 +53,29 @@ class ShiptorPointsGetter {
     const data = this._dataHandler({method: 'suggestSettlement', params: {query: this.usersCity, country_code: "RU"}});
     let result = await this._getData(data);
 
-    result
-      .then((result) => this.usersCityKladr = result.result[0].kladr_id || '00000000000');
+    try {
+      this.usersCityKladr = result.result[0].kladr_id;
+    } catch(e) {
+      this.usersCityKladr = '00000000000';
+    }
 
     return result;
+  };
+  calculateShipping = async () => {
+    const data = this._dataHandler({
+      method: "calculateShipping",
+      params: {
+        kladr_id: `${this.usersCityKladr}`,
+        courier: 'cdek',
+        cod: '0',
+        length: 10,
+        width: 10,
+        height: 10,
+        weight: 1,
+        declared_cost: 0
+      }
+    });
+    return await this._getData(data);
   };
   _dataHandler = (properties) => {
     let data = _.clone(this.cityData);
@@ -64,10 +83,10 @@ class ShiptorPointsGetter {
   };
 };
 
-const calculate = new ShiptorPointsGetter({
-  usersCity: 'Ростов',
-  fromCity: '77000000000',
-});
-
-calculate.getDeliveryPoints()
-  .then((result) => console.log(result.result.methods));
+// const calculate = new ShiptorPointsGetter({
+//   usersCity: 'Ростов',
+//   fromCity: '77000000000',
+// });
+//
+// calculate.getDeliveryPoints()
+//   .then((result) => console.log(result.result.methods));

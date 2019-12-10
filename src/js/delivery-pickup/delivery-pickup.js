@@ -2,7 +2,7 @@
   const option = {
     pickupModule: document.querySelector('.delivery-pickup'),
   };
-  window.options = _.extend(option, {
+  const options = _.extend(option, {
     pointsWrapper: option.pickupModule.querySelector('.delivery-pickup__points-list'),
     input:  option.pickupModule.querySelector('.delivery-pickup__input'),
     close:  option.pickupModule.querySelector('.delivery-pickup__close'),
