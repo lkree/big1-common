@@ -43,7 +43,6 @@ class ShiptorPointsGetter {
       method: "getDeliveryPoints",
       params: {
         kladr_id: `${this.usersCityKladr}`,
-        courier: 'cdek',
         cod: '0',
       }
     });
@@ -66,7 +65,7 @@ class ShiptorPointsGetter {
       method: "calculateShipping",
       params: {
         kladr_id: `${this.usersCityKladr}`,
-        courier: 'cdek',
+        kladr_id_from: '76000001000',
         cod: '0',
         length: 10,
         width: 10,

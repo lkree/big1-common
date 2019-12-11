@@ -935,7 +935,7 @@
 
                     return value;
                   };
-                  const createDeliveryPoint = ({ address, work_schedule, prepare_address }) => {
+                  const createDeliveryPoint = ({ courier, address, work_schedule, prepare_address }) => {
                     const value = handleAddress(prepare_address, address);
                     work_schedule = h.checkAvailable(work_schedule);
 
@@ -955,6 +955,11 @@
                     h.handleClass(shipping, 'add', 'delivery-selfExport__shipping-days');
                     h.setText(shipping, `Срок доставки: ${shippingDays[0]} - ${shippingDays[1]} дней`);
 
+                    const courierInfo = document.createElement('p');
+                    h.handleClass(courierInfo, 'add', 'delivery-selfExport__courier');
+                    h.setText(courierInfo, courier);
+
+                    point.append(courierInfo);
                     point.append(pointAddress);
                     point.append(schedule);
                     point.append(shipping);
