@@ -81,7 +81,7 @@ class ShiptorPointsGetter {
     let data = _.clone(this.cityData);
     return JSON.stringify(_.extend(data, properties));
   };
-};
+}
 
 // const calculate = new ShiptorPointsGetter({
 //   usersCity: 'Ростов',

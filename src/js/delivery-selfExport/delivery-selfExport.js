@@ -671,6 +671,7 @@
       },
       showError: () => h.show(options.errorSection),
       hideError: () => h.hide(options.errorSection),
+      clearStorage: (storages) => storages.forEach((storage) => localStorage.setItem(storage, '')),
       filterList: ({itemList, childClassName, wrapper, fastExit, isCityFiltered, firstInitiate = true}) => (evt) => {
         const inputString = h.escapeHtml(evt.target.value);
 
@@ -752,6 +753,12 @@
       onBlockScreenClick: () => {},
       onMapClose: () => {},
     }; //listeners
+    const u = {
+      saveStorageInfo: (module, chosenPoint) => {
+        localStorage.setItem('deliveryDate', h.getDataSet(module, 'deliveryPeriod'));
+        localStorage.setItem('deliveryAddress', `delivery: ${chosenPoint}`);
+      },
+    }; //functions especially used for this module
     const module = ({ blockScreen, selfExportModule, pickupList, chosenCity, pickupSection, confirmButton, pickupSearchInput, JCShiptorWidgetPvz }) => {
       module.initiate = () => {
         const w = () => {
@@ -852,14 +859,38 @@
                 s.handleRequest = () => {
                   shiptorApi
                     .getUsersCityKladr()
-                    .then((result) => h.setDataSet(selfExportModule, 'cityKladr', result.result[0].kladr_id))
+                    .then((result) => {
+                      let kladrId;
+                      try {
+                        kladrId = result.result[0].kladr_id;
+                      } catch({ message }) {
+                        console.log(message);
+                        kladrId = '11001110011'
+                      }
+                      h.setDataSet(selfExportModule, 'cityKladr', kladrId);
+
+                      return kladrId;
+                    })
                     .then((result) => h.setDataSet(JCShiptorWidgetPvz, 'cityKladr', result))
                     .then((result) => s.setKladrId(result))
                     .then(() => window.JCShiptorWidgetPvz.hide())
                     .then(() => shiptorApi.calculateShipping())
                     .then(({ result: { methods } }) => {
-                      const minDays = h.checkAvailable(methods[0].min_days);
-                      const maxDays = h.checkAvailable(methods[0].max_days);
+                      let minDays;
+                      let maxDays;
+                      try {
+                        minDays = methods[0].min_days;
+                      } catch({ message }) {
+                        console.log(message);
+                        minDays = 0;
+                      }
+                      try {
+                        maxDays = methods[0].max_days;
+                      } catch({ message }) {
+                        console.log(message);
+                        maxDays = 0;
+                      }
+
                       const supplyPeriod = +localStorage.getItem('supplyDate') || 0;
                       shippingDays = [minDays + supplyPeriod, maxDays + supplyPeriod];
                       h.setDataSet(selfExportModule, 'deliveryPeriod', maxDays || minDays);
@@ -991,6 +1022,7 @@
       let listenersList = [];
       let isCityRendered;
       let chosenPoint;
+      let _chosenPoint = `${selfExportModule.dataset.renderedCity}, ${selfExportModule.dataset.deliveryPoint}` || '';
       let customEvent = new Event('ClosePickupModule', {bubbles: true});
       
       eventListeners.create = () => {
@@ -1056,7 +1088,7 @@
             .initiate();
         };
         l.onCityClick = ({ target }) => {
-          if(h.hasClass(target, 'delivery-selfExport__city') || h.hasClass(target, 'delivery-selfExport__city-wrapper')) {
+          if (h.hasClass(target, 'delivery-selfExport__city') || h.hasClass(target, 'delivery-selfExport__city-wrapper')) {
             const w = () => {
               w.setTextCity = () => {
                 h.setText(chosenCity, target.textContent);
@@ -1065,6 +1097,16 @@
               };
               w.markCity = () => {
                 h.handleClass(target, 'add', 'delivery-selfExport__city--active');
+
+                return w;
+              };
+              w.clearData = () => {
+                h.setDataSet(selfExportModule, 'deliveryPoint', '');
+
+                return w;
+              };
+              w.clearStorageInfo = () => {
+                h.clearStorage(['deliveryDate', 'deliveryAddress']);
 
                 return w;
               };
@@ -1085,6 +1127,8 @@
 
             w()
               .setTextCity()
+              .clearData()
+              .clearStorageInfo()
               .unMarkPrevious()
               .markCity()
               .handleButton()
@@ -1195,8 +1239,7 @@
         });
         l.onPickupInput = _.debounce(l.onPickupInput(), 300);
         l.onPickupPointClick = (evt) => {
-          const handle = (evt) => {
-            let target = evt.target;
+          const handle = ({ target }) => {
             let fastExit, prevEl, selected;
             const helper = () => {
               helper.setFastExit = (value) => {
@@ -1216,6 +1259,7 @@
               };
               helper.clearSavedInfo = () => {
                 h.setDataSet(selfExportModule, 'deliveryPoint', '');
+                h.clearStorage(['deliveryDate', 'deliveryAddress']);
 
                 return helper;
               };
@@ -1230,12 +1274,18 @@
                 return helper;
               };
               helper.setChosenPoint = () => {
+                _chosenPoint = target.querySelector('.delivery-selfExport__address').textContent;
                 h.setDataSet(selfExportModule, 'deliveryPoint', h.getDataSet(target, 'value'));
 
                 return helper;
               };
               helper.activateButton = () => {
                 h.activateButton(confirmButton);
+
+                return helper;
+              };
+              helper.setStorageInfo = () => {
+                u.saveStorageInfo(selfExportModule, _chosenPoint);
 
                 return helper;
               };
@@ -1273,6 +1323,7 @@
                 helper()
                   .setChosenPoint()
                   .activateButton()
+                  .setStorageInfo()
               }
 
               return handle;
@@ -1295,11 +1346,6 @@
         };
         l.onCloseClick = () => {
           const w = () => {
-            w.saveInfo = () => {
-              localStorage.setItem('deliveryDate', h.getDataSet(selfExportModule, 'deliveryPeriod'));
-
-              return w;
-            };
             w.restorePoints = () => {
               [...pickupList.children].forEach((point) => h.handleClass(point, 'remove', 'hidden'));
 
@@ -1345,7 +1391,6 @@
           };
 
           w()
-            .saveInfo()
             .hide()
             .restorePoints()
             .inputClear()
@@ -1359,6 +1404,7 @@
           l.onCloseClick();
         };
         l.onPickupConfirm = () => {
+          u.saveStorageInfo(selfExportModule, _chosenPoint);
           l.onCloseClick();
         };
         l.onShowMapClick = (evt) => {

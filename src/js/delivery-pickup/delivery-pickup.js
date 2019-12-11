@@ -38,6 +38,12 @@
       setDataSet: (el, dataType, value) => el.dataset[dataType] = value,
       clearEl: (el) => el = null,
     };
+    const u = {
+      saveStorageInfo: (chosenPoint) => {
+        localStorage.setItem('deliveryDate', '0');
+        localStorage.setItem('deliveryAddress', `pickup: ${chosenPoint}`);
+      },
+    };
     const module = ({pickupModule, pointsWrapper, deliveryPoints, blockScreen}) => {
       module.initiate = () => {
         const handle = (pickupModule, pointsWrapper, deliveryPoints, blockScreen) => {
@@ -112,6 +118,7 @@
       let renderedPoints;
       let filterFlag;
       let chosenPoint;
+      let _chosenPointInfo = pickupModule.dataset.deliveryPoint || '';
       const eventAdd = (el, event, handler) => el.addEventListener(event, handler);
       const eventRemove = (el, event, handler) => el.removeEventListener(event, handler);
 
@@ -195,6 +202,8 @@
               };
               w.clearSavedInfo = () => {
                 h.setDataSet(pickupModule, 'deliveryPoint', '');
+                localStorage.setItem('deliveryAddress', '');
+                localStorage.setItem('deliveryDate', '');
 
                 return w;
               };
@@ -209,12 +218,18 @@
                 return w;
               };
               w.setChosenPoint = () => {
-                h.setDataSet(pickupModule, 'deliveryPoint', target.textContent);
+                _chosenPointInfo = target.textContent;
+                h.setDataSet(pickupModule, 'deliveryPoint', _chosenPointInfo);
 
                 return w;
               };
               w.activateButton = () => {
                 h.activateButton(confirmButton);
+
+                return w;
+              };
+              w.saveStorageInfo = () => {
+                u.saveStorageInfo(_chosenPointInfo);
 
                 return w;
               };
@@ -251,6 +266,7 @@
                 w()
                   .setChosenPoint()
                   .activateButton()
+                  .saveStorageInfo()
               }
 
               return handle;
@@ -325,7 +341,24 @@
           onCloseClick();
         };
         onConfirmClick = () => {
-          onCloseClick();
+          const w = () => {
+            w.closeModule = () => {
+              onCloseClick();
+
+              return w;
+            };
+            w.saveInfo = () => {
+              u.saveStorageInfo(_chosenPointInfo);
+
+              return w;
+            };
+
+            return w;
+          };
+
+          w()
+            .saveInfo()
+            .closeModule()
         };
 
         return eventListeners;
