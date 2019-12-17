@@ -88,7 +88,7 @@
 }
 .cars-catalog__item {
   flex-basis: 19%;
-  @include flex(space-between, false, column);
+  @include flex(false, false, column);
   padding: 0 !important;
   height: 140px;
   border: 2px solid #ccc;
@@ -114,10 +114,11 @@
   top: -5px;
 }
 .cars-catalog__img-wrapper {
-  height: 100% !important;
+  height: calc(100% - 18px);
 }
 .cars-catalog__name {
   text-align: center;
+  height: 18px;
 }
 
 @media (max-width: 950px) {

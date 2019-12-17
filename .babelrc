@@ -4,12 +4,13 @@
       "@babel/preset-env",
       {
         "targets": {
-          "ie": "10"
+          "chrome": "58"
         }
       }
     ],
     [
       "minify"
     ]
-  ]
+  ],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
 }

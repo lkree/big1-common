@@ -15,22 +15,24 @@ module.exports = function(grunt) {
           'no-source-map' : ''
         },
         files: {
-          'build/css/users-styles.css': 'src/less/style.scss'
+          // 'build/css/users-styles.css': 'src/less/style.scss'
           // 'build/css/lax-tecDoc-pages/style.css' : 'src/css/lax-tecDoc-pages/style.scss'
           // 'build/css/delivery/delivery--style.css' : 'src/css/delivery/delivery--style.scss'
           // 'build/css/catalog-seo/catalog-seo-style.css' : 'src/css/catalog-seo/catalog-seo-style.scss'
           // 'build/css/catalog-seo-style-new.css': 'src/css/catalog-seo/test/style.scss'
+          'build/css/basket-delivery.css': 'src/less/another-components/basket-index.scss'
         }
       }
     },
     cssmin: {
       target: {
         files: {
-          'build/css/users-styles.css': 'build/css/users-styles.css'
+          // 'build/css/users-styles.css': 'build/css/users-styles.css'
           // 'build/css/lax-tecDoc-pages/style.css' : 'build/css/lax-tecDoc-pages/style.css'
           // 'build/css/delivery/delivery--style.css' : 'build/css/delivery/delivery--style.css'
           // 'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
           // 'build/css/catalog-seo-style-new.css' : 'build/css/catalog-seo-style-new.css'
+          'build/css/basket-delivery.css' : 'build/css/basket-delivery.css'
         }
       }
     },
@@ -40,19 +42,20 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'build/css/users-styles.css': 'build/css/users-styles.css'
+          // 'build/css/users-styles.css': 'build/css/users-styles.css'
           // 'build/css/lax-tecDoc-pages/style.css' : 'build/css/lax-tecDoc-pages/style.css'
           // 'build/css/delivery/delivery--style.css' : 'build/css/delivery/delivery--style.css'
           // 'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css'
           // 'build/css/catalog-seo-style-new.css' : 'build/css/catalog-seo-style-new.css'
+          'build/css/basket-delivery.css' : 'build/css/basket-delivery.css'
         }
       },
     },
     uglify: {
-      mainPage: {
-        src: 'build/js/main-page-script.js',
-        dest: 'build/js/main-page-script.js'
-      },
+      // mainPage: {
+      //   src: 'build/js/main-page-script.js',
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'build/js/any-autos-page-script.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -92,7 +95,11 @@ module.exports = function(grunt) {
       // seoCatalogNew: {
       //   src: 'build/js/new-catalog-seo-script.js',
       //   dest: 'build/js/new-catalog-seo-script.js'
-      // }
+      // },
+      basketDelivery: {
+          src: 'build/js/basket-delivery-page-script.js',
+          dest: 'build/js/basket-delivery-page-script.js'
+      },
     },
     "babel": {
       options: {
@@ -100,7 +107,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "build/js/main-page-script.js" : "build/js/main-page-script.js",
+          // "build/js/main-page-script.js" : "build/js/main-page-script.js",
           // "build/js/any-autos-page-script.js": "build/js/any-autos-page-script.js",
           // "build/js/autos-page-script.js": "build/js/autos-page-script.js",
           // 'build/js/delivery-page-script.js' : 'build/js/delivery-page-script.js',
@@ -110,7 +117,8 @@ module.exports = function(grunt) {
           // 'build/js/parts-soft-script.js' : 'build/js/parts-soft-script.js',
           // 'build/js/catalog-seo-script.js' : 'build/js/catalog-seo-script.js'
           // 'build/js/new-car-type-chooser-modal-window-script.js' : 'build/js/new-car-type-chooser-modal-window-script.js'
-          // 'build/js/new-catalog-seo-script.js' : 'build/js/new-catalog-seo-script.js'
+          // 'build/js/new-catalog-seo-script.js' : 'build/js/new-catalog-seo-script.js',
+          'build/js/basket-delivery-page-script.js' : 'build/js/basket-delivery-page-script.js',
         }
       }
     },
@@ -118,14 +126,14 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
-      mainPage: {
-        src: [
-          // 'src/js/main-page/loading.js',
-          'src/js/main-page/href-checker.js',
-          'src/js/main-page/laximoGetter.js'
-          ],
-        dest: 'build/js/main-page-script.js'
-      },
+      // mainPage: {
+      //   src: [
+      //     // 'src/js/main-page/loading.js',
+      //     'src/js/main-page/href-checker.js',
+      //     'src/js/main-page/laximoGetter.js'
+      //     ],
+      //   dest: 'build/js/main-page-script.js'
+      // },
       // anyAutosPage: {
       //   src: 'src/js/any-autos-page/vinAutoInfoGetter.js',
       //   dest: 'build/js/any-autos-page-script.js'
@@ -173,7 +181,16 @@ module.exports = function(grunt) {
       // seoCatalog: {
       //   src: 'src/js/test/NEWcatalog-seo-script.js',
       //   dest: 'build/js/new-catalog-seo-script.js'
-      // }
+      // },
+      basketDelivery: {
+        src: [
+          'src/js/delivery-pickup/delivery-pickup.js',
+          'src/js/delivery-selfExport/delivery-selfExport.js',
+          'src/js/shiptor-points-getter/shiptor-points-getter.js',
+          'src/js/basket-delivery/basket-delivery.js',
+        ],
+        dest: 'build/js/basket-delivery-page-script.js'
+      },
     },
     imagemin: {
       // static: {
@@ -225,7 +242,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify-es');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-imagemin');

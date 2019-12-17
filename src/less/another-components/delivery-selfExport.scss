@@ -1,0 +1,159 @@
+.delivery-selfExport {
+  padding: 35px 25px 10px 25px;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  background-color: #fff;
+  position: fixed;
+  max-height: 595px;
+  min-width: 650px;
+  height: 595px;
+  overflow: hidden;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.delivery-selfExport__close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: url(https://big1.ru/images/another-images/icons/close-icon.png) no-repeat;
+}
+.delivery-selfExport__close:hover {
+  background: url(https://big1.ru/images/another-images/icons/close-icon--red.png) no-repeat;
+  cursor: pointer;
+}
+.delivery-selfExport__error {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 650px;
+  height: 420px;
+  bottom: 70px;
+  background-color: #fff;
+  position: absolute;
+}
+.delivery-selfExport__pickup-header {
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+}
+.delivery-selfExport__pickup-list {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  padding-right: 10px;
+  max-height: 320px;
+  list-style: none;
+  overflow-y: auto;
+}
+.delivery-selfExport__pickup-point {
+  padding: 10px;
+  border: 1px solid;
+  margin: 5px 0;
+  line-height: 20px;
+}
+.delivery-selfExport__pickup-point:hover, .delivery-selfExport__pickup-point--active {
+  background-color: #ad1318;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.delivery-selfExport__pickup-point--active::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 30px;
+  right: 20px;
+  top: 14px;
+  background: url(https://big1.ru/images/another-images/icons/check-mark-icon.png) no-repeat;
+}
+.delivery-selfExport__chosen-city-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+}
+.delivery-selfExport__chosen-city-wrapper:hover {
+  cursor: default;
+}
+.delivery-selfExport__chosen-city, .delivery-selfExport__chosen-city-descr {
+  font-size: 20px;
+}
+.delivery-selfExport__change-city, .delivery-selfExport__show-map {
+  border: none;
+  background-color: transparent;
+  color: #0000ff;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: -10px;
+}
+.delivery-selfExport__change-city:hover, .delivery-selfExport__show-map:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.delivery-selfExport__city-search-input, .delivery-selfExport__pickup-search-input {
+  margin-bottom: 15px;
+  min-height: 40px;
+  padding-left: 10px;
+  width: 100%;
+}
+.delivery-selfExport__cities-list {
+  display: flex;
+  max-width: 650px;
+  width: 650px;
+  padding-right: 10px;
+  max-height: 320px;
+  overflow: auto;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+.delivery-selfExport__city-wrapper {
+  width: 182px;
+  margin-left: 25px;
+}
+.delivery-selfExport__city {
+  color: #1c4254;
+}
+.delivery-selfExport__city:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.delivery-selfExport__city--active {
+  background-color: lightblue;
+  color: #fff;
+}
+.delivery-selfExport__confirm {
+  position: absolute;
+  height: 70px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.delivery-selfExport__confirm-btn {
+  width: 120px;
+  height: 40px;
+  background-color: #ad1318;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+}
+.delivery-selfExport__confirm-btn:hover {
+  cursor: pointer;
+}
+.delivery-selfExport__confirm-btn--deactive {
+  background-color: #cecece;
+}
+.delivery-selfExport__confirm-btn--deactive:hover {
+  cursor: default;
+}
+.delivery-selfExport__wait-screen {
+  width: 100%;
+  height: 100%;
+}

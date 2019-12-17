@@ -1,0 +1,104 @@
+.delivery-pickup {
+  padding: 35px 25px 10px 25px;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  background-color: #fff;
+  position: fixed;
+  max-height: 595px;
+  height: 595px;
+  overflow: hidden;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.delivery-pickup__close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: url(/images/another-images/icons/close-icon.png) no-repeat;
+}
+.delivery-pickup__close:hover {
+  background: url(/images/another-images/icons/close-icon--red.png) no-repeat;
+  cursor: pointer;
+}
+.delivery-pickup__input {
+  margin-bottom: 15px;
+  min-height: 40px;
+  padding-left: 10px;
+}
+.delivery-pickup__points-list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  overflow: auto;
+  padding-right: 10px;
+  max-height: 420px;
+}
+.delivery-pickup__point {
+  padding: 10px;
+  border: 1px solid;
+  margin: 5px 0;
+  line-height: 20px;
+}
+.delivery-pickup__point:hover, .delivery-pickup__point--active {
+  background-color: #ad1318;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.delivery-pickup__point--active::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 30px;
+  right: 20px;
+  top: 4px;
+  background: url(/images/another-images/icons/check-mark-icon.png) no-repeat;
+}
+.delivery-pickup__confirm {
+  position: absolute;
+  height: 70px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.delivery-pickup__confirm-btn {
+  width: 120px;
+  height: 40px;
+  background-color: #ad1318;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+}
+.delivery-pickup__confirm-btn:hover {
+  cursor: pointer;
+}
+.delivery-pickup__confirm-btn--deactive {
+  background-color: #cecece;
+}
+.delivery-pickup__confirm-btn--deactive:hover {
+  cursor: default;
+}
+
+@media (max-width: 550px) {
+  .delivery-pickup__points-list {
+    width: 400px;
+  }
+}
+@media (max-width: 420px) {
+  .delivery-pickup__points-list {
+    width: 320px;
+  }
+}
+@media (max-width: 320px) {
+  .delivery-pickup__points-list {
+    width: 290px;
+  }
+}

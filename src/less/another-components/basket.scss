@@ -1,0 +1,19 @@
+.basket__delivery-output td, .basket__buttons-wrapper td {
+  display: table-cell !important;
+}
+.basket__display-block {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #aaaaaa;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+._shiptor_widget_balloon_footer, ._shiptor_widget_points_payments {
+  display: none !important;
+}

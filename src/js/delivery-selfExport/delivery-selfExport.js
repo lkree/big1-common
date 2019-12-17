@@ -612,6 +612,7 @@
   const handler = (options) => {
     const h = {
       checkAvailable: (el, substitute = '') => el || substitute,
+      getText: (el) => el ? el.textContent : '',
       initiateApi: (usersCity, fromCity = '77000000000') => (new ShiptorPointsGetter({
         usersCity: usersCity,
         fromCity: fromCity,
@@ -754,9 +755,9 @@
       onMapClose: () => {},
     }; //listeners
     const u = {
-      saveStorageInfo: (module, chosenPoint) => {
+      saveStorageInfo: (module, chosenPoint, courier) => {
         localStorage.setItem('deliveryDate', h.getDataSet(module, 'deliveryPeriod'));
-        localStorage.setItem('deliveryAddress', `delivery: ${chosenPoint}`);
+        localStorage.setItem('deliveryAddress', `delivery: ${chosenPoint} | ${courier}`);
       },
     }; //functions especially used for this module
     const module = ({ blockScreen, selfExportModule, pickupList, chosenCity, pickupSection, confirmButton, pickupSearchInput, JCShiptorWidgetPvz }) => {
@@ -1028,6 +1029,7 @@
       let isCityRendered;
       let chosenPoint;
       let _chosenPoint = `${selfExportModule.dataset.renderedCity}, ${selfExportModule.dataset.deliveryPoint}` || '';
+      let _chosenCourier = h.getText(pickupList.querySelector('.delivery-selfExport__pickup-point--active .delivery-selfExport__courier'));
       let customEvent = new Event('ClosePickupModule', {bubbles: true});
       
       eventListeners.create = () => {
@@ -1092,7 +1094,7 @@
           module(options)
             .initiate();
         };
-        l.onCityClick = ({ target }) => {
+        l.onCityClick = ({target}) => {
           if (h.hasClass(target, 'delivery-selfExport__city') || h.hasClass(target, 'delivery-selfExport__city-wrapper')) {
             const w = () => {
               w.setTextCity = () => {
@@ -1280,6 +1282,7 @@
               };
               helper.setChosenPoint = () => {
                 _chosenPoint = target.querySelector('.delivery-selfExport__address').textContent;
+                _chosenCourier = target.querySelector('.delivery-selfExport__courier').textContent;
                 h.setDataSet(selfExportModule, 'deliveryPoint', h.getDataSet(target, 'value'));
 
                 return helper;
@@ -1290,7 +1293,7 @@
                 return helper;
               };
               helper.setStorageInfo = () => {
-                u.saveStorageInfo(selfExportModule, _chosenPoint);
+                u.saveStorageInfo(selfExportModule, _chosenPoint, _chosenCourier);
 
                 return helper;
               };
@@ -1409,7 +1412,7 @@
           l.onCloseClick();
         };
         l.onPickupConfirm = () => {
-          u.saveStorageInfo(selfExportModule, _chosenPoint);
+          u.saveStorageInfo(selfExportModule, _chosenPoint, _chosenCourier);
           l.onCloseClick();
         };
         l.onShowMapClick = (evt) => {
