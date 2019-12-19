@@ -1,8 +1,14 @@
 {
+  /*
+  constants
+   */
   const option = {
     selfExportModule: document.querySelector('.delivery-selfExport'),
     JCShiptorWidgetPvz: document.querySelector('#shiptor_widget_pvz'),
   };
+  /*
+   another constants depends on option object
+   */
   const options = _.extend(option, {
     citiesList: option.selfExportModule.querySelector('.delivery-selfExport__cities-list'),
     pickupList: option.selfExportModule.querySelector('.delivery-selfExport__pickup-list'),
@@ -1415,7 +1421,7 @@
           u.saveStorageInfo(selfExportModule, _chosenPoint, _chosenCourier);
           l.onCloseClick();
         };
-        l.onShowMapClick = (evt) => {
+        l.onShowMapClick = () => {
           const w = () => {
 
             return w;
@@ -1457,6 +1463,11 @@
 
                   return s;
                 };
+                s.clearPreviousSearch = () => {
+                  l.onPickupInput({target: {value: ''}});
+
+                  return s;
+                };
 
                 return s;
               };
@@ -1465,7 +1476,8 @@
                 .handleGettedAddress()
                 .getChosenPickupFromList()
                 .handleChosenPoint()
-                .sortPickupList();
+                .sortPickupList()
+                .clearPreviousSearch();
 
               return w;
             };
@@ -1480,6 +1492,10 @@
         return eventListeners;
       };
       eventListeners.listInitiate = () => {
+        /*
+        list with eventListeners and their dependencies
+        shows it usage
+         */
         listenersList = [
           {el: changeCity, ev: 'click', listener: l.onChangeCity, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
           {el: showMap, ev: 'click', listener: l.onShowMapClick, changeCityRemove: true, cityConfirmAdd: true, boot: true, closeModule: true },
@@ -1497,6 +1513,9 @@
         return eventListeners;
       };
       eventListeners.add = () => {
+        /*
+        initiate listeners
+         */
         h.addListOfEvents(listenersList, 'boot');
 
         return eventListeners;

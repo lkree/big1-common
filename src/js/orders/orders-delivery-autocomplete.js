@@ -20,21 +20,26 @@
           };
 
           w.setWaitScreen = () => {
-            debugger;
             waitScreen.classList.remove('hidden');
 
             return w;
           };
           w.getData = () => {
             storageInfo = localStorage.getItem('deliveryAddress');
-            type = storageInfo.split(': ')[0];
+            if (storageInfo) type = storageInfo.split(': ')[0];
 
             return w;
           };
           w.checkDeliveryType = () => {
             const s = () => {
               s.getReceivedValue = () => {
-                const receivedSelectValue = delTypes[type].split('/');
+                let receivedSelectValue;
+                try {
+                  receivedSelectValue = delTypes[type].split('/');
+                } catch(e) {
+                  receivedSelectValue = delTypes['pickup'].split('/');
+                }
+
                 deliveryValue = receivedSelectValue[1];
                 deliveryText = receivedSelectValue[0];
 
@@ -62,7 +67,7 @@
             return w;
           };
           w.setDeliveryType = () => {
-            commentInput.value = storageInfo;
+            commentInput.value = storageInfo || 'Доставка не записалась почему-то, уточните у клиента плс';
 
             return w;
           };
