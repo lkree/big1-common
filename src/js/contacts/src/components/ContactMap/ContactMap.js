@@ -7,6 +7,7 @@ import CitiesList from "../CitiesList";
 export default class ContactMap extends React.Component {
   constructor(props) {
     super(props);
+    this.baseCityId = '28';
     this.citiesList = [
       {
         "name": "Абакан",
@@ -66,50 +67,7 @@ export default class ContactMap extends React.Component {
             "name": "г. Бузулук, ул. Дорожная, 35",
             "street": 'ул. Дорожная, 35',
             "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800'
-            ],
-            'id': '28',
-          },
-          {
-            "name": "г. Бузулук, ул. Дорожная, 35",
-            "street": 'ул. Дорожная, 35',
-            "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800'
-            ],
-            'id': '28',
-          },
-          {
-            "name": "г. Бузулук, ул. Дорожная, 35",
-            "street": 'ул. Дорожная, 35',
-            "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800'
-            ],
-            'id': '28',
-          },
-          {
-            "name": "г. Бузулук, ул. Дорожная, 35",
-            "street": 'ул. Дорожная, 35',
-            "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800'
-            ],
-            'id': '28',
-          },
-          {
-            "name": "г. Бузулук, ул. Дорожная, 35",
-            "street": 'ул. Дорожная, 35',
-            "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800'
-            ],
+            "photos": [],
             'id': '28',
           },
         ],
@@ -174,12 +132,7 @@ export default class ContactMap extends React.Component {
             "name": "г. Екатеринбург, Железнодорожный район (Старая сортировка), ул.Билимбаевская, д.4",
             "street": 'Железнодорожный район (Старая сортировка), ул.Билимбаевская, д.4',
             "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800'
-            ],
+            "photos": [],
             'id': '37',
           }
         ],
@@ -515,36 +468,14 @@ export default class ContactMap extends React.Component {
             "name": "Ярославль, ул. Полушкина роща 16Л",
             "street": 'ул. Полушкина роща 16Л',
             "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-            ],
+            "photos": [],
             'id': '28',
           },
           {
             "name": "Ярославль, ул. Урицкого 47а",
             "street": 'ул. Урицкого 47а',
             "schedule": 'ПН-ПТ: 9:00 - 18:00',
-            "photos": [
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-              'https://picsum.photos/800/800',
-            ],
+            "photos": [],
             'id': '41',
           },
         ],
@@ -662,7 +593,7 @@ export default class ContactMap extends React.Component {
             return s;
           };
           s.saveCityId = () => {
-            this.setCityId('28');
+            this.setCityId();
 
             return s;
           };
@@ -723,7 +654,7 @@ export default class ContactMap extends React.Component {
     this.disableActiveElement();
     location.reload();
   };
-  setCityId = (id) => this.saveCookie('region_id', id);
+  setCityId = (id = this.baseCityId) => this.saveCookie('region_id', id);
   render() {
     const {isRenderedBrunch, branches, chosenCity, mapLink} = this.state;
     const {filterCityList, onBranchClick, renderCity} = this;
