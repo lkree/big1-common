@@ -365,8 +365,6 @@ module.exports = (grunt) => {
   grunt.loadNpmTasks('grunt-tinypng');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
-
-
   grunt.registerTask("default", ["babel"]);
   grunt.registerTask('scss', initTasks(SCSS_SETTINGS.tasks, SCSS_SETTINGS.preset, SCSS_SETTINGS.type));
   grunt.registerTask('js', initTasks(JS_SETTINGS.tasks, JS_SETTINGS.preset, JS_SETTINGS.type));
