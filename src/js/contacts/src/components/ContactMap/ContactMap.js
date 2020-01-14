@@ -610,6 +610,14 @@ export default class ContactMap extends React.Component {
       w.chooseCity = () => {
         this.chooseCity(target.textContent);
       };
+      w.refreshHeader = () => {
+        window.userCityHandler({
+          cityName: target.textContent,
+          cityId: this.baseCityId,
+        });
+
+        return w;
+      };
 
       return w;
     };
@@ -621,7 +629,8 @@ export default class ContactMap extends React.Component {
       .removeActiveElement()
       .setActiveElement()
       .saveCity()
-      .chooseCity();
+      .chooseCity()
+      .refreshHeader();
   };
   chooseCity = (value) => this.setState({
     chosenCity: value
