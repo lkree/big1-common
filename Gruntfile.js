@@ -324,33 +324,35 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     preset: ['catalog-seo'],
+    type: 'css',
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     preset: 'mainPage',
+    type: 'js',
   };
 
   /**
-   *
    * @param tasks {Array<String>}
-   * @param presetName {String}
+   * @param preset {String}
+   * @param type {'css' | 'js'}
    */
-  const createPaths = (tasks, presetName) => {
+  const createPaths = (tasks, preset, type) => {
     tasks.forEach(task => {
-      if (task === 'concat' || 'babel')
-        config[task].target = paths[task][presetName];
-      else
-        config[task].target.files = paths[task][presetName];
-
+      if (type === 'css')
+        config[task].target.files = paths[task][preset];
+      if (type === 'js')
+        config[task].target = paths[task][preset];
     });
   };
   /**
    * @param tasks {Array<String>}
    * @param preset {String}
+   * @param type {'css' | 'js'}
    * @returns {Array}
    */
-  const initTasks = (tasks, preset) => {
-    createPaths(tasks, preset);
+  const initTasks = (tasks, preset, type) => {
+    createPaths(tasks, preset, type);
     grunt.initConfig(config);
     return tasks;
   };
@@ -366,6 +368,6 @@ module.exports = (grunt) => {
 
 
   grunt.registerTask("default", ["babel"]);
-  grunt.registerTask('scss', initTasks(SCSS_SETTINGS.tasks, SCSS_SETTINGS.preset));
-  grunt.registerTask('js', initTasks(JS_SETTINGS.tasks, JS_SETTINGS.preset));
+  grunt.registerTask('scss', initTasks(SCSS_SETTINGS.tasks, SCSS_SETTINGS.preset, SCSS_SETTINGS.type));
+  grunt.registerTask('js', initTasks(JS_SETTINGS.tasks, JS_SETTINGS.preset, JS_SETTINGS.type));
 };
