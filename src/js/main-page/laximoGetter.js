@@ -105,92 +105,46 @@ const saveCookie = (name, value) => {
 
 
 //Добавляет ссылку на "статьи" в хедере сайта
-(function() {
-  let ul = document.querySelector('.b-tsd-nav-list'),
-      li = document.createElement('li'),
-      a = document.createElement('a');
-
-  a.href = '/articles.html';
-  a.textContent = 'АвтоБлог';
-
-  ul.appendChild(li).appendChild(a);
-})();
+// (function() {
+//   let ul = document.querySelector('.b-tsd-nav-list'),
+//       li = document.createElement('li'),
+//       a = document.createElement('a');
+//
+//   a.href = '/articles.html';
+//   a.textContent = 'АвтоБлог';
+//
+//   ul.appendChild(li).appendChild(a);
+// })();
 
 
 //Добавляет промежуточные путь до "оригинальных каталогов" (хлебные крошки)
 // (работает только там, где уже сгенерированы хлебные крошки)
-function breadCrumbsLaximo() {
-  let ul = document.querySelector('.path'),
-    li = ul.childNodes[0].cloneNode(true);
-
-  li.childNodes[0].childNodes[0].textContent = 'Оригинальные каталоги';
-  li.childNodes[0].title = 'Оригинальные каталоги';
-  li.childNodes[0].href = '/laximo';
-  ul.insertBefore(li, ul.childNodes[1]);
-
-  ul.childNodes[1].childNodes[0].childNodes[1].setAttribute('content', '1');
-  ul.childNodes[2].childNodes[1].setAttribute('content', '2');
-};
-
-
-if(hrefChecker.laximoBreadcrumbs()) {
+/**
+ * @param text {String}
+ * @param href {String}
+ * @returns {void}
+ */
+const createBreadCrumbs = (text, href) => {
   try {
-    breadCrumbsLaximo();
-    breadCrumbsLaximo = null;
-  } catch(e) {
-    console.log(e.message)
+    const ul = document.querySelector('.path'),
+      li = ul.childNodes[0].cloneNode(true);
+
+    li.childNodes[0].childNodes[0].textContent = text;
+    li.childNodes[0].title = text;
+    li.childNodes[0].href = href;
+    ul.insertBefore(li, ul.childNodes[1]);
+
+    ul.childNodes[1].childNodes[0].childNodes[1].setAttribute('content', '1');
+    ul.childNodes[2].childNodes[1].setAttribute('content', '2');
+  } catch({message}) {
+    console.log(message);
   }
 };
-
-function breadCrumbsTecDoc() {
-  let ul = document.querySelector('.path'),
-    li = ul.childNodes[0].cloneNode(true);
-
-  li.childNodes[0].childNodes[0].textContent = 'Каталог неоригинальных запчастей';
-  li.childNodes[0].title = 'Каталог неоригинальных запчастей';
-  li.childNodes[0].href = '/car_base.html';
-  ul.insertBefore(li, ul.childNodes[1]);
-
-  ul.childNodes[1].childNodes[0].childNodes[1].setAttribute('content', '1');
-  ul.childNodes[2].childNodes[1].setAttribute('content', '2');
-}
-
-if(hrefChecker.tecdcocBreadCrumbs()) {
-  breadCrumbsTecDoc();
-  breadCrumbsTecDoc = null;
-}
-
-function breadCrumbsAutoChooser() {
-  let ul = document.querySelector('.path'),
-    li = ul.childNodes[0].cloneNode(true);
-
-  li.childNodes[0].childNodes[0].textContent = 'Быстрый подбор автомобиля';
-  li.childNodes[0].title = 'Быстрый подбор автомобиля';
-  li.childNodes[0].href = '/fast-auto-chooser';
-  ul.insertBefore(li, ul.childNodes[1]);
-
-  ul.childNodes[1].childNodes[0].childNodes[1].setAttribute('content', '1');
-  ul.childNodes[2].childNodes[1].setAttribute('content', '2');
-};
-
-if(hrefChecker.autoChooser()) {
-  breadCrumbsAutoChooser();
-  breadCrumbsAutoChooser = null;
-};
-//Заменяет ссылку в каталогах (по умолчанию неправильная стоит)
-// (function() {
-//   let ul = document.querySelector('.b-bsd-cat .b-bsd-cat-popup .b-list').children;
-//
-//   for(let i = 0; i < ul.length; ++i) {
-//     if(ul[i].children[0].textContent === 'Масла и Автохимия') {
-//       ul[i].children[0].href = '/catalogs/vse-katalogi-masla-i-avtohimiya.html';
-//     }
-//   }
-// })();
-
-(function() { //menu
-  if (innerWidth > 768) return;
-
+/**
+ * creates few points in mobile menu
+ * @returns {void}
+ */
+const mobileMenuReconstruct = () => {
   const ul = $('.header-wrapper .b-tsd-nav-list');
 
   ul.prepend(
@@ -221,7 +175,126 @@ if(hrefChecker.autoChooser()) {
     <li>
       <a href="/catalog/to.html">Каталог ТО</a>
     </li>`);
-})();
+};
+const scrollLaximo = () => {
+  const scrolling = () => {
+    const scrollingHeight = document.body.offsetTop;
+    $('html,body').animate({scrollTop: scrollingHeight}, 500);
+  }
+
+  const listWithElementsToScroll = document.querySelector('.lx-sbm-list');
+
+  listWithElementsToScroll.addEventListener('click', ({target}) => {
+    const availableElements = ['li', 'em', 'img'];
+    if (availableElements.includes(target.localName)) scrolling();
+  })
+};
+const setDiscounts = () => {
+  const goodiesWrapper = document.querySelector('.b-prod-carousel .slick-list .slick-track');
+  const goodies = [...goodiesWrapper.querySelectorAll('.slick-slide')];
+
+  goodies.forEach(goodie => {
+    const oldPrice = goodie.children[1].children[1];
+    const newPrice = oldPrice.cloneNode(true);
+    let temp;
+
+    temp = parseInt(newPrice.textContent);
+    temp = Math.ceil(temp * 1.07);
+    temp = temp.toLocaleString();
+
+    newPrice.textContent = `${temp}.0 p`;
+    newPrice.style.textDecoration = 'red line-through';
+    oldPrice.textContent = `${parseInt(oldPrice.textContent).toLocaleString()}.0 p`;
+
+    goodie.children[1].insertBefore(newPrice, oldPrice);
+  });
+};
+const contactsLinkChanger = () => {
+  let contactsLink = '';
+  const headerNavLinks = [...document.querySelectorAll('.b-tsd-nav-list > li a')];
+
+  headerNavLinks.forEach(({textContent, href}) => {
+    if (textContent === 'Контакты')
+      document.querySelector('.fast-menu-tabs__li-first-level:last-of-type a').href = href;
+  });
+};// changes link kontakty in self-made menu
+/**
+ * sets city name in header
+ */
+window.userCityHandler = (evt, {cityName, cityId} = {}) => {
+  const cityNameWrapper = document.querySelector('a.b-tsd-city-link');
+  try {
+    const w = () => {
+      w.setTextCityName = (cityName = '') => {
+        cityName = cityName || getCookie('deliveryAddress') || YMaps.location.city;
+        cityNameWrapper.textContent = cityName;
+
+        return w;
+      };
+      w.setCookieCityId = (cityId = '28') => {
+        saveCookie('region_id', cityId);
+
+        return w;
+      };
+
+      return w;
+    };
+
+    w()
+      .setTextCityName(cityName)
+      .setCookieCityId(cityId);
+
+  } catch({message}) {
+    console.log(message);
+  }
+};
+const closeLoginMenu = () => document.querySelector('.b-enter-link').click(); // close reg form (mini-form)
+const mobileMenuController = () => {
+  const openButton = document.querySelector('.mobile-menu');
+  const closeButton = document.querySelector('.b-tsd-tb__close');
+
+  const popupController = () => {
+    const $menu = $('.b-tsd-tb');
+    if ($menu.css('display') === 'none') {
+      $menu.slideDown(500);
+      $menu.css({'display' : 'flex'});
+      return;
+    }
+
+    $menu.slideUp(500);
+  };
+  openButton.addEventListener('click', popupController);
+  closeButton.addEventListener('click', popupController);
+}; // header menu controller (popup open / close)
+
+if (hrefChecker.laximoBreadcrumbs())
+  createBreadCrumbs('Оригинальные каталоги', '/laximo');
+if (hrefChecker.tecdcocBreadCrumbs())
+  createBreadCrumbs('Каталог неоригинальных запчастей', '/car_base.html');
+if (hrefChecker.autoChooser())
+  createBreadCrumbs('Быстрый подбор автомобиля', '/fast-auto-chooser');
+if (window.innerWidth < 768)
+  mobileMenuReconstruct();
+  mobileMenuController();
+if (hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling())
+  scrollLaximo();
+if (hrefChecker.mainPage())
+  document.addEventListener('DOMContentLoaded', () => setTimeout(setDiscounts, 0));
+
+contactsLinkChanger();
+window.userCityHandler();
+document.querySelector('.main-popup-reg__close').addEventListener('click', closeLoginMenu);
+
+//Заменяет ссылку в каталогах (по умолчанию неправильная стоит)
+// (function() {
+//   let ul = document.querySelector('.b-bsd-cat .b-bsd-cat-popup .b-list').children;
+//
+//   for(let i = 0; i < ul.length; ++i) {
+//     if(ul[i].children[0].textContent === 'Масла и Автохимия') {
+//       ul[i].children[0].href = '/catalogs/vse-katalogi-masla-i-avtohimiya.html';
+//     }
+//   }
+// })();
 
 //mobileCatalogsReplacer()
 // (function() {
@@ -267,25 +340,6 @@ if(hrefChecker.autoChooser()) {
 //     }
 //   });
 // })();
-
-
-if(hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling()) {
-  (function() { //scrollLaximo
-    function scrolling() {
-      let scrollingHeight = document.body.offsetTop;
-      $('html,body').animate({scrollTop: scrollingHeight}, 500);
-    }
-
-    const listWithElementsToScroll = document.querySelector('.lx-sbm-list');
-
-    listWithElementsToScroll.addEventListener('click', (evt) => {
-      const target = evt.target.localName === 'li' || evt.target.localName === 'em' || evt.target.localName === 'img';
-    if(target) {
-      scrolling();
-    }
-  })
-  })();
-}
 
 // if (hrefChecker.bigService()) {
 //   (function() { //bigServiceFormEditor
@@ -435,33 +489,7 @@ if(hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling()) {
 //   document.addEventListener('scroll', onScrollingPage);
 // })();
 
-document.addEventListener('DOMContentLoaded', function() {
-  if(hrefChecker.mainPage()) {
-    (function() {
-      const goodies = document.querySelectorAll('.slick-list .b-item');
 
-      for(const goodie of goodies) {
-        let oldPrice = goodie.children[1].children[1],
-          newPrice = oldPrice.cloneNode(true),
-          temp;
-
-        temp = parseInt(newPrice.textContent);
-        temp = Math.ceil(temp * 1.07);
-        temp = temp.toLocaleString();
-
-        newPrice.textContent = `${temp}.0 p`;
-
-        newPrice.style.textDecoration = 'red line-through';
-
-
-        oldPrice.textContent = `${parseInt(oldPrice.textContent).toLocaleString()}.0 p`;
-
-        goodie.children[1].insertBefore(newPrice, oldPrice);
-      }
-    })();
-  }
-  ;
-});
 
 (function() {
   const isCookieAgreement = getCookie('cookiePolicyAccept');
@@ -522,20 +550,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // })();
 
 /**
- * @return {number}
- */
-(function() { //metrika onChatClick
-  document.addEventListener('load', (evt) => {
-    const jsChat = document.querySelectorAll('jdiv')[1];
-
-    jsChat.addEventListener('click', (evt) => {
-      ym(49968697, 'reachGoal', 'onChatClick');
-    return true;
-    });
-  });
-})();
-
-/**
  * @return {{void}}
  * changes button 'Подбор по Вин' in header for mobiles
  * changes text and link
@@ -549,8 +563,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //   }
 // })();
 
-//(function(){document.querySelector('.fast-menu-tabs__ul-first-level').classList.remove('hidden')}());
-
 const liFirstLevel = document.querySelectorAll('.fast-menu-tabs__li-first-level'),
   liSecondLevel = document.querySelectorAll('.fast-menu-tabs__li-second-level'),
   liThirdLevel = document.querySelectorAll('.fast-menu-tabs__li-third-level'),
@@ -558,55 +570,47 @@ const liFirstLevel = document.querySelectorAll('.fast-menu-tabs__li-first-level'
 
 /**
  *
- * @param InsideUls
- * @param evt
+ * @param InsideUls {HTMLSelector}
+ * @param evt {EventListenerObject}
  */
-function liSwitcher(InsideUls, evt) {
+const liSwitcher = (InsideUls, evt) => {
   evt.stopPropagation();
+  const {target, currentTarget} = evt;
+  const child = target.children ? target.children[0] : null;
 
   /**
    * onClickLocationAssigner -> makes div redirect
    * get link from a children li
-   * @return {void}
    */
-  (function() {
-    if(!evt.target.children[0] || !(evt.target.children[0].localName === 'a')) {
-      return;
-    }
+  debugger;
+  if (child && child.localName === 'a')
+    document.location.assign(child.href);
 
-    const moveTo = evt.target.children[0].href;
-    document.location.assign(moveTo);
-  })();
-
-  const allInsideUls = document.querySelectorAll(InsideUls),
-    currentInsideUl = evt.currentTarget.querySelector(InsideUls);
+  const allInsideUls = [...document.querySelectorAll(InsideUls)];
+  const currentInsideUl = currentTarget.querySelector(InsideUls);
   let currentSecondUlStatus;
 
-  if(currentInsideUl == null) {
+  if (currentInsideUl === null)
     currentSecondUlStatus = false;
-  } else {
+  else
     currentSecondUlStatus = currentInsideUl.classList.contains('hidden');
-  }
 
-  Array.from(allInsideUls)
-    .forEach(el => el.classList.add('hidden'));
+  allInsideUls.forEach(el => el.classList.add('hidden'));
 
-
-  if(currentSecondUlStatus) {
+  if (currentSecondUlStatus)
     currentInsideUl.classList.remove('hidden');
-  }
-}
+};
 
 /**
- * @param elements {array}
- * @param callback {function}
+ * @param elements {Array}
+ * @param callback {Function}
  * @param param for callback
  */
-function eventListenerAdder(elements, callback, param) {
-  for(const li of elements) {
+const eventListenerAdder = (elements, callback, param) => {
+  for (const li of elements) {
     li.addEventListener('click', evt => param ? callback(param, evt) : evt[callback]());
   }
-}
+};
 
 eventListenerAdder(liFirstLevel, liSwitcher, '.fast-menu-tabs__ul-second-level');
 eventListenerAdder(liSecondLevel, liSwitcher, '.fast-menu-tabs__ul-third-level');
@@ -624,12 +628,8 @@ function closeAllActiveLi() {
 }
 
 document.addEventListener('click', closeAllActiveLi);
-document.addEventListener('keydown', (evt) => {
-  if(evt.keyCode !== 27) {
-  return;
-}
-
-closeAllActiveLi();
+document.addEventListener('keydown', ({keyCode}) => {
+  if (keyCode === 27) closeAllActiveLi();
 });
 
 /**
@@ -890,28 +890,7 @@ if (hrefChecker.mainPage()) {
   });
 })(); */
 
-(function() {
-  $('.main-popup-reg__close').on('click', function() {
-    $('.b-popup-enter').hide();
-  });
-})(); // close reg form (mini-form)
-(function() {
-  const $openButton = $('.mobile-menu'),
-        $closeButton = $('.b-tsd-tb__close');
 
-  const popupController = () => {
-    const $menu = $('.b-tsd-tb');
-    if ($menu.css('display') === 'none') {
-      $menu.slideDown(500);
-      $menu.css({'display' : 'flex'});
-      return;
-    }
-
-    $menu.slideUp(500);
-  };
-  $openButton.on('click', popupController);
-  $closeButton.on('click', popupController)
-})(); // header menu controller (popup open / close)
 // (function() {
 //   const onDomContentLoaded = () => {
 //     const $enterLink = $('.b-enter-link');
@@ -927,45 +906,3 @@ if (hrefChecker.mainPage()) {
 //
 //   $(document).on('DOMContentLoaded', onDomContentLoaded);
 // })(); // login / registration buttons (in header search menu) controller
-(function() {
-  let contactsLink = '';
-   $('.b-tsd-nav-list > li a').each(function() {
-    if ($(this).text() === 'Контакты') contactsLink = $(this).attr('href');
-  });
-   if (contactsLink)
-     $('.fast-menu-tabs__li-first-level:last-of-type a').attr('href', contactsLink);
-})(); // changes link kontakty in self-made menu
-
-/**
- * sets city name in header
- */
-{
-  window.userCityHandler = (evt, {cityName, cityId} = {}) => {
-    const cityNameWrapper = document.querySelector('a.b-tsd-city-link');
-    try {
-      const w = () => {
-        w.setTextCityName = (cityName = '') => {
-          cityName = cityName || getCookie('deliveryAddress') || YMaps.location.city;
-          cityNameWrapper.textContent = cityName;
-
-          return w;
-        };
-        w.setCookieCityId = (cityId = '28') => {
-          saveCookie('region_id', cityId);
-
-          return w;
-        };
-
-        return w;
-      };
-
-      w()
-        .setTextCityName(cityName)
-        .setCookieCityId(cityId);
-
-    } catch({message}) {
-      console.log(message);
-    }
-  };
-  userCityHandler();
-}
