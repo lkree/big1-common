@@ -323,7 +323,7 @@ module.exports = (grunt) => {
 
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
-    preset: ['catalog-seo'],
+    preset: "users-styles",
     type: 'css',
   };
   const JS_SETTINGS = {
