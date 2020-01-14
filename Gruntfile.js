@@ -333,6 +333,8 @@ module.exports = (grunt) => {
   };
 
   /**
+   * creates paths in GruntFile configs
+   * wont work without this function
    * @param tasks {Array<String>}
    * @param preset {String}
    * @param type {'css' | 'js'}

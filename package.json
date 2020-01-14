@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-js": "grunt concat && grunt && grunt uglify",
-    "build-css": "grunt sass && grunt autoprefixer && grunt cssmin",
+    "build-js": "grunt js",
+    "build-css": "grunt scss",
     "build-img": "grunt imagemin && grunt tinypng"
   },
   "keywords": [],
