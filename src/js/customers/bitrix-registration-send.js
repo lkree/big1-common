@@ -1,8 +1,8 @@
 const form = document.querySelector('#new_customer');
 const onFormSubmit = (evt) => {
-  const formSubmitHandler = () => {
+  const w = () => {
     const _header = 'fields%5B';
-    let parsedData, sendData;
+    let parsedData, sendData, fastExit;
     const _escapeHtml = (text) => {
       const map = {
         '&': '&amp;',
@@ -22,9 +22,22 @@ const onFormSubmit = (evt) => {
 
       return text.replace(/[@ ]/g, (c) => map[c]);
     };
-    const handler = () => handler;
+    const getCookie = (name) => {
+      const matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+      ));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    };
 
-    handler.getUserInfo = () => {
+    w.checkRegion = () => {
+      const region = getCookie('region_id');
+      if (region !== '28' && region !== undefined)
+        fastExit = true;
+
+      return w;
+    };
+    w.getUserInfo = () => {
+      if (fastExit) return w;
       parsedData = [
         _escapeHtml(evt.target.querySelector('#customer_name').value) || '',
         _escapeHtml(evt.target.querySelector('#customer_contact_attributes_phone').value) || '',
@@ -32,9 +45,10 @@ const onFormSubmit = (evt) => {
         _escapeHtml(evt.target.querySelector('#customer_family_name').value) || '',
       ];
 
-      return handler;
+      return w;
     };
-    handler.handleInfo = () => {
+    w.handleInfo = () => {
+      if (fastExit) return w;
       const h = () => {
         let data;
         const _glueAll = (...args) => args.reduce((curr, prev) => curr + prev);
@@ -69,19 +83,21 @@ const onFormSubmit = (evt) => {
         .replaceChars()
         .prepareQuery();
 
-      return handler;
+      return w;
     };
-    handler.sendData = () => {
+    w.sendData = () => {
+      if (fastExit) return w;
       const xhr = new XMLHttpRequest;
       xhr.open('POST', 'https://avtodizel.bitrix24.ru/rest/391/8ttk4n73qu03obq6/crm.lead.add.json/');
       xhr.send(sendData);
 
-      return handler;
+      return w;
     };
 
-    return handler;
+    return w;
   };
-  formSubmitHandler()
+  w()
+    .checkRegion()
     .getUserInfo()
     .handleInfo()
     .sendData()

@@ -1,6 +1,31 @@
 'use strict';
 
 const href = window.location.href.split('/');
+const getCookie = (name) => {
+  const matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+};
+const saveCookie = (name, value) => {
+  const options = {
+    path: '/',
+    secure: true,
+    'max-age': new Date(Date.now() + 86400e5),
+  };
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (const optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    const optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+};
 
 /**
  * @return {void}
@@ -439,13 +464,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 (function() {
-  function getCookie(name) {
-    const matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
-
   const isCookieAgreement = getCookie('cookiePolicyAccept');
 
   if(!isCookieAgreement) {
@@ -914,5 +932,40 @@ if (hrefChecker.mainPage()) {
    $('.b-tsd-nav-list > li a').each(function() {
     if ($(this).text() === 'Контакты') contactsLink = $(this).attr('href');
   });
-   if (contactsLink) $('.fast-menu-tabs__li-first-level:last-of-type a').attr('href', contactsLink);
+   if (contactsLink)
+     $('.fast-menu-tabs__li-first-level:last-of-type a').attr('href', contactsLink);
 })(); // changes link kontakty in self-made menu
+
+/**
+ * sets city name in header
+ */
+{
+  window.userCityHandler = (evt, {cityName, cityId} = {}) => {
+    const cityNameWrapper = document.querySelector('a.b-tsd-city-link');
+    try {
+      const w = () => {
+        w.setTextCityName = (cityName = '') => {
+          cityName = cityName || getCookie('deliveryAddress') || YMaps.location.city;
+          cityNameWrapper.textContent = cityName;
+
+          return w;
+        };
+        w.setCookieCityId = (cityId = '28') => {
+          saveCookie('region_id', cityId);
+
+          return w;
+        };
+
+        return w;
+      };
+
+      w()
+        .setTextCityName(cityName)
+        .setCookieCityId(cityId);
+
+    } catch({message}) {
+      console.log(message);
+    }
+  };
+  userCityHandler();
+}

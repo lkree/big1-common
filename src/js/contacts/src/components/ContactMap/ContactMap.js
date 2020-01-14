@@ -609,6 +609,8 @@ export default class ContactMap extends React.Component {
       };
       w.chooseCity = () => {
         this.chooseCity(target.textContent);
+
+        return w;
       };
       w.refreshHeader = () => {
         window.userCityHandler({

@@ -120,6 +120,17 @@ table.logo-table td div.logotype {
   position: relative
 }
 
+.b-msd-contact {
+  flex-grow: 1;
+  height: 50px;
+  background: url(/images/another-images/main-header-preview/new-year.png) center no-repeat;
+  background-size: 800px auto;
+  bottom: 11px;
+}
+.b-msd-contact .header-info {
+  display: none;
+}
+
 .b-promo-tms {
   margin-top: 40px
 }
@@ -269,9 +280,13 @@ table.logo-table td div.logotype {
   display: block
 }
 
-//.b-tsd-city-link {
-//  background: url(/images/design/locationMarker.png) no-repeat 10px 0
-//}
+.b-tsd-city-link {
+  //background: url(/images/design/locationMarker.png) no-repeat 10px 0
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .b-tsd-tb {
   display: flex;
@@ -635,7 +650,7 @@ table.logo-table td div.logotype {
   background-color: #ad1318
 }
 
-.b-btn-add2b::after, .basket-form-inline::after {
+.b-btn-add2b::after {
   content: 'Купить';
   position: absolute;
   top: 8px;
