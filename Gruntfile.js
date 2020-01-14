@@ -1,19 +1,11 @@
-module.exports = function(grunt) {
+module.exports = (grunt) => {
 
   const imagemin = require('imagemin');
   const imageminJpegtran = require('imagemin-jpegtran');
   const imageminGifsicle = require('imagemin-gifsicle');
   const imageminOptipng = require('imagemin-optipng');
   const imageminSvgo = require('imagemin-svgo');
-
-  const SCSS_SETTINGS = {
-    tasks: ['sass', 'autoprefixer', 'cssmin'],
-    preset: ['catalog-seo'],
-  };
-  const JS_SETTINGS = {
-    tasks: ['concat', 'babel', 'uglify'],
-    preset: ['mainPage'],
-  };
+  require("load-grunt-tasks")(grunt);
 
   const paths = {
     sass: {
@@ -329,6 +321,15 @@ module.exports = function(grunt) {
     }
   };
 
+  const SCSS_SETTINGS = {
+    tasks: ['sass', 'autoprefixer', 'cssmin'],
+    preset: ['catalog-seo'],
+  };
+  const JS_SETTINGS = {
+    tasks: ['concat', 'babel', 'uglify'],
+    preset: 'mainPage',
+  };
+
   /**
    *
    * @param tasks {Array<String>}
@@ -353,8 +354,6 @@ module.exports = function(grunt) {
     grunt.initConfig(config);
     return tasks;
   };
-
-  require("load-grunt-tasks")(grunt);
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify-es');
