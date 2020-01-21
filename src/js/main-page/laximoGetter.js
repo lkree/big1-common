@@ -1,6 +1,12 @@
 'use strict';
 
+const cities = {
+  41: 'Ярославль, ул. Урицкого 47а',
+  28: 'Ярославль, ул. Полушкина роща 16Л',
+  37: 'г. Екатеринбург, Железнодорожный район (Старая сортировка), ул.Билимбаевская, д.4',
+};
 const href = window.location.href.split('/');
+const isLoggedIn = !!document.querySelector('.b-link-perscab');
 const getCookie = (name) => {
   const matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -26,6 +32,9 @@ const saveCookie = (name, value) => {
 
   document.cookie = updatedCookie;
 };
+const params = location.href.split('?')[1];
+const paramId = new URLSearchParams(params).get('id');
+
 
 /**
  * @return {void}
@@ -266,7 +275,15 @@ const mobileMenuController = () => {
   openButton.addEventListener('click', popupController);
   closeButton.addEventListener('click', popupController);
 }; // header menu controller (popup open / close)
+const setCity = (id) => {
+  if (isLoggedIn) return;
+  saveCookie('region_id', id);
+  saveCookie('deliveryAddress', cities[id]);
+  location.assign('/');
+};
 
+if (paramId)
+  setCity(paramId);
 if (hrefChecker.laximoBreadcrumbs())
   createBreadCrumbs('Оригинальные каталоги', '/laximo');
 if (hrefChecker.tecdcocBreadCrumbs())
@@ -280,10 +297,12 @@ if (hrefChecker.laximoMainPage() || hrefChecker.laximoScrolling())
   scrollLaximo();
 if (hrefChecker.mainPage())
   document.addEventListener('DOMContentLoaded', () => setTimeout(setDiscounts, 0));
+if (!isLoggedIn)
+  document.querySelector('.main-popup-reg__close').addEventListener('click', closeLoginMenu);
 
 contactsLinkChanger();
-window.userCityHandler();
-document.querySelector('.main-popup-reg__close').addEventListener('click', closeLoginMenu);
+document.addEventListener('load', window.userCityHandler);
+
 
 //Заменяет ссылку в каталогах (по умолчанию неправильная стоит)
 // (function() {

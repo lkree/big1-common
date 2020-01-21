@@ -12,26 +12,10 @@ $height: 595px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  position: fixed;
   max-height: $height;
   min-width: $min-width;
   height: $height;
   overflow: hidden;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.delivery-selfExport__close {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  background: url(https://big1.ru/images/another-images/icons/close-icon.png) no-repeat;
-}
-.delivery-selfExport__close:hover {
-  background: url(https://big1.ru/images/another-images/icons/close-icon--red.png) no-repeat;
-  cursor: pointer;
 }
 .delivery-selfExport__error {
   z-index: 10;
@@ -130,34 +114,6 @@ $height: 595px;
 .delivery-selfExport__city:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-.delivery-selfExport__confirm {
-  position: absolute;
-  height: 70px;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-.delivery-selfExport__confirm-btn {
-  width: 120px;
-  height: 40px;
-  background-color: #ad1318;
-  color: #fff;
-  border: 0;
-  border-radius: 3px;
-}
-.delivery-selfExport__confirm-btn:hover {
-  cursor: pointer;
-}
-.delivery-selfExport__confirm-btn--deactive {
-  background-color: #cecece;
-}
-.delivery-selfExport__confirm-btn--deactive:hover {
-  cursor: default;
 }
 .delivery-selfExport__wait-screen {
   width: 100%;

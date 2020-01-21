@@ -122,6 +122,14 @@ module.exports = (grunt) => {
           src: 'build/js/basket-delivery-page-script.js',
           dest: 'build/js/basket-delivery-page-script.js'
       },
+      customers: {
+          src: 'build/js/customers-script.js',
+          dest: 'build/js/customers-script.js'
+      },
+      citiesList: {
+        src: 'build/js/cities-list.js',
+        dest: 'build/js/cities-list.js'
+      },
     },
     babel: {
       mainPage: {
@@ -167,6 +175,14 @@ module.exports = (grunt) => {
       basketDelivery: {
         src: 'build/js/basket-delivery-page-script.js',
         dest: 'build/js/basket-delivery-page-script.js'
+      },
+      customers: {
+        src: 'build/js/customers-script.js',
+        dest: 'build/js/customers-script.js'
+      },
+      citiesList: {
+        src: 'build/js/cities-list.js',
+        dest: 'build/js/cities-list.js'
       },
     },
     concat: {
@@ -224,12 +240,20 @@ module.exports = (grunt) => {
       },
       basketDelivery: {
         src: [
-          'src/js/delivery-pickup/delivery-pickup.js',
-          'src/js/delivery-selfExport/delivery-selfExport.js',
-          'src/js/shiptor-points-getter/shiptor-points-getter.js',
-          'src/js/basket-delivery/basket-delivery.js',
+          'src/js/basket/shiptor-points-getter/shiptor-points-getter.js',
+          'src/js/basket/delivery-pickup/delivery-pickup.js',
+          'src/js/basket/delivery-selfExport/delivery-selfExport.js',
+          // 'src/js/basket/basket-delivery/basket-delivery.js',
         ],
         dest: 'build/js/basket-delivery-page-script.js'
+      },
+      customers: {
+        src: 'src/js/customers/bitrix-registration-send.js',
+        dest: 'build/js/customers-script.js'
+      },
+      citiesList: {
+        src: 'src/js/data/citiesList.js',
+        dest: 'build/js/cities-list.js'
       },
     }
   };
@@ -269,7 +293,7 @@ module.exports = (grunt) => {
     },
     concat: {
       options: {
-        separator: ';',
+        separator: ';\n',
       },
       target: {
       },
@@ -323,13 +347,13 @@ module.exports = (grunt) => {
 
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
-    preset: "users-styles",
     type: 'css',
+    preset: "contacts",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
-    preset: 'mainPage',
     type: 'js',
+    preset: 'basketDelivery',
   };
 
   /**

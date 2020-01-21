@@ -31,7 +31,7 @@ const onFormSubmit = (evt) => {
 
     w.checkRegion = () => {
       const region = getCookie('region_id');
-      if (region !== '28' && region !== undefined)
+      if (region === '41') //region !== '28' && region !== undefined
         fastExit = true;
 
       return w;
