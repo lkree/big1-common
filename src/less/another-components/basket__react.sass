@@ -1,0 +1,143 @@
+$border-main-color: #c1c1c1
+$main-color: #1c4254
+$main-secondary-color: #ad1318
+$arrow-background: url(/images/design/basket/icons/nav-arrow.svg) no-repeat
+$text-size: 14px
+
+@mixin blockHeader($withTopPadding: false)
+  @if $withTopPadding
+    padding-top: 15px
+  border-top: 1px solid $border-main-color
+
+
+.basket__stages
+  @include blockHeader
+.basket__progress-header
+  display: flex
+  margin: 15px 0
+
+.basket__progress-header-item
+  border: 1px solid $border-main-color
+    radius: 5px
+  padding: 5px 10px
+  position: relative
+  margin-right: 30px
+
+  &::before
+    content: ''
+    position: absolute
+    right: -23px
+    top: 5px
+    width: 15px
+    height: 15px
+    background: $arrow-background
+      size: contain
+
+  &:last-child::before
+    display: none
+
+  &:hover
+    cursor: default
+
+.basket__progress-header-item--without-before
+  ::before
+    display: none
+.basket__progress-header-item--active
+  color: #fff
+  background-color: $main-secondary-color
+
+.basket__react-stage-header
+  @include blockHeader(true)
+  font-size: 16px
+  margin-bottom: 15px
+
+.basket__react-bottom-panel
+  display: flex
+  justify-content: space-between
+  padding: 15px 5px
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, rgba(235,239,238,1) 10%, rgba(235,239,238,1) 90%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%)
+  border:
+    top: 1px solid $border-main-color
+    bottom: 1px solid $border-main-color
+
+.basket__react-bottom-info
+  display: flex
+  align-items: center
+
+  &:hover
+    cursor: default
+.basket__react-bottom-info-item
+  padding-left: 25px
+  margin: 0 0 0 10px
+  color: #000
+  font-size: $text-size
+
+.basket__react-bottom-info-item--products
+  background: url(/images/design/basket/icons/wheel.svg) no-repeat
+  background-size: contain
+
+.basket__react-bottom-info-item--delivery
+  background: url(/images/design/basket/icons/box.svg) no-repeat 8px 0
+  padding-left: 30px
+  position: relative
+
+  &::before
+    content: ''
+    position: absolute
+    width: 1px
+    height: 15px
+    top: 1px
+    left: 0
+    background-color: $border-main-color
+
+.basket__react-bottom-info-item-mark
+  border-bottom: 1px solid $main-color
+
+.basket__react-bottom-nav
+  display: flex
+
+.basket__react-bottom-nav-btn
+  border: 1px solid $main-secondary-color
+    radius: 5px
+  text-align: left
+  height: 30px
+  background-color: #fff
+  padding: 5px 10px 5px 5px
+  display: flex
+  justify-content: space-between
+  font-size: $text-size
+  margin-right: 20px
+
+  &:nth-child(1)
+    flex-direction: row-reverse
+    padding: 5px 5px 5px 10px
+
+  &:hover
+    cursor: pointer
+.basket__react-bottom-nav-btn-text
+
+.basket__react-bottom-nav-btn-arrow
+  background: $arrow-background
+    position: 60% center
+    size: 14px
+  height: 14px
+  width: 14px
+  margin-left: 10px
+
+.basket__react-bottom-nav-btn:nth-child(1) .basket__react-bottom-nav-btn-arrow
+  transform: rotate(180deg)
+  margin: 0 10px 0 0
+.basket__react-bottom-message
+  display: flex
+  justify-content: flex-end
+  margin-top: 10px
+
+  &:hover
+    cursor: default
+.basket__react-bottom-message-text
+  border: 1px solid $main-secondary-color
+    radius: 5px
+  max-width: 400px
+  padding: 10px
+  color: $main-color
+  font-size: $text-size

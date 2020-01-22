@@ -12,6 +12,20 @@ window.deliveryPickup = () => {
   });
   const buttonHandler = (options) => {
     const h = {
+      saveAllCookie: (type, address, id, deadline, cost, city = '') => {
+        const cookieTypes = ['deliveryType', 'deliveryAddress', 'selfExportPointId', 'deliveryDeadline', 'deliveryCost', 'deliveryCity'];
+        const cookieValues = [type, address, id, deadline, cost, city];
+
+        cookieValues.forEach((v, i) => {
+          if (v === null) {
+            saveCookie(cookieTypes[i], '');
+            return;
+          }
+          if (!v) return;
+
+          saveCookie(cookieTypes[i], v);
+        });
+      },
       handleClass: (el, action, className) => el.classList[action](className),
       escapeHtml: (text) => {
         const map = {
@@ -152,7 +166,7 @@ window.deliveryPickup = () => {
         onSearchInput = _.debounce(onSearchInput, 300);
         onPointClick = (evt) => {
           const handle = (evt) => {
-            const target = evt.target;
+            const {target} = evt;
             let fastExit, prevEl, selected;
             const w = () => {
               w.setFastExit = (value) => {
@@ -175,6 +189,8 @@ window.deliveryPickup = () => {
                 localStorage.setItem('deliveryAddress', '');
                 localStorage.setItem('deliveryDate', '');
 
+                h.saveAllCookie(null, null, null, null, null);
+
                 return w;
               };
               w.clearChosenPoint = () => {
@@ -190,6 +206,8 @@ window.deliveryPickup = () => {
               };
               w.saveStorageInfo = () => {
                 u.saveStorageInfo(_chosenPointInfo);
+
+                h.saveAllCookie('pickup', _chosenPointInfo, '', '0', '0', _chosenPointInfo.split(',')[0]);
 
                 return w;
               };

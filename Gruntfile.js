@@ -130,6 +130,10 @@ module.exports = (grunt) => {
         src: 'build/js/cities-list.js',
         dest: 'build/js/cities-list.js'
       },
+      shiptor: {
+        src: 'build/js/shiptorPointsGetter.js',
+        dest: 'build/js/shiptorPointsGetter.js'
+      },
     },
     babel: {
       mainPage: {
@@ -183,6 +187,10 @@ module.exports = (grunt) => {
       citiesList: {
         src: 'build/js/cities-list.js',
         dest: 'build/js/cities-list.js'
+      },
+      shiptor: {
+        src: 'build/js/shiptorPointsGetter.js',
+        dest: 'build/js/shiptorPointsGetter.js'
       },
     },
     concat: {
@@ -254,6 +262,10 @@ module.exports = (grunt) => {
       citiesList: {
         src: 'src/js/data/citiesList.js',
         dest: 'build/js/cities-list.js'
+      },
+      shiptor: {
+        src: 'src/js/basket/shiptor-points-getter/shiptor-points-getter.js',
+        dest: 'build/js/shiptorPointsGetter.js'
       },
     }
   };
@@ -348,7 +360,7 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "contacts",
+    preset: "basket-delivery",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],

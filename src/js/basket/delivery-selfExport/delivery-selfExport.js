@@ -25,10 +25,11 @@ window.deliverySelfExport = () => {
   });
   const handler = (options) => {
     const h = {
-      setCookie: (type, address, id) => {
-        saveCookie('deliveryType', type);
-        saveCookie('deliveryAddress', address);
-        saveCookie('selfExportPointId', id);
+      saveAllCookie: (type, address, id, deadline, cost) => {
+        const cookieTypes = ['deliveryType', 'deliveryAddress', 'selfExportPointId', 'deliveryDeadline', 'deliveryCost'];
+        const cookieValues = [type, address, id, deadline, cost];
+
+        cookieValues.forEach((v, i) => saveCookie(cookieTypes[i], v));
       },
       checkAvailable: (el, substitute = '') => el || substitute,
       getText: (el) => el ? el.textContent : '',
@@ -197,6 +198,29 @@ window.deliverySelfExport = () => {
         localStorage.setItem('deliveryDate', h.getDataSet(module, 'deliveryPeriod'));
         localStorage.setItem('deliveryAddress', `delivery: ${chosenPoint} | ${courier}`);
       },
+      /**
+       * @param methods {Object}
+       * @returns {[number, number]}
+       */
+      convertDeliveryPeriod: ({ result: { methods } }) => {
+        let minDays;
+        let maxDays;
+        try {
+          minDays = methods[0].min_days;
+        } catch({ message }) {
+          console.log(message);
+          minDays = 0;
+        }
+        try {
+          maxDays = methods[0].max_days;
+        } catch({ message }) {
+          console.log(message);
+          maxDays = 0;
+        }
+
+
+        return [minDays, maxDays];
+      },
     }; //functions especially used for this module
     const module = ({ selfExportModule, pickupList, chosenCity, pickupSection, pickupSearchInput, JCShiptorWidgetPvz }) => {
       module.initiate = () => {
@@ -299,24 +323,11 @@ window.deliverySelfExport = () => {
                     .then((result) => s.setKladrId(result))
                     .then(() => window.JCShiptorWidgetPvz.hide())
                     .then(() => shiptorApi.calculateShipping())
-                    .then(({ result: { methods } }) => {
-                      let minDays;
-                      let maxDays;
-                      try {
-                        minDays = methods[0].min_days;
-                      } catch({ message }) {
-                        console.log(message);
-                        minDays = 0;
-                      }
-                      try {
-                        maxDays = methods[0].max_days;
-                      } catch({ message }) {
-                        console.log(message);
-                        maxDays = 0;
-                      }
-
-                      const supplyPeriod = +localStorage.getItem('supplyDate') || 0;
+                    .then(result => {
+                      const supplyPeriod = 0;
+                      const [minDays, maxDays] = u.convertDeliveryPeriod(result);
                       shippingDays = [minDays + supplyPeriod, maxDays + supplyPeriod];
+
                       h.setDataSet(selfExportModule, 'deliveryPeriod', maxDays || minDays);
                     })
                     .then(() => {
@@ -485,7 +496,7 @@ window.deliverySelfExport = () => {
                 h.setDataSet(selfExportModule, 'deliveryPoint', '');
                 h.clearStorage(['deliveryDate', 'deliveryAddress']);
 
-                h.setCookie('', '', '');
+                h.saveAllCookie('', '', '', '', '');
 
                 return helper;
               };
@@ -504,7 +515,7 @@ window.deliverySelfExport = () => {
               helper.setStorageInfo = () => {
                 u.saveStorageInfo(selfExportModule, _chosenPoint, _chosenCourier);
 
-                h.setCookie('selfExport', _chosenPoint, h.getDataSet(target, 'id'));
+                h.saveAllCookie('selfExport', _chosenPoint, h.getDataSet(target, 'id'), selfExportModule.dataset.deliveryPeriod, window.citiesList[0].price);
 
                 return helper;
               };

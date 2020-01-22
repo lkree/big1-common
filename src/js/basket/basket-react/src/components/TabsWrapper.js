@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {PickupTab} from "./PickupTab";
 import {SelfExportTab} from "./SelfexportTab";
 
-export const TabsWrapper = ({onTabClick, deliveryType}) => {
+export const TabsWrapper = ({onTabClick, deliveryType, ...rest}) => {
   const commonDeliveryProps = {
     pickup: {
       header: 'Офисы обслуживания',
@@ -23,19 +23,22 @@ export const TabsWrapper = ({onTabClick, deliveryType}) => {
     deliveryProps,
     onPickAnotherPointClick: setDeliveryProps,
     deliveryType,
+    ...rest
   };
   const tabClickHandler = (deliveryType) => {
     onTabClick(deliveryType);
     setDeliveryProps(commonDeliveryProps[deliveryType]);
   };
+  const pickupClassName = `basket__progress-header-item .basket__progress-header-item--without-before' ${isPickup ? 'basket__progress-header-item--active': ''}`;
+  const selfExportClassName = `basket__progress-header-item .basket__progress-header-item--without-before' ${isPickup ? '': 'basket__progress-header-item--active'}`;
   return (
     <>
       <ul>
         <li
-          className={isPickup ? 'basket__react-tab-active': ''}
+          className={pickupClassName}
           onClick={() => tabClickHandler('pickup')}>Самовывоз</li>
         <li
-          className={isPickup ? '': 'basket__react-tab-active'}
+          className={selfExportClassName}
           onClick={() => tabClickHandler('selfExport')}>Доставка</li>
       </ul>
       {

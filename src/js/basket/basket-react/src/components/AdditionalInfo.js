@@ -57,8 +57,13 @@ export const AdditionalInfo = () => {
     };
 
     const deliveryType = getCookie('deliveryType');
-    if (deliveryType === 'pickup') getPickUpData();
-    else getSelfExportData();
+
+    try {
+      if (deliveryType === 'pickup') getPickUpData();
+      else getSelfExportData();
+    } catch({message}) {
+      console.log(message);
+    }
   }, []);
 
   const {header, name, phone, schedule, mapLink} = data;

@@ -7,14 +7,24 @@ export const BottomInfo = ({deliveryType}) => {
         {
           text: totalPriceData.split(':')[0],
           value: totalPriceData.split(':')[1],
+          className: 'basket__react-bottom-info-item basket__react-bottom-info-item--products',
         },
         {
           text: 'Стоимость доставки',
           value: `${deliveryType === 'pickup' ? 0 : 350} р`, /* need to initialize variable (contacts and over delivery types, then synchronize*/
+          className: 'basket__react-bottom-info-item basket__react-bottom-info-item--delivery',
         }
       ];
 
-    return itemData.map(({text, value}, i) => <div key={i} className={'basket__react-bottom-info-item'}>{text}: <span className={'basket__react-bottom-info-item-mark'}>{value}</span></div>);
+    return itemData.map(({text, value, className}, i) => (
+      <div key={i} className={className}>
+          {text}:&nbsp;
+        <span className={'basket__react-bottom-info-item-mark'}>
+          {value}
+        </span>
+      </div>
+      )
+    );
   };
 
   return (

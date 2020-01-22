@@ -211,8 +211,55 @@ export default class ContactMap extends React.Component {
   PickupPointClickHandler = () => {
     const shiptorWidget = document.querySelector("#shiptor_widget_pvz");
 
-    shiptorWidget.addEventListener ('onPvzSelect', ({detail: {address, id, courier}}) => {
+    shiptorWidget.addEventListener ('onPvzSelect', ({detail: {address, id, shipping_days}}) => {
+      const setDeadline = () => {
+        const deadLine = parseInt(shipping_days);
+
+        if (deadLine)
+          this.saveCookie('deliveryDeadline', deadLine.toString());
+        else {
+          const city = document.querySelector('.contacts__city-button--active').textContent;
+          const shiptor = new ShiptorPointsGetter({usersCity: city, fromCity: '_'});
+          /**
+           * @param methods {Object}
+           * @returns {[number, number]}
+           */
+          const convertDeliveryPeriod = ({ result: { methods } }) => {
+            let minDays;
+            let maxDays;
+            try {
+              minDays = methods[0].min_days;
+            } catch({ message }) {
+              console.log(message);
+              minDays = 0;
+            }
+            try {
+              maxDays = methods[0].max_days;
+            } catch({ message }) {
+              console.log(message);
+              maxDays = 0;
+            }
+
+
+            return [minDays, maxDays];
+          };
+
+          shiptor
+            .getUsersCityKladr()
+            .then(() => {
+              shiptor
+                .calculateShipping()
+                .then(result => {
+                  const [minDays, maxDays] = convertDeliveryPeriod(result);
+                  this.saveCookie('deliveryDeadline', maxDays.toString() || minDays.toString() || '0');
+                })
+            })
+        }
+      };
+
+      setDeadline();
       this.saveCookie('deliveryAddress', address);
+      this.saveCookie('deliveryCost', window.citiesList[0].price);
       this.setSelfExportPointId(id);
     });
   };

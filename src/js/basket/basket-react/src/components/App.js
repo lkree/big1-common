@@ -9,6 +9,9 @@ export const App = () => {
     2: 'Способ доставки',
     3: 'Подтверждение заказа',
   };
+  const [nextButtonAvailable, setNextButtonAvailable] = useState({
+    available: false,
+  });
   const [deliveryType, setDeliveryType] = useState(getCookie('deliveryType') || 'pickup');
   const [step, setStep] = useState(2);
   const onNavButtonClick = (operation, step) => {
@@ -18,17 +21,23 @@ export const App = () => {
   };
   const currentScreen = (
       step === 2 ?
-      <SecondScreen header={headers[step]}
-                    onTabClick={(payload) => setDeliveryType(payload)}
-                    deliveryType={deliveryType}/> :
-      <ThirdScreen header={headers[step]}/>
+      <SecondScreen
+        header={headers[step]}
+        onTabClick={(payload) => setDeliveryType(payload)}
+        deliveryType={deliveryType}
+        setButtonState={setNextButtonAvailable}
+      /> :
+      <ThirdScreen
+        setButtonState={setNextButtonAvailable}
+        header={headers[step]}
+      />
     );
   return (
     <>
       {currentScreen}
       <BottomPanel
         onClick={payload => setStep(step => onNavButtonClick(payload, step))}
-        step={step} deliveryType={deliveryType}
+        step={step} deliveryType={deliveryType} buttonAvailable={nextButtonAvailable} setButtonState={setNextButtonAvailable}
       />
     </>
   )
