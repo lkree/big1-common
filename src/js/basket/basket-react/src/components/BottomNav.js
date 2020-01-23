@@ -5,9 +5,7 @@ export const BottomNav = ({step, onClick, buttonAvailable, setButtonState}) => {
   useEffect(() => {
     const isCookieOk = [getCookie('deliveryAddress'), getCookie('deliveryDeadline'), getCookie('deliveryCost'), getCookie('deliveryType')].every(el => !!el);
 
-    setButtonState({
-      available: isCookieOk
-    });
+    setButtonState(isCookieOk);
   }, []);
   const renderButtons = () => {
     const buttonsData = {
@@ -15,13 +13,13 @@ export const BottomNav = ({step, onClick, buttonAvailable, setButtonState}) => {
         text: ['Back To Basket', 'Next'],
         className: 'basket__react-bottom-nav-btn',
         onClick: [window.basketApi.returnToBasket, onClick.bind(null, 'add')],
-        available: [true, buttonAvailable.available],
+        available: [true, buttonAvailable],
       },
       3: {
         text: ['Prev', 'Оформить'],
         className: 'basket__react-bottom-nav-btn',
         onClick: [onClick.bind(null, 'sub'), (evt) => evt.preventDefault()],
-        available: [true, buttonAvailable.available],
+        available: [true, buttonAvailable],
       },
     };
     const buttonsCount = 2;

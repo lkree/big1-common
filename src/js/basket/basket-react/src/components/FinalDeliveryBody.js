@@ -5,8 +5,8 @@ export const FinalDeliveryBody = () => {
 
   return (
     <div className="basket__react-final-delivery-body">
-      <p>Адрес:</p>
-      <p>{getDeliveryPoint()}</p>
+      <p className={'basket__react-final-delivery-address-text'}>Адрес:</p>
+      <p className={'basket__react-final-delivery-address'}>{getDeliveryPoint()}</p>
     </div>
   )
 };

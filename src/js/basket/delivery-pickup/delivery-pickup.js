@@ -1,14 +1,29 @@
 window.deliveryPickup = () => {
+  const getDeliveryPoints = () => {
+    const obj = window.citiesList
+      .filter(city => city.branches)
+      .flatMap(({name, branches}) => branches)
+      .flatMap(({name}) => {
+        const [city] = name.split(', ');
+        const temp = name.split(', ');
+        temp.shift();
+        const address = temp.join(', ');
+        return [[city, address]];
+      });
+
+    return {
+      city: obj.map(el => el[0]),
+      address: obj.map(el => el[1]),
+    }
+  };
+  const deliveryPoints = getDeliveryPoints();
   const option = {
     pickupModule: document.querySelector('.delivery-pickup'),
   };
   const options = _.extend(option, {
     pointsWrapper: option.pickupModule.querySelector('.delivery-pickup__points-list'),
     input:  option.pickupModule.querySelector('.delivery-pickup__input'),
-    deliveryPoints: {
-      'city': ['Ярославль', 'Москва', 'Астрахань', 'Оренбург', 'Бузулук', 'Химки', 'Санкт-Петербург', 'Горький', 'Одесса', 'Мурманск', 'Алма-Ата'],
-      'address': ['Полушкина Роща 16Л', 'Пушкина 30', 'Власова 61б', 'Зелинского 10', 'Соловьёва 90', 'Babel 76', 'Fallout 77', 'Королёва 35', 'Бурмистрова 16', 'Сидорова 47/4', 'Кирова 11'],
-    },
+    deliveryPoints,
   });
   const buttonHandler = (options) => {
     const h = {

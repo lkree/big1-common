@@ -1,20 +1,39 @@
 $border-main-color: #c1c1c1
+$border-secondary-color: #616161
 $main-color: #1c4254
 $main-secondary-color: #ad1318
 $arrow-background: url(/images/design/basket/icons/nav-arrow.svg) no-repeat
-$text-size: 14px
+$text-size: 16px
 
-@mixin blockHeader($withTopPadding: false)
+div, p
+  cursor: default
+  font-size: $text-size
+  letter-spacing: 0.2px
+
+@mixin blockHeader($withTopPadding: false, $withTopBorder: true, $withFontSize: false, $withMargin: false, $withBottomBorder: false)
   @if $withTopPadding
     padding-top: 15px
-  border-top: 1px solid $border-main-color
+  @if $withTopBorder
+    border-top: 1px solid $border-main-color
+  @if $withBottomBorder
+    border-bottom: 1px solid $border-main-color
+  @if $withFontSize
+    font-size: 16px
+  @if $withMargin
+    margin-bottom: 15px
+
+@mixin ulStyle($type: none)
+  list-style: $type
+@mixin additionalItemBackground($url, $size: 14px)
+  background: url($url) no-repeat left top
+  background-size: 18px
 
 
-.basket__stages
-  @include blockHeader
 .basket__progress-header
   display: flex
-  margin: 15px 0
+  padding: 15px 0
+  @include ulStyle
+  @include blockHeader(false, true, false, false, true)
 
 .basket__progress-header-item
   border: 1px solid $border-main-color
@@ -37,19 +56,78 @@ $text-size: 14px
     display: none
 
   &:hover
-    cursor: default
+    cursor: pointer
 
 .basket__progress-header-item--without-before
-  ::before
+  margin-right: 15px
+
+  &::before
     display: none
+
 .basket__progress-header-item--active
   color: #fff
   background-color: $main-secondary-color
 
 .basket__react-stage-header
-  @include blockHeader(true)
-  font-size: 16px
+  @include blockHeader(true, false, true, true)
+
+.basket__tabs-wrapper
+  display: flex
+  @include ulStyle
   margin-bottom: 15px
+
+.basket__react-delivery-choose-header
+  @include blockHeader(false, false, true, true)
+
+.basket__react-delivery-choose-point
+  margin-bottom: 5px
+
+.basket__react-delivery-choose-pickAnotherPoint
+  border: none
+    bottom: 1px solid $border-secondary-color
+  color: $border-secondary-color
+  background: transparent
+
+  &:hover
+    cursor: pointer
+
+.basket__react-additional-info
+  margin: 15px 0
+  display: flex
+  flex-direction: column
+
+.basket__react-additional-info-header
+  @include blockHeader(false, false, true, true, true)
+
+.basket__react-additional-info-body
+  display: flex
+
+.basket__react-additional-info-left-part
+  display: flex
+  flex-direction: column
+  padding: 0 10px
+  max-width: 200px
+
+.basket__react-additional-info-right-part
+  flex-grow: 1
+
+.basket__react-additional-info-item
+  color: $border-secondary-color
+  border-bottom: 1px solid $border-main-color
+  padding: 0 0 5px 23px
+  margin: 0 0 5px 0
+
+  &:last-child
+    border: none
+
+.basket__react-additional-info-item--phone
+  @include additionalItemBackground('/images/design/basket/icons/phone.svg')
+
+.basket__react-additional-info-item--name
+  @include additionalItemBackground('/images/design/basket/icons/point.svg')
+
+.basket__react-additional-info-item--schedule
+  @include additionalItemBackground('/images/design/basket/icons/clock.svg')
 
 .basket__react-bottom-panel
   display: flex
@@ -59,13 +137,12 @@ $text-size: 14px
   border:
     top: 1px solid $border-main-color
     bottom: 1px solid $border-main-color
+  margin: 15px 0
 
 .basket__react-bottom-info
   display: flex
   align-items: center
 
-  &:hover
-    cursor: default
 .basket__react-bottom-info-item
   padding-left: 25px
   margin: 0 0 0 10px
@@ -73,11 +150,12 @@ $text-size: 14px
   font-size: $text-size
 
 .basket__react-bottom-info-item--products
-  background: url(/images/design/basket/icons/wheel.svg) no-repeat
-  background-size: contain
+  background: url(/images/design/basket/icons/wheel.svg) no-repeat left center
+  background-size: 17px
 
 .basket__react-bottom-info-item--delivery
-  background: url(/images/design/basket/icons/box.svg) no-repeat 8px 0
+  background: url(/images/design/basket/icons/box.svg) no-repeat 8px center
+  background-size: 17px
   padding-left: 30px
   position: relative
 
@@ -108,36 +186,98 @@ $text-size: 14px
   font-size: $text-size
   margin-right: 20px
 
-  &:nth-child(1)
+  &:first-child
     flex-direction: row-reverse
     padding: 5px 5px 5px 10px
 
   &:hover
     cursor: pointer
+
+  &:last-child
+    margin-right: 0
+
 .basket__react-bottom-nav-btn-text
 
 .basket__react-bottom-nav-btn-arrow
   background: $arrow-background
     position: 60% center
-    size: 14px
-  height: 14px
-  width: 14px
+    size: 15px
+  height: 19px
+  width: 15px
   margin-left: 10px
 
 .basket__react-bottom-nav-btn:nth-child(1) .basket__react-bottom-nav-btn-arrow
   transform: rotate(180deg)
   margin: 0 10px 0 0
+
 .basket__react-bottom-message
   display: flex
   justify-content: flex-end
-  margin-top: 10px
 
-  &:hover
-    cursor: default
 .basket__react-bottom-message-text
   border: 1px solid $main-secondary-color
     radius: 5px
   max-width: 400px
   padding: 10px
   color: $main-color
-  font-size: $text-size
+
+.basket__react-final-goods-header
+  border-bottom: 1px solid $border-main-color
+.basket__react-final-goods-header, .basket__react-final-goods-item, .basket__react-final-delivery-header, .basket__react-final-delivery-body, .basket__react-final-delivery-deadline, .basket__react-final-sum
+  display: flex
+  justify-content: space-between
+  margin-bottom: 10px
+
+.basket__react-final-goods-header-positions, .basket__react-final-delivery-header-type, .basket__react-final-delivery-address-text, .basket__react-final-delivery-deadline-text, .basket__react-final-message
+  font-weight: 700
+  font-size: 20px
+
+.basket__react-final-body
+  margin-top: 20px
+
+.basket__react-final-goods-item-link
+  flex-basis: 60%
+  overflow: hidden
+  text-overflow: ellipsis
+  padding-right: 10px
+
+.basket__react-final-goods-item-date, .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
+  flex-basis: 10%
+  padding-right: 10px
+  text-align: right
+
+  &:last-of-type
+    padding-right: 0
+
+@media (max-width: 768px)
+  .basket__react-additional-info-right-part
+    display: none
+
+  .basket__react-bottom-panel
+    flex-wrap: wrap
+
+  .basket__react-bottom-nav
+    margin-top: 15px
+    width: 100%
+    justify-content: flex-end
+
+@media (max-width: 550px)
+  .basket__react-bottom-info
+    flex-wrap: wrap
+
+  .basket__react-bottom-info-item
+    padding: 10px 15px 10px 25px
+
+    &::before
+      display: none
+
+  .basket__react-bottom-info-item--delivery
+    background-position: left center
+
+  .basket__react-delivery-strong
+    display: block
+    width: 100%
+
+@media (max-width: 360px)
+  .basket__react-bottom-panel
+    min-height: 200px

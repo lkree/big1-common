@@ -1,7 +1,9 @@
 import React, {useEffect} from "react";
 
 export const SelfExportModule = ({className}) => {
-  useEffect(() => window.deliverySelfExport());
+  useEffect(() => {
+    window.deliverySelfExport()
+  });
   return (
     <>
       <div className={`delivery-selfExport ${className}`}

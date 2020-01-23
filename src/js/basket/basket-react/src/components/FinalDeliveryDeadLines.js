@@ -5,8 +5,8 @@ export const FinalDeliveryDeadLines = () => {
 
   return (
     <div className={'basket__react-final-delivery-deadline'}>
-      <p>Срок доставки</p>
-      <p>{deadline} дн.</p>
+      <p className={'basket__react-final-delivery-deadline-text'}>Срок доставки</p>
+      <p className={'basket__react-final-delivery-deadline-days'}>{deadline} дн.</p>
     </div>
   )
 };

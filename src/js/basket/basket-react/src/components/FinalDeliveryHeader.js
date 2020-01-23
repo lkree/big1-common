@@ -14,8 +14,8 @@ export const FinalDeliveryHeader = () => {
 
   return (
     <header className="basket__react-final-delivery-header">
-      <p>{getDeliveryTypeMessage()}</p>
-      <p>{getDeliveryPriceMessage()}</p>
+      <p className="basket__react-final-delivery-header-type">{getDeliveryTypeMessage()}</p>
+      <p className="basket__react-final-delivery-header-price">{getDeliveryPriceMessage()}</p>
     </header>
   )
 };

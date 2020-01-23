@@ -1,8 +1,8 @@
 import React from "react";
 
 export const FinalGoodsHeader = () => {
-  const positionsNumber = window.basketApi.getPositionsNumber();
-  const totalSum = window.basketApi.getTotalSum();
+  const positionsNumber = parseInt(window.basketApi.getTotalPricesAndItems().replace('Итого ', '')); //temporary
+  const totalSum = window.basketApi.getItemsPrice();
   const getPositionsMessage = (positions) => {
     switch(true) {
       case positions.toString().slice(-1) === '1': return `${positions} позиция`;
@@ -13,8 +13,8 @@ export const FinalGoodsHeader = () => {
 
   return (
     <header className="basket__react-final-goods-header">
-      <p>{getPositionsMessage(positionsNumber)}</p>
-      <p>К оплате {totalSum} р.</p>
+      <p className="basket__react-final-goods-header-positions">{getPositionsMessage(positionsNumber)}</p>
+      <p className="basket__react-final-goods-header-price">На сумму {totalSum} р.</p>
     </header>
   )
 };

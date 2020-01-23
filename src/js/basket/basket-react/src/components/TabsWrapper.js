@@ -29,11 +29,11 @@ export const TabsWrapper = ({onTabClick, deliveryType, ...rest}) => {
     onTabClick(deliveryType);
     setDeliveryProps(commonDeliveryProps[deliveryType]);
   };
-  const pickupClassName = `basket__progress-header-item .basket__progress-header-item--without-before' ${isPickup ? 'basket__progress-header-item--active': ''}`;
-  const selfExportClassName = `basket__progress-header-item .basket__progress-header-item--without-before' ${isPickup ? '': 'basket__progress-header-item--active'}`;
+  const pickupClassName = `basket__progress-header-item basket__progress-header-item--without-before ${isPickup ? 'basket__progress-header-item--active': ''}`;
+  const selfExportClassName = `basket__progress-header-item basket__progress-header-item--without-before ${isPickup ? '': 'basket__progress-header-item--active'}`;
   return (
     <>
-      <ul>
+      <ul className={'basket__tabs-wrapper'}>
         <li
           className={pickupClassName}
           onClick={() => tabClickHandler('pickup')}>Самовывоз</li>

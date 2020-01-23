@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {AdditionalInfoItem} from "./AdditionalInfoItem";
 
 export const AdditionalInfo = () => {
   const [data, getData] = useState({
@@ -65,28 +66,31 @@ export const AdditionalInfo = () => {
       console.log(message);
     }
   }, []);
+  const renderItem = () => {
+    const data = {name, phone, schedule};
+    const dataKeys = Object.keys(data);
 
-  const {header, name, phone, schedule, mapLink} = data;
+    return dataKeys.map(k => data[k] ? <AdditionalInfoItem text={data[k]} className={k}/> : '')
+  };
+  const {header = '', name = '', phone = '', schedule = '', mapLink = ''} = data;
 
-  return (
+  return header && name || mapLink ? (
     <section className={'basket__react-additional-info'}>
-    <header className={'basket__react-additional-info__header'}>{header}</header>
-    <div className="basket__react-additional-info__body">
-      <div className="basket__react-additional-info__left-part">
-        <div className="basket__react-additional-info__name">{name}</div>
-        <div className="basket__react-additional-info__phone">{phone}</div>
-        <div className="basket__react-additional-info__schedule">{schedule}</div>
+    <header className={'basket__react-additional-info-header'}>{header}</header>
+    <div className="basket__react-additional-info-body">
+      <div className="basket__react-additional-info-left-part">
+        {renderItem()}
       </div>
       <div className="basket__react-additional-info-right-part">
         {
           mapLink ?
             <iframe src={mapLink}
                     width="100%"
-                    height="360"
+                    height="100%"
                     frameBorder="0"/> : ''
         }
       </div>
     </div>
   </section>
-  )
+  ) : ''
 };

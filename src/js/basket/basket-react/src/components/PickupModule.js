@@ -1,7 +1,9 @@
 import React, {useEffect} from "react";
 
 export const PickupModule = ({className}) => {
-  useEffect(() => window.deliveryPickup());
+  useEffect(() => {
+    window.deliveryPickup()
+  });
   return (
     <div className={`delivery-pickup ${className}`}
          data-delivery-type="Самовывоз">
