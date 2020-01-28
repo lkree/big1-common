@@ -1,24 +1,28 @@
 import React from "react";
+import useCookie from "../hooks/useCookie";
 
 export const DeliveryChooseWrapper = ({showPoint, deliveryProps, onPickAnotherPointClick, setButtonState}) => {
   const {header, linkText, showModule} = deliveryProps;
   const point = getCookie('deliveryAddress');
+  const [, setCookie] = useCookie([]);
   const onDeliveryChooseButtonClick = () => {
     onPickAnotherPointClick({...deliveryProps, showModule: !showModule});
+    !showModule && setCookie({
+      deliveryType: '',
+      deliveryAddress: '',
+      deliveryCost: '',
+      SelfExportPointId: '',
+      deliveryDeadline: '',
+    });
 
-    const checkState = () => {
-      const isCookieOk = [getCookie('deliveryAddress'), getCookie('deliveryDeadline'), getCookie('deliveryCost'), getCookie('deliveryType')].every(el => !!el);
-
-      setButtonState(isCookieOk);
-    };
-    checkState();
+    setButtonState(false);
   };
   const renderPoint = () => (
-    !showModule ?
+    !showModule &&
       <div className={'basket__react-delivery-choose-point'}>
         Текущий пункт выдачи:&nbsp;
         <strong className={'basket__react-delivery-strong'}>{point && showPoint ? point : 'не выбран'}</strong>
-        </div> : ''
+        </div>
   );
   return (
     <>

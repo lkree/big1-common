@@ -1,9 +1,26 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import ModuleNextButton from "./ModuleNextButton";
+import useModules from "../hooks/useModules";
 
-export const SelfExportModule = ({className}) => {
+export const SelfExportModule = ({className, setButtonState, onPickAnotherPointClick, deliveryProps}) => {
+  const [next, setNext] = useState(false);
+  const [active, getActive] = useModules(false);
+  const onListClick = ({target}) => {
+    getActive(target);
+    console.log(active);
+    if (target.classList.contains('delivery-pickup__point--active'))
+      setNext(true);
+   else setNext(false);
+  };
+  const onNextButtonClick = () => {
+    setButtonState(true);
+    const {showModule} = deliveryProps;
+    onPickAnotherPointClick({...deliveryProps, showModule: !showModule});
+  };
+
   useEffect(() => {
-    window.deliverySelfExport()
-  });
+    window.deliverySelfExport();
+  }, []);
   return (
     <>
       <div className={`delivery-selfExport ${className}`}
@@ -33,13 +50,8 @@ export const SelfExportModule = ({className}) => {
           <input type="text"
                  className="delivery-selfExport__pickup-search-input"
                  placeholder="Поиск пункта выдачи"/>
-            <ul className="delivery-selfExport__pickup-list"/>
-        </section>
-        <section className="delivery-selfExport__cities hidden">
-          <input type="text"
-                 className="delivery-selfExport__city-search-input"
-                 placeholder="Поиск города"/>
-            <ul className="delivery-selfExport__cities-list"/>
+            <ul onClick={onListClick} className="delivery-selfExport__pickup-list"/>
+            {next && <ModuleNextButton onClick={onNextButtonClick}/>}
         </section>
         <section className="delivery-selfExport__error hidden">
           <p className="delivery-selfExport__error-text">К сожалению пункты

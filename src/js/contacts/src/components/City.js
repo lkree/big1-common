@@ -3,11 +3,8 @@ import {CityButton} from "./CityButton";
 
 export const City = ({kladr_id, firstLetter, renderBranch, onClick, branches, ...rest}) => (
   <li key={kladr_id} className={'contacts__item'}>
-    {
-      firstLetter ?
-        <div className={'contacts__item-first-letter'}>{firstLetter}</div> :
-        undefined
-    }
+    {firstLetter &&
+        <div className={'contacts__item-first-letter'}>{firstLetter}</div>}
     {
       branches ?
         <CityButton {...rest} kladr_id={kladr_id} branches={branches} onClick={renderBranch}/> :

@@ -41,7 +41,7 @@ export const AdditionalInfo = () => {
                   getData( {
                     header: 'Контактная информация',
                     name,
-                    phone: phones[0] ? phones.reduce((prev, curr) => `${prev} + /n + ${curr}`) : '',
+                    phone: phones[0] && phones.reduce((prev, curr) => `${prev} + /n + ${curr}`),
                     schedule,
                     mapLink: '',
                   })
@@ -70,11 +70,11 @@ export const AdditionalInfo = () => {
     const data = {name, phone, schedule};
     const dataKeys = Object.keys(data);
 
-    return dataKeys.map(k => data[k] ? <AdditionalInfoItem text={data[k]} className={k}/> : '')
+    return dataKeys.map(k => data[k] && <AdditionalInfoItem text={data[k]} className={k}/>)
   };
   const {header = '', name = '', phone = '', schedule = '', mapLink = ''} = data;
 
-  return header && name || mapLink ? (
+  return ((header && name) || mapLink) && (
     <section className={'basket__react-additional-info'}>
     <header className={'basket__react-additional-info-header'}>{header}</header>
     <div className="basket__react-additional-info-body">
@@ -82,15 +82,13 @@ export const AdditionalInfo = () => {
         {renderItem()}
       </div>
       <div className="basket__react-additional-info-right-part">
-        {
-          mapLink ?
+        {mapLink &&
             <iframe src={mapLink}
                     width="100%"
                     height="100%"
-                    frameBorder="0"/> : ''
-        }
+                    frameBorder="0"/>}
       </div>
     </div>
   </section>
-  ) : ''
+  )
 };

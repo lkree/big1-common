@@ -13,7 +13,7 @@ export const PickupTab = ({deliveryType, ...rest}) => {
       {
         showModule ?
           <PickupModule {...rest}/> :
-          (showAdditionalInfo ? <AdditionalInfo/> : '')
+          (showAdditionalInfo && <AdditionalInfo/>)
       }
     </>
 )};

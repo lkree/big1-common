@@ -5,7 +5,7 @@ export const BottomInfo = () => {
     const totalPriceData = window.basketApi.getTotalPricesAndItems();
     const itemData = [
         {
-          text: totalPriceData.replace('Итого ', '').split(':')[0],
+          text: totalPriceData.split(':')[0],
           value: totalPriceData.split(':')[1],
           className: 'basket__react-bottom-info-item basket__react-bottom-info-item--products',
         },

@@ -192,7 +192,7 @@ export default class ContactMap extends React.Component {
   scrollToTop = () => {
     $('html,body').animate({scrollTop: 0}, 500);
   };
-  onBranchClick = ({target, target: {value, dataset: {city}}, id}) => {
+  onBranchClick = ({target: {value, dataset: {city}, id}}) => {
     this.setCityId(id);
     this.saveCookie('deliveryAddress', value);
     this.saveCookie('deliveryCity', city);
@@ -200,7 +200,7 @@ export default class ContactMap extends React.Component {
     this.renderBranch([]);
     this.chooseCity(city);
     this.disableActiveElement();
-    location.reload();
+    this.getBackToBasket() || location.reload();
   };
   setCityId = (id = this.baseCityId) => this.saveCookie('region_id', id);
   /**
@@ -208,10 +208,18 @@ export default class ContactMap extends React.Component {
    */
   setSelfExportPointId = (id) => this.saveCookie('selfExportPointId', id);
   saveDeliveryType = (deliveryType) => this.saveCookie('deliveryType', deliveryType);
+  getBackToBasket = () => {
+    if (sessionStorage.getItem('fromBasket')) {
+      sessionStorage.removeItem('fromBasket');
+      location.assign('/baskets');
+      return true;
+    }
+    else return false;
+  };
   PickupPointClickHandler = () => {
     const shiptorWidget = document.querySelector("#shiptor_widget_pvz");
 
-    shiptorWidget.addEventListener ('onPvzSelect', ({detail: {address, id, shipping_days}}) => {
+    shiptorWidget.addEventListener('onPvzSelect', ({detail: {address, id, shipping_days}}) => {
       const setDeadline = () => {
         const deadLine = parseInt(shipping_days);
 
@@ -261,6 +269,7 @@ export default class ContactMap extends React.Component {
       this.saveCookie('deliveryAddress', address);
       this.saveCookie('deliveryCost', window.citiesList[0].price);
       this.setSelfExportPointId(id);
+      this.getBackToBasket();
     });
   };
   componentDidMount() {

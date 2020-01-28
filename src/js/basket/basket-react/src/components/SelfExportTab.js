@@ -13,7 +13,7 @@ export const SelfExportTab = ({deliveryType, ...rest}) => {
       {
         showModule ?
           <SelfExportModule {...rest}/> :
-          (showAdditionalInfo ? <AdditionalInfo/> : '')
+          (showAdditionalInfo && <AdditionalInfo/>)
       }
     </>
   )

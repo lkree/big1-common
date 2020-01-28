@@ -465,6 +465,7 @@ window.deliverySelfExport = () => {
       
       eventListeners.create = () => {
         l.onChangeCity = () => {
+          sessionStorage.setItem('fromBasket', 'y');
           location.assign('/kontakty.html');
         };
         l.onPickupInput = _.partial(h.filterList, {

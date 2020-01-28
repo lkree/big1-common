@@ -234,12 +234,16 @@ div, p
 
 .basket__react-final-body
   margin-top: 20px
+.basket__react-final-goods-item-list
+  display: none
 
 .basket__react-final-goods-item-link
   flex-basis: 60%
   overflow: hidden
   text-overflow: ellipsis
   padding-right: 10px
+  &:hover
+    cursor: pointer
 
 .basket__react-final-goods-item-date, .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
   flex-basis: 10%
@@ -277,6 +281,11 @@ div, p
   .basket__react-delivery-strong
     display: block
     width: 100%
+  .basket__react-final-goods-item-date
+    display: none
+
+  .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
+    flex-basis: 20%
 
 @media (max-width: 360px)
   .basket__react-bottom-panel
