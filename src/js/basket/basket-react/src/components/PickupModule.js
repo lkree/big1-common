@@ -1,17 +1,28 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import ModuleNextButton from "./ModuleNextButton";
+import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
+import {DeliveryStatusContext} from "../context/DeliveryStatusContext";
 
-export const PickupModule = ({className, setButtonState, onPickAnotherPointClick, deliveryProps}) => {
+export const PickupModule = ({className}) => {
+  const [, updateStatus] = useContext(DeliveryStatusContext);
+  const [{pickup}, updateData] = useContext(DeliveryPropertiesContext);
   const [next, setNext] = useState(false);
+
   const onListClick = ({target}) => {
+    updateStatus();
+    updateData();
     target.classList.contains('delivery-pickup__point--active') ?
       setNext(true) :
       setNext(false);
   };
   const onNextButtonClick = () => {
-    setButtonState(true);
-    const {showModule} = deliveryProps;
-    onPickAnotherPointClick({...deliveryProps, showModule: !showModule});
+    const {showModule} = pickup;
+    updateData({
+      pickup: {
+        ...pickup,
+        showModule: !showModule
+      }
+    });
   };
 
   useEffect(() => {

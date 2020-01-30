@@ -1,33 +1,31 @@
-import React from "react";
-import useCookie from "../hooks/useCookie";
+import React, {useContext} from "react";
+import {DeliveryStatusContext} from "../context/DeliveryStatusContext";
+import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
 
-export const DeliveryChooseWrapper = ({showPoint, deliveryProps, onPickAnotherPointClick, setButtonState}) => {
-  const {header, linkText, showModule} = deliveryProps;
-  const point = getCookie('deliveryAddress');
-  const [, setCookie] = useCookie([]);
+export const DeliveryChooseWrapper = ({deliveryType}) => {
+  const [props, updateProps] = useContext(DeliveryPropertiesContext);
+  const currentProps = props[deliveryType];
+  const {showModule, header, linkText} = currentProps;
+  const [, getStatus] = useContext(DeliveryStatusContext);
+  const {deliveryAddress} = props;
   const onDeliveryChooseButtonClick = () => {
-    onPickAnotherPointClick({...deliveryProps, showModule: !showModule});
-    !showModule && setCookie({
-      deliveryType: '',
-      deliveryAddress: '',
-      deliveryCost: '',
-      SelfExportPointId: '',
-      deliveryDeadline: '',
-    });
-
-    setButtonState(false);
+    getStatus();
+    updateProps({[deliveryType]: {
+      ...currentProps,
+      showModule: !showModule
+    }});
   };
+
   const renderPoint = () => (
-    !showModule &&
       <div className={'basket__react-delivery-choose-point'}>
         Текущий пункт выдачи:&nbsp;
-        <strong className={'basket__react-delivery-strong'}>{point && showPoint ? point : 'не выбран'}</strong>
+        <strong className={'basket__react-delivery-strong'}>{deliveryType === props.deliveryType ? deliveryAddress : 'не выбран'}</strong>
         </div>
   );
   return (
     <>
       <header className={'basket__react-delivery-choose-header'}>{header}</header>
-      {renderPoint()}
+      {!showModule && renderPoint()}
       <button
         onClick={onDeliveryChooseButtonClick}
         className={'basket__react-delivery-choose-pickAnotherPoint'}

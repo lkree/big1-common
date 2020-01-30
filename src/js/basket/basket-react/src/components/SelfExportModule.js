@@ -1,21 +1,29 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import ModuleNextButton from "./ModuleNextButton";
-import useModules from "../hooks/useModules";
+import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
+import {DeliveryStatusContext} from "../context/DeliveryStatusContext";
 
-export const SelfExportModule = ({className, setButtonState, onPickAnotherPointClick, deliveryProps}) => {
+export const SelfExportModule = ({className}) => {
+  const [, updateStatus] = useContext(DeliveryStatusContext);
+  const [{selfExport}, updateData] = useContext(DeliveryPropertiesContext);
   const [next, setNext] = useState(false);
-  const [active, getActive] = useModules(false);
+
   const onListClick = ({target}) => {
-    getActive(target);
-    console.log(active);
-    if (target.classList.contains('delivery-pickup__point--active'))
-      setNext(true);
-   else setNext(false);
+    updateStatus();
+    updateData();
+    target.classList.contains('delivery-selfExport__pickup-point--active') ||
+    target.parentElement.classList.contains('delivery-selfExport__pickup-point--active') ?
+      setNext(true) :
+      setNext(false);
   };
   const onNextButtonClick = () => {
-    setButtonState(true);
-    const {showModule} = deliveryProps;
-    onPickAnotherPointClick({...deliveryProps, showModule: !showModule});
+    const {showModule} = selfExport;
+    updateData({
+      selfExport: {
+        ...selfExport,
+        showModule: !showModule
+      }
+    });
   };
 
   useEffect(() => {
@@ -50,8 +58,8 @@ export const SelfExportModule = ({className, setButtonState, onPickAnotherPointC
           <input type="text"
                  className="delivery-selfExport__pickup-search-input"
                  placeholder="Поиск пункта выдачи"/>
-            <ul onClick={onListClick} className="delivery-selfExport__pickup-list"/>
-            {next && <ModuleNextButton onClick={onNextButtonClick}/>}
+          <ul onClick={onListClick} className="delivery-selfExport__pickup-list"/>
+          {next && <ModuleNextButton onClick={onNextButtonClick}/>}
         </section>
         <section className="delivery-selfExport__error hidden">
           <p className="delivery-selfExport__error-text">К сожалению пункты

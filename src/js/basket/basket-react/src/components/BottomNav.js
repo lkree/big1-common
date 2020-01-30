@@ -1,22 +1,19 @@
-import React, {useEffect} from "react";
+import React, {useContext} from "react";
 import {BottomNavButton} from "./BottomNavButton";
+import {DeliveryStatusContext} from "../context/DeliveryStatusContext";
 
-export const BottomNav = ({step, onClick, buttonAvailable, setButtonState}) => {
-  useEffect(() => {
-    const isCookieOk = [getCookie('deliveryAddress'), getCookie('deliveryDeadline'), getCookie('deliveryCost'), getCookie('deliveryType')].every(el => !!el);
-
-    setButtonState(isCookieOk);
-  }, []);
+export const BottomNav = ({step, onClick}) => {
+  const [buttonAvailable] = useContext(DeliveryStatusContext);
   const renderButtons = () => {
     const buttonsData = {
       2: {
-        text: ['Back To Basket', 'Next'],
+        text: ['К корзине', 'Далее'],
         className: 'basket__react-bottom-nav-btn',
         onClick: [window.basketApi.returnToBasket, onClick.bind(null, 'add')],
         available: [true, buttonAvailable],
       },
       3: {
-        text: ['Prev', 'Оформить'],
+        text: ['Назад', 'Оформить'],
         className: 'basket__react-bottom-nav-btn',
         onClick: [onClick.bind(null, 'sub'), (evt) => evt.preventDefault()],
         available: [true, buttonAvailable],

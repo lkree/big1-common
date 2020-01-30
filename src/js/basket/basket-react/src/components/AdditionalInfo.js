@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {AdditionalInfoItem} from "./AdditionalInfoItem";
+import useCookie from "../hooks/useCookie";
 
 export const AdditionalInfo = () => {
   const [data, getData] = useState({
@@ -9,16 +10,15 @@ export const AdditionalInfo = () => {
     schedule: '',
     mapLink: '',
   });
+  const [{deliveryType, deliveryCity, deliveryAddress}] = useCookie(['deliveryType', 'deliveryCity', 'deliveryAddress']);
   useEffect(() => {
     const getPickUpData = () => {
-      const city = getCookie('deliveryCity');
-      const address = getCookie('deliveryAddress');
-      const cityData = window.citiesList.filter(({name}) => name === city)[0];
+      const cityData = window.citiesList.filter(({name}) => name === deliveryCity)[0];
       const {mapLink = ''} = cityData;
       const props = {
         ...cityData
           .branches
-          .filter(({name}) => name === address)
+          .filter(({name}) => name === deliveryAddress)
           [0]
       };
       getData( {
@@ -56,8 +56,6 @@ export const AdditionalInfo = () => {
 
       getDeliveryPoints(city, id);
     };
-
-    const deliveryType = getCookie('deliveryType');
 
     try {
       if (deliveryType === 'pickup') getPickUpData();

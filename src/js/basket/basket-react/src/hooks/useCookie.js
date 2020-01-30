@@ -1,18 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 /**
- *
- * @param names {Array<string>}
+ * @param initialState {Object: {String} | Array<String>}
  * @returns {[Object, Function]}
  */
-const  useCookie = (names) => {
+const useCookie = (initialState) => {
   const getCookie = (name) => {
     const matches = document.cookie.match(new RegExp(
       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
   };
-  const saveCookie = (name, value) => {
+  const setCookie = (name, value) => {
     const options = {
       path: '/',
       secure: true,
@@ -31,23 +30,24 @@ const  useCookie = (names) => {
 
     document.cookie = updatedCookie;
   };
-  const initialState = {};
+  const _cookieHandler = (state) => {
+    if (Array.isArray(state))
+      return state.reduce((prev, e) => {prev[e] = getCookie(e); return prev}, {});
+    else
+      return state;
+  };
+  const updateCookie = () => setState(state => _cookieHandler(Object.keys(state)));
+  // const updateCookie = newState => setState(() => {
+  //   setState(newState);
+  // });
 
-  names.forEach(e => {
-    initialState[e] = getCookie(e);
-  });
+  const [state, setState] = useState(_cookieHandler(initialState));
 
-  const [cookie, setState] = useState(initialState);
-  const setCookie = (newState = {}) => setState(state => {
-    Object.keys(newState)[0] && Object.keys(newState).forEach(e => saveCookie(e, newState[e]));
+  useEffect(() => {
+    state && Object.keys(state)[0] && Object.keys(state).forEach(e => state[e] && setCookie(e, state[e]))
+  }, [state]);
 
-    return {
-      ...state,
-      ...newState,
-    }
-  });
-
-  return [cookie, setCookie];
+  return [state, updateCookie];
 };
 
 export default useCookie;
