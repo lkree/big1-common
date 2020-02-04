@@ -2,13 +2,14 @@ import React, {useContext} from "react";
 import {DeliveryStatusContext} from "../context/DeliveryStatusContext";
 import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
 
-export const DeliveryChooseWrapper = ({deliveryType}) => {
+export const DeliveryChooseWrapper = ({deliveryType, setNext}) => {
   const [props, updateProps] = useContext(DeliveryPropertiesContext);
   const currentProps = props[deliveryType];
   const {showModule, header, linkText} = currentProps;
   const [, getStatus] = useContext(DeliveryStatusContext);
   const {deliveryAddress} = props;
   const onDeliveryChooseButtonClick = () => {
+    setNext(false);
     getStatus();
     updateProps({[deliveryType]: {
       ...currentProps,

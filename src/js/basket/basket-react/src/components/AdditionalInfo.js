@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import {AdditionalInfoItem} from "./AdditionalInfoItem";
-import useCookie from "../hooks/useCookie";
+import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
 
 export const AdditionalInfo = () => {
   const [data, getData] = useState({
@@ -10,7 +10,7 @@ export const AdditionalInfo = () => {
     schedule: '',
     mapLink: '',
   });
-  const [{deliveryType, deliveryCity, deliveryAddress}] = useCookie(['deliveryType', 'deliveryCity', 'deliveryAddress']);
+  const [{deliveryType, deliveryCity, deliveryAddress}] = useContext(DeliveryPropertiesContext);
   useEffect(() => {
     const getPickUpData = () => {
       const cityData = window.citiesList.filter(({name}) => name === deliveryCity)[0];

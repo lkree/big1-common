@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
+import useCookie from "../hooks/useCookie";
 
-export const BottomInfo = () => {
+export const BottomInfo = (next) => {
+  const [{deliveryCost}, updateData] = useCookie(['deliveryCost']);
   const renderInfoItem = () => {
     const totalPriceData = window.basketApi.getTotalPricesAndItems();
+    const deliveryDeadline = deliveryCost ? `${deliveryCost} р` : 'не выбран пункт выдачи';
     const itemData = [
         {
           text: totalPriceData.split(':')[0],
@@ -11,7 +14,7 @@ export const BottomInfo = () => {
         },
         {
           text: 'Стоимость доставки',
-          value: `${window.basketApi.getDeliveryPrice()} р`, /* need to initialize variable (contacts and over delivery types, then synchronize*/
+          value: deliveryDeadline, /* need to initialize variable (contacts and over delivery types, then synchronize*/
           className: 'basket__react-bottom-info-item basket__react-bottom-info-item--delivery',
         }
       ];
@@ -26,6 +29,8 @@ export const BottomInfo = () => {
       )
     );
   };
+
+  useEffect(() => updateData(), [next]);
 
   return (
     <div className={'basket__react-bottom-info'}>

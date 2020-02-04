@@ -494,7 +494,7 @@ window.deliverySelfExport = () => {
                 return helper;
               };
               helper.clearSavedInfo = () => {
-                h.setDataSet(selfExportModule, 'deliveryPoint', '');
+                h.setDataSet(selfExportModule, 'deliveryPoint', null);
                 h.clearStorage(['deliveryDate', 'deliveryAddress']);
 
                 h.saveAllCookie('', '', '', '', '');

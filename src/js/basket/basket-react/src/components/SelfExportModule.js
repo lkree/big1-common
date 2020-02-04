@@ -1,12 +1,11 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect} from "react";
 import ModuleNextButton from "./ModuleNextButton";
 import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
 import {DeliveryStatusContext} from "../context/DeliveryStatusContext";
 
-export const SelfExportModule = ({className}) => {
+export const SelfExportModule = ({className, next, setNext}) => {
   const [, updateStatus] = useContext(DeliveryStatusContext);
   const [{selfExport}, updateData] = useContext(DeliveryPropertiesContext);
-  const [next, setNext] = useState(false);
 
   const onListClick = ({target}) => {
     updateStatus();

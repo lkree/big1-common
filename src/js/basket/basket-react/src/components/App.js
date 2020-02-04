@@ -13,7 +13,8 @@ export const App = () => {
     2: 'Способ доставки',
     3: 'Подтверждение заказа',
   };
-  const [{deliveryType: initialState}] = useCookie(['deliveryType']);
+  const [next, setNext] = useState(false);
+  const [{deliveryType: initialState}] = useCookie('deliveryType');
   const [deliveryType, setDeliveryType] = useState(initialState || 'pickup');
   const [step, setStep] = useState(2);
   const onNavButtonClick = (operation, step) => {
@@ -27,6 +28,8 @@ export const App = () => {
           header={headers[step]}
           onTabClick={(payload) => setDeliveryType(payload)}
           deliveryType={deliveryType}
+          next={next}
+          setNext={setNext}
         /> :
         <ThirdScreen/>
     );
@@ -40,7 +43,7 @@ export const App = () => {
         {currentScreen}
         <BottomPanel
           onClick={payload => setStep(step => onNavButtonClick(payload, step))}
-          step={step}
+          step={step} next={next}
         />
       </DeliveryStatusProvider>
     </DeliveryPropertiesProvider>

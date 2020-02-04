@@ -1,8 +1,6 @@
-import React, {useContext, useState} from "react";
+import React from "react";
 import {PickupTab} from "./PickupTab";
 import {SelfExportTab} from "./SelfexportTab";
-import useCookie from "../hooks/useCookie";
-import {DeliveryPropertiesContext} from "../context/DeliveryProperiesProvider";
 
 export const TabsWrapper = ({onTabClick, deliveryType, ...rest}) => {
   const isPickup = deliveryType === 'pickup';
