@@ -57,8 +57,9 @@ export const SelfExportModule = ({className, next, setNext}) => {
           <input type="text"
                  className="delivery-selfExport__pickup-search-input"
                  placeholder="Поиск пункта выдачи"/>
+          <header className={'delivery-selfExport__points-header'}>{selfExport.header}</header>
           <ul onClick={onListClick} className="delivery-selfExport__pickup-list"/>
-          {next && <ModuleNextButton onClick={onNextButtonClick}/>}
+          {next && <ModuleNextButton onClick={onNextButtonClick} className={'delivery-pickup__continue-btn'}/>}
         </section>
         <section className="delivery-selfExport__error hidden">
           <p className="delivery-selfExport__error-text">К сожалению пункты

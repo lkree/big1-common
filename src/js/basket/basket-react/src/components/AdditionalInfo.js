@@ -38,7 +38,7 @@ export const AdditionalInfo = () => {
                 const res = result.filter(el => el.id === id);
                 try {
                   const [{address: name, phones = [], work_schedule: schedule}] = res;
-                  getData( {
+                  getData({
                     header: 'Контактная информация',
                     name,
                     phone: phones[0] && phones.reduce((prev, curr) => `${prev} + /n + ${curr}`),

@@ -219,7 +219,7 @@ export default class ContactMap extends React.Component {
   PickupPointClickHandler = () => {
     const shiptorWidget = document.querySelector("#shiptor_widget_pvz");
 
-    shiptorWidget.addEventListener('onPvzSelect', ({detail: {address, id, shipping_days}}) => {
+    shiptorWidget.addEventListener('onPvzSelect', ({detail: {address, id, shipping_days, courier}}) => {
       const setDeadline = () => {
         const deadLine = parseInt(shipping_days);
 
@@ -268,6 +268,7 @@ export default class ContactMap extends React.Component {
       setDeadline();
       this.saveCookie('deliveryAddress', address);
       this.saveCookie('deliveryCost', window.citiesList[0].price);
+      this.saveCookie('deliveryCourier', courier);
       this.setSelfExportPointId(id);
       this.getBackToBasket();
     });

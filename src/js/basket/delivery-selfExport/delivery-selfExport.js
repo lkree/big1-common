@@ -25,9 +25,9 @@ window.deliverySelfExport = () => {
   });
   const handler = (options) => {
     const h = {
-      saveAllCookie: (type, address, id, deadline, cost) => {
-        const cookieTypes = ['deliveryType', 'deliveryAddress', 'selfExportPointId', 'deliveryDeadline', 'deliveryCost'];
-        const cookieValues = [type, address, id, deadline, cost];
+      saveAllCookie: (type, address, id, deadline, cost, courier) => {
+        const cookieTypes = ['deliveryType', 'deliveryAddress', 'selfExportPointId', 'deliveryDeadline', 'deliveryCost', 'deliveryCourier'];
+        const cookieValues = [type, address, id, deadline, cost, courier];
 
         cookieValues.forEach((v, i) => saveCookie(cookieTypes[i], v));
       },
@@ -497,7 +497,7 @@ window.deliverySelfExport = () => {
                 h.setDataSet(selfExportModule, 'deliveryPoint', null);
                 h.clearStorage(['deliveryDate', 'deliveryAddress']);
 
-                h.saveAllCookie('', '', '', '', '');
+                h.saveAllCookie('', '', '', '', '', '');
 
                 return helper;
               };
@@ -516,7 +516,7 @@ window.deliverySelfExport = () => {
               helper.setStorageInfo = () => {
                 u.saveStorageInfo(selfExportModule, _chosenPoint, _chosenCourier);
 
-                h.saveAllCookie('selfExport', _chosenPoint, h.getDataSet(target, 'id'), selfExportModule.dataset.deliveryPeriod, window.citiesList[0].price);
+                h.saveAllCookie('selfExport', _chosenPoint, h.getDataSet(target, 'id'), selfExportModule.dataset.deliveryPeriod, window.citiesList[0].price, _chosenCourier);
 
                 return helper;
               };

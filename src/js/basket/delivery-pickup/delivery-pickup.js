@@ -1,7 +1,9 @@
 window.deliveryPickup = () => {
   const getDeliveryPoints = () => {
+    const currentCity = getCookie('deliveryCity');
+
     const obj = window.citiesList
-      .filter(city => city.branches)
+      .filter(city => city.branches && city.name === currentCity)
       .flatMap(({name, branches}) => branches)
       .flatMap(({name}) => {
         const [city] = name.split(', ');

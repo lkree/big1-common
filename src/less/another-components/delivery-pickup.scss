@@ -8,6 +8,10 @@
   //height: 595px;
   overflow: hidden;
 }
+.delivery-pickup__points-header {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
 .delivery-pickup__input {
   margin-bottom: 15px;
   min-height: 40px;
@@ -20,27 +24,38 @@
   overflow: auto;
   padding-right: 10px;
   max-height: 420px;
+  margin-bottom: 20px;
 }
 .delivery-pickup__point {
-  padding: 10px;
-  border: 1px solid;
-  margin: 5px 0;
-  line-height: 20px;
+  //padding: 10px;
+  //border: 1px solid;
+  //margin: 5px 0;
+  //line-height: 20px;
+  
+  color: #616161;
+  margin-left: 15px;
 }
 .delivery-pickup__point:hover, .delivery-pickup__point--active {
+  //background-color: #ad1318;
+  //color: #fff;
+  //cursor: pointer;
+  //position: relative;
+  
+  color: #ad1318;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.delivery-pickup__continue-btn {
   background-color: #ad1318;
   color: #fff;
-  cursor: pointer;
-  position: relative;
-}
-.delivery-pickup__point--active::after {
-  content: '';
-  position: absolute;
-  width: 26px;
-  height: 30px;
-  right: 20px;
-  top: 4px;
-  background: url(/images/another-images/icons/check-mark-icon.png) no-repeat;
+  border: none;
+  height: 25px;
+  border-radius: 2px;
+  width: 150px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 550px) {
