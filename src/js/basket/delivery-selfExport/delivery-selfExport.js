@@ -24,96 +24,47 @@ window.deliverySelfExport = () => {
     showMap: option.selfExportModule.querySelector('.delivery-selfExport__show-map'),
   });
   const handler = (options) => {
-    const h = {
-      saveAllCookie: (type, address, id, deadline, cost, courier) => {
-        const cookieTypes = ['deliveryType', 'deliveryAddress', 'selfExportPointId', 'deliveryDeadline', 'deliveryCost', 'deliveryCourier'];
-        const cookieValues = [type, address, id, deadline, cost, courier];
-
-        cookieValues.forEach((v, i) => saveCookie(cookieTypes[i], v));
+    const l = {
+      onChangeCity: () => {},
+      onShowMapClick: () => {},
+      onPickupConfirm: () => {},
+      onPickupInput: () => {},
+      onPickupPointClick: () => {},
+      onCloseClick: () => {},
+      onMapClose: () => {},
+    }; //listeners
+    const u = {
+      saveStorageInfo: (module, chosenPoint, courier) => {
+        localStorage.setItem('deliveryDate', h.getDataSet(module, 'deliveryPeriod'));
+        localStorage.setItem('deliveryAddress', `delivery: ${chosenPoint} | ${courier}`);
       },
-      checkAvailable: (el, substitute = '') => el || substitute,
-      getText: (el) => el ? el.textContent : '',
+      /**
+       * @param methods {Object}
+       * @returns {[number, number]}
+       */
+      convertDeliveryPeriod: ({ result: { methods } }) => {
+        let minDays;
+        let maxDays;
+        try {
+          minDays = methods[0].min_days;
+        } catch({ message }) {
+          console.log(message);
+          minDays = 0;
+        }
+        try {
+          maxDays = methods[0].max_days;
+        } catch({ message }) {
+          console.log(message);
+          maxDays = 0;
+        }
+
+
+        return [minDays, maxDays];
+      },
       initiateApi: (usersCity, fromCity = '77000000000') => (new ShiptorPointsGetter({
         usersCity: usersCity,
         fromCity: fromCity,
       })),
-      handleClass: (el, action, className) => el.classList[action](className),
-      hasClass: (el, className) => el.classList.contains(className),
-      escapeHtml: (text) => {
-        const map = {
-          '&': '&amp;',
-          '<': '&lt;',
-          '>': '&gt;',
-          '"': '&quot;',
-          "'": '&#039;'
-        };
-
-        return text.replace(/[&<>"']/g, (m) => map[m]);
-      },
-      activateButton: (button, className = 'delivery-selfExport__confirm-btn--deactive') => {
-        button.disabled = false;
-        h.handleClass(button, 'remove', className);
-      },
-      disableButton: (button, className = 'delivery-selfExport__confirm-btn--deactive') => {
-        button.disabled = true;
-        h.handleClass(button, 'add', className);
-      },
-      setDataSet: (el, dataType, value) => el.dataset[dataType] = value,
-      getDataSet: (el, dataType) => el.dataset[dataType],
-      clearEl: (el) => el.innerHTML = '',
-      clearInput: (el) => el.value = '',
-      removeEl: (el) => el = null,
-      hide: (el) => h.handleClass(el, 'add', 'hidden'),
-      show: (el) => h.handleClass(el, 'remove', 'hidden'),
-      hideAll: (list) => [...list].forEach(h.hide),
-      showAll: (list) => [...list].forEach(h.show),
-      setText: (el, text) => el.textContent = text,
-      eventAdd: (el, event, handler) => el.addEventListener(event, handler),
-      eventRemove: (el, event, handler) => el.removeEventListener(event, handler),
-      isMatch: (el, matchEl) => el === matchEl,
-      removeListOfEvents: (list, filter) => {
-        list
-          .filter((el) => el[filter])
-          .forEach((e) => h.eventRemove(e.el, e.ev, e.listener))
-      },
-      addListOfEvents: (list, filter) => {
-        list
-          .filter((el) => el[filter])
-          .forEach((e) => h.eventAdd(e.el, e.ev, e.listener))
-      },
-      setWaitScreen: () => h.show(options.waitScreen),
-      disableWaitScreen: () => h.hide(options.waitScreen),
-      lowerCase: (el) => el.toLowerCase(),
-      /**
-       * @param string {String}
-       * @param subString {String}
-       * @returns {null|boolean}
-       */
-      checkSubString: (string = '', subString = '') => {
-        if (!string || !subString) return null;
-
-        string = string.toLowerCase().split('').sort().join('').trim().split('');
-        subString = subString.toLowerCase().split('').sort().join('').trim().split('');
-        let result = [];
-        subString.forEach(ssLetter => {
-          //temp var
-          let temp = '';
-          //searching for subString letter in string
-          temp = string.find(sLetter => sLetter === ssLetter);
-          //if something found
-          if (temp) {
-            //delete found var from string (to fix duplicate letters)
-            string.splice(1, string.indexOf(temp));
-            //found var push to result array
-            result.push(temp);
-          }
-        });
-        //sort result array and transform to string to compare
-        return result.sort().join() === subString.join();
-      },
-      showError: () => h.show(options.errorSection),
-      hideError: () => h.hide(options.errorSection),
-      clearStorage: (storages) => storages.forEach((storage) => localStorage.setItem(storage, '')),
       filterList: ({itemList, childClassName, wrapper, fastExit, isCityFiltered, firstInitiate = true}) => (evt) => {
         const inputString = h.escapeHtml(evt.target.value);
 
@@ -183,46 +134,8 @@ window.deliverySelfExport = () => {
           .filterPoints()
           .clearClosure()
       },
-    }; //helpers
-    const l = {
-      onChangeCity: () => {},
-      onShowMapClick: () => {},
-      onPickupConfirm: () => {},
-      onPickupInput: () => {},
-      onPickupPointClick: () => {},
-      onCloseClick: () => {},
-      onMapClose: () => {},
-    }; //listeners
-    const u = {
-      saveStorageInfo: (module, chosenPoint, courier) => {
-        localStorage.setItem('deliveryDate', h.getDataSet(module, 'deliveryPeriod'));
-        localStorage.setItem('deliveryAddress', `delivery: ${chosenPoint} | ${courier}`);
-      },
-      /**
-       * @param methods {Object}
-       * @returns {[number, number]}
-       */
-      convertDeliveryPeriod: ({ result: { methods } }) => {
-        let minDays;
-        let maxDays;
-        try {
-          minDays = methods[0].min_days;
-        } catch({ message }) {
-          console.log(message);
-          minDays = 0;
-        }
-        try {
-          maxDays = methods[0].max_days;
-        } catch({ message }) {
-          console.log(message);
-          maxDays = 0;
-        }
-
-
-        return [minDays, maxDays];
-      },
     }; //functions especially used for this module
-    const module = ({ selfExportModule, pickupList, chosenCity, pickupSection, pickupSearchInput, JCShiptorWidgetPvz }) => {
+    const module = ({ selfExportModule, pickupList, chosenCity, pickupSection, pickupSearchInput, JCShiptorWidgetPvz, waitScreen }) => {
       module.initiate = () => {
         const w = () => {
           let _renderedCity, userCity, deliveryPoints, shiptorApi, shippingDays, isRendered = false;
@@ -234,7 +147,7 @@ window.deliverySelfExport = () => {
             return w;
           };
           w.setWaitScreen = () => {
-            h.setWaitScreen();
+            h.setWaitScreen(waitScreen);
 
             return w;
           };
@@ -245,7 +158,7 @@ window.deliverySelfExport = () => {
           };
           w.setUserCity = () => {
             if (!_renderedCity) {
-              userCity = getCookie('deliveryCity') || YMaps.location.city || 'Москва';
+              userCity = getCookie('deliveryCity') || YMaps.location.city || 'Ярославль';
               h.setText(chosenCity, userCity);
             }
             else userCity = _renderedCity;
@@ -300,7 +213,7 @@ window.deliverySelfExport = () => {
                   return s;
                 };
                 s.initiateApi = () => {
-                  shiptorApi = h.initiateApi(userCity, '77000000000');
+                  shiptorApi = u.initiateApi(userCity, '77000000000');
 
                   return s;
                 };
@@ -342,7 +255,7 @@ window.deliverySelfExport = () => {
                           w.checkRender();
                           _renderedCity = userCity;
                         })
-                        .then(() => w.disableWaitScreen());
+                        .then(() => w.disableWaitScreen(waitScreen));
                     })
                 };
                 s.filterPoints = ({result}) => {
@@ -370,35 +283,20 @@ window.deliverySelfExport = () => {
 
                     return value;
                   };
-                  const createDeliveryPoint = ({ courier, address, work_schedule, prepare_address, id }) => {
+                  const createDeliveryPoint = ({ courier, address, prepare_address, id }) => {
                     const value = handleAddress(prepare_address, address);
-                    work_schedule = h.checkAvailable(work_schedule);
 
                     const point = document.createElement('li');
                     h.handleClass(point,'add', 'delivery-selfExport__pickup-point');
                     h.setDataSet(point, 'value', value);
                     h.setDataSet(point, 'id', id);
+                    h.setDataSet(point, 'courier', courier);
 
                     const pointAddress = document.createElement('p');
                     h.handleClass(pointAddress,'add','delivery-selfExport__address');
                     h.setText(pointAddress, address);
 
-                    const schedule = document.createElement('p');
-                    h.handleClass(schedule,'add', 'delivery-selfExport__work-schedule');
-                    h.setText(schedule, work_schedule);
-
-                    const shipping = document.createElement('p');
-                    h.handleClass(shipping, 'add', 'delivery-selfExport__shipping-days');
-                    h.setText(shipping, `Срок доставки: ${shippingDays[0]} - ${shippingDays[1]} дней`);
-
-                    const courierInfo = document.createElement('p');
-                    h.handleClass(courierInfo, 'add', 'delivery-selfExport__courier');
-                    h.setText(courierInfo, courier);
-
-                    point.append(courierInfo);
                     point.append(pointAddress);
-                    point.append(schedule);
-                    point.append(shipping);
 
                     return point;
                   };
@@ -432,12 +330,12 @@ window.deliverySelfExport = () => {
 
               return w;
             }
-            else w.disableWaitScreen();
+            else w.disableWaitScreen(waitScreen);
 
             return w;
           };
           w.disableWaitScreen = async () => {
-            await h.disableWaitScreen();
+            await h.disableWaitScreen(waitScreen);
 
             return w;
           };
@@ -456,19 +354,20 @@ window.deliverySelfExport = () => {
 
       return module;
     };
-    const eventListeners = ({ changeCity, showMap, pickupSection, cities, citiesList, selfExportModule, citiesSection, pickupSearchInput, pickupList, JCShiptorWidgetPvz, map }) => {
+    const eventListeners = ({ changeCity, showMap, pickupSection, citiesList, selfExportModule, citiesSection, pickupSearchInput, pickupList, JCShiptorWidgetPvz, map }) => {
       let listenersList = [];
       let chosenPoint;
       let _chosenPoint = `${selfExportModule.dataset.renderedCity}, ${selfExportModule.dataset.deliveryPoint}` || '';
-      let _chosenCourier = h.getText(pickupList.querySelector('.delivery-selfExport__pickup-point--active .delivery-selfExport__courier'));
+      let _chosenCourier = h.getDataSet(pickupList.querySelector('.delivery-selfExport__pickup-point--active'), 'courier');
       let customEvent = new Event('ClosePickupModule', {bubbles: true});
       
       eventListeners.create = () => {
         l.onChangeCity = () => {
           sessionStorage.setItem('fromBasket', 'y');
+          sessionStorage.setItem('prevBasketPage', '2');
           location.assign('/kontakty.html');
         };
-        l.onPickupInput = _.partial(h.filterList, {
+        l.onPickupInput = _.partial(u.filterList, {
           itemList: 'pickup',
           childClassName: '.delivery-selfExport__pickup-point',
           wrapper: selfExportModule,
@@ -497,18 +396,18 @@ window.deliverySelfExport = () => {
                 h.setDataSet(selfExportModule, 'deliveryPoint', null);
                 h.clearStorage(['deliveryDate', 'deliveryAddress']);
 
-                h.saveAllCookie('', '', '', '', '', '');
+                h.saveAllCookie({type: null, address: null, id: null, deadline: null, cost: null, courier: null});
 
                 return helper;
               };
               helper.clearChosenPoint = () => {
-                h.removeEl(chosenPoint);
+                h.removeElement(chosenPoint);
 
                 return helper;
               };
               helper.setChosenPoint = () => {
                 _chosenPoint = target.querySelector('.delivery-selfExport__address').textContent;
-                _chosenCourier = target.querySelector('.delivery-selfExport__courier').textContent;
+                _chosenCourier = h.getDataSet(target, 'courier');
                 h.setDataSet(selfExportModule, 'deliveryPoint', h.getDataSet(target, 'value'));
 
                 return helper;
@@ -516,7 +415,7 @@ window.deliverySelfExport = () => {
               helper.setStorageInfo = () => {
                 u.saveStorageInfo(selfExportModule, _chosenPoint, _chosenCourier);
 
-                h.saveAllCookie('selfExport', _chosenPoint, h.getDataSet(target, 'id'), selfExportModule.dataset.deliveryPeriod, window.citiesList[0].price, _chosenCourier);
+                h.saveAllCookie({type: 'selfExport', address: _chosenPoint, id: h.getDataSet(target, 'id'), deadline: selfExportModule.dataset.deliveryPeriod, cost: window.citiesList[0].price, courier: _chosenCourier});
 
                 return helper;
               };
@@ -705,11 +604,11 @@ window.deliverySelfExport = () => {
         shows it usage
          */
         listenersList = [
-          {el: changeCity, ev: 'click', listener: l.onChangeCity, changeCityRemove: true, cityConfirmAdd: true, boot: true },
-          {el: showMap, ev: 'click', listener: l.onShowMapClick, changeCityRemove: true, cityConfirmAdd: true, boot: true },
-          {el: pickupSearchInput, ev: 'input', listener: l.onPickupInput, changeCityRemove: true, cityConfirmAdd: true, boot: true },
-          {el: pickupList, ev: 'click', listener: l.onPickupPointClick, changeCityRemove: true, cityConfirmAdd: true, boot: true },
-          {el: JCShiptorWidgetPvz, ev: 'onPvzSelect', listener: l.onMapClose, boot: true }
+          {element: changeCity, ev: 'click', listener: l.onChangeCity, changeCityRemove: true, cityConfirmAdd: true, boot: true },
+          {element: showMap, ev: 'click', listener: l.onShowMapClick, changeCityRemove: true, cityConfirmAdd: true, boot: true },
+          {element: pickupSearchInput, ev: 'input', listener: l.onPickupInput, changeCityRemove: true, cityConfirmAdd: true, boot: true },
+          {element: pickupList, ev: 'click', listener: l.onPickupPointClick, changeCityRemove: true, cityConfirmAdd: true, boot: true },
+          {element: JCShiptorWidgetPvz, ev: 'onPvzSelect', listener: l.onMapClose, boot: true }
         ];
 
         return eventListeners;

@@ -1,3 +1,6 @@
+$change-city-color: #0000ff;
+
+
 .delivery-pickup {
   padding: 35px 25px 10px 25px;
   display: flex;
@@ -56,6 +59,30 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.delivery-pickup__chosen-city-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+}
+.delivery-pickup__chosen-city-wrapper:hover {
+  cursor: default;
+}
+.delivery-pickup__chosen-city, .delivery-pickup__chosen-city-descr {
+  font-size: 20px;
+}
+.delivery-pickup__change-city {
+  border: none;
+  background-color: transparent;
+  color: $change-city-color;
+  margin-left: 10px;
+  font-size: 12px;
+  position: relative;
+  top: -10px;
+}
+.delivery-pickup__change-city:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media (max-width: 550px) {

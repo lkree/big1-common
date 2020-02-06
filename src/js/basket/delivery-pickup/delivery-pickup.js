@@ -2,7 +2,7 @@ window.deliveryPickup = () => {
   const getDeliveryPoints = () => {
     const currentCity = getCookie('deliveryCity');
 
-    const obj = window.citiesList
+    const arr = window.citiesList
       .filter(city => city.branches && city.name === currentCity)
       .flatMap(({name, branches}) => branches)
       .flatMap(({name}) => {
@@ -14,8 +14,8 @@ window.deliveryPickup = () => {
       });
 
     return {
-      city: obj.map(el => el[0]),
-      address: obj.map(el => el[1]),
+      city: arr[0] ? arr.map(el => el[0]) : 'К сожалению, в данном городе у нас нет филиалов :(',
+      address: arr[0] ? arr.map(el => el[1]) : 'Выберите Пункт доставки в разделе "Доставка"',
     }
   };
   const deliveryPoints = getDeliveryPoints();
@@ -25,56 +25,20 @@ window.deliveryPickup = () => {
   const options = _.extend(option, {
     pointsWrapper: option.pickupModule.querySelector('.delivery-pickup__points-list'),
     input:  option.pickupModule.querySelector('.delivery-pickup__input'),
+    chosenCity: option.pickupModule.querySelector('.delivery-pickup__chosen-city'),
+    changeCity: option.pickupModule.querySelector('.delivery-pickup__change-city'),
     deliveryPoints,
   });
   const buttonHandler = (options) => {
-    const h = {
-      saveAllCookie: (type, address, id, deadline, cost, city = '') => {
-        const cookieTypes = ['deliveryType', 'deliveryAddress', 'selfExportPointId', 'deliveryDeadline', 'deliveryCost', 'deliveryCity'];
-        const cookieValues = [type, address, id, deadline, cost, city];
-
-        cookieValues.forEach((v, i) => {
-          if (v === null) {
-            saveCookie(cookieTypes[i], '');
-            return;
-          }
-          if (!v) return;
-
-          saveCookie(cookieTypes[i], v);
-        });
-      },
-      handleClass: (el, action, className) => el.classList[action](className),
-      escapeHtml: (text) => {
-        const map = {
-          '&': '&amp;',
-          '<': '&lt;',
-          '>': '&gt;',
-          '"': '&quot;',
-          "'": '&#039;'
-        };
-
-        return text.replace(/[&<>"']/g, (m) => map[m]);
-      },
-      activateButton: (button) => {
-        button.disabled = false;
-        h.handleClass(button, 'remove', 'delivery-pickup__confirm-btn--deactive');
-      },
-      disableButton: (button) => {
-        button.disabled = true;
-        h.handleClass(button, 'add', 'delivery-pickup__confirm-btn--deactive')
-      },
-      setDataSet: (el, dataType, value) => el.dataset[dataType] = value,
-      clearEl: (el) => el = null,
-    };
     const u = {
       saveStorageInfo: (chosenPoint) => {
         localStorage.setItem('deliveryDate', '0');
         localStorage.setItem('deliveryAddress', `pickup: ${chosenPoint}`);
       },
     };
-    const module = ({pickupModule, pointsWrapper, deliveryPoints}) => {
+    const module = ({pickupModule, pointsWrapper, deliveryPoints, chosenCity}) => {
       module.initiate = () => {
-        const handle = (pickupModule, pointsWrapper, deliveryPoints) => {
+        const handle = (pickupModule, pointsWrapper, deliveryPoints, chosenCity) => {
           const createPoint = (city, address) => {
             const point = document.createElement('p');
             point.classList.add('delivery-pickup__point');
@@ -82,7 +46,14 @@ window.deliveryPickup = () => {
 
             return point;
           };
-          let isRendered = false;
+          const createNoPoint = (header, message) => {
+            const point = document.createElement('p');
+            point.classList.add('delivery-pickup__no-point');
+            point.innerHTML = `${header}<br/>${message}`;
+
+            return point;
+          };
+          let isRendered = false, _renderedCity, userCity;
 
           handle.checkRender = () => {
             isRendered = pickupModule.dataset.rendered;
@@ -91,9 +62,26 @@ window.deliveryPickup = () => {
           };
           handle.fillModule = () => {
             if (!isRendered) {
-              deliveryPoints['city'].forEach((el, i) => pointsWrapper.append(createPoint(el, deliveryPoints['address'][i])));
+              if (Array.isArray(deliveryPoints))
+                deliveryPoints['city'].forEach((el, i) => pointsWrapper.append(createPoint(el, deliveryPoints['address'][i])));
+              else pointsWrapper.append(createNoPoint(deliveryPoints['city'], deliveryPoints['address']));
+
               pickupModule.dataset.rendered = '1';
             }
+
+            return handle;
+          };
+          handle.getUserCity = () => {
+            _renderedCity = chosenCity.textContent;
+
+            return handle;
+          };
+          handle.setUserCity = () => {
+            if (!_renderedCity) {
+              userCity = getCookie('deliveryCity') || YMaps.location.city || 'Ярославль';
+              h.setText(chosenCity, userCity);
+            }
+            else userCity = _renderedCity;
 
             return handle;
           };
@@ -101,20 +89,23 @@ window.deliveryPickup = () => {
           return handle;
         };
 
-        handle(pickupModule, pointsWrapper, deliveryPoints)
+        handle(pickupModule, pointsWrapper, deliveryPoints, chosenCity)
           .checkRender()
-          .fillModule();
+          .fillModule()
+          .getUserCity()
+          .setUserCity();
 
         return module;
       };
 
       return module;
     };
-    const eventListeners = ({input, pointsWrapper, pickupModule}) => {
+    const eventListeners = ({input, pointsWrapper, pickupModule, changeCity}) => {
       let onSearchInput = () => {};
       let onPointClick = () => {};
       let onCloseClick = () => {};
       let onConfirmClick = () => {};
+      let onChangeCityClick = () => {};
       let listenersList = [];
       let renderedPoints;
       let filterFlag;
@@ -206,12 +197,12 @@ window.deliveryPickup = () => {
                 localStorage.setItem('deliveryAddress', '');
                 localStorage.setItem('deliveryDate', '');
 
-                h.saveAllCookie(null, null, null, null, null);
+                h.saveAllCookie({type: null, address: null, id: null, deadline: null, cost: null, courier: null});
 
                 return w;
               };
               w.clearChosenPoint = () => {
-                h.clearEl(chosenPoint);
+                h.removeElement(chosenPoint);
 
                 return w;
               };
@@ -224,7 +215,7 @@ window.deliveryPickup = () => {
               w.saveStorageInfo = () => {
                 u.saveStorageInfo(_chosenPointInfo);
 
-                h.saveAllCookie('pickup', _chosenPointInfo, '', '0', '0', _chosenPointInfo.split(',')[0]);
+                h.saveAllCookie({type: 'pickup', address: _chosenPointInfo, id: '', deadline: '0', cost: '0', city: _chosenPointInfo.split(',')[0]});
 
                 return w;
               };
@@ -350,6 +341,11 @@ window.deliveryPickup = () => {
             .saveInfo()
             .closeModule()
         };
+        onChangeCityClick = () => {
+          sessionStorage.setItem('fromBasket', 'y');
+          sessionStorage.setItem('prevBasketPage', '2');
+          location.assign('/kontakty.html');
+        };
 
         return eventListeners;
       };
@@ -357,6 +353,7 @@ window.deliveryPickup = () => {
         listenersList = [
           [input, 'input', onSearchInput],
           [pointsWrapper, 'click', onPointClick],
+          [changeCity, 'click', onChangeCityClick],
         ];
 
         listenersList.forEach((listenerOptions) => eventAdd(listenerOptions[0], listenerOptions[1], listenerOptions[2]));

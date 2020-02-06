@@ -9,6 +9,11 @@ import DeliveryStatusProvider from "../context/DeliveryStatusContext";
 import useCookie from "../hooks/useCookie";
 
 export const App = () => {
+  const getPrevBasketPage = () => {
+    const prevPage = sessionStorage.getItem('prevBasketPage');
+    sessionStorage.setItem('prevBasketPage', '');
+    return prevPage ? +prevPage : '';
+  };
   const headers = {
     2: 'Способ доставки',
     3: 'Подтверждение заказа',
@@ -16,7 +21,7 @@ export const App = () => {
   const [next, setNext] = useState(false);
   const [{deliveryType: initialState}] = useCookie('deliveryType');
   const [deliveryType, setDeliveryType] = useState(initialState || 'pickup');
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(getPrevBasketPage() || 2);
   const onNavButtonClick = (operation, step) => {
     const newStep = operation === 'add' ? step + 1 : step - 1;
     if (newStep < 4 && newStep > 1) return newStep;
@@ -33,6 +38,7 @@ export const App = () => {
         /> :
         <ThirdScreen/>
     );
+
   return (
     <DeliveryPropertiesProvider>
       <DeliveryStatusProvider>

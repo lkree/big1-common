@@ -30,9 +30,17 @@ export const PickupModule = ({className, next, setNext}) => {
   return (
     <div className={`delivery-pickup ${className || ''}`}
          data-delivery-type="Самовывоз">
+      <div className="delivery-pickup__chosen-city-wrapper">
+        <p className="delivery-pickup__chosen-city-descr">Текущий
+          город:&nbsp;</p>
+        <p className="delivery-pickup__chosen-city"/>
+        <button className="delivery-pickup__change-city">Выбрать другой
+          город
+        </button>
+      </div>
       <input type="text"
              className="delivery-pickup__input"
-             placeholder="Введите город"/>
+             placeholder="Введите улицу"/>
       <header className={'delivery-pickup__points-header'}>{pickup.header}</header>
       <div className="delivery-pickup__points-list" onClick={onListClick}/>
       {next && <ModuleNextButton onClick={onNextButtonClick} className={'delivery-pickup__continue-btn'}/>}

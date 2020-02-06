@@ -8,13 +8,13 @@ export const BottomNav = ({step, onClick}) => {
     const buttonsData = {
       2: {
         text: ['К корзине', 'Далее'],
-        className: 'basket__react-bottom-nav-btn',
+        className: ['basket__react-bottom-nav-btn', 'basket__react-bottom-nav-btn'],
         onClick: [window.basketApi.returnToBasket, onClick.bind(null, 'add')],
         available: [true, buttonAvailable],
       },
       3: {
         text: ['Назад', 'Оформить'],
-        className: 'basket__react-bottom-nav-btn',
+        className: ['basket__react-bottom-nav-btn', 'basket__react-bottom-nav-btn basket__react-bottom-nav-btn--confirm'],
         onClick: [onClick.bind(null, 'sub'), (evt) => {evt.preventDefault(); window.location.assign('/orders/new')}],
         available: [true, buttonAvailable],
       },
@@ -24,7 +24,7 @@ export const BottomNav = ({step, onClick}) => {
       .fill(''))
       .map((_, i) => {
         const {text, className, onClick, available} = buttonsData[step];
-        return <BottomNavButton key={i} text={text[i]} className={className} onClick={onClick[i]} available={available[i]}/>
+        return <BottomNavButton key={i} text={text[i]} className={className[i]} onClick={onClick[i]} available={available[i]}/>
       });
   };
   return (
