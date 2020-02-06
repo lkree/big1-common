@@ -3,6 +3,7 @@ $border-secondary-color: #616161
 $main-color: #1c4254
 $main-secondary-color: #ad1318
 $arrow-background: url(/images/design/basket/icons/nav-arrow.svg) no-repeat
+$double-arrow-background: url(/images/design/basket/icons/double-arrow.svg) no-repeat center
 $confirm-background: url(/images/design/basket/icons/nav-arrow--white.svg) no-repeat
 $text-size: 16px
 
@@ -145,20 +146,11 @@ div, p
   align-items: center
 
 .basket__react-bottom-info-item
-  padding-left: 25px
   margin: 0 0 0 10px
   color: #000
   font-size: $text-size
-
-.basket__react-bottom-info-item--products
-  background: url(/images/design/basket/icons/wheel.svg) no-repeat left center
-  background-size: 17px
-
-.basket__react-bottom-info-item--delivery
-  background: url(/images/design/basket/icons/box.svg) no-repeat 8px center
-  background-size: 17px
-  padding-left: 30px
   position: relative
+  padding-left: 30px
 
   &::before
     content: ''
@@ -168,6 +160,21 @@ div, p
     top: 1px
     left: 0
     background-color: $border-main-color
+
+.basket__react-bottom-info-item--products
+  background: url(/images/design/basket/icons/wheel.svg) no-repeat 0 center
+  background-size: 17px
+
+  &::before
+    display: none
+
+.basket__react-bottom-info-item--delivery
+  background: url(/images/design/basket/icons/box.svg) no-repeat 8px center
+  background-size: 17px
+
+.basket__react-bottom-info-item--common
+  background: url(/images/design/basket/icons/shop.svg) no-repeat 8px center
+  background-size: 17px
 
 .basket__react-bottom-info-item-mark
   border-bottom: 1px solid $main-color
@@ -236,15 +243,37 @@ div, p
   text-align: justify
 
 .basket__react-final-goods-header
-  border-bottom: 1px solid $border-main-color
-.basket__react-final-goods-header, .basket__react-final-goods-item, .basket__react-final-delivery-header, .basket__react-final-delivery-body, .basket__react-final-delivery-deadline, .basket__react-final-sum
+  @include blockHeader(false, false, true, true, true)
+
+.basket__react-final-delivery-address-wrapper, .basket__react-final-delivery-deadline, .basket__react-final-delivery-price-wrapper, .basket__react-final-goods-header, .basket__react-final-goods-item
   display: flex
   justify-content: space-between
   margin-bottom: 10px
+  border-bottom: 1px dashed $border-main-color
 
-.basket__react-final-goods-header-positions, .basket__react-final-delivery-header-type, .basket__react-final-delivery-address-text, .basket__react-final-delivery-deadline-text, .basket__react-final-message
+.basket__react-final-delivery-header
+  @include blockHeader(false, false, false, true, false)
+
+.basket__react-final-goods-header-positions, .basket__react-final-delivery-header-type, .basket__react-final-delivery-header
   font-weight: 700
   font-size: 20px
+
+.basket__react-final-goods-open-button
+  border: none
+  font-size: 0
+  width: 20px
+  height: 30px
+  position: relative
+  left: 11px
+  top: -6px
+  border-radius: 4px
+  background: $double-arrow-background
+    color: #1c4254
+    size: 13px
+  transform: rotate(90deg)
+
+.basket__react-final-goods-open-button--open
+  transform: rotate(270deg)
 
 .basket__react-final-body
   margin-top: 20px
@@ -301,6 +330,14 @@ div, p
   .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
     flex-basis: 20%
 
+  .basket__react-final-delivery-address
+    max-width: 50%
+    text-align: right
+
+  .basket__react-bottom-info-item--common
+    background-position: 0 center
+
 @media (max-width: 360px)
   .basket__react-bottom-panel
-    min-height: 200px
+    min-height: 260px
+    padding: 25px 5px

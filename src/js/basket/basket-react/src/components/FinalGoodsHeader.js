@@ -15,11 +15,11 @@ export const FinalGoodsHeader = () => {
     const {style: {display}} = wrapper;
     if (display === 'none' || !display) {
       $(wrapper).slideDown();
-      target.textContent = 'Закрыть';
+      target.classList.add('basket__react-final-goods-open-button--open');
     }
     else {
       $(wrapper).slideUp();
-      target.textContent = 'Открыть';
+      target.classList.remove('basket__react-final-goods-open-button--open');
     }
   };
 
@@ -27,7 +27,7 @@ export const FinalGoodsHeader = () => {
     <header className="basket__react-final-goods-header">
       <p className="basket__react-final-goods-header-positions">
         {getPositionsMessage(positionsNumber)}
-        <button onClick={onHandleButtonClick}>Открыть</button>
+        <button className={'basket__react-final-goods-open-button'} onClick={onHandleButtonClick}>Открыть</button>
       </p>
       <p className="basket__react-final-goods-header-price">На сумму {totalSum} р.</p>
     </header>

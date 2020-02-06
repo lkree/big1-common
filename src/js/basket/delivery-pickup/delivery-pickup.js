@@ -1,6 +1,6 @@
 window.deliveryPickup = () => {
   const getDeliveryPoints = () => {
-    const currentCity = getCookie('deliveryCity');
+    const currentCity = getCookie('deliveryCity') || YMaps.location.city;
 
     const arr = window.citiesList
       .filter(city => city.branches && city.name === currentCity)
@@ -14,8 +14,8 @@ window.deliveryPickup = () => {
       });
 
     return {
-      city: arr[0] ? arr.map(el => el[0]) : 'К сожалению, в данном городе у нас нет филиалов :(',
-      address: arr[0] ? arr.map(el => el[1]) : 'Выберите Пункт доставки в разделе "Доставка"',
+      city: !_.isEmpty(arr) ? arr.map(el => el[0]) : 'К сожалению, в данном городе у нас нет филиалов :(',
+      address: !_.isEmpty(arr) ? arr.map(el => el[1]) : 'Выберите Пункт доставки в разделе "Доставка"',
     }
   };
   const deliveryPoints = getDeliveryPoints();
@@ -62,7 +62,7 @@ window.deliveryPickup = () => {
           };
           handle.fillModule = () => {
             if (!isRendered) {
-              if (Array.isArray(deliveryPoints))
+              if (Array.isArray(deliveryPoints['city']))
                 deliveryPoints['city'].forEach((el, i) => pointsWrapper.append(createPoint(el, deliveryPoints['address'][i])));
               else pointsWrapper.append(createNoPoint(deliveryPoints['city'], deliveryPoints['address']));
 

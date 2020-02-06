@@ -6,6 +6,7 @@ export const BottomInfo = (next) => {
   const renderInfoItem = () => {
     const totalPriceData = window.basketApi.getTotalPricesAndItems();
     const deliveryDeadline = deliveryCost ? `${deliveryCost} р` : 'не выбран пункт выдачи';
+    const commonCost = window.basketApi.getTotalSum();
     const itemData = [
         {
           text: totalPriceData.split(':')[0],
@@ -16,7 +17,12 @@ export const BottomInfo = (next) => {
           text: 'Стоимость доставки',
           value: deliveryDeadline, /* need to initialize variable (contacts and over delivery types, then synchronize*/
           className: 'basket__react-bottom-info-item basket__react-bottom-info-item--delivery',
-        }
+        },
+        {
+          text: 'Итого',
+          value: ` ${commonCost} р.`, /* need to initialize variable (contacts and over delivery types, then synchronize*/
+          className: 'basket__react-bottom-info-item basket__react-bottom-info-item--common',
+        },
       ];
 
     return itemData.map(({text, value, className}, i) => (
