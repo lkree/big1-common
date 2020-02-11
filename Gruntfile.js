@@ -134,6 +134,10 @@ module.exports = (grunt) => {
         src: 'build/js/shiptorPointsGetter.js',
         dest: 'build/js/shiptorPointsGetter.js'
       },
+      orders: {
+        src: 'build/js/orders-auto-order.js',
+        dest: 'build/js/orders-auto-order.js'
+      },
     },
     babel: {
       mainPage: {
@@ -192,6 +196,10 @@ module.exports = (grunt) => {
         src: 'build/js/shiptorPointsGetter.js',
         dest: 'build/js/shiptorPointsGetter.js'
       },
+      orders: {
+        src: 'build/js/orders-auto-order.js',
+        dest: 'build/js/orders-auto-order.js'
+      },
     },
     concat: {
       mainPage: {
@@ -248,9 +256,12 @@ module.exports = (grunt) => {
       },
       basketDelivery: {
         src: [
+          'src/js/data/citiesList.js',
+          'src/js/basket/basket-delivery/basket-main-script.js',
           'src/js/basket/shiptor-points-getter/shiptor-points-getter.js',
           'src/js/basket/delivery-pickup/delivery-pickup.js',
           'src/js/basket/delivery-selfExport/delivery-selfExport.js',
+          'src/js/basket/basket-react/dist/main.js',
           // 'src/js/basket/basket-delivery/basket-delivery.js',
         ],
         dest: 'build/js/basket-delivery-page-script.js'
@@ -267,6 +278,10 @@ module.exports = (grunt) => {
         src: 'src/js/basket/shiptor-points-getter/shiptor-points-getter.js',
         dest: 'build/js/shiptorPointsGetter.js'
       },
+      orders: {
+        src: 'src/js/orders/auto-order.js',
+        dest: 'build/js/orders-auto-order.js'
+      }
     }
   };
   const config = {
@@ -360,12 +375,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "basket-delivery",
+    preset: "mainPage",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'basketDelivery',
+    preset: 'orders',
   };
 
   /**

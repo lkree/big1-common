@@ -6,7 +6,7 @@ import {BottomMessage} from "./BottomMessage";
 export const BottomPanel = ({...restProps}) => (
   <>
     <section className={'basket__react-bottom-panel'}>
-      <BottomInfo/>
+      <BottomInfo {...restProps}/>
       <BottomNav {...restProps}/>
     </section>
     <BottomMessage/>

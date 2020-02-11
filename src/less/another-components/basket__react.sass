@@ -161,12 +161,13 @@ div, p
     left: 0
     background-color: $border-main-color
 
+.basket__react-bottom-info-item:first-child
+  &::before
+    display: none
+
 .basket__react-bottom-info-item--products
   background: url(/images/design/basket/icons/wheel.svg) no-repeat 0 center
   background-size: 17px
-
-  &::before
-    display: none
 
 .basket__react-bottom-info-item--delivery
   background: url(/images/design/basket/icons/box.svg) no-repeat 8px center
@@ -244,17 +245,45 @@ div, p
 
 .basket__react-final-goods-header
   @include blockHeader(false, false, true, true, true)
+  display: flex
+  align-items: flex-end
+  font-size: 20px
+  font-weight: 700
+
+.basket__react-final-goods-header-price, .basket__react-final-delivery-price, .basket__react-final-delivery-deadline-days
+  color: $main-secondary-color
+
+.basket__react-final-delivery-price-text
+  font-size: inherit
+  line-height: inherit
+
+.basket__react-final-delivery-deadline
+  font-weight: 700
+  font-size: 20px
 
 .basket__react-final-delivery-address-wrapper, .basket__react-final-delivery-deadline, .basket__react-final-delivery-price-wrapper, .basket__react-final-goods-header, .basket__react-final-goods-item
   display: flex
   justify-content: space-between
-  margin-bottom: 10px
+  margin-bottom: 25px
   border-bottom: 1px dashed $border-main-color
 
-.basket__react-final-delivery-header
-  @include blockHeader(false, false, false, true, false)
+.basket__react-final-delivery-address
+  font-size: 14px
 
-.basket__react-final-goods-header-positions, .basket__react-final-delivery-header-type, .basket__react-final-delivery-header
+.basket__react-final-delivery-deadline-text
+  font-size: inherit
+
+.basket__react-final-delivery-header
+  display: flex
+  justify-content: space-between
+
+.basket__react-final-goods-header-positions
+  display: flex
+  align-items: flex-end
+  font-size: inherit
+  font-weight: inherit
+
+.basket__react-final-delivery-header-type, .basket__react-final-delivery-header
   font-weight: 700
   font-size: 20px
 
@@ -265,7 +294,6 @@ div, p
   height: 30px
   position: relative
   left: 11px
-  top: -6px
   border-radius: 4px
   background: $double-arrow-background
     color: #1c4254
@@ -329,10 +357,6 @@ div, p
 
   .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
     flex-basis: 20%
-
-  .basket__react-final-delivery-address
-    max-width: 50%
-    text-align: right
 
   .basket__react-bottom-info-item--common
     background-position: 0 center

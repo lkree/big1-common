@@ -6,6 +6,16 @@ import {SearchCity} from "./SearchCity";
 import {CitiesList} from "./CitiesList";
 
 export default class ContactMap extends React.Component {
+  getYmapsCity = () => {
+    let ymaps;
+    try {
+      ymaps = YMaps.location.city;
+    } catch(e) {
+
+    }
+
+    return ymaps;
+  };
   constructor(props) {
     super(props);
     this.baseCityId = '28';
@@ -14,7 +24,7 @@ export default class ContactMap extends React.Component {
     this.state = {
       isRenderedBranch: false,
       branches: '',
-      chosenCity: this.getCookie('deliveryCity') || YMaps?.location?.city || '',
+      chosenCity: this.getCookie('deliveryCity') || this.getYmapsCity() || '',
       filteredList: this.citiesList,
       activeElement: '',
       city: '',
@@ -85,7 +95,14 @@ export default class ContactMap extends React.Component {
     this.removeActiveElement();
   };
   onNonBranchClick = ({evt: {target, target: {textContent}}, kladr_id}) => {
+    let fromPickup = false;
+
     const w = () => {
+      w.checkStatement = (condition, a, b) => {
+        condition ? a() : b();
+
+        return w;
+      };
       w.setMapKladr = () => {
         window.JCShiptorWidgetPvz.setParams({
           location: {
@@ -96,12 +113,12 @@ export default class ContactMap extends React.Component {
         return w;
       };
       w.refreshMap = () => {
-        window.JCShiptorWidgetPvz.refresh();
+        !fromPickup && window.JCShiptorWidgetPvz.refresh();
 
         return w;
       };
       w.callMap = () => {
-        this.map.click();
+        !fromPickup && this.map.click();
 
         return w;
       };
@@ -155,20 +172,39 @@ export default class ContactMap extends React.Component {
 
         return w;
       };
+      w.removePickupFlag = () => {
+        fromPickup && sessionStorage.removeItem('fromPickup');
+
+        return w;
+      };
+      w.setPickup = () => {
+        fromPickup = true;
+
+        return w;
+      };
+      w.emptyFunction = () => w;
+      w.savePickupData = () => {
+        fromPickup && this.onBranchClick({target: {value: '', dataset: {city: textContent}, id: 28}});
+
+        return w;
+      };
 
       return w;
     };
 
     w()
+      .checkStatement(!!sessionStorage.getItem('fromPickup'), w.setPickup, w.emptyFunction)
       .setMapKladr()
       .refreshMap()
       .callMap()
       .removeActiveElement()
       .setActiveElement()
       .saveCity()
+      .removePickupFlag()
       .saveDeliveryType()
       .chooseCity()
-      .refreshHeader();
+      .refreshHeader()
+      .savePickupData();
   };
   chooseCity = (value) => this.setState({
     chosenCity: value
@@ -195,8 +231,11 @@ export default class ContactMap extends React.Component {
   onBranchClick = ({target: {value, dataset: {city}, id}}) => {
     this.setCityId(id);
     this.saveCookie('deliveryAddress', value);
+    this.saveCookie('deliveryCost', '0');
+    this.saveCookie('deliveryDeadline', '0');
     this.saveCookie('deliveryCity', city);
     this.saveDeliveryType('pickup');
+    sessionStorage.removeItem('fromPickup');
     this.renderBranch([]);
     this.chooseCity(city);
     this.disableActiveElement();

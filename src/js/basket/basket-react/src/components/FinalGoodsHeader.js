@@ -29,7 +29,7 @@ export const FinalGoodsHeader = () => {
         {getPositionsMessage(positionsNumber)}
         <button className={'basket__react-final-goods-open-button'} onClick={onHandleButtonClick}>Открыть</button>
       </p>
-      <p className="basket__react-final-goods-header-price">На сумму {totalSum} р.</p>
+      <p className="basket__react-final-goods-header-price">{totalSum} р.</p>
     </header>
   )
 };

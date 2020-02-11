@@ -1,4 +1,5 @@
 $change-city-color: #0000ff;
+$main-color: #ad1318;
 
 
 .delivery-pickup {
@@ -44,12 +45,12 @@ $change-city-color: #0000ff;
   //cursor: pointer;
   //position: relative;
   
-  color: #ad1318;
+  color: $main-color;
   cursor: pointer;
   text-decoration: underline;
 }
 .delivery-pickup__continue-btn {
-  background-color: #ad1318;
+  background-color: $main-color;
   color: #fff;
   border: none;
   height: 25px;
@@ -73,16 +74,19 @@ $change-city-color: #0000ff;
 }
 .delivery-pickup__change-city {
   border: none;
+  text-decoration: underline;
   background-color: transparent;
-  color: $change-city-color;
+  color: #616161;
   margin-left: 10px;
   font-size: 12px;
-  position: relative;
-  top: -10px;
 }
 .delivery-pickup__change-city:hover {
-  text-decoration: underline;
   cursor: pointer;
+}
+
+.delivery-pickup__no-point {
+  font-weight: 700;
+  color: $main-color;
 }
 
 @media (max-width: 550px) {

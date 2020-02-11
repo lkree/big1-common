@@ -11,15 +11,15 @@ import useCookie from "../hooks/useCookie";
 export const App = () => {
   const getPrevBasketPage = () => {
     const prevPage = sessionStorage.getItem('prevBasketPage');
-    sessionStorage.setItem('prevBasketPage', '');
-    return prevPage ? +prevPage : '';
+    sessionStorage.removeItem('prevBasketPage');
+    return prevPage && +prevPage;
   };
   const headers = {
     2: 'Способ доставки',
     3: 'Подтверждение заказа',
   };
   const [next, setNext] = useState(false);
-  const [{deliveryType: initialState}] = useCookie('deliveryType');
+  const [{deliveryType: initialState}] = useCookie(['deliveryType']);
   const [deliveryType, setDeliveryType] = useState(initialState || 'pickup');
   const [step, setStep] = useState(getPrevBasketPage() || 2);
   const onNavButtonClick = (operation, step) => {
@@ -43,6 +43,7 @@ export const App = () => {
     <DeliveryPropertiesProvider>
       <DeliveryStatusProvider>
         <StageHeader
+          setStep={setStep}
           header={headers[step]}
           onClick={payload => setStep(step => onNavButtonClick(payload, step))}
         />

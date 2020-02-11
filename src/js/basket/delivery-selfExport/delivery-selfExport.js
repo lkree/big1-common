@@ -135,7 +135,7 @@ window.deliverySelfExport = () => {
           .clearClosure()
       },
     }; //functions especially used for this module
-    const module = ({ selfExportModule, pickupList, chosenCity, pickupSection, pickupSearchInput, JCShiptorWidgetPvz, waitScreen }) => {
+    const module = ({ selfExportModule, pickupList, chosenCity, pickupSection, pickupSearchInput, JCShiptorWidgetPvz, waitScreen, errorSection }) => {
       module.initiate = () => {
         const w = () => {
           let _renderedCity, userCity, deliveryPoints, shiptorApi, shippingDays, isRendered = false;
@@ -247,7 +247,7 @@ window.deliverySelfExport = () => {
                       shiptorApi
                         .getDeliveryPoints()
                         .then((result) => {
-                          if (result.result.length < 1) h.showError();
+                          if (result.result.length < 1) h.showError(errorSection);
                           return s.filterPoints(result)
                         })
                         .then(() => {
@@ -363,6 +363,7 @@ window.deliverySelfExport = () => {
       
       eventListeners.create = () => {
         l.onChangeCity = () => {
+          h.saveAllCookie({type: null, address: null, id: null, deadline: null, cost: null, courier: null});
           sessionStorage.setItem('fromBasket', 'y');
           sessionStorage.setItem('prevBasketPage', '2');
           location.assign('/kontakty.html');
@@ -560,7 +561,7 @@ window.deliverySelfExport = () => {
                   }
                   chosenEl = chosenEl[0];
 
-                  l.onPickupPointClick({target: chosenEl});
+                  chosenEl.click();
 
                   return s;
                 };
@@ -585,6 +586,7 @@ window.deliverySelfExport = () => {
                 .handleChosenPoint()
                 .sortPickupList()
                 .clearPreviousSearch();
+
 
               return w;
             };

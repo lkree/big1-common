@@ -235,7 +235,13 @@ window.userCityHandler = (evt, {cityName, cityId} = {}) => {
   try {
     const w = () => {
       w.setTextCityName = (cityName = '') => {
-        cityName = cityName || getCookie('deliveryAddress') || YMaps.location.city;
+        let ymaps;
+        try {
+          ymaps = YMaps.location.city;
+        } catch(e) {
+
+        }
+        cityName = cityName || getCookie('deliveryCity') || ymaps || 'Ярославль';
         cityNameWrapper.textContent = cityName;
 
         return w;

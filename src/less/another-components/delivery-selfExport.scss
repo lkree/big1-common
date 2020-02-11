@@ -22,11 +22,9 @@ $border-main-color: #616161;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 420px;
   bottom: 70px;
   font-size: 20px;
   background-color: #fff;
-  position: absolute;
 }
 .delivery-selfExport__pickup-header {
   font-size: 20px;
@@ -102,7 +100,6 @@ $border-main-color: #616161;
   font-size: 12px;
 }
 .delivery-selfExport__change-city:hover, .delivery-selfExport__show-map:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
 .delivery-selfExport__city-search-input, .delivery-selfExport__pickup-search-input {
