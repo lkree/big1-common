@@ -8,7 +8,8 @@ const DeliveryPropertiesProvider = ({children}) => {
   const [props, setProps] = useState({
     ...cookie,
     pickup: {
-      header: 'Офисы самовывоза',
+      officeHeader: 'Офисы обслуживания',
+      pointHeader: 'Пункты самовывоза',
       linkText: 'Выбрать другое место самовывоза',
       showModule: false,
     },

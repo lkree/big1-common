@@ -375,12 +375,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "mainPage",
+    preset: "contacts",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'orders',
+    preset: 'mainPage',
   };
 
   /**

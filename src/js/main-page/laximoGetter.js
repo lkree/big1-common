@@ -307,7 +307,7 @@ if (!isLoggedIn)
   document.querySelector('.main-popup-reg__close').addEventListener('click', closeLoginMenu);
 
 contactsLinkChanger();
-document.addEventListener('load', window.userCityHandler);
+document.addEventListener('DOMContentLoaded', window.userCityHandler);
 
 
 //Заменяет ссылку в каталогах (по умолчанию неправильная стоит)

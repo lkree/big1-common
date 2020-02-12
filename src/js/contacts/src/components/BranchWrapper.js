@@ -20,10 +20,20 @@ export const BranchWrapper = ({branches, onClick, mapLink, onBranchClick, city})
   return (
     <>
       <button onClick={onClick} className={'contacts__back-button'}>Назад</button>
-      <header className={'contacts__branches-wrapper-header'}>Офисы обслуживания BIG1.RU</header>
-      <ul className={'contacts__branches-wrapper'}>
-        {renderBranch(branches)}
-      </ul>
+      {branches.office &&
+        <>
+          <header className={'contacts__branches-wrapper-header'}>Офисы обслуживания BIG1.RU</header>
+          <ul className={'contacts__branches-wrapper'}>
+            {renderBranch(branches.office)}
+          </ul>
+        </>}
+      {branches.points &&
+        <>
+          <header className={'contacts__branches-wrapper-header'}>Пункты самовывоза BIG1.RU</header>
+          <ul className={'contacts__branches-wrapper'}>
+            {renderBranch(branches.points)}
+          </ul>
+        </>}
       <iframe src={mapLink}
               width="100%"
               height="360"
