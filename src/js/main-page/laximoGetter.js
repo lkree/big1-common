@@ -246,8 +246,9 @@ window.userCityHandler = (evt, {cityName, cityId} = {}) => {
 
         return w;
       };
-      w.setCookieCityId = (cityId = '28') => {
-        saveCookie('region_id', cityId);
+      w.setCookieCityId = (cityId) => {
+        cityId && saveCookie('region_id', cityId);
+        !getCookie('region_id') && saveCookie('region_id', '28');
 
         return w;
       };

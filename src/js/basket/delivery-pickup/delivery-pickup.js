@@ -1,21 +1,29 @@
 window.deliveryPickup = () => {
   const getDeliveryPoints = () => {
-    const currentCity = getCookie('deliveryCity') || YMaps.location.city;
+    let ymaps, arr = [];
+    try {
+      ymaps = YMaps.location.city;
+    } catch(e) {
+      ymaps = 'Ярославль';
+    }
 
-    return window.citiesList
-      .filter(city => city.branches && city.name === currentCity).branches;
+    const currentCity = getCookie('deliveryCity') || ymaps || 'Ярославль';
+    let temp = window.citiesList
+      .filter(city => city.branches && city.name === currentCity)[0];
+
+    temp &&
+      temp.branches &&
+        Object.keys(temp.branches).forEach(k => arr = [...arr, ...temp.branches[k]]);
+
+    temp = arr[0] &&
+      arr.map(e => e.name.split(', '));
+
+    return {
+      city: !_.isEmpty(temp) ? temp.map(el => el[0]) : 'К сожалению, в данном городе у нас нет филиалов :(',
+      address: !_.isEmpty(temp) ? temp.map(el => el[1]) : 'Выберите Пункт доставки в разделе "Доставка"',
+    }
   };
-  const getOfficesOrPoints = (data) => (
-    data && data.flatMap(({name}) => {
-      const [city] = name.split(', ');
-      const temp = name.split(', ');
-      temp.shift();
-      const address = temp.join(', ');
-      return [[city, address]];
-    })
-  );
   const deliveryPoints = getDeliveryPoints();
-  const deliveryOffices = getDeliveryPoints();
   const option = {
     pickupModule: document.querySelector('.delivery-pickup'),
   };

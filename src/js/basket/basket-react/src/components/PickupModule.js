@@ -42,9 +42,7 @@ export const PickupModule = ({className, next, setNext}) => {
              className="delivery-pickup__input"
              placeholder="Введите улицу"/>
       <header className={'delivery-pickup__points-header'}>{pickup.officeHeader}</header>
-      <div className="delivery-pickup__points-list--offices" onClick={onListClick}/>
-      <header className={'delivery-pickup__points-header hidden'}>{pickup.pointHeader}</header>
-      <div className="delivery-pickup__points-list--points hidden" onClick={onListClick}/>
+      <div className="delivery-pickup__points-list" onClick={onListClick}/>
       {next && <ModuleNextButton onClick={onNextButtonClick} className={'delivery-pickup__continue-btn'}/>}
     </div>
   )

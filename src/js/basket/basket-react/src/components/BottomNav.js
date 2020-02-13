@@ -15,7 +15,7 @@ export const BottomNav = ({step, onClick}) => {
       3: {
         text: ['Назад', 'Оформить'],
         className: ['basket__react-bottom-nav-btn', 'basket__react-bottom-nav-btn basket__react-bottom-nav-btn--confirm'],
-        onClick: [onClick.bind(null, 'sub'), (evt) => {evt.preventDefault(); window.location.assign('/orders/new')}],
+        onClick: [onClick.bind(null, 'sub'), (evt) => {evt.preventDefault(); document.querySelector('a.c-order.to-right').click()}],
         available: [true, buttonAvailable],
       },
     };

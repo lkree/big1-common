@@ -271,7 +271,7 @@ module.exports = (grunt) => {
         dest: 'build/js/customers-script.js'
       },
       citiesList: {
-        src: 'src/js/data/citiesList.js',
+        src: 'src/js/data/cities-list-data.js',
         dest: 'build/js/cities-list.js'
       },
       shiptor: {
@@ -281,7 +281,7 @@ module.exports = (grunt) => {
       orders: {
         src: 'src/js/orders/auto-order.js',
         dest: 'build/js/orders-auto-order.js'
-      }
+      },
     }
   };
   const config = {

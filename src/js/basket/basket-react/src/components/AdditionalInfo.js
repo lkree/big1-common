@@ -15,11 +15,16 @@ export const AdditionalInfo = () => {
     const getPickUpData = () => {
       const cityData = window.citiesList.filter(({name}) => name === deliveryCity)[0];
       const {mapLink = ''} = cityData;
-      const props = {
-        ...cityData
-          .branches
-          .filter(({name}) => name === deliveryAddress)
-          [0]
+      let props = [];
+
+      cityData &&
+        cityData.branches &&
+          Object.keys(cityData.branches)
+            .forEach(k => props = [...props, ...cityData.branches[k]]);
+
+      props = {
+        ...props
+          .filter(({name}) => name === deliveryAddress)[0]
       };
       getData( {
         ...props,

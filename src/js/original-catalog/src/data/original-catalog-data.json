@@ -1,0 +1,506 @@
+{
+  "hyundai": {
+    "logo": {
+      "src": "/images/another-images/icons/cars-logo/hyundai.png"
+    },
+    "trucks": {
+      "HDLight": {
+        "name": "HDLight",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5535/11_original_original.jpg",
+        "laximo": {
+          "codes": [],
+          "names": []
+        }
+      },
+      "HDMedium": {
+        "name": "HDMedium",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5536/8_original_original.jpg",
+        "laximo": {
+          "codes": [],
+          "names": []
+        }
+      },
+      "HDHeavy": {
+        "name": "HDHeavy",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5534/7_original_original.jpg",
+        "laximo": {
+          "codes": [],
+          "names": []
+        }
+      },
+      "PORTER": {
+        "name": "PORTER",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5273/12_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwF0K1E4fgAAAACbK1Nk$ no",
+            "HYW201803 $*KwFVCnAZXwAAAAB63LJV$ no"
+          ],
+          "names": [
+            "Porter",
+            "Porter"
+          ]
+        }
+      },
+      "Aero": {
+        "name": "Aero",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5537/5_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwH-oduw9QAAAAB8XdOG$ no",
+            "HYWCV201803 $*KwG75J77vwAAAAAjQgri$ no",
+            "HYWCV201803 $*KwHot82g6-0AAAAAWqv8QA$ no",
+            "HYWCV201803 $*KwGL1K7LiAAAAACQ-YQv$ no",
+            "HYWCV201803 $*KwEneAJqJgAAAADBVIXR$ no"
+          ],
+          "names": [
+            "Aero City",
+            "Aero Queen",
+            "Aero Space",
+            "Aero Town",
+            "E-Aerotown"
+          ]
+        }
+      },
+      "_another": {
+        "name": "_another",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/default.gif",
+        "laximo": {
+          "codes": ["HYWCV201803 no no"],
+          "names": []
+        }
+      }
+    },
+    "cars": {
+      "ACCENT": {
+        "name": "ACCENT",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1413/49_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwEQTzVQEAAAAABnn_08$ no"
+          ],
+          "names": [
+            "Accent"
+          ]
+        }
+      },
+      "CRETA": {
+        "name": "CRETA",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/6218/2_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwHhvsSp4-oAAAAAc9_1nw$ no"
+          ],
+          "names": [
+            "Creta"
+          ]
+        }
+      },
+      "ELANTRA": {
+        "name": "ELANTRA",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1424/3_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwGy7Zf4uAAAAADk0riH$ no"
+          ],
+          "names": [
+            "Elantra"
+          ]
+        }
+      },
+      "GETZ": {
+        "name": "GETZ",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1432/33_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFME2kASAAAAABc6R5g$ no"
+          ],
+          "names": [
+            "Getz"
+          ]
+        }
+      },
+      "H-100": {
+        "name": "H-100",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5272/13_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwHvsMqn7O4AAAAAplvJEQ$ no",
+            "HYW201803 $*KwHqtc-i6esAAAAAUrN0cg$ no"
+          ],
+          "names": [
+            "H-100",
+            "H-100"
+          ]
+        }
+      },
+      "H350": {
+        "name": "H350",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5123/4_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwFZBnwZUgAAAABHoYg0$ no",
+            "HYW201803 $*KwH2qdO2_QAAAADve4Vl$ no"
+          ],
+          "names": [
+            "H350",
+            "H350"
+          ]
+        }
+      },
+      "STAREX": {
+        "name": "STAREX",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1436/64_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwHot82k6QAAAAArK48d$ no",
+            "HYWCV201803 $*KwHJluyCygAAAABrk5nH$ no",
+            "HYW201803 $*KwEaRT9WGwAAAADEPeaA$ no",
+            "HYW201803 $*KwFmOUMtZQAAAADDSZSW$ no"
+          ],
+          "names": [
+            "Grand Starex",
+            "Starex",
+            "Grand Starex",
+            "Starex"
+          ]
+        }
+      },
+      "I40": {
+        "name": "I40",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1450/13_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFOEWsBTAAAAADrEvfd$ no"
+          ],
+          "names": [
+            "i40"
+          ]
+        }
+      },
+      "IX35": {
+        "name": "IX35",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1453/15_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFcA3kWXwAAAACPndqf$ no"
+          ],
+          "names": [
+            "ix35"
+          ]
+        }
+      },
+      "SANTA FE": {
+        "name": "SANTA FE",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1433/50_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFSDXcSUwAAAAAIBgmJ$ no"
+          ],
+          "names": [
+            "Santa Fe"
+          ]
+        }
+      },
+      "SOLARIS": {
+        "name": "SOLARIS",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/6484/6_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwGN0qjHigAAAADzpIlh$ no"
+          ],
+          "names": [
+            "Solaris"
+          ]
+        }
+      },
+      "SONATA": {
+        "name": "SONATA",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/6124/4_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFEG2ELRwAAAADkBaNt$ no",
+            "HYW201803 $*KwGr9I7jqaEAAAAAA6A6rw$ no"
+          ],
+          "names": [
+            "Sonata",
+            "Sonata Hybrid"
+          ]
+        }
+      },
+      "TUCSON": {
+        "name": "TUCSON",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5125/1_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwHUi_GV0QAAAABS-Gvc$ no"
+          ],
+          "names": [
+            "Tucson"
+          ]
+        }
+      },
+      "_another": {
+        "name": "_another",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/default.gif",
+        "laximo": {
+          "codes": ["HYW201803 no no"],
+          "names": []
+        }
+      }
+    },
+    "toggle": true
+  },
+  "test123": {
+    "logo": {
+      "src": "/images/another-images/icons/cars-logo/hyundai.png"
+    },
+    "trucks": {
+      "HDLight": {
+        "name": "HDLight",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5535/11_original_original.jpg",
+        "laximo": {
+          "codes": [],
+          "names": []
+        }
+      },
+      "HDMedium": {
+        "name": "HDMedium",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5536/8_original_original.jpg",
+        "laximo": {
+          "codes": [],
+          "names": []
+        }
+      },
+      "HDHeavy": {
+        "name": "HDHeavy",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5534/7_original_original.jpg",
+        "laximo": {
+          "codes": [],
+          "names": []
+        }
+      },
+      "PORTER": {
+        "name": "PORTER",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5273/12_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwF0K1E4fgAAAACbK1Nk$ no",
+            "HYW201803 $*KwFVCnAZXwAAAAB63LJV$ no"
+          ],
+          "names": [
+            "Porter",
+            "Porter"
+          ]
+        }
+      },
+      "Aero": {
+        "name": "Aero",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5537/5_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwH-oduw9QAAAAB8XdOG$ no",
+            "HYWCV201803 $*KwG75J77vwAAAAAjQgri$ no",
+            "HYWCV201803 $*KwHot82g6-0AAAAAWqv8QA$ no",
+            "HYWCV201803 $*KwGL1K7LiAAAAACQ-YQv$ no",
+            "HYWCV201803 $*KwEneAJqJgAAAADBVIXR$ no"
+          ],
+          "names": [
+            "Aero City",
+            "Aero Queen",
+            "Aero Space",
+            "Aero Town",
+            "E-Aerotown"
+          ]
+        }
+      },
+      "_another": {
+        "name": "_another",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/default.gif",
+        "laximo": {
+          "codes": ["HYWCV201803 no no"],
+          "names": []
+        }
+      }
+    },
+    "cars": {
+      "ACCENT": {
+        "name": "ACCENT",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1413/49_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwEQTzVQEAAAAABnn_08$ no"
+          ],
+          "names": [
+            "Accent"
+          ]
+        }
+      },
+      "CRETA": {
+        "name": "CRETA",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/6218/2_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwHhvsSp4-oAAAAAc9_1nw$ no"
+          ],
+          "names": [
+            "Creta"
+          ]
+        }
+      },
+      "ELANTRA": {
+        "name": "ELANTRA",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1424/3_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwGy7Zf4uAAAAADk0riH$ no"
+          ],
+          "names": [
+            "Elantra"
+          ]
+        }
+      },
+      "GETZ": {
+        "name": "GETZ",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1432/33_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFME2kASAAAAABc6R5g$ no"
+          ],
+          "names": [
+            "Getz"
+          ]
+        }
+      },
+      "H-100": {
+        "name": "H-100",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5272/13_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwHvsMqn7O4AAAAAplvJEQ$ no",
+            "HYW201803 $*KwHqtc-i6esAAAAAUrN0cg$ no"
+          ],
+          "names": [
+            "H-100",
+            "H-100"
+          ]
+        }
+      },
+      "H350": {
+        "name": "H350",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5123/4_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwFZBnwZUgAAAABHoYg0$ no",
+            "HYW201803 $*KwH2qdO2_QAAAADve4Vl$ no"
+          ],
+          "names": [
+            "H350",
+            "H350"
+          ]
+        }
+      },
+      "STAREX": {
+        "name": "STAREX",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1436/64_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYWCV201803 $*KwHot82k6QAAAAArK48d$ no",
+            "HYWCV201803 $*KwHJluyCygAAAABrk5nH$ no",
+            "HYW201803 $*KwEaRT9WGwAAAADEPeaA$ no",
+            "HYW201803 $*KwFmOUMtZQAAAADDSZSW$ no"
+          ],
+          "names": [
+            "Grand Starex",
+            "Starex",
+            "Grand Starex",
+            "Starex"
+          ]
+        }
+      },
+      "I40": {
+        "name": "I40",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1450/13_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFOEWsBTAAAAADrEvfd$ no"
+          ],
+          "names": [
+            "i40"
+          ]
+        }
+      },
+      "IX35": {
+        "name": "IX35",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1453/15_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFcA3kWXwAAAACPndqf$ no"
+          ],
+          "names": [
+            "ix35"
+          ]
+        }
+      },
+      "SANTA FE": {
+        "name": "SANTA FE",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/1433/50_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFSDXcSUwAAAAAIBgmJ$ no"
+          ],
+          "names": [
+            "Santa Fe"
+          ]
+        }
+      },
+      "SOLARIS": {
+        "name": "SOLARIS",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/6484/6_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwGN0qjHigAAAADzpIlh$ no"
+          ],
+          "names": [
+            "Solaris"
+          ]
+        }
+      },
+      "SONATA": {
+        "name": "SONATA",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/6124/4_original_original.jpg",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwFEG2ELRwAAAADkBaNt$ no",
+            "HYW201803 $*KwGr9I7jqaEAAAAAA6A6rw$ no"
+          ],
+          "names": [
+            "Sonata",
+            "Sonata Hybrid"
+          ]
+        }
+      },
+      "TUCSON": {
+        "name": "TUCSON",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/5125/1_original_original.JPG",
+        "laximo": {
+          "codes": [
+            "HYW201803 $*KwHUi_GV0QAAAABS-Gvc$ no"
+          ],
+          "names": [
+            "Tucson"
+          ]
+        }
+      },
+      "_another": {
+        "name": "_another",
+        "imgSrc": "https://api.parts-soft.ru/system/car_base_model/default.gif",
+        "laximo": {
+          "codes": ["HYW201803 no no"],
+          "names": []
+        }
+      }
+    },
+    "toggle": true
+  }
+}
