@@ -1,0 +1,27 @@
+.separator {
+  position: relative;
+}
+
+.separator__text {
+  font-size: 40px !important;
+  color: #616161;
+  line-height: 2;
+
+  background: #fff;
+  padding: 0 !important;
+
+  position: relative;
+  top: 30px;
+}
+
+.separator__line {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 1px;
+  height: 300px;
+  border: 1px solid #616161;
+  z-index: -1;
+}

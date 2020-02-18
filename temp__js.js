@@ -15,7 +15,7 @@ window.deliveryPickup = () => {
     }
   };
 
-  const arr = getDeliveryPoints();
+  const deliveryPoints = getDeliveryPoints();
 
   const [offices, points] = Object.keys(arr).map(k => getOfficesOrPoints(arr[k]));
   const option = {

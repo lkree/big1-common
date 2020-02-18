@@ -10,7 +10,7 @@ module.exports = (grunt) => {
   const paths = {
     sass: {
       'users-styles': {
-        'build/css/users-styles.css' : 'src/less/style.scss',
+        'build/css/users-styles.css' : 'src/scss/style.scss',
       },
       'lax-tecDoc-pages': {
         'build/css/lax-tecDoc-pages/style.css': 'src/css/lax-tecDoc-pages/style.scss',
@@ -21,14 +21,14 @@ module.exports = (grunt) => {
       'catalog-seo-old': {
         'build/css/catalog-seo/catalog-seo-style.css' :'src/css/catalog-seo/catalog-seo-style.scss',
       },
-      'catalog-seo': {
-        'build/css/catalog-seo-style-new.css' : 'src/css/catalog-seo/test/style.scss',
+      'originalCatalog': {
+        'build/css/catalog-seo-style.css' : 'src/scss/another-components/original-catalog/index.scss',
       },
       'basket-delivery': {
-        'build/css/basket-delivery.css' : 'src/less/another-components/basket-index.scss',
+        'build/css/basket-delivery.css' : 'src/scss/another-components/basket/index.scss',
       },
       'contacts': {
-        'build/css/contacts.css' :'src/less/another-components/contacts.scss',
+        'build/css/contacts.css' :'src/scss/another-components/contacts.scss',
       },
     },
     cssmin: {
@@ -44,8 +44,8 @@ module.exports = (grunt) => {
       'catalog-seo-old': {
         'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css',
       },
-      'catalog-seo': {
-        'build/css/catalog-seo-style-new.css' : 'build/css/catalog-seo-style-new.css',
+      'originalCatalog': {
+        'build/css/catalog-seo-style.css' : 'build/css/catalog-seo-style.css',
       },
       'basket-delivery': {
         'build/css/basket-delivery.css' : 'build/css/basket-delivery.css',
@@ -67,8 +67,8 @@ module.exports = (grunt) => {
       'catalog-seo-old': {
         'build/css/catalog-seo/catalog-seo-style.css' : 'build/css/catalog-seo/catalog-seo-style.css',
       },
-      'catalog-seo': {
-        'build/css/catalog-seo-style-new.css' : 'build/css/catalog-seo-style-new.css',
+      'originalCatalog': {
+        'build/css/catalog-seo-style.css' : 'build/css/catalog-seo-style.css',
       },
       'basket-delivery': {
         'build/css/basket-delivery.css' : 'build/css/basket-delivery.css',
@@ -256,7 +256,7 @@ module.exports = (grunt) => {
       },
       basketDelivery: {
         src: [
-          'src/js/data/citiesList.js',
+          'src/js/data/cities-list-data.js',
           'src/js/basket/basket-delivery/basket-main-script.js',
           'src/js/basket/shiptor-points-getter/shiptor-points-getter.js',
           'src/js/basket/delivery-pickup/delivery-pickup.js',
@@ -375,12 +375,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "contacts",
+    preset: "originalCatalog",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'mainPage',
+    preset: 'basketDelivery',
   };
 
   /**
