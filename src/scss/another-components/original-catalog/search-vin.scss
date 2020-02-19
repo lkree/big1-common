@@ -15,6 +15,7 @@
 .search-vin__search-input {
   width: 100%;
   height: 30px;
+  border: 1px solid;
 }
 .search-vin__search-submit-label {
   position: absolute;
@@ -26,6 +27,10 @@
           rgba(209, 209, 209, 1) 100%);
   background-color: rgb(241, 241, 241);
   width: 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .search-vin__search-submit {
@@ -40,12 +45,24 @@
   border: unset;
   height: 20px;
   width: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 .search-vin__example {
-
+  margin: 10px 0;
+  color: #616161;
 }
 .search-vin__example-button {
+  color: inherit;
+  border: none;
+  background: none;
+  border-bottom: 1px dotted #616161;
 
+  &:hover {
+    cursor: pointer;
+  }
 }
 .search-vin__description {
 

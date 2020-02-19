@@ -61,7 +61,7 @@
       };
 
       optionsWrapperMake();
-      contentController(false);
+      contentController(true);
       $wrapper.on('click', onWrapperClick);
     };
     const formCleaner = (form) => {
@@ -129,9 +129,9 @@
       const $laxForm = $('#js-laximo-wizard-options');
 
       if (!h.isAvailable$($laxForm)) return; //if no laxOptions -> exit
-      if (hasResult) { //if no id => no result found
+      if (hasResult) //if no id => no result found
         formCleaner($laxForm);
-      } else {
+      else {
         const previousData = [$('.laximo-div-selectors-wrapper'), $('.laximo-div-description')];
         formCleaner(previousData);
       }

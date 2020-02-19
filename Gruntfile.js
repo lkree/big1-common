@@ -110,13 +110,9 @@ module.exports = (grunt) => {
         src: 'build/js/parts-soft-script.js',
         dest: 'build/js/parts-soft-script.js'
       },
-      seoCatalog: {
+      originalCatalog: {
         src: 'build/js/catalog-seo-script.js',
         dest: 'build/js/catalog-seo-script.js'
-      },
-      seoCatalogNew: {
-        src: 'build/js/new-catalog-seo-script.js',
-        dest: 'build/js/new-catalog-seo-script.js'
       },
       basketDelivery: {
           src: 'build/js/basket-delivery-page-script.js',
@@ -172,13 +168,9 @@ module.exports = (grunt) => {
         src: 'build/js/parts-soft-script.js',
         dest: 'build/js/parts-soft-script.js'
       },
-      seoCatalog: {
+      originalCatalog: {
         src: 'build/js/catalog-seo-script.js',
         dest: 'build/js/catalog-seo-script.js'
-      },
-      seoCatalogNew: {
-        src: 'build/js/new-catalog-seo-script.js',
-        dest: 'build/js/new-catalog-seo-script.js'
       },
       basketDelivery: {
         src: 'build/js/basket-delivery-page-script.js',
@@ -246,13 +238,9 @@ module.exports = (grunt) => {
         src: 'src/js/parts-soft/parts-soft.js',
         dest: 'build/js/parts-soft-script.js'
       },
-      seoCatalogOld: {
-        src: 'src/js/catalog-seo/catalog-seo-script.js',
-        dest: 'build/js/catalog-seo-script.js'
-      },
-      seoCatalog: {
+      originalCatalog: {
         src: 'src/js/test/NEWcatalog-seo-script.js',
-        dest: 'build/js/new-catalog-seo-script.js'
+        dest: 'build/js/catalog-seo-script.js'
       },
       basketDelivery: {
         src: [

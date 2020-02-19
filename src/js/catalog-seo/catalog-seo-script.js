@@ -288,9 +288,7 @@
         }
       });
       $('.lx-vin-search-module').append($wrapper);
-      $('#js-laximo-wizard-options').slideUp();
       $('.laximo').slideUp();
-      $('#js-laximo-chassis-options').slideUp();
     })();
   })(); //handlers
   ;(function() { //event listeners

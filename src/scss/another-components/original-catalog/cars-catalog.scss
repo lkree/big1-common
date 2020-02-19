@@ -37,11 +37,24 @@
   height: 18px;
 }
 
-@media (max-width: 768px) {
-  .cars-catalog {
-    padding: 0;
+@media (max-width: 1200px) {
+  .cars-catalog__item {
+    flex-basis: 19%;
   }
 }
+
+@media (max-width: 900px) {
+  .cars-catalog__item {
+    flex-basis: 24%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cars-catalog__item {
+    flex-basis: 32%;
+  }
+}
+
 @media (max-width: 550px) {
   .cars-catalog__item {
     flex-basis: 49%;

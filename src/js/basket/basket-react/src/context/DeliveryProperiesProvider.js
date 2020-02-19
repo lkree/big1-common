@@ -11,7 +11,7 @@ const DeliveryPropertiesProvider = ({children}) => {
       officeHeader: 'Офисы обслуживания',
       pointHeader: 'Пункты самовывоза',
       linkText: 'Выбрать другое место самовывоза',
-      showModule: false,
+      showModule: !cookie.deliveryAddress && !cookie.deliveryType,
     },
     selfExport: {
       header: 'Пункты доставки',
