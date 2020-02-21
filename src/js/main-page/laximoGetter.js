@@ -1,9 +1,11 @@
 'use strict';
 
 const cities = {
-  41: 'Ярославль, ул. Урицкого 47а',
   28: 'Ярославль, ул. Полушкина роща 16Л',
-  37: 'г. Екатеринбург, Железнодорожный район (Старая сортировка), ул.Билимбаевская, д.4',
+  37: 'Екатеринбург, Железнодорожный район (Старая сортировка) ул.Билимбаевская д.4',
+  41: 'Ярославль, ул. Урицкого 47А',
+  43: 'Рыбинск, ул. Танкистов, 8В',
+  44: 'Ярославль, ул.Гагарина, 4А'
 };
 const href = window.location.href.split('/');
 const isLoggedIn = !!document.querySelector('.b-link-perscab');
@@ -238,17 +240,22 @@ window.userCityHandler = (evt, {cityName, cityId} = {}) => {
         let ymaps;
         try {
           ymaps = YMaps.location.city;
-        } catch(e) {
-
+        } catch(e) {}
+        const regionId = +getCookie('region_id');
+        if (!cityName)
+        {
+          if (regionId === 28)
+            cityName = getCookie('deliveryCity') || 'Ярославль';
+          else
+            cityName = cities[regionId] || getCookie('deliveryCity') || ymaps || 'Ярославль';
         }
-        cityName = cityName || getCookie('deliveryCity') || ymaps || 'Ярославль';
         cityNameWrapper.textContent = cityName;
 
         return w;
       };
       w.setCookieCityId = (cityId) => {
         cityId && saveCookie('region_id', cityId);
-        !getCookie('region_id') && saveCookie('region_id', '28');
+        // !getCookie('region_id') && saveCookie('region_id', '28');
 
         return w;
       };
