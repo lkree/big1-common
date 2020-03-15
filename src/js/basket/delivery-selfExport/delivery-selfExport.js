@@ -245,7 +245,7 @@ window.deliverySelfExport = () => {
                     })
                     .then(() => {
                       shiptorApi
-                        .getDeliveryPoints()
+                        .getDeliveryPoints(['cdek', 'pec', 'dpd'])
                         .then((result) => {
                           if (result.result.length < 1) h.showError(errorSection);
                           return s.filterPoints(result)

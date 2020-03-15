@@ -36,22 +36,47 @@ class ShiptorPointsGetter {
   };
   /**
    * works only after using getUsersCityKladr
-   * @param courier {Object<string>}
-   * @returns {Promise<*>}
+   * @param courier {string|Object<string>|String[]}
+   * @returns {Promise<*>, Array<Object>}
    */
-  getDeliveryPoints = async ({courier} = {}) => {
-    if (courier)
-      courier = {courier: courier};
+  getDeliveryPoints = async (courier) => {
+    const prepareData = courier => (
+      this._dataHandler({
+        method: "getDeliveryPoints",
+        params: {
+          kladr_id: `${this.usersCityKladr}`,
+          cod: '0',
+          courier: courier
+        }
+      })
+    );
+    const promises = [];
+    if (Array.isArray(courier))
+    {
+      courier.forEach(element => {
+        const data = prepareData(element);
 
-    const data = this._dataHandler({
-      method: "getDeliveryPoints",
-      params: {
-        kladr_id: `${this.usersCityKladr}`,
-        cod: '0',
-        ...courier
-      }
-    });
-    return await this._getData(data);
+        promises.push(this._getData(data));
+      })
+    }
+    else
+    {
+      const data = prepareData(courier);
+      promises.push(this._getData(data));
+    }
+
+    return await Promise.all(promises)
+      .then(result => {
+        if (result.length > 1)
+          return result.reduce((prev, curr) => {
+           prev = prev.result || prev || [];
+           curr = curr.result || curr || [];
+
+           return {result: [...prev, ...curr]};
+          });
+
+        return result[0];
+      })
   };
   getUsersCityKladr = async () => {
     const data = this._dataHandler({method: 'suggestSettlement', params: {query: this.usersCity, country_code: "RU"}});
