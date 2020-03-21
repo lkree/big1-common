@@ -9,6 +9,11 @@ interface IProps extends IOptions {
   addCarButton: Element|null;
   userExitLink: Element|null;
 }
+interface ICheckStatementProps {
+  condition: boolean;
+  stateA: Function;
+  stateB: Function;
+}
 
 const options: IOptions = {
   addCar: document.querySelector('.add-car') || document.createElement('div'),
@@ -29,10 +34,11 @@ const addCarToGarage = (props: IProps): void => {
           const w = () => {};
 
           w.prototype = {
-            _then: (cb: Function, ...args: any): Function => {
-              cb(args);
+            _then: (cb: Function, ...args): Function => {
+              cb(...args);
               return w.prototype;
             },
+            _checkStatement: ({condition, stateA, stateB}: ICheckStatementProps) => condition ? stateA() : stateB(),
             checkForUserLogin: ({userExitLink}): boolean => checkAvailable(userExitLink),
             getVIN: (): void => {
               const params = new URLSearchParams(window.location.search);
@@ -45,8 +51,19 @@ const addCarToGarage = (props: IProps): void => {
                   w.isCarAlreadyAdded = Boolean(
                       ~lowerCase(result)
                         .indexOf(lowerCase(w.VIN)));
-                  }
-                );
+
+                  w._checkStatement({
+                    condition: w.isCarAlreadyAdded,
+                    stateA: w.alreadyAddedHandler,
+                    stateB: w.dontAddedHandler
+                  });
+                });
+            },
+            alreadyAddedHandler: (): void => {
+              console.log(props);
+            },
+            dontAddedHandler: (): void => {
+              console.log(props);
             },
           };
 
@@ -59,30 +76,16 @@ const addCarToGarage = (props: IProps): void => {
           });
         })();
 
-        const {getVIN, checkForAlreadyAddedVIN, checkForUserLogin} = w;
+        const {
+          getVIN,
+          checkForAlreadyAddedVIN,
+          checkForUserLogin,
+        } = w;
 
         checkForUserLogin(props) &&
           w
             ._then(getVIN)
             ._then(checkForAlreadyAddedVIN)
-            ._then();
-
-        if (w.isCarAlreadyAdded)
-        {
-          console.log('added');
-          const {} = w;
-
-          w
-            ._then()
-        }
-        else
-        {
-          console.log('not added');
-          const {} = w;
-
-          w
-            ._then()
-        }
 
       },
     };
