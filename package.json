@@ -6,7 +6,8 @@
   "scripts": {
     "build-js": "grunt js",
     "build-css": "grunt scss",
-    "build-img": "grunt imagemin && grunt tinypng"
+    "build-img": "grunt imagemin && grunt tinypng",
+    "build-webpack": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,11 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-tinypng": "^0.7.0",
     "imagemin-svgo": "^7.0.0",
-    "load-grunt-tasks": "^5.0.0"
+    "load-grunt-tasks": "^5.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony"

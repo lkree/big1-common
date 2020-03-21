@@ -1,0 +1,31 @@
+.catalog-button {
+  width: 70%;
+}
+table .add-car {
+  background-color: transparent;
+  color: #000;
+  border: none;
+
+  width: 20%;
+  margin-left: 9.7%;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+table .add-car--added {
+  &:hover {
+    text-decoration: none;
+    cursor: default;
+  }
+}
+
+@media (max-width: 650px) {
+  table .add-car {
+    margin: 10px 0 0;
+  }
+  table .catalog-button, table .add-car {
+    width: 100%;
+  }
+}

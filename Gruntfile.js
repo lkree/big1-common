@@ -30,6 +30,9 @@ module.exports = (grunt) => {
       'contacts': {
         'build/css/contacts.css' :'src/scss/another-components/contacts.scss',
       },
+      'laximoVehicleByVin': {
+        'build/css/laximoVehicleByVin.css' :'src/scss/another-components/laximoVehicleByVin.scss',
+      }
     },
     cssmin: {
       'users-styles': {
@@ -53,6 +56,9 @@ module.exports = (grunt) => {
       'contacts': {
         'build/css/contacts.css' : 'build/css/contacts.css',
       },
+      'laximoVehicleByVin': {
+        'build/css/laximoVehicleByVin.css': 'build/css/laximoVehicleByVin.css',
+      }
     },
     autoprefixer: {
       'users-styles': {
@@ -76,6 +82,9 @@ module.exports = (grunt) => {
       'contacts': {
         'build/css/contacts.css' : 'build/css/contacts.css',
       },
+      'laximoVehicleByVin': {
+        'build/css/laximoVehicleByVin.css': 'build/css/laximoVehicleByVin.css',
+      }
     },
     uglify: {
       mainPage: {
@@ -363,7 +372,7 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "originalCatalog",
+    preset: "laximoVehicleByVin",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],

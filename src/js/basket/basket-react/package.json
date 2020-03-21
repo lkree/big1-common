@@ -15,7 +15,9 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/preset-react": "^7.7.4",
-    "css-loader": "^3.4.0"
+    "css-loader": "^3.4.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "build": "webpack --mode production"
