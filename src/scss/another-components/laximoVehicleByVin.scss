@@ -1,7 +1,7 @@
-.catalog-button {
+.add-car__to-catalog-button {
   width: 70%;
 }
-table .add-car {
+table .add-car__add-button {
   background-color: transparent;
   color: #000;
   border: none;
@@ -14,7 +14,7 @@ table .add-car {
   }
 }
 
-table .add-car--added {
+table .add-car__add-button--added {
   &:hover {
     text-decoration: none;
     cursor: default;
@@ -22,10 +22,10 @@ table .add-car--added {
 }
 
 @media (max-width: 650px) {
-  table .add-car {
+  table .add-car__add-button {
     margin: 10px 0 0;
   }
-  table .catalog-button, table .add-car {
+  table .add-car__to-catalog-button, table .add-car__add-button {
     width: 100%;
   }
 }
