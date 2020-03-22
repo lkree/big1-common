@@ -32,6 +32,9 @@ module.exports = (grunt) => {
       },
       'laximoVehicleByVin': {
         'build/css/laximoVehicleByVin.css' :'src/scss/another-components/laximoVehicleByVin.scss',
+      },
+      'laximoVehicles': {
+        'build/css/laximoVehicles.css' :'src/scss/another-components/laximoVehicles.scss',
       }
     },
     cssmin: {
@@ -58,6 +61,9 @@ module.exports = (grunt) => {
       },
       'laximoVehicleByVin': {
         'build/css/laximoVehicleByVin.css': 'build/css/laximoVehicleByVin.css',
+      },
+      'laximoVehicles': {
+        'build/css/laximoVehicles.css' :'build/css/laximoVehicles.css',
       }
     },
     autoprefixer: {
@@ -84,6 +90,9 @@ module.exports = (grunt) => {
       },
       'laximoVehicleByVin': {
         'build/css/laximoVehicleByVin.css': 'build/css/laximoVehicleByVin.css',
+      },
+      'laximoVehicles': {
+        'build/css/laximoVehicles.css' :'build/css/laximoVehicles.css',
       }
     },
     uglify: {
@@ -143,6 +152,10 @@ module.exports = (grunt) => {
         src: 'build/js/orders-auto-order.js',
         dest: 'build/js/orders-auto-order.js'
       },
+      laximoVehicleByVin: {
+        src: 'build/js/laximoVehiclesByVinFrame.js',
+        dest: 'build/js/laximoVehiclesByVinFrame.js'
+      },
     },
     babel: {
       mainPage: {
@@ -200,6 +213,10 @@ module.exports = (grunt) => {
       orders: {
         src: 'build/js/orders-auto-order.js',
         dest: 'build/js/orders-auto-order.js'
+      },
+      laximoVehicleByVin: {
+        src: 'build/js/laximoVehiclesByVinFrame.js',
+        dest: 'build/js/laximoVehiclesByVinFrame.js'
       },
     },
     concat: {
@@ -278,6 +295,10 @@ module.exports = (grunt) => {
       orders: {
         src: 'src/js/orders/auto-order.js',
         dest: 'build/js/orders-auto-order.js'
+      },
+      laximoVehicleByVin: {
+        src: 'build/js/laximoVehiclesByVinFrame.js',
+        dest: 'build/js/laximoVehiclesByVinFrame.js'
       },
     }
   };
@@ -372,12 +393,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "laximoVehicleByVin",
+    preset: "laximoVehicles",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'basketDelivery',
+    preset: 'laximoVehicleByVin',
   };
 
   /**

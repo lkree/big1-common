@@ -65,3 +65,29 @@ export const checkSubString = (string: string, subString: string): boolean => {
 export const showError = (errorSection: HTMLElement): void => show(errorSection);
 export const hideError = (errorSection: HTMLElement): void => hide(errorSection);
 export const clearStorage = (storages: string[]) => storages.forEach((storage) => localStorage.setItem(storage, ''));
+export const flattenObjectValues = (array: any[]|any, key: string, initialValue = []) => {
+  const flatten = (object, key, result) => {
+    if (object && typeof object === 'object')
+    {
+      Object.keys(object).forEach(k => {
+        if (typeof object[k] === 'object')
+        {
+          return flatten(object[k], key, result);
+        }
+        else
+        {
+          if (k === key)
+            result.push(object[key]);
+
+          return result;
+        }
+      });
+    }
+
+    return result;
+  };
+
+  array.forEach(element => initialValue = flatten(element, key, initialValue));
+
+  return initialValue;
+};
