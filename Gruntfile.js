@@ -396,7 +396,7 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "laximoVehicleByVin",
+    preset: "laximoVehicles",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],

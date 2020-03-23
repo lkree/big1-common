@@ -17,6 +17,7 @@ export default () => {
     addCarButtons: document.querySelectorAll('.add-car .add-car__add-button') || document.createElement('div'),
     userExitWrapper: document.querySelector('.b-tsd-user')|| document.createElement('div'),
     carData: document.querySelectorAll('.b-content .table tbody tr'),
+    authToken: document.querySelector('meta[name=csrf-token]').content,
   };
   const props: IProps = {
     ...options,
@@ -41,22 +42,7 @@ export default () => {
               getCarData: async (): Promise<void> => {
                 const params = new URLSearchParams(window.location.search);
                 w.carVIN = params.get('vin') || '';
-
-                /**
-                 * temporary
-                 * because no no way to get authenticity_token by server
-                 */
-                const getAuthToken = () => {
-                  fetch(`${garageUrl}/new`)
-                    .then(result => result.text())
-                    .then(result => {
-                      const div = document.createElement('div');
-                      div.innerHTML = result;
-                      w.authToken = div.querySelector('input[name=authenticity_token]').value;
-                    });
-                };
-
-                await getAuthToken();
+                w.authToken = props.authToken;
 
                 [...props.carData].forEach(tr => {
                   const trLabel = getText(tr.children[0]);
