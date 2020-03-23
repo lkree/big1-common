@@ -1,23 +1,25 @@
 .add-car__to-catalog-button {
   width: 70%;
 }
-table .add-car__add-button {
-  background-color: transparent;
-  color: #000;
-  border: none;
+table {
+  .add-car__add-button, .add-car__fake-button {
+    background-color: transparent;
+    color: #000;
+    border: none;
 
-  width: 20%;
-  margin-left: 9.7%;
+    width: 20%;
+    margin-left: 9.7%;
 
-  &:hover {
-    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-}
 
-table .add-car__add-button--added {
-  &:hover {
-    text-decoration: none;
-    cursor: default;
+  .add-car__add-button--added {
+    &:hover {
+      text-decoration: none;
+      cursor: default;
+    }
   }
 }
 
