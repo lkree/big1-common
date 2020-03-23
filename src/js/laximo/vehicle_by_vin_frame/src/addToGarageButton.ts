@@ -182,7 +182,6 @@ export default () => {
   };
 
   const addCarToGarageHandler = addCarToGarage.bind(null, props);
-  addCarToGarageHandler();
 
   eventAdd(document, 'DOMContentLoaded', addCarToGarageHandler);
 }
