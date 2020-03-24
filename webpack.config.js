@@ -5,16 +5,22 @@ const modules = {
         src: './src/js/laximo/vehicle_by_vin_frame/index.ts',
         dest: './build/js/',
         filename: 'laximoVehiclesByVinFrame.js'
+      },
+      vehicles: {
+        src: './src/js/laximo/vehicles/index.ts',
+        dest: './build/js/',
+        filename: 'laximoVehicles.js'
       }
     }
   }
 };
 const path = require('path');
+const {src, dest, filename} = modules.js.laximo.vehicles;
 
 
 module.exports = {
   mode: 'production',
-  entry: modules.js.laximo.vehicle_by_vin_frame.src,
+  entry: src,
   externals: {
     'react': 'React',
     'react-dom' : 'ReactDOM',
@@ -31,7 +37,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: modules.js.laximo.vehicle_by_vin_frame.filename,
-    path: path.resolve(__dirname, modules.js.laximo.vehicle_by_vin_frame.dest),
+    filename: filename,
+    path: path.resolve(__dirname, dest),
   }
 };

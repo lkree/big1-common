@@ -156,6 +156,10 @@ module.exports = (grunt) => {
         src: 'build/js/laximoVehiclesByVinFrame.js',
         dest: 'build/js/laximoVehiclesByVinFrame.js'
       },
+      laximoVehicles: {
+        src: 'build/js/laximoVehicles.js',
+        dest: 'build/js/laximoVehicles.js'
+      },
     },
     babel: {
       mainPage: {
@@ -217,6 +221,10 @@ module.exports = (grunt) => {
       laximoVehicleByVin: {
         src: 'build/js/laximoVehiclesByVinFrame.js',
         dest: 'build/js/laximoVehiclesByVinFrame.js'
+      },
+      laximoVehicles: {
+        src: 'build/js/laximoVehicles.js',
+        dest: 'build/js/laximoVehicles.js'
       },
     },
     concat: {
@@ -299,6 +307,10 @@ module.exports = (grunt) => {
       laximoVehicleByVin: {
         src: 'build/js/laximoVehiclesByVinFrame.js',
         dest: 'build/js/laximoVehiclesByVinFrame.js'
+      },
+      laximoVehicles: {
+        src: 'build/js/laximoVehicles.js',
+        dest: 'build/js/laximoVehicles.js'
       },
     }
   };
@@ -401,7 +413,7 @@ module.exports = (grunt) => {
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'laximoVehicleByVin',
+    preset: 'laximoVehicles',
   };
 
   /**
