@@ -8,7 +8,7 @@ table {
     border: none;
 
     width: 20%;
-    margin-left: 9.7%;
+    margin-left: 8%;
 
     &:hover {
       text-decoration: underline;
@@ -23,11 +23,11 @@ table {
   }
 }
 
-@media (max-width: 650px) {
-  table .add-car__add-button {
-    margin: 10px 0 0;
-  }
-  table .add-car__to-catalog-button, table .add-car__add-button {
+@media (max-width: 750px) {
+  table .add-car__to-catalog-button, table .add-car__add-button, table .add-car__fake-button {
     width: 100%;
+  }
+  table .add-car__add-button, table .add-car__fake-button {
+    margin: 10px 0 0;
   }
 }

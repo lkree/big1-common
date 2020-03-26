@@ -10,7 +10,7 @@ import {
   eventRemove
 } from './utils.ts';
 import {addedButtonProps, apiUrl, garageUrl} from "./settings.ts";
-import {IOptions, ICheckStatementProps, IProps} from "./interfaces.ts";
+import {IOptions, ICheckStatementProps, IProps, IAppInitiate, IApp} from "./interfaces.ts";
 
 export default () => {
   const options: IOptions = {
@@ -25,24 +25,28 @@ export default () => {
   };
 
   const addCarToGarage = (props: IProps): void => {
-    const app = (() => {
+    const app = ((): IApp => {
       const app = () => {};
       app.prototype = {
-        initiate: (props): void => {
-          const w = (() => {
+        initiate: async (props): void => {
+          const w = (): IAppInitiate => {
             const w = () => {};
 
             w.prototype = {
-              _then: (cb: Function, ...args): Function => {
-                cb(...args);
-                return w.prototype;
+              _then(cb: string, ...args): Object {
+                this[cb](...args);
+                return this;
               },
-              _checkStatement: ({condition, stateA, stateB}: ICheckStatementProps) => condition ? stateA() : stateB(),
-              checkForUserLogin: ({userExitLink}): boolean => checkAvailable(userExitLink),
-              getCarData: async (): Promise<void> => {
+              _checkStatement({condition, stateA, stateB}: ICheckStatementProps) {
+                return condition ? stateA() : stateB()
+              },
+              checkForUserLogin(): boolean {
+                return checkAvailable(props.userExitLink)
+              },
+              getCarData(): void {
                 const params = new URLSearchParams(window.location.search);
-                w.carVIN = params.get('vin') || '';
-                w.authToken = props.authToken;
+                this.carVIN = params.get('vin') || '';
+                this.authToken = props.authToken;
 
                 [...props.carData].forEach(tr => {
                   const trLabel = getText(tr.children[0]);
@@ -50,35 +54,29 @@ export default () => {
                   switch (trLabel)
                   {
                     case 'Производитель:':
-                      w.carName = trValue;
+                      this.carName = trValue;
                       break;
                     case 'Модель:':
-                      w.carModel = trValue;
+                      this.carModel = trValue;
                       break;
                     case 'Выпущено':
-                      w.carYear = trValue;
+                      this.carYear = trValue;
                       break;
                     default:
                       break;
                   }
                 })
               },
-              checkForAlreadyAddedVIN: (): Promise<void>|void => {
-                fetch(`${apiUrl}?autos=json`)
+              checkForAlreadyAddedVIN(): Promise<boolean>|boolean {
+                return fetch(`${apiUrl}?autos=json`)
                   .then(result => result.json())
                   .then(result => {
                     const codes = flattenObjectValues(result, 'code', []).map(lowerCase);
-                    w.isCarAlreadyAdded = codes.includes(lowerCase(w.carVIN));
-                  })
-                  .then(() => {
-                    w._checkStatement({
-                      condition: w.isCarAlreadyAdded,
-                      stateA: w.alreadyAddedHandler,
-                      stateB: w.dontAddedHandler
-                    })
+
+                    return codes.includes(lowerCase(this.carVIN));
                   });
               },
-              alreadyAddedHandler: (): void => {
+              alreadyAddedHandler(): void {
                 const {addCarButtons} = props;
                 const {text, className} = addedButtonProps;
 
@@ -87,8 +85,8 @@ export default () => {
                   addClass(button, className);
                 });
               },
-              dontAddedHandler: (): void => {
-                const onAddButtonClick = () => {
+              dontAddedHandler(): void {
+                const addButtonHandler = () => {
                   [...props.addCarButtons].forEach(button => {
                     button.disabled = true;
                   });
@@ -98,11 +96,11 @@ export default () => {
 
                     formData.append('any_auto[type]', 'AnyAuto');
                     formData.append('utf8', '✓');
-                    formData.append('authenticity_token', w.authToken);
-                    formData.append('any_auto[code]', w.carVIN);
-                    formData.append('any_auto[make_name]', w.carName);
-                    formData.append('any_auto[model]', w.carModel);
-                    formData.append('any_auto[year]', w.carYear);
+                    formData.append('authenticity_token', this.authToken);
+                    formData.append('any_auto[code]', this.carVIN);
+                    formData.append('any_auto[make_name]', this.carName);
+                    formData.append('any_auto[model]', this.carModel);
+                    formData.append('any_auto[year]', this.carYear);
                     formData.append('any_auto[engine]', '');
                     formData.append('any_auto[body]', '');
                     formData.append('any_auto[comment]', '');
@@ -115,21 +113,19 @@ export default () => {
                   fetch(garageUrl, {
                     method: 'POST',
                     body: formData
-                  })
-                    .then(() => {
-                      [...props.addCarButtons].forEach(button => {
-                        eventRemove(button, 'click', onAddButtonClick);
-                      });
-
-                      addCarToGarageHandler();
+                  });
+                    [...props.addCarButtons].forEach(button => {
+                      eventRemove(button, 'click', addButtonHandler);
                     });
 
+                  addCarToGarageHandler();
                 };
 
                 [...props.addCarButtons].forEach(button => {
-                  eventAdd(button, 'click', onAddButtonClick);
+                  eventAdd(button, 'click', addButtonHandler);
                 })
               },
+              dontLoginHandler(): void {}
             };
 
             Object.setPrototypeOf(w, w.prototype);
@@ -142,19 +138,17 @@ export default () => {
               carModel: '',
               carYear: '',
             });
-          })();
+          };
+          const app = w();
 
-          const {
-            getCarData,
-            checkForAlreadyAddedVIN,
-            checkForUserLogin,
-          } = w;
+          if (app.checkForUserLogin()) {
+            app.getCarData();
+            app.isCarAlreadyAdded = await app.checkForAlreadyAddedVIN();
 
-          checkForUserLogin(props) &&
-          w
-            ._then(getCarData)
-            ._then(checkForAlreadyAddedVIN)
-
+            app.isCarAlreadyAdded ?
+              app.alreadyAddedHandler() :
+              app.dontAddedHandler();
+          }
         },
       };
 

@@ -408,12 +408,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "laximoVehicles",
+    preset: "laximoVehicleByVin",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'laximoVehicles',
+    preset: 'laximoVehicleByVin',
   };
 
   /**

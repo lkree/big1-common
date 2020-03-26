@@ -15,7 +15,7 @@ const modules = {
   }
 };
 const path = require('path');
-const {src, dest, filename} = modules.js.laximo.vehicles;
+const {src, dest, filename} = modules.js.laximo.vehicle_by_vin_frame;
 
 
 module.exports = {
