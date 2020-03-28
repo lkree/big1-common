@@ -8,12 +8,19 @@ export default () => {
   let details;
   try {
     details = window.detailsInfo.filter(({name}) => name === header);
-    details = (details[0] && details[0].details) || [];
+    details = clickedElId || (details && details[0] && details[0].details) || [];
 
-    details.forEach(({codeonimage = ''}) => {
-      try {
-        document.querySelector(`li[data-code="${codeonimage}"]`).click();
-      } catch (e) {}
-    });
+    clickedElId = null;
+
+    const doHighlight = (array, key = '') => {
+      array.forEach(({[key]: i}) => {
+        try {
+          document.querySelector(`li[data-code="${i}"]`).click();
+        } catch (e) {
+        }
+      });
+    };
+
+    doHighlight(details, 'codeonimage');
   } catch (e) {}
-};
+}
