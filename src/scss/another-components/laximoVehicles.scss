@@ -45,14 +45,21 @@
     flex-basis: 60%;
   }
 
-  .lax-tree__close-button {
+  .lax-tree__open-button, .lax-tree__close-button {
     width: auto;
     height: auto;
     padding: 0;
     margin: 0;
-    //display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .lax-tree__close-wrapper {
+    list-style: none;
     display: none;
   }
 }
