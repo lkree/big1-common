@@ -15,7 +15,7 @@ const useCookie = (initialState) => {
     const options = {
       path: '/',
       secure: true,
-      'max-age': new Date(Date.now() + 86400e5),
+      'expires': new Date(Date.now() + 11586400e5),
     };
 
     let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);

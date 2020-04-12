@@ -434,7 +434,7 @@ module.exports = (grunt) => {
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'customersDashboard',
+    preset: 'mainPage',
   };
 
   /**

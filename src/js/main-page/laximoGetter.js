@@ -19,7 +19,7 @@ const saveCookie = (name, value) => {
   const options = {
     path: '/',
     secure: true,
-    'max-age': new Date(Date.now() + 86400e5),
+    'expires': new Date(Date.now() + 11186400e5),
   };
 
   let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
