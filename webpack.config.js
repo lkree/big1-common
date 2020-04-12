@@ -11,11 +11,18 @@ const modules = {
         dest: './build/js/',
         filename: 'laximoVehicles.js'
       }
-    }
+    },
+    customers: {
+      dashboard: {
+        src: './src/js/customers/dashboard/index.ts',
+        dest: './build/js/',
+        filename: 'customersDashboard.js'
+      },
+    },
   }
 };
 const path = require('path');
-const {src, dest, filename} = modules.js.laximo.vehicle_by_vin_frame;
+const {src, dest, filename} = modules.js.customers.dashboard;
 
 
 module.exports = {

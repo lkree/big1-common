@@ -169,6 +169,10 @@ module.exports = (grunt) => {
         src: 'build/js/laximoVehicles.js',
         dest: 'build/js/laximoVehicles.js'
       },
+      customersDashboard: {
+        src: 'build/js/customersDashboard.js',
+        dest: 'build/js/customersDashboard.js'
+      },
     },
     babel: {
       mainPage: {
@@ -234,6 +238,10 @@ module.exports = (grunt) => {
       laximoVehicles: {
         src: 'build/js/laximoVehicles.js',
         dest: 'build/js/laximoVehicles.js'
+      },
+      customersDashboard: {
+        src: 'build/js/customersDashboard.js',
+        dest: 'build/js/customersDashboard.js'
       },
     },
     concat: {
@@ -320,6 +328,10 @@ module.exports = (grunt) => {
       laximoVehicles: {
         src: 'build/js/laximoVehicles.js',
         dest: 'build/js/laximoVehicles.js'
+      },
+      customersDashboard: {
+        src: 'build/js/customersDashboard.js',
+        dest: 'build/js/customersDashboard.js'
       },
     }
   };
@@ -422,7 +434,7 @@ module.exports = (grunt) => {
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'laximoVehicles',
+    preset: 'customersDashboard',
   };
 
   /**
