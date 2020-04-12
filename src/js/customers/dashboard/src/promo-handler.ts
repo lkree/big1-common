@@ -30,8 +30,15 @@ export default () => {
     const app = ((): IApp => {
       const app = () => {};
       app.prototype = {
-        createListeners() {
+        createListeners(): this {
           this.l.onPromoBtnClick = async () => {
+            const getPromoCodeSubmitLink = () => {
+              return window
+                .location
+                .href
+                .split('?')[0]
+                .replace('dashboard', 'update_discount');
+            };
             const {value} = props.promoInput;
 
             if (!value) return;
@@ -43,28 +50,22 @@ export default () => {
               { key: 'promo_code', value: 'true' },
               { key: 'customer[promo_code_number]', value }
             ]);
-            const link = window.location.href.split('?')[0].replace('dashboard', 'update_discount');
+            const link = getPromoCodeSubmitLink();
 
-            await fetch(link, {method: 'POST', body: formData});
+            await fetch(link, { method: 'POST', body: formData });
             const promoCode = await fetch(promoCodeUrl).then(result => result.text());
 
             if (promoCode)
-            {
               props.promoWrapper.innerHTML = `
                 <div class="customer__promo-code">Текущий промокод: ${promoCode}</div>
               `;
-            }
             else
-            {
-              const {promoPopup} = props;
-
-              promoPopup.click();
-            }
+              props.promoPopup.click();
           };
 
           return this;
         },
-        addListeners() {
+        addListeners(): this {
           eventAdd(props.promoBtn, 'click', this.l.onPromoBtnClick);
 
           return this;
