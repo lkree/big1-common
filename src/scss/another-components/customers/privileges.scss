@@ -1,0 +1,44 @@
+$main-background-color: #2e6780; // #2e6780
+$main-color: #fff; // #fff
+
+.customer__privileges
+{
+
+}
+
+.customer__privileges-item
+{
+  //background-color: $main-background-color;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.customer__privileges-item-icon
+{
+  margin-right: 10px;
+}
+
+.customer__privileges-item-info
+{
+  //color: $main-color;
+}
+
+.customer__privileges-item-link
+{
+  text-decoration: none;
+
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.customer__privileges-item-text
+{
+
+}

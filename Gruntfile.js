@@ -35,6 +35,9 @@ module.exports = (grunt) => {
       },
       'laximoVehicles': {
         'build/css/laximoVehicles.css' :'src/scss/another-components/laximoVehicles.scss',
+      },
+      'customers': {
+        'build/css/customers.css' :'src/scss/another-components/customers/index.scss',
       }
     },
     cssmin: {
@@ -64,6 +67,9 @@ module.exports = (grunt) => {
       },
       'laximoVehicles': {
         'build/css/laximoVehicles.css' :'build/css/laximoVehicles.css',
+      },
+      'customers': {
+        'build/css/customers.css' :'build/css/customers.css',
       }
     },
     autoprefixer: {
@@ -93,6 +99,9 @@ module.exports = (grunt) => {
       },
       'laximoVehicles': {
         'build/css/laximoVehicles.css' :'build/css/laximoVehicles.css',
+      },
+      'customers': {
+        'build/css/customers.css' :'build/css/customers.css',
       }
     },
     uglify: {
@@ -408,12 +417,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "laximoVehicleByVin",
+    preset: "customers",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'laximoVehicleByVin',
+    preset: 'laximoVehicles',
   };
 
   /**
