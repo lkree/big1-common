@@ -1,3 +1,5 @@
+$footer-color: #66808B;
+
 .customers__info {
   display: flex;
   justify-content: space-between;
@@ -42,7 +44,7 @@
   }
 }
 .customers__info-item-footer {
-  color: #66808B;
+  color: $footer-color;
 
   display: flex;
   align-items: center;
@@ -64,6 +66,7 @@
 }
 .customers__info-item-manager-link {
   text-decoration: none;
+  color: $footer-color;
 }
 
 @media (max-width: 750px) {

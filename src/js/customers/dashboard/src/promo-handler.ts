@@ -1,5 +1,5 @@
 // @ts-nocheck
-import {eventAdd, getFormData} from "./utils.ts";
+import {eventAdd, getFormData, activateButton, disableButton} from "./utils.ts";
 import {promoCodeUrl} from "./settings.ts";
 
 interface IProps {
@@ -42,7 +42,7 @@ export default () => {
             const {value} = props.promoInput;
 
             if (!value) return;
-
+            const {promoBtn} = props;
             const formData = getFormData([
               { key: 'utf8', value: '✓' },
               { key: '_method', value: 'patch' },
@@ -51,6 +51,8 @@ export default () => {
               { key: 'customer[promo_code_number]', value }
             ]);
             const link = getPromoCodeSubmitLink();
+
+            disableButton(promoBtn);
 
             await fetch(link, { method: 'POST', body: formData });
             const promoCode = await fetch(promoCodeUrl).then(result => result.text());
@@ -61,6 +63,8 @@ export default () => {
               `;
             else
               props.promoPopup.click();
+
+            activateButton(promoBtn);
           };
 
           return this;

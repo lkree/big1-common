@@ -22,13 +22,15 @@ export const escapeHtml = (text: string): string => {
 
   return text.replace(/[&<>"']/g, (m) => map[m]);
 };
-export const activateButton = (button: HTMLButtonElement, className: string): void => {
+export const activateButton = (button: HTMLButtonElement, className?: string): void => {
   button.disabled = false;
-  handleClass(button, 'remove', className);
+  document.body.style.cursor = 'default';
+  className && handleClass(button, 'remove', className);
 };
-export const disableButton = (button: HTMLButtonElement, className: string): void => {
+export const disableButton = (button: HTMLButtonElement, className?: string): void => {
   button.disabled = true;
-  handleClass(button, 'add', className);
+  document.body.style.cursor = 'not-allowed';
+  className && handleClass(button, 'add', className);
 };
 export const setDataSet = (element: HTMLElement, dataType: string, value: string): string => element.dataset[dataType] = value;
 export const getDataSet = (element: HTMLElement, dataType: string): string|undefined => element ? element.dataset[dataType] : '';

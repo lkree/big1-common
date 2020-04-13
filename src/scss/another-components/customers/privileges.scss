@@ -8,28 +8,33 @@ $main-color: #fff; // #fff
 
 .customer__privileges-item
 {
-  //background-color: $main-background-color;
+  background-color: $main-background-color;
   padding: 0 20px;
 
   display: flex;
   align-items: center;
 }
 
-.customer__privileges-item-icon
+.customer__privileges-item-icon-wrapper
 {
   margin-right: 10px;
 }
 
+.customer__privileges-item-icon
+{
+  width: 90px;
+}
+
 .customer__privileges-item-info
 {
-  //color: $main-color;
+  color: $main-color;
 }
 
 .customer__privileges-item-link
 {
   text-decoration: none;
 
-  color: #000;
+  color: $main-color;
   font-weight: 700;
   font-size: 16px;
 
