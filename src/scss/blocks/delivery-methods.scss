@@ -1,0 +1,19 @@
+.delivery-methods {
+  @include flex(false, false, column);
+  width: 270px;
+}
+.delivery-methods__header {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.delivery-methods__list {
+  @include flex(space-between);
+  @include ul-style-off();
+}
+
+@media (max-width: 880px) {
+  .delivery-methods__header {
+    font-size: 16px;
+  }
+}

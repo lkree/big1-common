@@ -1,0 +1,367 @@
+$border-main-color: #c1c1c1
+$border-secondary-color: #616161
+$main-color: #1c4254
+$main-secondary-color: #ad1318
+$arrow-background: url(/images/design/basket/icons/nav-arrow.svg) no-repeat
+$double-arrow-background: url(/images/design/basket/icons/double-arrow.svg) no-repeat center
+$confirm-background: url(/images/design/basket/icons/nav-arrow--white.svg) no-repeat
+$text-size: 16px
+
+div, p
+  cursor: default
+  font-size: $text-size
+  letter-spacing: 0.2px
+
+@mixin blockHeader($withTopPadding: false, $withTopBorder: true, $withFontSize: false, $withMargin: false, $withBottomBorder: false)
+  @if $withTopPadding
+    padding-top: 15px
+  @if $withTopBorder
+    border-top: 1px solid $border-main-color
+  @if $withBottomBorder
+    border-bottom: 1px solid $border-main-color
+  @if $withFontSize
+    font-size: 16px
+  @if $withMargin
+    margin-bottom: 15px
+
+@mixin ulStyle($type: none)
+  list-style: $type
+@mixin additionalItemBackground($url, $size: 14px)
+  background: url($url) no-repeat left top
+  background-size: 18px
+
+
+.basket__progress-header
+  display: flex
+  padding: 15px 0
+  @include ulStyle
+  @include blockHeader(false, true, false, false, true)
+
+.basket__progress-header-item
+  border: 1px solid $border-main-color
+    radius: 5px
+  padding: 5px 10px
+  position: relative
+  margin-right: 30px
+
+  &::before
+    content: ''
+    position: absolute
+    right: -23px
+    top: 5px
+    width: 15px
+    height: 15px
+    background: $arrow-background
+      size: contain
+
+  &:last-child::before
+    display: none
+
+  &:hover
+    cursor: pointer
+
+.basket__progress-header-item--without-before
+  margin-right: 15px
+
+  &::before
+    display: none
+
+.basket__progress-header-item--active
+  color: #fff
+  background-color: $main-secondary-color
+
+.basket__react-stage-header
+  @include blockHeader(true, false, true, true)
+
+.basket__tabs-wrapper
+  display: flex
+  @include ulStyle
+  margin-bottom: 15px
+
+.basket__react-delivery-choose-header
+  @include blockHeader(false, false, true, true)
+
+.basket__react-delivery-choose-point
+  margin-bottom: 5px
+
+.basket__react-delivery-choose-pickAnotherPoint
+  border: none
+    bottom: 1px solid $border-secondary-color
+  color: $border-secondary-color
+  background: transparent
+
+  &:hover
+    cursor: pointer
+
+.basket__react-additional-info
+  margin: 15px 0
+  display: flex
+  flex-direction: column
+
+.basket__react-additional-info-header
+  @include blockHeader(false, false, true, true, true)
+
+.basket__react-additional-info-body
+  display: flex
+
+.basket__react-additional-info-left-part
+  display: flex
+  flex-direction: column
+  padding: 0 10px
+  max-width: 200px
+
+.basket__react-additional-info-right-part
+  flex-grow: 1
+
+.basket__react-additional-info-item
+  color: $border-secondary-color
+  border-bottom: 1px solid $border-main-color
+  padding: 0 0 5px 23px
+  margin: 0 0 5px 0
+
+  &:last-child
+    border: none
+
+.basket__react-additional-info-item--phone
+  @include additionalItemBackground('/images/design/basket/icons/phone.svg')
+
+.basket__react-additional-info-item--name
+  @include additionalItemBackground('/images/design/basket/icons/point.svg')
+
+.basket__react-additional-info-item--schedule
+  @include additionalItemBackground('/images/design/basket/icons/clock.svg')
+
+.basket__react-bottom-panel
+  display: flex
+  justify-content: space-between
+  padding: 15px 5px
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 10%, rgba(235,239,238,1) 10%, rgba(235,239,238,1) 90%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%)
+  border:
+    top: 1px solid $border-main-color
+    bottom: 1px solid $border-main-color
+  margin: 15px 0
+
+.basket__react-bottom-info
+  display: flex
+  align-items: center
+
+.basket__react-bottom-info-item
+  margin: 0 0 0 10px
+  color: #000
+  font-size: $text-size
+  position: relative
+  padding-left: 30px
+
+  &::before
+    content: ''
+    position: absolute
+    width: 1px
+    height: 15px
+    top: 1px
+    left: 0
+    background-color: $border-main-color
+
+.basket__react-bottom-info-item:first-child
+  &::before
+    display: none
+
+.basket__react-bottom-info-item--products
+  background: url(/images/design/basket/icons/wheel.svg) no-repeat 0 center
+  background-size: 17px
+
+.basket__react-bottom-info-item--delivery
+  background: url(/images/design/basket/icons/box.svg) no-repeat 8px center
+  background-size: 17px
+
+.basket__react-bottom-info-item--common
+  background: url(/images/design/basket/icons/shop.svg) no-repeat 8px center
+  background-size: 17px
+
+.basket__react-bottom-info-item-mark
+  border-bottom: 1px solid $main-color
+  white-space: nowrap
+
+.basket__react-bottom-nav
+  display: flex
+
+.basket__react-bottom-nav-btn, .basket__next-button
+  border: 1px solid $main-secondary-color
+    radius: 5px
+  text-align: left
+  height: 30px
+  background-color: #fff
+  padding: 5px 10px 5px 5px
+  display: flex
+  justify-content: space-between
+  font-size: $text-size
+  margin-right: 20px
+
+  &:first-child
+    flex-direction: row-reverse
+    padding: 5px 5px 5px 10px
+
+  &:hover
+    cursor: pointer
+
+  &:last-child
+    margin-right: 0
+
+.basket__react-bottom-nav-btn--confirm
+  background-color: #28a745
+  color: #fff
+  border: 1px solid $border-secondary-color
+
+.basket__react-bottom-nav-btn--confirm .basket__react-bottom-nav-btn-arrow
+  background: $confirm-background
+    position: 60% center
+    size: 15px
+  height: 19px
+  width: 15px
+  margin-left: 10px
+
+.basket__react-bottom-nav-btn-text
+
+.basket__react-bottom-nav-btn-arrow
+  background: $arrow-background
+    position: 60% center
+    size: 15px
+  height: 19px
+  width: 15px
+  margin-left: 10px
+
+.basket__react-bottom-nav-btn:nth-child(1) .basket__react-bottom-nav-btn-arrow
+  transform: rotate(180deg)
+  margin: 0 10px 0 0
+
+.basket__react-bottom-message
+  display: flex
+
+.basket__react-bottom-message-text
+  border: 1px solid $main-secondary-color
+    radius: 5px
+  padding: 10px
+  color: $main-color
+  text-align: justify
+
+.basket__react-final-goods-header
+  @include blockHeader(false, false, true, true, true)
+  display: flex
+  align-items: flex-end
+  font-size: 20px
+  font-weight: 700
+
+.basket__react-final-goods-header-price, .basket__react-final-delivery-price, .basket__react-final-delivery-deadline-days
+  color: $main-secondary-color
+
+.basket__react-final-delivery-price-text
+  font-size: inherit
+  line-height: inherit
+
+.basket__react-final-delivery-deadline
+  font-weight: 700
+  font-size: 20px
+
+.basket__react-final-delivery-address-wrapper, .basket__react-final-delivery-deadline, .basket__react-final-delivery-price-wrapper, .basket__react-final-goods-header, .basket__react-final-goods-item
+  display: flex
+  justify-content: space-between
+  margin-bottom: 25px
+  border-bottom: 1px dashed $border-main-color
+
+.basket__react-final-delivery-address
+  font-size: 14px
+
+.basket__react-final-delivery-deadline-text
+  font-size: inherit
+
+.basket__react-final-delivery-header
+  display: flex
+  justify-content: space-between
+
+.basket__react-final-goods-header-positions
+  display: flex
+  align-items: flex-end
+  font-size: inherit
+  font-weight: inherit
+
+.basket__react-final-delivery-header-type, .basket__react-final-delivery-header
+  font-weight: 700
+  font-size: 20px
+
+.basket__react-final-goods-open-button
+  border: none
+  font-size: 0
+  width: 20px
+  height: 30px
+  position: relative
+  left: 11px
+  border-radius: 4px
+  background: $double-arrow-background
+    color: #1c4254
+    size: 13px
+  transform: rotate(90deg)
+
+.basket__react-final-goods-open-button--open
+  transform: rotate(270deg)
+
+.basket__react-final-body
+  margin-top: 20px
+.basket__react-final-goods-item-list
+  display: none
+
+.basket__react-final-goods-item-link
+  flex-basis: 60%
+  overflow: hidden
+  text-overflow: ellipsis
+  padding-right: 10px
+  &:hover
+    cursor: pointer
+
+.basket__react-final-goods-item-date, .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
+  flex-basis: 10%
+  padding-right: 10px
+  text-align: right
+
+  &:last-of-type
+    padding-right: 0
+
+@media (max-width: 768px)
+  .basket__react-additional-info-right-part
+    display: none
+
+  .basket__react-bottom-panel
+    flex-wrap: wrap
+
+  .basket__react-bottom-nav
+    margin-top: 15px
+    width: 100%
+    justify-content: flex-end
+
+@media (max-width: 550px)
+  .basket__react-bottom-info
+    flex-wrap: wrap
+
+  .basket__react-bottom-info-item
+    padding: 10px 15px 10px 25px
+
+    &::before
+      display: none
+
+  .basket__react-bottom-info-item--delivery
+    background-position: left center
+
+  .basket__react-delivery-strong
+    display: block
+    width: 100%
+  .basket__react-final-goods-item-date
+    display: none
+
+  .basket__react-final-goods-item-count, .basket__react-final-goods-item-price
+    flex-basis: 20%
+
+  .basket__react-bottom-info-item--common
+    background-position: 0 center
+
+@media (max-width: 360px)
+  .basket__react-bottom-panel
+    min-height: 260px
+    padding: 25px 5px

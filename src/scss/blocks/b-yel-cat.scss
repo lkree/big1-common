@@ -1,0 +1,205 @@
+.b-yel-cat {
+  padding: 0;
+  position: relative;
+  overflow: hidden
+}
+
+.b-yel-cat-list li {
+  height: 200px
+}
+
+.b-yel-cat-list li {
+  position: relative;
+  background-color: #1c4254;
+  perspective: 1000px;
+  width: 10%
+}
+
+.b-yel-cat-list li a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 1s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden
+}
+
+.b-yel-cat-list li a:first-of-type {
+  background-image: url(/images/design/bgCarsMini.jpg);
+  background-size: contain
+}
+
+.b-yel-cat-list li a:last-of-type {
+  background-image: url(/images/design/bgCarsMiniHover.jpg);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.b-yel-cat-list li a:last-of-type span:first-of-type i {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain
+}
+
+.b-yel-cat-list li:hover a:first-of-type {
+  transform: rotateY(180deg);
+}
+
+.b-yel-cat-list li:hover a:last-of-type {
+  transform: rotateY(360deg);
+}
+
+.b-yel-cat-list {
+  background: #1c4254;
+  display: flex;
+  width: 200%;
+  transition: 0.5s transform linear
+}
+
+.b-yel-cat__slider-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: unset;
+  background: url(/images/design/brandsLaximoHover/slider-btn--active.svg) no-repeat center center;
+  position: absolute;
+  top: calc(50% - 25px);
+  right: 0;
+  font-size: 0;
+}
+
+.b-yel-cat__slider-btn--prev {
+  transform: rotate(180deg);
+  left: 0
+}
+
+.b-yel-cat__slider-btn--deactive {
+  background: url(/images/design/brandsLaximoHover/slider-btn--deactive.svg) no-repeat center center;
+  opacity: 0.3
+}
+
+#main-slider-truck li a:last-of-type span i img {
+  display: none
+}
+
+#main-slider-truck li:first-of-type a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/manHover.png);
+  background-position: center 7px
+}
+
+#main-slider-truck li:nth-of-type(2) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/dafHover.png);
+  background-position: center 18px
+}
+
+#main-slider-truck li:nth-of-type(3) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/renaultHover.png);
+  background-position: center 10px
+}
+
+#main-slider-truck li:nth-of-type(4) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/volvoHover.png);
+  background-position: center 11px
+}
+
+#main-slider-truck li:nth-of-type(5) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/mercedesHover.png);
+  background-position: center 10px
+}
+
+#main-slider-truck li:nth-of-type(6) a:last-of-type span:first-of-type i {
+  background-position: center 6px
+}
+
+#main-slider-truck li:nth-of-type(7) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/ivecoHover.png);
+  background-position: center 8px
+}
+
+#main-slider-truck li:nth-of-type(8) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/isuzuHover.png)
+}
+
+#main-slider-truck li:nth-of-type(9) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/hyundaiHover.png)
+}
+
+#main-slider-truck li:nth-of-type(10) a:last-of-type span:first-of-type i {
+  background-image: url(/images/design/brandsLaximoHover/kiaHover.png);
+  background-position: center 12px
+}
+
+#main-slider-car li:nth-of-type(5) a:last-of-type img {
+  object-position: 0 20px
+}
+
+#main-slider-car li a:first-of-type img {
+  object-position: 0 30px
+}
+
+#main-slider-car li:nth-of-type(10) a:last-of-type img, #main-slider-car li:nth-of-type(8) a:last-of-type img {
+  object-position: 0 10px
+}
+
+#main-slider-car li:nth-of-type(1) a:last-of-type img, #main-slider-car li:nth-of-type(2) a:last-of-type img {
+  object-position: 0 15px
+}
+
+#main-slider-car {
+  width: 300%
+}
+
+@media (max-width: 1000px) {
+  .b-yel-cat-list {
+    width: 250%
+  }
+
+  #main-slider-car {
+    width: 375%
+  }
+}
+
+@media (max-width: 800px) {
+  .b-yel-cat-list {
+    width: 350%
+  }
+
+  #main-slider-car {
+    width: 525%
+  }
+}
+
+@media (max-width: 720px) {
+  .b-yel-cat-list li:last-of-type {
+    border-bottom: none
+  }
+}
+
+@media (max-width: 600px) {
+  .b-yel-cat-list {
+    width: 500%
+  }
+
+  #main-slider-car {
+    width: 750%
+  }
+}
+
+@media (max-width: 550px) {
+  .b-yel-cat-list li:last-of-type {
+    border-bottom: 1px solid #fff
+  }
+}
+
+@media (max-width: 450px) {
+  .b-yel-cat-list {
+    width: 1000%
+  }
+
+  #main-slider-car {
+    width: 1500%
+  }
+}

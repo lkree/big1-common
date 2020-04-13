@@ -1,0 +1,108 @@
+.footerDown {
+  display: flex;
+  padding: 17px 15px 4px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between
+}
+
+.footerDown__mark {
+  display: inline-block;
+  width: 9%;
+  background-repeat: no-repeat;
+  height: 25px;
+  background-size: cover;
+  background-position: center;
+  transition: .5s;
+  font-size: 0;
+}
+
+.footerDown__mark:hover {
+  background-size: contain
+}
+
+.footerDown__mark1 {
+  background-image: url(/images/design/footerBrands/_man.png)
+}
+
+.footerDown__mark2 {
+  background-image: url(/images/design/footerBrands/_daf.png)
+}
+
+.footerDown__mark3 {
+  background-image: url(/images/design/footerBrands/_renault.png)
+}
+
+.footerDown__mark4 {
+  background-image: url(/images/design/footerBrands/_volvo.png)
+}
+
+.footerDown__mark5 {
+  background-image: url(/images/design/footerBrands/_mercedes.png)
+}
+
+.footerDown__mark6 {
+  background-image: url(/images/design/footerBrands/_scania.png)
+}
+
+.footerDown__mark7 {
+  background-image: url(/images/design/footerBrands/_iveco.png)
+}
+
+.footerDown__mark8 {
+  background-image: url(/images/design/footerBrands/_isuzu.png)
+}
+
+.footerDown__mark9 {
+  background-image: url(/images/design/footerBrands/_hyundai.png)
+}
+
+.footerDown__mark10 {
+  background-image: url(/images/design/footerBrands/_kia.png)
+}
+
+.footerDown__mark1:hover {
+  background-image: url(/images/design/footerBrands/_manHover.png)
+}
+
+.footerDown__mark2:hover {
+  background-image: url(/images/design/footerBrands/_dafHover.png)
+}
+
+.footerDown__mark3:hover {
+  background-image: url(/images/design/footerBrands/_renaultHover.png)
+}
+
+.footerDown__mark4:hover {
+  background-image: url(/images/design/footerBrands/_volvoHover.png)
+}
+
+.footerDown__mark5:hover {
+  background-image: url(/images/design/footerBrands/_mercedesHover.png)
+}
+
+.footerDown__mark6:hover {
+  background-image: url(/images/design/footerBrands/_scaniaHover.png)
+}
+
+.footerDown__mark7:hover {
+  background-image: url(/images/design/footerBrands/_ivecoHover.png)
+}
+
+.footerDown__mark8:hover {
+  background-image: url(/images/design/footerBrands/_isuzuHover.png)
+}
+
+.footerDown__mark9:hover {
+  background-image: url(/images/design/footerBrands/_hyundaiHover.png)
+}
+
+.footerDown__mark10:hover {
+  background-image: url(/images/design/footerBrands/_kiaHover.png)
+}
+
+@media (max-width: 539px) {
+  .footerDown__mark {
+    background-size: contain
+  }
+}

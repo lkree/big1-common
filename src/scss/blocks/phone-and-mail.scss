@@ -1,0 +1,190 @@
+.phone-and-mail {
+  position: relative
+}
+
+.phone-and-mail::before, .phone-and-mail::after, address::after {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  height: 25px;
+  width: 1px;
+  top: -1px;
+  background-color: #fff;
+  right: -20px
+}
+
+.phone-and-mail::before {
+  top: 3px;
+  left: -53px
+}
+
+.phone-and-mail::after {
+  top: 3px;
+  right: -53px
+}
+
+.phone-and-mail a, .phone-and-mail div a, address a {
+  font-family: MyriadPro
+}
+
+
+.phone-and-mail__mail {
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+  margin: 0 20px
+}
+
+.phone-and-mail__mail::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background: url(/images/design/mailLogo.png) no-repeat;
+  width: 20px;
+  height: 16px;
+  top: 0;
+  left: -30px
+}
+
+.phone-and-mail__callBack {
+  display: inline-block;
+  padding: 7px 5px 5px 35px;
+  background-color: #ad1318
+}
+
+.phone-and-mail__popup-overlay {
+  color: #fff;
+  font-size: 15px;
+  position: relative
+}
+
+.phone-and-mail__popup-overlay::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 21px;
+  background: url(/images/design/callBackLogo.png) no-repeat;
+  top: -3px;
+  left: -27px
+}
+
+address {
+  position: relative
+}
+
+@media (max-width: 1168px) {
+  .phone-and-mail::after {
+    right: -17px
+  }
+
+  .phone-and-mail::before, .phone-and-mail::after, address::after {
+    display: none
+  }
+}
+
+@media (max-width: 1024px) {
+  .phone-and-mail__mail {
+    margin: 5px 0 -5px
+  }
+
+  .phone-and-mail__callBack {
+    padding: 2px 5px 5px 5px;
+    margin-left: 10px
+  }
+
+  .phone-and-mail__callBack, .phone-and-mail__mail {
+    font-size: 14px
+  }
+
+  .phone-and-mail__mail::before, .phone-and-mail__popup-overlay::before {
+    display: none
+  }
+}
+
+@media (max-width: 980px) {
+  .phone-and-mail__mail::before {
+    display: none
+  }
+
+  .phone-and-mail::after, address::after {
+    display: none
+  }
+}
+
+@media (max-width: 800px) {
+  .phone-and-mail__popup-overlay::before {
+    display: none
+  }
+
+  .phone-and-mail__callBack {
+    padding: 7px 5px
+  }
+
+  .phone-and-mail::after {
+    top: 1px;
+    right: -6vw
+  }
+
+  address::after {
+    right: -6vw
+  }
+}
+
+@media (max-width: 720px) {
+  .phone-and-mail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 9vw
+  }
+
+  .phone-and-mail__mail, .phone-and-mail__popup-overlay {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0 0 0 20px;
+    margin: 0
+  }
+
+  .phone-and-mail__callBack {
+    background-color: transparent;
+    margin: 0;
+    padding: 0
+  }
+
+  .phone-and-mail__popup-overlay {
+    height: 21px;
+    width: 20px;
+    background: url(/images/design/callBackLogo.png) no-repeat 0 0
+  }
+
+  .phone-and-mail__mail {
+    width: 20px;
+    height: 16px;
+    background: url(/images/design/mailLogo.png) no-repeat 0 0
+  }
+}
+
+@media (max-width: 600px) {
+  .phone-and-mail::after {
+    right: -2vw
+  }
+}
+
+@media (max-width: 560px) {
+  .phone-and-mail__mail {
+    margin: 0 2vw 0 0
+  }
+}
+
+@media (max-width: 500px) {
+  .phone-and-mail::after, address::after {
+    display: none
+  }
+}
+
+@media (max-width: 425px) {
+  .phone-and-mail {
+    display: none
+  }
+}

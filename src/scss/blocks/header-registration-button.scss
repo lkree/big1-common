@@ -1,0 +1,27 @@
+.header-registration-button {
+  background-color: #FED65D;
+  @include flex(center, center);
+  height: 43px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: #2F2B22;
+  text-transform: uppercase;
+  padding: 0 30px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header-registration-button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 550px) {
+  .header-registration-button {
+    flex-basis: 45%;
+    max-width: unset;
+    font-size: 15px;
+    padding: 0 15px;
+    height: 35px;
+  }
+}

@@ -29,11 +29,18 @@
 
 (function() { //switchs content according to get param (type)
   $(document).on('DOMContentLoaded', (evt) => {
-    const params = window.location.href.split('?')[1];
+    const urlParam = (name) => {
+      const results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+      if (results == null) return null;
 
-    if (!params) return;
+      return decodeURI(results[1]) || 0;
+    };
 
-    if ((new URLSearchParams(params).get('type').slice(0,3)) === 'car') {
+    const param = urlParam('type');
+
+    if (!param) return;
+
+    if (param === 'car') {
       $('.car-type-toggler__checkbox')[0].click();
     }
   });

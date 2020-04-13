@@ -4,23 +4,14 @@
 window.hrefChecker = {
   //Проверка на соответствие ссылки заданным параметрам
   laximoBreadcrumbs: function() {
-      if (href[3] === 'original-catalog') {
-          if (
-              href[4].slice(0, 5) === 'isuzu' ||
-              href[4].slice(0, 3) === 'kia' ||
-              href[4].slice(0, 8) === 'mercedes' ||
-              href[4].slice(0, 3) === 'daf' ||
-              href[4].slice(0, 3) === 'man' ||
-              href[4].slice(0, 5) === 'volvo' ||
-              href[4].slice(0, 7) === 'hyundai' ||
-              href[4].slice(0, 5) === 'iveco' ||
-              href[4].slice(0, 7) === 'renault' ||
-              href[4].slice(0, 6) === 'scania' &&
-              href[5] === undefined
-      ) {
-              return true;
-          }
-      }
+    const brands = ['isuzu', 'kia', 'mercedes', 'daf', 'man', 'volvo', 'hyundai', 'iveco', 'renault', 'scania', 'toyota', 'bmw', 'mitsubishi', 'skoda', 'volkswagen', 'ford', 'nissan', 'audi', 'mazda', 'chevrolet', 'opel'];
+    let brandHref;
+    try {
+      brandHref = href[4].split('?')[0]
+    } catch {
+      brandHref = href[4];
+    }
+      if (href[3] === 'original-catalog') return brands.includes(brandHref) && !href[5];
       if (
           href[3] === 'original-catalog' && 
           href[4].slice(0,9) === 'car-parts' 
@@ -37,7 +28,6 @@ window.hrefChecker = {
 
       return false;
   },
-
   laximoScrolling: function() {
       if (
           href[3] === 'original-catalog' && 
@@ -55,7 +45,6 @@ window.hrefChecker = {
 
       return false;
   },
-
   mainPage: function() {
       return href[2].slice(0, 7) === 'big1.ru' && !href[3] || href[2].slice(0, 7) === 'big1.ru' && href[3].slice(0,1) === '?';
   },
@@ -88,10 +77,10 @@ window.hrefChecker = {
   vinAutoInfoGetter: function() {
     return href[3].slice(0, 9) === 'any_autos';
   },
-  laximoCatalogs: function() {
-      const getParams = new URL(document.location).searchParams;
-      return href[3] === 'laximo' && href[4] !== undefined && href[5] !== undefined && href[6] !== undefined && getParams.get('vin') !== null;
-  },
+  // laximoCatalogs: function() {
+  //     const getParams = new URL(document.location).searchParams;
+  //     return href[3] === 'laximo' && href[4] !== undefined && href[5] !== undefined && href[6] !== undefined && getParams.get('vin') !== null;
+  // },
   registrationForm: function() {
       return href[3].slice(0,9) === 'customers' && href[4] === undefined;
   }

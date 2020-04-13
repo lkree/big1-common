@@ -365,9 +365,9 @@
       (function() {
         evt.stopImmediatePropagation();
 
-        const $leftBtn = $(evt.currentTarget).find('.tecdoc-cars-btns-wrapper__catalog-btn'),
-          $rightBtn = $(evt.currentTarget).find('.tecdoc-cars-btns-wrapper__catalog-btn--second'),
-          $btnsWrapper = $(evt.currentTarget).find('.tecdoc-cars-btns-wrapper');
+        const $leftBtn = $(evt.currentTarget).find('.tecdoc-cars-btns-wrapper__catalog-btn');
+        const $rightBtn = $(evt.currentTarget).find('.tecdoc-cars-btns-wrapper__catalog-btn--second');
+        const $btnsWrapper = $(evt.currentTarget).find('.tecdoc-cars-btns-wrapper');
 
         if ($leftBtn.hasClass('activated')) return;
 

@@ -1,0 +1,111 @@
+$change-city-color: #0000ff;
+$main-color: #ad1318;
+
+
+.delivery-pickup {
+  padding: 35px 25px 10px 25px;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  background-color: #fff;
+  max-height: 595px;
+  //height: 595px;
+  overflow: hidden;
+}
+.delivery-pickup__points-header {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.delivery-pickup__input {
+  margin-bottom: 15px;
+  min-height: 40px;
+  padding-left: 10px;
+}
+.delivery-pickup__points-list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  overflow: auto;
+  padding-right: 10px;
+  max-height: 420px;
+  margin-bottom: 20px;
+}
+.delivery-pickup__point {
+  //padding: 10px;
+  //border: 1px solid;
+  //margin: 5px 0;
+  //line-height: 20px;
+  
+  color: #616161;
+  margin-left: 15px;
+}
+.delivery-pickup__point:hover, .delivery-pickup__point--active {
+  //background-color: #ad1318;
+  //color: #fff;
+  //cursor: pointer;
+  //position: relative;
+  
+  color: $main-color;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.delivery-pickup__continue-btn {
+  background-color: $main-color;
+  color: #fff;
+  border: none;
+  height: 25px;
+  border-radius: 2px;
+  width: 150px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.delivery-pickup__chosen-city-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+}
+.delivery-pickup__chosen-city-wrapper:hover {
+  cursor: default;
+}
+.delivery-pickup__chosen-city, .delivery-pickup__chosen-city-descr {
+  font-size: 20px;
+}
+.delivery-pickup__change-city {
+  border: none;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #616161;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.delivery-pickup__change-city:hover {
+  cursor: pointer;
+}
+
+.delivery-pickup__no-point {
+  font-weight: 700;
+  color: $main-color;
+}
+
+@media (max-width: 550px) {
+  .delivery-pickup__points-list {
+    width: 400px;
+  }
+}
+@media (max-width: 420px) {
+  .delivery-pickup__points-list {
+    width: auto;
+  }
+  .delivery-pickup {
+    padding: 0;
+    margin-top: 15px;
+    min-width: 280px;
+  }
+}
+@media (max-width: 320px) {
+  .delivery-pickup__points-list {
+    width: 290px;
+  }
+}

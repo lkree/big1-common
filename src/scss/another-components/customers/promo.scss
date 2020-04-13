@@ -1,0 +1,99 @@
+$border-color: #cecece;
+$main-color: #1c4254;
+
+
+.customer__promo
+{
+  padding: 20px 0;
+  margin: 15px 0;
+
+  display: flex;
+  align-items: center;
+
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.customer__promo-label
+{
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.customer__promo-input
+{
+  margin-left: 10px;
+}
+
+.customer__promo-submit
+{
+  border: none;
+  background-color: $main-color;
+  color: #fff;
+  height: 25px;
+  width: 85px;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.customer__promo-code
+{
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 10px 0 0;
+  font-size: 16px;
+}
+
+.customer__promo-code-delete
+{
+  font-size: 20px;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.customer__promo-popup
+{
+  display: none;
+  padding: 60px 15px;
+
+  font-size: 16px;
+}
+
+@media (max-width: 360px)
+{
+  .customer__promo
+  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .customer__promo-label
+  {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .customer__promo-input
+  {
+    margin: 10px 0;
+  }
+}

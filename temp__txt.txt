@@ -1,33 +1,44 @@
-bongo
-besta
-granbird
-k2500
-k2700
-k3600
-pregio
-towner
+1. Что такое DOM?
+2. Что такое стек?
+3. Что такое БОМ?
+4. Область видимости.
+6. Что такое замыкание?
+7. Как работает прототипное наследование?
+8. Что такое контекст?
+9. Что такое всплытие событий и как работает?
+10. Пробовали ли вы реактивное программирование?
+11. Что такое парирование? карирование? функторы? лямбды? Обёртки?
+12. MVC?
+13. ООП?
+14. Какими фреймворками вы пользовались?
 
 
-1. Список характеристик товаров (есть в поиске через каталоги, но нет у товара)
-
-
-https://big1.ru/original-catalog/skoda
-https://big1.ru/original-catalog/volkswagen
-https://big1.ru/original-catalog/ford
-https://big1.ru/original-catalog/bmw
-https://big1.ru/original-catalog/nissan
-https://big1.ru/original-catalog/toyota
-https://big1.ru/original-catalog/audi
-https://big1.ru/original-catalog/mazda
-https://big1.ru/original-catalog/chevrolet
-https://big1.ru/original-catalog/mitsubishi
-https://big1.ru/original-catalog/opel
+Реализуйте функцию factorial()
+Реализуйте функцию flat()
+Дана строка (возможно пустая) состоящая из A-Z:
+AAAABBBCCXYZDDDDEEEEFFFAAAAABBBBBBBBBBBBBBB
+Нужно написать функцию RLE, которая на входе даст строку вида: A4B3C2XYZD4E4F3A5B15
+И сгенерирует ошибку, если на вход пришла невалидная строка.
 
 
 
-TRKM - -2k
-RCMAZ - 1k
-BIG1 - 5k
+Обязанности:
+  Адаптивная, кроссбраузерная, валидная верстка HTML5, CSS3
+  Работа с CSS-препроцессорами (scss, sass)
+  Написание кода на JavaScript
+  Использование Babel
+  Использование сборщиков Webpack, Grunt
+  Работа с Git
+  Написание Frontend части сайта
+  Умение самостоятельно принимать решения и решать сложные задачи
 
-
- | БИГОДИН: Интернет-магазин автозапчастей для иномарок в Ярославле
+Требования:
+  Отличное знание HTML/CSS
+  Знание JavaScript (es5, es6+)
+  Опыт работы с npm, Webpack
+  Опыт работы с пре- и постпроцессорами CSS
+  Опыт работы с Git
+  Приветствуется опыт работы с React, CoffeeScript, Mustache, Ruby on Rails, underscore (lodash), jQuery, всевозможные jQuery-зависимые библиотеки, Bootstrap, БЭМ
+  Понимание принципов ООП
+  Умение разбираться в чужом коде
+  Будет плюсом знание SEO

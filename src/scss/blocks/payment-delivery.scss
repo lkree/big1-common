@@ -1,0 +1,6 @@
+.payment-delivery {
+  @include flex(false, false, column);
+}
+.payment-delivery__payment-methods {
+  margin-bottom: 20px;
+}

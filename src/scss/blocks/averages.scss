@@ -1,0 +1,173 @@
+.averages {
+  display: flex;
+  margin: 41px 0 24px
+}
+
+.averages a p {
+  display: inline-block
+}
+
+.averages__producers, .averages__service-pe, .averages__spare-parts, .averages__truck-motors {
+  display: block;
+  background-color: #1c4254;
+  height: 96px;
+  text-decoration: none;
+  color: #fff;
+  border-right: 2px solid #fff;
+  border-radius: 4px;
+  font-family: MyriadPro, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  margin-bottom: 2px
+}
+
+.averages__producers:hover, .averages__service-pe:hover, .averages__spare-parts:hover, .averages__truck-motors:hover {
+  background-color: #ad1318
+}
+
+.averages a p {
+  position: relative
+}
+
+.averages a:nth-of-type(1) p::after, .averages a:nth-of-type(2) p::after, .averages a:nth-of-type(3) p::after, .averages a:nth-of-type(4) p::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  top: 0
+}
+
+.averages a:nth-of-type(1) p::after {
+  background-image: url(/images/design/producersIcon.png);
+  left: 100%
+}
+
+.averages a:nth-of-type(2) p::after {
+  background-image: url(/images/design/sparePartsIcon.png);
+  left: 115%;
+  height: 118%
+}
+
+.averages a:nth-of-type(3) p::after {
+  background-image: url(/images/design/truckMotorsLogo.png);
+  left: 115%;
+  width: 212%
+}
+
+.averages a:nth-of-type(4) p::before {
+  background-image: url(/images/design/servicePeIcon.png);
+  left: -65px;
+  height: 125%;
+  top: -7px
+}
+
+.averages__producers {
+  width: 19%;
+  padding: 27px 0 0 22px
+}
+
+.averages__spare-parts {
+  width: 25%;
+  padding: 29px 0 0 25px
+}
+
+.averages__truck-motors {
+  width: 28%;
+  padding: 24px 0 0 29px
+}
+
+.averages__service-pe {
+  width: 28%;
+  padding: 27px 0 0 95px
+}
+
+.wrap {
+  display: block
+}
+
+@media (max-width: 1132px) {
+  .averages {
+    flex-wrap: wrap
+  }
+
+  .averages__producers, .averages__service-pe, .averages__spare-parts, .averages__truck-motors {
+    width: 50%
+  }
+
+  .averages__producers {
+    padding: 27px 0 0 14%;
+    background-position: 275px 25px
+  }
+
+  .averages__spare-parts {
+    padding: 29px 0 0 14%;
+    background-position: 300px 25px
+  }
+
+  .averages__truck-motors {
+    padding: 24px 0 0 14%;
+    background-position: 245px 27px
+  }
+
+  .averages__service-pe {
+    padding: 25px 0 0 21%;
+    background-position: 165px 17px
+  }
+}
+
+@media (max-width: 780px) {
+  .averages__producers, .averages__service-pe, .averages__spare-parts, .averages__truck-motors {
+    width: 100%
+  }
+
+  .averages {
+    justify-content: center
+  }
+}
+
+@media (max-width: 700px) {
+  .averages__service-pe {
+    padding-left: 23%
+  }
+}
+
+@media (max-width: 469px) {
+  .averages__service-pe {
+    padding-left: 28%
+  }
+}
+
+@media (max-width: 350px) {
+  .averages a {
+    background-repeat: no-repeat;
+    background-position: center
+  }
+
+  .averages a p {
+    display: none
+  }
+
+  .averages__producers {
+    background-size: 42px 41px;
+    background-image: url(/images/design/producersIcon.png)
+  }
+
+  .averages__spare-parts {
+    background-size: 81px 53px;
+    background-image: url(/images/design/sparePartsIcon.png)
+  }
+
+  .averages__truck-motors {
+    background-size: 173px 40px;
+    background-image: url(/images/design/truckMotorsLogo.png)
+  }
+
+  .averages__service-pe {
+    background-size: 55px;
+    background-image: url(/images/design/servicePeIcon.png)
+  }
+}

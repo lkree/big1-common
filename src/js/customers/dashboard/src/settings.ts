@@ -1,0 +1,1 @@
+export const promoCodeUrl = 'https://big1.ru/customApi?promo_code_number=json';

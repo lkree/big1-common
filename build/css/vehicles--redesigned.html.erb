@@ -1,0 +1,92 @@
+<%= breadcrumbs([link_to(ft(:original_catalogs, scope: 'views.laximo.vehicles'), laximo_url), ft(:search_result, scope: 'views.laximo.vehicles')]) -%>
+<div class="bootstrap-layer">
+  <% if !@vehicles.blank? && !@types.blank? %>
+    <%= link_to "Посмотреть результаты в каталоге TecDoc (#{@types.count})", not_original_catalog_url(:tecdoc_vin => params[:vin]), :class => "btn btn-default col-xs-12", :target => "_blank" %>
+    <br><br>
+    <h4>Результаты в оригинальном каталоге</h4>
+  <% end %>
+</div>
+<ul class="laximo-search">
+  <% if !@vehicles.blank? %>
+    <% @vehicles.each do |vehicle| %>
+      <li class="laximo-search__item">
+        <ul class="laximo-search__info">
+          <li class="laximo-search__info-item">
+            <p class="laximo-search__info-property"><%= ft(:manufacturer, scope: 'views.laximo.vehicles') %>:</p>
+            <p class="laximo-search__info-description"><%= vehicle.brand -%></p>
+          </li>
+          <li class="laximo-search__info-item">
+            <p class="laximo-search__info-property"><%= ft(:model, scope: 'views.laximo.vehicles') %>:</p>
+            <p class="laximo-search__info-description"><%= vehicle.name -%></p>
+          </li>
+          <% vehicle.attributes.each do |k, v| %>
+            <li class="laximo-search__info-item">
+              <p class="laximo-search__info-property"><%= k %></p>
+              <p class="laximo-search__info-description"><%= v %></p>
+            </li>
+          <% end %>
+        </ul>
+        <div class="laximo-search__submit-wrapper">
+          <%= link_to(ft(:open_catalog, scope: 'views.laximo.vehicles'), laximo_trees_path(catalog_code: vehicle.catalog, vehicle_id: vehicle.vehicleid, ssd: vehicle.ssd, vin: vehicle.vin), :class => 'laximo-search__submit' ) %>
+        </div>
+    <% end %>
+  <% else %>
+    <img class="laximo-no-response" src="/images/banners/tech-works-banner.jpg" alt="Ведутся технические работы" />
+  <% end %>
+</ul>
+<script>
+  const laxItems = $('.laximo-search__info');
+  let heightArr = Array(laxItems.length).fill(0);
+  const maxHeight = 270;
+  const setOpacity = ($el, value) => ($el.css('opacity', value));
+  const createShowBtn = ($wrapper) => {
+    const $btn = $('<li>', {class: 'laximo-search__show-wrapper'});
+    $btn.append($('<button>', {text: 'Больше', class: 'laximo-search__show-btn'}));
+    $wrapper.append($btn);
+
+    const onOpenBtnClick = function() {
+      const onCloseBtnClick = function() {
+        const $commonWrapper = $(this).parent().parent(),
+          $wrapper = $(this).parent(),
+          $button = $(this).find('button');
+
+        $commonWrapper.removeAttr('style');
+        $wrapper.removeAttr('style');
+        $button.text('Больше');
+        $button.removeAttr('style');
+
+        $btn.on('click', onOpenBtnClick);
+        $btn.off('click', onCloseBtnClick);
+      };
+      const $commonWrapper = $(this).parent().parent(),
+        $wrapper = $(this).parent(),
+        $button = $(this).find('button');
+
+      $commonWrapper.css('height', 'auto');
+      $wrapper.css('overflow', 'unset');
+      $wrapper.find('.laximo-search__info-item').each(function() {
+        $(this).removeAttr('style');
+      });
+      $button.text('Свернуть');
+      setOpacity($button, '0.1');
+
+      $(this).off('click', onOpenBtnClick);
+      $(this).on('click', onCloseBtnClick);
+    };
+    $btn.on('click', onOpenBtnClick);
+  };
+
+  laxItems.each(function(currentEl) {
+    $(this).find('.laximo-search__info-item').each(function() {
+      heightArr[currentEl] += $(this).innerHeight();
+      if (heightArr[currentEl] > maxHeight) {
+        const alreadyDoneBtn = $(this).parent().find('.laximo-search__show-wrapper')[0];
+        if (!_.isElement(alreadyDoneBtn)) {
+          setOpacity($(this).prev(), '0.3');
+          setOpacity($(this), '0.3');
+          createShowBtn($(this).parent());
+        }
+      }
+    })
+  });
+</script>

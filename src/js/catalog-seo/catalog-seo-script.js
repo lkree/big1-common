@@ -176,7 +176,6 @@
     Array.isArray(form) ?
       $(form).each((function() { $(this).remove() } )) :
       $(form).html('');
-
   };
   const scrollToForm = () => {
     const formY = $('.b-content')[0].offsetTop - 10;
@@ -249,27 +248,48 @@
     //       el.addEventListener('click', onCarClick);
     //     });
     // })(); //link creator
+    // (function() {
+    //   if (!isAvailable$($('.lx-b-lax-container select'))) return; //if no selectos on page
+    //
+    //   const $unnecessaryElement = $('.lx-b-lax-col .lx-b-lax-container > .lx-sel-or').first();
+    //   $unnecessaryElement.css('display', 'none');
+    //
+    //   const $tempHeader = $('<div></div>', {
+    //       text: 'Поиск по VIN ↓',
+    //       class: 'VIN-search-button'
+    //     }).css({
+    //       'font-weight' : '700',
+    //       'font-size' : '16px',
+    //       'border' : '1px solid',
+    //       'padding' : '10px 5px'
+    //     }),
+    //     $wrapper = $('.lx-vin-search-module');
+    //
+    //   $wrapper.prepend($tempHeader);
+    //
+    //   $('.lx-b-search-container').first().slideUp();
+    // })(); //laximo search page handler
     (function() {
       if (!isAvailable$($('.lx-b-lax-container select'))) return; //if no selectos on page
 
-      const $unnecessaryElement = $('.lx-b-lax-col .lx-b-lax-container > .lx-sel-or').first();
-      $unnecessaryElement.css('display', 'none');
+      const separator = $('<em>', {text: 'или'}),
+             separatorWrapper = $('<div>', {class: 'lx-sel-or'});
+      separatorWrapper.append(separator);
 
-      const $tempHeader = $('<div></div>', {
-          text: 'Поиск по VIN ↓',
-          class: 'VIN-search-button'
-        }).css({
-          'font-weight' : '700',
-          'font-size' : '16px',
-          'border' : '1px solid',
-          'padding' : '10px 5px'
-        }),
-        $wrapper = $('.lx-vin-search-module');
+      $('.lx-vin-search-module').each(function() {
+        if ($(this).find('.lx-sel-or')) $(this).find('.lx-sel-or').css('display', 'block');
+        else $(this).find('.lx-b-search-container').after(separatorWrapper);
+      });
 
-      $wrapper.prepend($tempHeader);
-
-      $('.lx-b-search-container').first().slideUp();
-    })(); //laximo search page handler
+      const $wrapper = $('<div>', {class: 'temp-lax-open-btn lx-btn-sm', text: 'Подобрать по параметрам', css: {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }
+      });
+      $('.lx-vin-search-module').append($wrapper);
+      $('.laximo').slideUp();
+    })();
   })(); //handlers
   ;(function() { //event listeners
     const onDOMContentLoaded = () => {
@@ -277,7 +297,7 @@
         const carsWrapper = $('.td-model')[0],
           cars = carsWrapper.querySelectorAll('li');
 
-        Array.from(cars)
+        [...cars]
           .map((car) => {
             car.querySelector('img').removeAttribute('style');
           });
@@ -454,6 +474,16 @@
       //   const activeTab = document.querySelector('.[data-status="1"]');
       //   laximoWizardyController(activeTab.textContent);
       // })();
+      ;(function() {
+        const $btn = $('.temp-lax-open-btn');
+        if (evt.target === $btn[0]) {
+          $btn.css('display', 'none');
+          $('#js-laximo-wizard-options').slideDown();
+          $('.laximo').slideDown();
+          $('#js-laximo-chassis-options').slideDown();
+          bodyResizer();
+        }
+      })(); // on temp-lax-open-btn click
     };
     const onLiClick = (evt) => {
       (function() {
@@ -543,6 +573,10 @@
             if (isAvailable$($form) && $form[0].style.display !== 'none') {
               $form.slideUp(500);
               bodyResizer(true);
+              $('#js-laximo-wizard-options').slideUp();
+              $('.laximo').slideUp();
+              $('#js-laximo-chassis-options').slideUp();
+              $('.temp-lax-open-btn').css('display', 'flex');
               return;
             };
 
@@ -575,10 +609,10 @@
       const cars = carsWrapper.querySelectorAll('li'),
         carTabs = document.querySelectorAll('.car-chooser-list-tecdoc__point');
 
-      Array.from(cars)
+      [...cars]
         .forEach((el) => el.style.display = 'none');
 
-      Array.from(carTabs)
+      [...carTabs]
         .forEach((el) => el.classList.remove('active'));
     };
     const carSorter = (carMark) => {
@@ -590,7 +624,7 @@
         .replace('-', '')
         .replace(' ', '');
 
-      Array.from(cars)
+      [...cars]
         .map((el) => {
           if (~el.dataset.name.indexOf(carMark)) {
             el.style.display = 'block';
@@ -609,8 +643,12 @@
       hideAllCars();
       $ul.css({'background' : 'url(/images/another-images/seo-catalogs/seo-catalogs-girl-bg-1.png) no-repeat right top'});
       $form.slideUp(500);
+      $('#js-laximo-wizard-options').slideUp();
+      $('.laximo').slideUp();
+      $('#js-laximo-chassis-options').slideUp();
+      $('.temp-lax-open-btn').css('display', 'flex');
 
-      Array.from(carShowBtns)
+      [...carShowBtns]
         .forEach((el) => {
           if (el.dataset.status === '1') {
             el.dataset.status = '0';

@@ -1,0 +1,19 @@
+.payment-methods {
+  @include flex(false, false, column);
+  width: 270px;
+}
+.payment-methods__header {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.payment-methods__list {
+  @include flex(space-between);
+  @include ul-style-off();
+}
+
+@media (max-width: 880px) {
+  .payment-methods__header {
+    font-size: 16px;
+  }
+}

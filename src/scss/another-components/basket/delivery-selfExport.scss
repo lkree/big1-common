@@ -1,0 +1,180 @@
+$min-width: 650px;
+$min-width-md: 500px;
+$min-width-sm: 400px;
+$min-width-xs: 300px;
+$city-color: #1c4254;
+$change-city-color: #0000ff;
+$lists-height: 320px;
+$height: 595px;
+$border-main-color: #616161;
+
+.delivery-selfExport {
+  padding: 35px 25px 10px 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  min-width: $min-width;
+  overflow: hidden;
+}
+.delivery-selfExport__error {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 70px;
+  font-size: 20px;
+  background-color: #fff;
+}
+.delivery-selfExport__pickup-header {
+  font-size: 20px;
+  margin-bottom: 15px;
+  display: flex;
+}
+.delivery-selfExport__pickup-list {
+  display: flex;
+  flex-direction: column;
+  width: $min-width;
+  padding-right: 10px;
+  max-height: $lists-height;
+  list-style: none;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+.delivery-selfExport__pickup-point {
+  //padding: 10px;
+  //border: 1px solid;
+  //margin: 5px 0;
+  //line-height: 20px;
+
+  color: #616161;
+  margin-left: 15px;
+}
+.delivery-selfExport__pickup-point:hover, .delivery-selfExport__pickup-point--active {
+  //background-color: #ad1318;
+  //color: #fff;
+  //cursor: pointer;
+  //position: relative;
+
+  color: #ad1318;
+  cursor: pointer;
+  text-decoration: underline;
+}
+//.delivery-selfExport__pickup-point--active::after {
+//  content: '';
+//  position: absolute;
+//  width: 26px;
+//  height: 30px;
+//  right: 20px;
+//  top: 14px;
+//  background: url(https://big1.ru/images/another-images/icons/check-mark-icon.png) no-repeat;
+//}
+.delivery-selfExport__continue-btn {
+  background-color: #ad1318;
+  color: #fff;
+  border: none;
+  height: 25px;
+  border-radius: 2px;
+  width: 150px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.delivery-selfExport__chosen-city-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+}
+.delivery-selfExport__chosen-city-wrapper:hover {
+  cursor: default;
+}
+.delivery-selfExport__chosen-city, .delivery-selfExport__chosen-city-descr {
+  font-size: 20px;
+}
+.delivery-selfExport__change-city, .delivery-selfExport__show-map {
+  border: none;
+  text-decoration: underline;
+  background-color: transparent;
+  color: $border-main-color;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.delivery-selfExport__change-city:hover, .delivery-selfExport__show-map:hover {
+  cursor: pointer;
+}
+.delivery-selfExport__city-search-input, .delivery-selfExport__pickup-search-input {
+  margin-bottom: 15px;
+  min-height: 40px;
+  padding-left: 10px;
+  width: 100%;
+}
+.delivery-selfExport__cities-list {
+  display: flex;
+  max-width: $min-width;
+  width: $min-width;
+  padding-right: 10px;
+  max-height: $lists-height;
+  overflow: auto;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+.delivery-selfExport__city-wrapper {
+  width: 182px;
+  margin-left: 25px;
+  font-size: 20px;
+}
+.delivery-selfExport__city {
+  color: $city-color;
+}
+.delivery-selfExport__city:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.delivery-selfExport__wait-screen {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .delivery-selfExport {
+    min-width: auto;
+    width: auto;
+  }
+  .delivery-selfExport__pickup-list, .delivery-selfExport__cities-list {
+    min-width: $min-width-md;
+    width: $min-width-md;
+  }
+  .delivery-selfExport__city-wrapper {
+    line-height: 30px;
+  }
+}
+@media (max-width: 550px) {
+  .delivery-selfExport__pickup-list, .delivery-selfExport__cities-list {
+    min-width: $min-width-sm;
+    width: $min-width-sm;
+  }
+  .delivery-selfExport__cities-list {
+    justify-content: space-around;
+  }
+  .delivery-selfExport__city-wrapper {
+    width: 150px;
+  }
+}
+@media (max-width: 450px) {
+  .delivery-selfExport__chosen-city, .delivery-selfExport__chosen-city-descr, .delivery-selfExport__pickup-point, .delivery-selfExport__pickup-header {
+    font-size: 16px;
+  }
+  .delivery-selfExport__pickup-list, .delivery-selfExport__cities-list {
+    min-width: $min-width-xs;
+    width: $min-width-xs;
+  }
+  .delivery-selfExport__cities-list {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 320px) {
+  .delivery-selfExport__pickup-list, .delivery-selfExport__cities-list {
+    min-width: $min-width-xs - 20px;
+    width: $min-width-xs - 20px;
+  }
+}

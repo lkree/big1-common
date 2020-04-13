@@ -1,0 +1,67 @@
+.cars-catalog__list {
+  @include ul-style-off();
+  @include flex(false, false, false, wrap);
+}
+.cars-catalog__item {
+  flex-basis: 32%;
+  @include flex(false, false, column);
+  padding: 0 !important;
+  height: 140px;
+  border: 2px solid #ccc;
+  margin: 2% 1% 0 0;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .cars-catalog__img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    transition: top 0.5s ease;
+  }
+}
+.cars-catalog__item:hover {
+  cursor: pointer;
+}
+.cars-catalog__item:hover .cars-catalog__img {
+  top: -5px;
+}
+.cars-catalog__img-wrapper {
+  height: calc(100% - 18px);
+}
+.cars-catalog__name {
+  text-align: center;
+  height: 18px;
+}
+
+@media (max-width: 1200px) {
+  .cars-catalog__item {
+    flex-basis: 19%;
+  }
+}
+
+@media (max-width: 900px) {
+  .cars-catalog__item {
+    flex-basis: 24%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cars-catalog__item {
+    flex-basis: 32%;
+  }
+}
+
+@media (max-width: 550px) {
+  .cars-catalog__item {
+    flex-basis: 49%;
+  }
+}
+@media (max-width: 320px) {
+  .cars-catalog__item {
+    height: 130px;
+  }
+}

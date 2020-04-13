@@ -1,0 +1,255 @@
+* {
+  font-size: 16px;
+}
+
+.original-catalog {
+  display: flex;
+}
+
+.lx-b-lax-container--tecdoc-lax-page > p {
+  padding: 0;
+}
+.laximo-div-selectors-wrapper {
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+.laximo-div-selector, .laximo-div-selector--no-hover {
+  color: #1c4254;
+  padding: 10px 8px;
+  font-size: 14px;
+  cursor: default;
+  position: relative;
+  border: 1px solid;
+  border-radius: 3px;
+  margin: 5px;
+  min-width: 46%;
+}
+.laximo-div-selector--no-hover {
+  padding: 0;
+  border: none;
+}
+.laximo-div-selector:hover {
+  cursor: pointer;
+  color: #ad1318;
+  text-decoration: underline;
+}
+.lx-b-lax-col-close {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(/images/another-images/icons/close-icon.png) no-repeat;
+}
+.lx-b-lax-col-close:hover {
+  background: url(/images/another-images/icons/close-icon--red.png) no-repeat;
+  cursor: pointer;
+}
+
+/* lax form */
+.laximo-in-laxTecdoc {
+  width: 400px;
+  z-index: 1500;
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lx-b-lax-col {
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+.lx-vin-search-module {
+  padding: 10px 15px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #1c4254;
+  box-shadow: 0 0 48px -10px #000;
+}
+.lx-b-lax-col-close {
+
+}
+.lx-wht-vin, .lx-search-examp-vin {
+  display: none;
+}
+.lx-b-search-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.lx-b-search-container label {
+  color: #1c4254;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 0;
+  line-height: unset;
+}
+.lx-search-wrap-inp {
+  border: unset;
+  border-radius: unset;
+  background-color: unset;
+  height: auto;
+  margin: 0;
+}
+.lx-search-wrap-inp form {
+  display: flex;
+  position: relative;
+}
+.lx-search-inp {
+  border: 1px solid #1c4254;
+  border-radius: 3px;
+  height: 35px;
+  padding-left: 5px;
+}
+.lx-search-send {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  background-color: #ad1318;
+  border-radius: 3px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 2px);
+  border: 1px solid #fff;
+  width: 80px;
+  font-weight: 400;
+  text-transform: unset;
+
+  &:hover {
+    background-color: #1c4254;
+  }
+}
+.lx-sel-or {
+  background: url(/images/design/line.png) 0 9px repeat-x;
+  padding: 0;
+  margin: 10px 0;
+}
+.lx-sel-or em {
+  background-color: #fff;
+}
+.js-laximo-wizard-options {
+
+}
+.lx-b-sel-tm {
+  color: #1c4254;
+  text-transform: uppercase;
+  font-size: 16px;
+  width: 320px;
+}
+.lx-b-sel-tm:hover {
+  cursor: default;
+}
+.lx-b-sel-tm label {
+  margin-right: 10px;
+  display: inline-block;
+  text-transform: none;
+  font-weight: 400;
+}
+.lx-b-sel-tm a {
+  margin-left: 10px;
+  display: inline-block;
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 400;
+}
+.lx-wrap-ss {
+  border: 1px solid #1c4254;
+  background: none;
+  background-color: #eee;
+
+}
+.lx-wrap-ss .js-laximo-wizard-select {
+  background: url(/images/design/treangle-mini.png) 300px center no-repeat;
+  background-size: 10px;
+}
+.lx-wrap-btn-sm {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.lx-choose-modif {
+  flex-basis: 48%;
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  text-transform: unset;
+  font-weight: 400;
+  background-color: #1c4254;
+  color: #fff;
+  border-radius: 3px;
+  justify-content: center;
+  z-index: 0;
+}
+.lx-wrap-btn-sm--help-btn {
+  flex-basis: 48%;
+  background-color: #ad1318;
+  color: #fff;
+  justify-content: center;
+  font-size: 14px;
+  border: none;
+  display: flex !important; //нужно убрать display none из ruby
+  position: relative;
+  padding-right: 15px;
+  border-radius: 3px;
+  align-items: center;
+}
+.lx-wrap-btn-sm--help-btn::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: url(/images/another-images/icons/question-icon.png) no-repeat;
+}
+.lx-wrap-btn-sm--help-btn:hover {
+  cursor: pointer;
+}
+.lx-b-sel-tm .laximo-div-description {
+  display: block;
+}
+.options-wrapper {
+  flex-basis: 90%;
+  background-color: #1c4254;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.options-wrapper:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .original-catalog {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .laximo-in-laxTecdoc {
+    width: 320px;
+  }
+  .lx-b-sel-tm {
+    width: 270px;
+  }
+  .lx-wrap-ss .js-laximo-wizard-select {
+    background-position: 250px center;
+  }
+  .lx-wrap-btn-sm--help-btn {
+    padding-right: 0;
+  }
+  .lx-wrap-btn-sm--help-btn::after {
+    display: none;
+  }
+}
