@@ -239,7 +239,7 @@ export default class ContactMap extends React.Component {
     this.renderBranch([]);
     this.chooseCity(city);
     this.disableActiveElement();
-    this.getBackToBasket() || location.reload();
+    this.getBackUrl() || location.reload();
   };
   setCityId = (id = this.baseCityId) => this.saveCookie('region_id', id);
   /**
@@ -247,10 +247,11 @@ export default class ContactMap extends React.Component {
    */
   setSelfExportPointId = (id) => this.saveCookie('selfExportPointId', id);
   saveDeliveryType = (deliveryType) => this.saveCookie('deliveryType', deliveryType);
-  getBackToBasket = () => {
-    if (sessionStorage.getItem('fromBasket')) {
-      sessionStorage.removeItem('fromBasket');
-      location.assign('/baskets');
+  getBackUrl = () => {
+    const fromUrl = sessionStorage.getItem('fromAnotherUrl');
+    if (fromUrl) {
+      sessionStorage.removeItem('fromAnotherUrl');
+      location.assign(fromUrl);
       return true;
     }
     else return false;
@@ -309,7 +310,7 @@ export default class ContactMap extends React.Component {
       this.saveCookie('deliveryCost', window.citiesList[0].price);
       this.saveCookie('deliveryCourier', courier);
       this.setSelfExportPointId(id);
-      this.getBackToBasket();
+      this.getBackUrl();
     });
   };
   componentDidMount() {
