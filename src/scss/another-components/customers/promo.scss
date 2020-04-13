@@ -41,7 +41,32 @@ $main-color: #1c4254;
 
 .customer__promo-code
 {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 10px 0 0;
   font-size: 16px;
+}
+
+.customer__promo-code-delete
+{
+  font-size: 20px;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .customer__promo-popup
