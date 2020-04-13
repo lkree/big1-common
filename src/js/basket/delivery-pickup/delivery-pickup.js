@@ -348,7 +348,7 @@ window.deliveryPickup = () => {
         };
         onChangeCityClick = () => {
           h.saveAllCookie({type: null, address: null, id: null, deadline: null, cost: null, courier: null});
-          sessionStorage.setItem('fromBasket', 'y');
+          sessionStorage.setItem('fromAnotherUrl', '/baskets');
           sessionStorage.setItem('haveToOpenPickupModule', 'y');
           sessionStorage.setItem('prevBasketPage', '2');
           sessionStorage.setItem('fromPickup', 'y');
