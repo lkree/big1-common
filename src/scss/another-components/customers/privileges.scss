@@ -8,11 +8,20 @@ $main-color: #fff; // #fff
 
 .customer__privileges-item
 {
-  background-color: $main-background-color;
   padding: 0 20px;
 
   display: flex;
   align-items: center;
+
+  &:nth-child(-n+3) {
+    background-color: $main-background-color;
+  }
+
+  &:nth-child(1n+4) {
+    .customer__privileges-item-link, .customer__privileges-item-info {
+      color: $main-background-color;
+    }
+  }
 }
 
 .customer__privileges-item-icon-wrapper
