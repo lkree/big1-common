@@ -97,10 +97,10 @@ export default () => {
           return this;
         },
         addListeners(): this {
-          const {promoWrapper} = props;
+          const {promoWrapper, cityEdit} = props;
 
           eventAdd(promoWrapper, 'click', this.l.onPromoBtnClick);
-          eventAdd(promoWrapper, 'click', this.l.onCityEditClick);
+          eventAdd(cityEdit, 'click', this.l.onCityEditClick);
           eventAdd(promoWrapper, 'click', this.l.onDeleteButtonClick);
 
           return this;
