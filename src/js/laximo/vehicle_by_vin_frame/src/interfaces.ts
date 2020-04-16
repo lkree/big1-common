@@ -1,11 +1,11 @@
 export interface IOptions {
-  addCarButtons: HTMLCollection;
+  addCarButtons: NodeListOf<HTMLButtonElement>;
   userExitWrapper: Element;
-  carData: HTMLCollection;
+  carData: NodeListOf<HTMLTableRowElement>;
   authToken: string;
 }
 export interface IProps extends IOptions {
-  userExitLink: Element|null;
+  userExitLink: Element;
 }
 export interface ICheckStatementProps {
   condition: boolean;
@@ -19,15 +19,15 @@ export interface IAppInitiate {
   carModel: string;
   carYear: string;
   isCarAlreadyAdded: boolean;
-  _then: Function;
-  _checkStatement: Function;
-  checkForUserLogin: Function;
-  getCarData: Function;
-  checkForAlreadyAddedVIN: Function;
-  alreadyAddedHandler: Function;
-  dontAddedHandler: Function;
-  dontLoginHandler: Function;
+  _then: (cb: string, ...args) => this;
+  _checkStatement: ({condition, stateA, stateB}: ICheckStatementProps) => Function;
+  checkForUserLogin: () => boolean;
+  getCarData: () => void;
+  checkForAlreadyAddedVIN: () => Promise<boolean>|boolean;
+  alreadyAddedHandler: () => void;
+  dontAddedHandler: () => void;
+  dontLoginHandler: () => void;
 }
 export interface IApp {
-  initiate: Function;
+  initiate: (props: IProps) => Promise<void>;
 }

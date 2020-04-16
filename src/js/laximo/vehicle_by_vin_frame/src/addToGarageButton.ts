@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   eventAdd,
   checkAvailable,
@@ -7,35 +6,33 @@ import {
   addClass,
   setText,
   getText,
-  eventRemove
-} from './utils.ts';
-import {addedButtonProps, apiUrl, garageUrl} from "./settings.ts";
-import {IOptions, ICheckStatementProps, IProps, IAppInitiate, IApp} from "./interfaces.ts";
+  eventRemove,
+  getFormData
+} from '../../../utils/utils.js';
+import {addedButtonProps, apiUrl, garageUrl} from "./settings.js";
+import {IOptions, ICheckStatementProps, IProps, IAppInitiate, IApp} from "./interfaces.js";
 
 export default () => {
   const options: IOptions = {
-    addCarButtons: document.querySelectorAll('.add-car .add-car__add-button') || document.createElement('div'),
+    addCarButtons: document.querySelectorAll('.add-car .add-car__add-button'),
     userExitWrapper: document.querySelector('.b-tsd-user')|| document.createElement('div'),
     carData: document.querySelectorAll('.b-content .table tbody tr'),
-    authToken: document.querySelector('meta[name=csrf-token]').content,
+    authToken: (document.querySelector('meta[name=csrf-token]') as HTMLMetaElement)!.content,
   };
   const props: IProps = {
     ...options,
-    userExitLink: options.userExitWrapper.querySelector('.b-link-exit'),
+    userExitLink: options.userExitWrapper.querySelector('.b-link-exit')!,
   };
 
   const addCarToGarage = (props: IProps): void => {
-    const app = ((): IApp => {
-      const app = () => {};
-      app.prototype = {
-        initiate: async (props): void => {
+    const app = (): IApp => {
+      const app: IApp = {
+        initiate: async (props): Promise<void> => {
           const w = (): IAppInitiate => {
-            const w = () => {};
-
-            w.prototype = {
-              _then(cb: string, ...args): Object {
+            const w: IAppInitiate = {
+              _then(cb: string, ...args): IAppInitiate {
                 this[cb](...args);
-                return this;
+                return w;
               },
               _checkStatement({condition, stateA, stateB}: ICheckStatementProps) {
                 return condition ? stateA() : stateB()
@@ -91,32 +88,26 @@ export default () => {
                     button.disabled = true;
                   });
 
-                  const getFormData = () => {
-                    const formData = new FormData();
-
-                    formData.append('any_auto[type]', 'AnyAuto');
-                    formData.append('utf8', '✓');
-                    formData.append('authenticity_token', this.authToken);
-                    formData.append('any_auto[code]', this.carVIN);
-                    formData.append('any_auto[make_name]', this.carName);
-                    formData.append('any_auto[model]', this.carModel);
-                    formData.append('any_auto[year]', this.carYear);
-                    formData.append('any_auto[engine]', '');
-                    formData.append('any_auto[body]', '');
-                    formData.append('any_auto[comment]', '');
-
-                    return formData;
-                  };
-
-                  const formData = getFormData();
+                  const formData = getFormData([
+                    { key: 'any_auto[type]', value: 'AnyAuto' },
+                    { key: 'utf8', value: 'AnyAuto' },
+                    { key: 'authenticity_token', value: this.authToken },
+                    { key: 'any_auto[code]', value: this.carVIN },
+                    { key: 'any_auto[make_name]', value: this.carName },
+                    { key: 'any_auto[model]', value: this.carModel },
+                    { key: 'any_auto[year]', value: this.carYear },
+                    { key: 'any_auto[engine]', value: '' },
+                    { key: 'any_auto[body]', value: '' },
+                    { key: 'any_auto[comment]', value: '' },
+                  ]);
 
                   fetch(garageUrl, {
                     method: 'POST',
                     body: formData
                   });
-                    [...props.addCarButtons].forEach(button => {
-                      eventRemove(button, 'click', addButtonHandler);
-                    });
+                  [...props.addCarButtons].forEach(button => {
+                    eventRemove(button, 'click', addButtonHandler);
+                  });
 
                   addCarToGarageHandler();
                 };
@@ -125,19 +116,16 @@ export default () => {
                   eventAdd(button, 'click', addButtonHandler);
                 })
               },
-              dontLoginHandler(): void {}
-            };
-
-            Object.setPrototypeOf(w, w.prototype);
-
-            return Object.assign(w, {
+              dontLoginHandler(): void {},
               isCarAlreadyAdded: false,
               authToken: '',
               carVIN: '',
               carName: '',
               carModel: '',
               carYear: '',
-            });
+            };
+
+            return w;
           };
           const app = w();
 
@@ -145,19 +133,17 @@ export default () => {
             app.getCarData();
             app.isCarAlreadyAdded = await app.checkForAlreadyAddedVIN();
 
-            app.isCarAlreadyAdded ?
-              app.alreadyAddedHandler() :
-              app.dontAddedHandler();
+            app.isCarAlreadyAdded
+              ? app.alreadyAddedHandler()
+              : app.dontAddedHandler();
           }
-        },
-      };
+        }
+      }
 
-      Object.setPrototypeOf(app, app.prototype);
+      return app;
+    };
 
-      return Object.assign(app, {});
-    })();
-
-    app
+    app()
       .initiate(props);
   };
 
