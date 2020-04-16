@@ -1,4 +1,4 @@
-import {IAddList} from './interfaces';
+import {IAddList, IGetFormData} from './interfaces';
 
 export const checkAvailable = (element: Element): boolean => !!element;
 export const getText = (element: Element): string|null => element ? element.textContent : '';
@@ -88,10 +88,20 @@ export const flattenObjectValues = (array: any[]|any, key: string, initialValue 
 
   return initialValue;
 };
-export const getFormData = (data: Array<{key: string; value: any}>): FormData => {
+export const getFormData = (data: IGetFormData[]): FormData => {
     const formData = new FormData();
 
     data.forEach(({key, value}) => formData.append(key, value));
 
     return formData;
+};
+/**
+ * returns submit link to upload promo codes
+ */
+export const getPromoCodeSubmitLink = (): string => {
+  return window
+    .location
+    .href
+    .split('?')[0]
+    .replace('dashboard', 'update_discount');
 };

@@ -1,86 +1,128 @@
-// @ts-nocheck
-import {eventAdd, getFormData, activateButton, disableButton} from "./utils.ts";
-import {promoCodeUrl} from "./settings.ts";
+import {eventAdd, getFormData, getPromoCodeSubmitLink, disableButton, activateButton} from "../../../utils/utils.js";
+import {IGetFormData} from "../../../utils/interfaces";
+import {promoCodeUrl} from "./settings.js";
+import {IProps, IApp, IListeners, IPromoInputHandler, IPromoInputValues} from "./interfaces";
 
-interface IProps {
-  promoWrapper: Element;
-  authToken: string;
-  cityEdit: HTMLLinkElement;
-  promoInput: HTMLInputElement;
-  promoBtn: HTMLButtonElement;
-  promoPopup: Element;
-  promoDelete: HTMLButtonElement;
-}
-interface IApp {
-  createListeners: () => IApp;
-  addListeners: () => IApp;
-}
 
 export default () => {
-  const props = {
-    promoWrapper: document.querySelector('.customer__promo'),
-    authToken: document.querySelector('meta[name=csrf-token]')!.content,
-    cityEdit: document.querySelector('.customers__info-item-edit--city'),
+  const props: IProps = {
+    promoWrapper: document.querySelector('.customer__promo')!,
+    authToken: (document.querySelector('meta[name=csrf-token]') as HTMLMetaElement)!.content,
+    cityEdit: document.querySelector('.customers__info-item-edit--city')!,
     promoPopup: document.querySelector('.customer__promo-popup'),
   };
+  const getButton = (): HTMLButtonElement => (
+    props.promoWrapper.querySelector('.customer__promo-submit') || document.createElement('button')
+  );
 
-  const promoInputHandler = async (value: string, isDeleting = false): void => {
-    const getPromoCodeSubmitLink = () => {
-      return window
-        .location
-        .href
-        .split('?')[0]
-        .replace('dashboard', 'update_discount');
-    };
-
+  const promoInputHandler = async (value: string, isDeleting = false): Promise<void> => {
     if (!isDeleting)
       value = value.trim();
 
     if (!value && !isDeleting) return;
-    const {promoBtn} = props;
-    const formData = getFormData([
-      { key: 'utf8', value: '✓' },
-      { key: '_method', value: 'patch' },
-      { key: 'authenticity_token', value: props.authToken },
-      { key: 'promo_code', value: 'true' },
-      { key: 'customer[promo_code_number]', value }
-    ]);
-    const link = getPromoCodeSubmitLink();
 
-    promoBtn && disableButton(promoBtn);
+    const w: IPromoInputHandler<IPromoInputValues> = {
+      v: {
+        promoCode: '',
+        promoSubmitLink: '',
+        formData: new FormData()
+      },
+      hideButton(button) {
+        disableButton(button);
 
-    await fetch(link, { method: 'POST', body: formData });
-    const promoCode = await fetch(promoCodeUrl).then(result => result.text());
+        return this;
+      },
+      showButton(button) {
+        activateButton(button);
 
-    if (promoCode)
-      props.promoWrapper.innerHTML = `
+        return this;
+      },
+      setFormData(data: IGetFormData[]) {
+        this.v.formData = getFormData(data);
+
+        return this;
+      },
+      getPromoSubmitLink() {
+        this.v.promoSubmitLink = getPromoCodeSubmitLink();
+
+        return this;
+      },
+      async sendPromoCode() {
+        await fetch(this.v.promoSubmitLink, { method: 'POST', body: this.v.formData });
+
+        return this;
+      },
+      async getPromoCode() {
+        this.v.promoCode = await fetch(promoCodeUrl).then(result => result.text());
+
+        return this;
+      },
+      setResolvedPromo() {
+        props.promoWrapper.innerHTML = `
                 <div class="customer__promo-code">
-                  <p>Текущий промокод: <strong>${promoCode}</strong></p>
+                  <p>Текущий промокод: <strong>${this.v.promoCode}</strong></p>
                   <button class="customer__promo-code-delete">&times;</button>
                 </div>
               `;
 
+        return this;
+      },
+      getPopupWrongPromo() {
+        props.promoPopup!.click();
 
-    else {
-      if (!isDeleting)
-        props.promoPopup.click();
-      else
+        return this;
+      },
+      resetPromoWrapper() {
         props.promoWrapper.innerHTML = `
-                  <label class="customer__promo-label">Промокод: <input class="customer__promo-input" type="text"></label>
-                  <button class="customer__promo-submit">Применить</button>`;
-    }
+                  <form class="customer__promo-form">
+                     <label class="customer__promo-label">Промокод: <input class="customer__promo-input" type="text"></label>
+                     <button class="customer__promo-submit">Применить</button>
+                  </form>`;
 
-    promoBtn && activateButton(promoBtn);
+        return this;
+      },
+    };
+
+    await
+      (await
+        (await
+          w
+      .hideButton(getButton())
+      .setFormData([
+        {key: 'utf8', value: '✓'},
+        {key: '_method', value: 'patch'},
+        {key: 'authenticity_token', value: props.authToken},
+        {key: 'promo_code', value: 'true'},
+        {key: 'customer[promo_code_number]', value}
+      ])
+      .getPromoSubmitLink()
+      .sendPromoCode())
+      .getPromoCode())
+
+    if (w.v.promoCode)
+      w.setResolvedPromo()
+    else
+      !isDeleting
+        ? w.getPopupWrongPromo()
+        : w.resetPromoWrapper();
+
+    w.showButton(getButton());
   };
 
   const promoHandler = (props: IProps): void => {
-    const app = ((): IApp => {
-      const app = () => {};
-      app.prototype = {
-        createListeners(): this {
+    const app = (): IApp<IListeners> => {
+      const app = {
+        l: {
+          onPromoBtnClick: () => {},
+          onCityEditClick: () => {},
+          onDeleteButtonClick: () => {},
+        },
+        createListeners(): IApp<IListeners> {
           this.l.onPromoBtnClick = evt => {
+            evt.preventDefault();
+
             if (evt.target.matches('.customer__promo-submit'))
-              promoInputHandler(props.promoWrapper.querySelector('.customer__promo-input').value, false);
+              promoInputHandler((props.promoWrapper.querySelector('.customer__promo-input') as HTMLInputElement)!.value, false);
           };
           this.l.onCityEditClick = evt => {
             if (evt.target.matches('.customers__info-item-edit--city')) {
@@ -90,13 +132,15 @@ export default () => {
             }
           };
           this.l.onDeleteButtonClick = evt => {
+            evt.preventDefault();
+
             if (evt.target.matches('.customer__promo-code-delete'))
               promoInputHandler('', true);
           };
 
           return this;
         },
-        addListeners(): this {
+        addListeners(): IApp<IListeners> {
           const {promoWrapper, cityEdit} = props;
 
           eventAdd(promoWrapper, 'click', this.l.onPromoBtnClick);
@@ -107,22 +151,14 @@ export default () => {
         },
       };
 
-      Object.setPrototypeOf(app, app.prototype);
+      return app;
+    };
 
-      return Object.assign(app, {
-          l: {
-            onPromoBtnClick: () => {},
-            onCityEditClick: () => {},
-            onDeleteButtonClick: () => {},
-          },
-      });
-    })();
-
-    app
+    app()
       .createListeners()
       .addListeners();
   };
 
   promoHandler(props);
-  $(props.promoPopup).fancybox({ maxWidth: 800, maxHeight: 600 });
+  ($(props.promoPopup!) as any).fancybox({ maxWidth: 800, maxHeight: 600 });
 };

@@ -39,6 +39,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@types/jquery": "^3.3.35",
     "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
     "ruby": "^0.6.1"
   }
