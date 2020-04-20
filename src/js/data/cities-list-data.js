@@ -36,7 +36,7 @@ window.citiesList = [
           "street": "ул. Попова, 248/2",
           "schedule": "ПН-ПТ: 9:00 - 18:00",
           "photos": [],
-          "id": "28"
+          "id": "35"
         }
       ]
     },
@@ -82,7 +82,7 @@ window.citiesList = [
           "street": "ул. Дорожная, 35",
           "schedule": "ПН-ПТ: 9:00 - 18:00",
           "photos": [],
-          "id": "28"
+          "id": "38"
         }
       ]
     },
@@ -330,7 +330,7 @@ window.citiesList = [
           "street": "ул. Авиаторов д.16",
           "schedule": "ПН-ПТ: 9:00 - 18:00",
           "photos": [],
-          "id": "28"
+          "id": "36"
         }
       ]
     },
@@ -368,7 +368,7 @@ window.citiesList = [
           "street": "ул. Путейская 19",
           "schedule": "ПН-ПТ: 9:00 - 18:00",
           "photos": [],
-          "id": "28"
+          "id": "39"
         }
       ]
     },
@@ -493,7 +493,7 @@ window.citiesList = [
             "street": "ул. Крылова д. 61",
             "schedule": "ПН-ПТ: 9:00 - 18:00",
             "photos": [],
-            "id": "28"
+            "id": "34"
           }
         ]
       },
