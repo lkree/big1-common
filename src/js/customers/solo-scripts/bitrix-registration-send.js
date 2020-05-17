@@ -31,7 +31,7 @@ const onFormSubmit = (evt) => {
 
     w.checkRegion = () => {
       const region = getCookie('region_id');
-      if (region === '41') //region !== '28' && region !== undefined
+      if ((region === '41') || (region === '43') || (region === '44'))//region !== '28' && region !== undefined
         fastExit = true;
 
       return w;
@@ -54,6 +54,12 @@ const onFormSubmit = (evt) => {
         const _glueAll = (...args) => args.reduce((curr, prev) => curr + prev);
 
         const wrapper = () => wrapper;
+        const getCookie = (name) => {
+          const matches = document.cookie.match(new RegExp(
+              "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+          ));
+          return matches ? decodeURIComponent(matches[1]) : undefined;
+        };
         wrapper.replaceChars = () => {
           data = parsedData.map(el => _specialCharsReplacer(el));
           data = _.object(['name', 'phone', 'email', 'surname'], data);
@@ -62,16 +68,18 @@ const onFormSubmit = (evt) => {
         };
         wrapper.prepareQuery = () => {
           let {name, email, phone, surname} = data;
-          let title, source;
+          let title, source, utm;
+
+          const utm_source = getCookie('utm_source');
 
           name = name ? `fields%5BNAME%5D=${name}&` : '';
           phone = phone ? `&fields%5BPHONE%5D%5B0%5D%5BVALUE%5D=${phone}&fields%5BPHONE%5D%5B0%5D%5BVALUE_TYPE%5D=WORK&` : '';
           email = email ? `fields%5BEMAIL%5D%5B0%5D%5BVALUE%5D=${email}&fields%5BEMAIL%5D%5B0%5D%5BVALUE_TYPE%5D=HOME&` : '';
           source = 'fields%5BSOURCE_ID%5D=WEB&';
           title = `TITLE%5D=%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%BD%D0%B0+big1.ru+${data.name}&`;
-          surname = `fields%5BLAST_NAME%5D=${surname}`;
-
-          sendData = _glueAll(_header, title, source, name, phone, email, surname);
+          surname = `fields%5BLAST_NAME%5D=${surname}&`;
+          utm = utm_source  ? `fields%5BUTM_SOURCE%5D=${utm_source}`: '';
+          sendData = _glueAll(_header, title, source, name, phone, email, surname, utm);
 
           return wrapper;
         };
