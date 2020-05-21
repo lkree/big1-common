@@ -193,7 +193,18 @@ window.citiesList = [
   {
     "name": "Иркутск",
     "kladr_id": "38000003000",
-    "price": "450"
+    "branches": {
+      "office": [
+        {
+          "name": "Иркутск, Советский 5-й переулок, 11а",
+          "street": "Советский 5-й переулок, 11а",
+          "schedule": "ПН-ПТ: 9:00 - 18:00",
+          "photos": [],
+          "id": "45"
+        }
+      ]
+    },
+    "mapLink": "https://yandex.ru/map-widget/v1/?um=constructor%3Aec3ef41458998f7bf0dc68f58fb052c3445c00f5db04c612b0b533fb3c320293&amp;source=constructor",
   },
   {
     "name": "Йошкар-Ола",
