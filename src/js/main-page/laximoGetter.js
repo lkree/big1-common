@@ -19,7 +19,8 @@ const saveCookie = (name, value) => {
   const options = {
     path: '/',
     secure: true,
-    'expires': new Date(Date.now() + 11186400e5),
+    expires: (new Date(Date.now() + 11186400e5)).toUTCString(),
+    SameSite: 'None',
   };
 
   let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
@@ -31,7 +32,6 @@ const saveCookie = (name, value) => {
       updatedCookie += "=" + optionValue;
     }
   }
-
   document.cookie = updatedCookie;
 };
 const params = location.href.split('?')[1];

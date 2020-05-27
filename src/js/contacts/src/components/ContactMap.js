@@ -61,7 +61,8 @@ export default class ContactMap extends React.Component {
     const options = {
       path: '/',
       secure: true,
-      'max-age': new Date(Date.now() + 86400e5),
+      expires: (new Date(Date.now() + 86400e5)).toUTCString(),
+      SameSite: 'None',
     };
 
     let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
@@ -73,7 +74,6 @@ export default class ContactMap extends React.Component {
         updatedCookie += "=" + optionValue;
       }
     }
-
     document.cookie = updatedCookie;
   };
   getCookie = (name) => {
