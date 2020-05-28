@@ -38,6 +38,9 @@ module.exports = (grunt) => {
       },
       'customers': {
         'build/css/customers.css' :'src/scss/another-components/customers/index.scss',
+      },
+      'aboutCompany': {
+         'build/css/clients/aboutCompany.css': 'src/scss/clients/aboutCompany.scss',
       }
     },
     cssmin: {
@@ -70,6 +73,9 @@ module.exports = (grunt) => {
       },
       'customers': {
         'build/css/customers.css' :'build/css/customers.css',
+      },
+      'aboutCompany': {
+        'build/css/clients/aboutCompany.css': 'build/css/clients/aboutCompany.css',
       }
     },
     autoprefixer: {
@@ -102,6 +108,9 @@ module.exports = (grunt) => {
       },
       'customers': {
         'build/css/customers.css' :'build/css/customers.css',
+      },
+      'aboutCompany': {
+        'build/css/clients/aboutCompany.css': 'build/css/clients/aboutCompany.css',
       }
     },
     uglify: {
@@ -173,6 +182,10 @@ module.exports = (grunt) => {
         src: 'build/js/customersDashboard.js',
         dest: 'build/js/customersDashboard.js'
       },
+      aboutCompany: {
+        src: 'build/js/aboutCompany.html.js',
+        dest: 'build/js/aboutCompany.html.js'
+      }
     },
     babel: {
       mainPage: {
@@ -243,6 +256,10 @@ module.exports = (grunt) => {
         src: 'build/js/customersDashboard.js',
         dest: 'build/js/customersDashboard.js'
       },
+      aboutCompany: {
+        src: 'build/js/aboutCompany.html.js',
+        dest: 'build/js/aboutCompany.html.js'
+      }
     },
     concat: {
       mainPage: {
@@ -306,7 +323,7 @@ module.exports = (grunt) => {
         dest: 'build/js/basket-delivery-page-script.js'
       },
       customers: {
-        src: 'src/js/customers/bitrix-registration-send.js',
+        src: 'src/js/customers/solo-scripts//bitrix-registration-send.js',
         dest: 'build/js/customers-script.js'
       },
       citiesList: {
@@ -333,6 +350,10 @@ module.exports = (grunt) => {
         src: 'build/js/customersDashboard.js',
         dest: 'build/js/customersDashboard.js'
       },
+      aboutCompany: {
+        src: 'src/js/clients/aboutCompany.html.js',
+        dest: 'build/js/aboutCompany.html.js'
+      }
     }
   };
   const config = {
@@ -429,12 +450,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "customers",
+    preset: "aboutCompany",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'laximoVehicleByVin',
+    preset: 'aboutCompany',
   };
 
   /**
