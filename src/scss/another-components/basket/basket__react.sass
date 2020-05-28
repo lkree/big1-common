@@ -59,6 +59,11 @@ div, p
 
   &:hover
     cursor: pointer
+@media (max-width: 400px)
+  .basket__progress-header-item
+    padding: 2px 2px
+    margin-right: 22px
+    font-size: 15px
 
 .basket__progress-header-item--without-before
   margin-right: 15px
@@ -219,8 +224,6 @@ div, p
   width: 15px
   margin-left: 10px
 
-.basket__react-bottom-nav-btn-text
-
 .basket__react-bottom-nav-btn-arrow
   background: $arrow-background
     position: 60% center
@@ -365,3 +368,38 @@ div, p
   .basket__react-bottom-panel
     min-height: 260px
     padding: 25px 5px
+
+  .tab-bask thead:nth-child(1) tr:nth-child(1) th:nth-child(4)
+    display: none
+
+  td.nowrap:nth-child(4)
+    display: none
+
+@media (max-width: 640px)
+
+  .tab-bask
+    word-break: break-all
+    font-size: 10px
+
+  .tab-bask th
+    font-size: 10px
+    padding: 0 1px
+    white-space: nowrap
+
+  .b-art-helper
+    width: 43px
+    font-size: 10px
+  .b-art-helper p
+    font-size: 10px
+
+  .tab-bask td
+    padding: 8px 2px
+
+  .col-vo input
+    left: 12px
+    font-size: 12px
+
+  .col-vo
+    width: 50px
+
+
