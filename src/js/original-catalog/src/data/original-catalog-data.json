@@ -9,7 +9,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1413/49_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwEQTzVQEAAAAABnn_08$ no"
+            "HYW201905 $*KwGVzbDdlZcAAAAALdlLNg$ no"
           ],
           "names" => [
             "Accent"
@@ -21,7 +21,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6218/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwHhvsSp4-oAAAAAc9_1nw$ no"
+            "HYW201905 $*KwGbw77TmpwAAAAAaOJqKQ$ no"
           ],
           "names" => [
             "Creta"
@@ -33,7 +33,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1424/3_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwGy7Zf4uAAAAADk0riH$ no"
+            "HYW201905 $*KwHBmeSKxgAAAAD8jB4K$ no"
           ],
           "names" => [
             "Elantra"
@@ -45,7 +45,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1432/33_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwFME2kASAAAAABc6R5g$ no"
+            "HYW201905 $*KwFFHWANR0IAAAAASkY5AA$ no"
           ],
           "names" => [
             "Getz"
@@ -57,11 +57,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5272/13_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "HYWCV201803 $*KwHvsMqn7O4AAAAAplvJEQ$ no",
-            "HYW201803 $*KwHqtc-i6esAAAAAUrN0cg$ no"
+            "HYW201905 $*KwFYAH0QW10AAAAAD8SF-g$ no"
           ],
           "names" => [
-            "H-100",
             "H-100"
           ]
         }
@@ -71,11 +69,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5123/4_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYWCV201803 $*KwFZBnwZUgAAAABHoYg0$ no",
-            "HYW201803 $*KwH2qdO2_QAAAADve4Vl$ no"
+            "HYW201905 $*KwFtNUgtZwAAAABrxKXj$ no"
           ],
           "names" => [
-            "H350",
             "H350"
           ]
         }
@@ -85,14 +81,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1436/64_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYWCV201803 $*KwHot82k6QAAAAArK48d$ no",
-            "HYWCV201803 $*KwHJluyCygAAAABrk5nH$ no",
-            "HYW201803 $*KwEaRT9WGwAAAADEPeaA$ no",
-            "HYW201803 $*KwFmOUMtZQAAAADDSZSW$ no"
+            "HYW201905 $*KwHNleiFzs0AAAAAm12rDA$ no",
+            "HYW201905 $*KwF6Il87eQAAAABZ9PeE$ no"
           ],
           "names" => [
-            "Grand Starex",
-            "Starex",
             "Grand Starex",
             "Starex"
           ]
@@ -103,7 +95,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1450/13_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwFOEWsBTAAAAADrEvfd$ no"
+            "HYW201905 $*KwHju8ar4uYAAAAAAh8bYA$ no"
           ],
           "names" => [
             "i40"
@@ -115,7 +107,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1453/15_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwFcA3kWXwAAAACPndqf$ no"
+            "HYW201905 $*KwEsdAlnLwAAAABLpRNh$ no"
           ],
           "names" => [
             "ix35"
@@ -127,7 +119,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1433/50_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwFSDXcSUwAAAAAIBgmJ$ no"
+            "HYW201905 $*KwGI0K3IjgAAAADfk1vX$ no"
           ],
           "names" => [
             "Santa Fe"
@@ -139,7 +131,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6484/6_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwGN0qjHigAAAADzpIlh$ no"
+            "HYW201905 $*KwFfB3oTXgAAAAAIyTdC$ no"
           ],
           "names" => [
             "Solaris"
@@ -151,14 +143,12 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6124/4_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwG75J7zubkAAAAAdtHTxQ$ no",
-            "HYW201803 $*KwFEG2ELRwAAAADkBaNt$ no",
-            "HYW201803 $*KwGr9I7jqaEAAAAAA6A6rw$ no"
+            "HYW201905 $*KwEwaBV6NgAAAADfUWWO$ no",
+            "HYW201905 $*KwGk_IHspKQAAAAApSusxw$ no"
           ],
           "names" => [
             "Santamo",
-            "Sonata",
-            "Sonata Hybrid"
+            "Sonata"
           ]
         }
       },
@@ -167,7 +157,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5125/1_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "HYW201803 $*KwHUi_GV0QAAAABS-Gvc$ no"
+            "HYW201905 $*KwG95ZjwvwAAAAB8h8j-$ no"
           ],
           "names" => [
             "Tucson"
@@ -179,7 +169,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "HYW201803 no no"
+            "HYW201905 no no"
           ],
           "names" => [
             "npc"
@@ -218,8 +208,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5273/12_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "HYWCV201803 $*KwF0K1E4fgAAAACbK1Nk$ no",
-            "HYW201803 $*KwFVCnAZXwAAAAB63LJV$ no"
+            "HYWCV201905 $*KwFEHGEIRgAAAAAl-PiB$ no",
+            "HYW201905$*KwHTi_af0QAAAACtWJXT$ no"
           ],
           "names" => [
             "Porter",
@@ -232,11 +222,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5537/5_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "HYWCV201803 $*KwH-oduw9QAAAAB8XdOG$ no",
-            "HYWCV201803 $*KwG75J77vwAAAAAjQgri$ no",
-            "HYWCV201803 $*KwHot82g6-0AAAAAWqv8QA$ no",
-            "HYWCV201803 $*KwGL1K7LiAAAAACQ-YQv$ no",
-            "HYWCV201803 $*KwEneAJqJgAAAADBVIXR$ no"
+            "HYWCV201905 $*KwHVjfCa0gAAAABowBNC$ no",
+            "HYWCV201905 $*KwGL067EjQAAAAD63FTW$ no",
+            "HYWCV201905 $*KwEnfwJoJwAAAAAZsu98$ no",
+            "HYWCV201905 $*KwFkPEElYgAAAAChrq9h$ no",
+            "HYWCV201905 $*KwEgeAVqKwAAAAC6qu_p$ no"
           ],
           "names" => [
             "Aero City",
@@ -252,7 +242,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "HYWCV201803 no no"
+            "HYWCV201905 no no"
           ],
           "names" => [
             "npc"
@@ -271,7 +261,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3070/1_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwGh-ITgoAAAAAAMAgIM$ no"
+            "SK862 $*KwEGXyNHAgAAAADZF4C_$ no"
           ],
           "names" => [
             "Citigo"
@@ -283,7 +273,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/4885/32_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwGq84_qqgAAAADNbGt4$ no"
+            "SK862 $*KwGI0a3IggAAAABumXCZ$ no"
           ],
           "names" => [
             "Fabia"
@@ -295,7 +285,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3078/24_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwH5oNy5-AAAAABu3WWS$ no"
+            "SK862 $*KwHvtsqv5AAAAAALnVuL$ no"
           ],
           "names" => [
             "Favorit/Form./Pickup"
@@ -307,7 +297,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3083/16_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwHwqdWw9gAAAAAqfofZ$ no"
+            "SK862 $*KwEKUy9CCAkAAAAAg9uWbA$ no"
           ],
           "names" => [
             "Felicia"
@@ -319,7 +309,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6490/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwGO16vGjY8AAAAAAZVYFQ$ no"
+            "SK862 $*KwFxKFQ5cXMAAAAAp269Aw$ no"
           ],
           "names" => [
             "Karoq"
@@ -331,7 +321,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6268/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwHstcmk7-wAAAAAu2tlOQ$ no"
+            "SK862 $*KwG37pL_t7YAAAAAcZG9pw$ no"
           ],
           "names" => [
             "Kodiaq"
@@ -343,7 +333,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3087/4_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwEbQj5TGxgAAAAAIEWwgw$ no"
+            "SK862 $*KwHLku6DyskAAAAAa5pVbw$ no"
           ],
           "names" => [
             "Octavia"
@@ -355,7 +345,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3092/6_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwEdRDhVHBkAAAAAtqXAHA$ no"
+            "SK862 $*KwHstcmk5uwAAAAAaqnecA$ no"
           ],
           "names" => [
             "Rapid"
@@ -367,7 +357,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3095/27_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwESSzdaExkAAAAA4FIcaQ$ no"
+            "SK862 $*KwG44Z3wsr8AAAAApFUx_A$ no"
           ],
           "names" => [
             "Roomster"
@@ -379,7 +369,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5065/29_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwFEHWEMQkMAAAAA-UjwgQ$ no"
+            "SK862 $*KwEcRTlUFx4AAAAATyuolg$ no"
           ],
           "names" => [
             "Superb"
@@ -391,7 +381,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3100/28_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwHttMil6esAAAAA90tz_g$ no"
+            "SK862 $*KwE5YBxyOj0AAAAAb2tGIQ$ no"
           ],
           "names" => [
             "Yeti"
@@ -402,7 +392,9 @@
         "name" => "другие модели",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
-          "codes" => [],
+          "codes" => [
+            "SK862 no no"
+          ],
           "names" => []
         }
       }
@@ -495,8 +487,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2857/7_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwFfBXoRWAAAAAB5lTh-$ no",
-            "RENAULT201801 $*KwFEHmEEQAAAAADKJ9oz$ no"
+            "RENAULT201809 $*KwHhu8Sv5gAAAAAdZ89w$ no",
+            "RENAULT201809 $*KwGQyrXQlQAAAAD6fE9R$ no"
           ],
           "names" => [
             "Duster (PR\n        1479)\n      ",
@@ -509,7 +501,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2863/8_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwGRy7TelwAAAAAzjw6h$ no"
+            "RENAULT201809 $*KwEJUyxGDwAAAAD_NzXG$ no"
           ],
           "names" => [
             "Fluence-Megane\n        Generation (PR 1438)\n      "
@@ -521,8 +513,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2870/73_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwGg-oXtpwAAAACMA0te$ no",
-            "RENAULT201801 $*KwF5I1w3eQAAAABPu2G0$ no"
+            "RENAULT201809 $*KwGn_YLqoAAAAADFvmYG$ no",
+            "RENAULT201809 $*KwFuNEsgbgAAAAAdTLo2$ no"
           ],
           "names" => [
             "Kangoo (PR\n        1280)\n      ",
@@ -535,7 +527,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7030/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwHEnuGExgAAAAD5E8nW$ no"
+            "RENAULT201809 $*KwEeRDteHAAAAAAtNTaS$ no"
           ],
           "names" => [
             "Captur Kaptur\n        (HHA) (PR 1808)\n      "
@@ -547,9 +539,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6377/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwHEnuGLwQAAAADg70C6$ no",
-            "RENAULT201801 $*KwF4Il05cwAAAACIk6h2$ no",
-            "RENAULT201801 $*KwH2rNO28QAAAADREzl8$ no"
+            "RENAULT201809 $*KwEnfQJoIgAAAADD0dN4$ no",
+            "RENAULT201809 $*KwFfBXoeVAAAAAD3u2ia$ no",
+            "RENAULT201809 $*KwEJUyxJDgAAAAAPqBmf$ no"
           ],
           "names" => [
             "Koleos (PR\n        1445)\n      ",
@@ -563,12 +555,12 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2878/45_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwGRy7TelwAAAAAzjw6h$ no",
-            "RENAULT201801 $*KwEWTDNcFgAAAAA0ccRZ$ no",
-            "RENAULT201801 $*KwGD2abJggAAAAC-Y4bW$ no",
-            "RENAULT201801 $*KwFwKlU9egAAAABehKyB$ no",
-            "RENAULT201801 $*KwFaAH8UUAAAAAA7LHbQ$ no",
-            "RENAULT201801 $*KwGr8Y7mrQAAAABUdhNr$ no"
+            "RENAULT201809$*KwGl_4DqowAAAAD1OitZ$ no",
+            "RENAULT201809 $*KwHIku2CyAAAAAALPQWL$ no",
+            "RENAULT201809 $*KwG955j3vAAAAAAAxscI$ no",
+            "RENAULT201809 $*KwHbgf6W0QAAAAAdNJ9G$ no",
+            "RENAULT201809 $*KwGm_IPorAAAAABHQEX9$ no",
+            "RENAULT201809 $*KwElfwBoIwAAAAAdW_8L$ no"
           ],
           "names" => [
             "Fluence-Megane\n        Generation (PR 1438)\n      ",
@@ -585,10 +577,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5053/89_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwGRy7TelwAAAAAzjw6h$ no",
-            "RENAULT201801 $*KwE-ZBtzAAAAANClUfI$ no",
-            "RENAULT201801 $*KwHIku2HwwAAAADhmChG$ no",
-            "RENAULT201801 $*KwGr8Y7mrQAAAABUdhNr$ no"
+            "RENAULT201809$*KwGl_4DqowAAAAD1OitZ$ no",
+            "RENAULT201809 $*KwEnfQJqAAAAADw5yNU$ no",
+            "RENAULT201809 $*KwGK0K_FgQAAAAD5Buxl$ no",
+            "RENAULT201809 $*KwElfwBoIwAAAAAdW_8L$ no"
           ],
           "names" => [
             "Fluence-Megane\n        Generation (PR 1438)\n      ",
@@ -603,14 +595,14 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5290/5_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwGRy7TelwAAAAAzjw6h$ no",
-            "RENAULT201801 $*KwHps8yp6QAAAAAQJQww$ no",
-            "RENAULT201801 $*KwEJUyxECgAAAAC9a6PL$ no",
-            "RENAULT201801 $*KwHRi_Sc0AAAAADy9iLo$ no",
-            "RENAULT201801 $*KwGr8Y7mrQAAAABUdhNr$ no",
-            "RENAULT201801 $*KwHCmOeOxQAAAAC7E1OI$ no",
-            "RENAULT201801 $*KwF1L1A0dwAAAADA4lms$ no",
-            "RENAULT201801 $*KwEHXSJGAgAAAABrxxNC$ no"
+            "RENAULT201809 $*KwGG3KPJgAAAAABheNUj$ no",
+            "RENAULT201809 $*KwHehPue3gAAAAB0RzoG$ no",
+            "RENAULT201809 $*KwH5o9y0-gAAAAAnyNUd$ no",
+            "RENAULT201809 $*KwH-pNuz_wAAAACAe5lp$ no",
+            "RENAULT201809 $*KwHchvmR2gAAAABdP_41$ no",
+            "RENAULT201809 $*KwEfRTpTGAAAAAAmiIGU$ no",
+            "RENAULT201809 $*KwEqcA9rKAAAAADymyIr$ no",
+            "RENAULT201809 $*KwFkPkElYQAAAACSrjZQ$ no"
           ],
           "names" => [
             "Fluence-Megane\n        Generation (PR 1438)\n      ",
@@ -637,11 +629,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6187/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwHRi_Sc0AAAAADy9iLo$ no",
-            "RENAULT201801 $*KwEDWSZOAwAAAABccpZX$ no",
-            "RENAULT201801 $*KwGcxrnQmAAAAADHAXUw$ no",
-            "RENAULT201801 $*KwHjucai4wAAAABxLllX$ no",
-            "RENAULT201801 $*KwEJUyxJCgAAAAAIxd2G$ no"
+            "RENAULT201809 $*KwEGXCNLBwAAAAAXfZTS$ no",
+            "RENAULT201809 $*KwGRy7TckQAAAADo2skW$ no",
+            "RENAULT201809 $*KwEjeQZvJwAAAAB0kY67$ no",
+            "RENAULT201809 $*KwEdRzhcHQAAAAB493Ux$ no",
+            "RENAULT201809 $*KwHYgv2Y2wAAAABzkUph$ no"
           ],
           "names" => [
             "Megane\n        Classic-Estate (PR 1274)\n      ",
@@ -657,7 +649,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2921/33_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwH9p9iy_AAAAAAQmugl$ no"
+            "RENAULT201809 $*KwFYAn0XWQAAAADAUIFS$ no"
           ],
           "names" => [
             "Symbol-Thalia (PR\n        1435)\n      "
@@ -669,7 +661,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 no no"
+            "RENAULT201809 no no"
           ],
           "names" => [
             "npc"
@@ -684,7 +676,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5441/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwEnfQJrIQAAAABx9dEB$ no"
+            "RENAULT201801 $*KwEKUC9GDAAAAAB2zXXL$ no"
           ],
           "names" => [
             "Mascott-Master\n        rear wheel drive (PR 1329)\n      "
@@ -696,7 +688,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5442/4_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwEnfQJrIQAAAABx9dEB$ no"
+            "RENAULT201801 $*KwEKUC9GDAAAAAB2zXXL$ no"
           ],
           "names" => [
             "Mascott-Master\n        rear wheel drive (PR 1329)\n      "
@@ -716,7 +708,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5459/17_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "RENAULT201801 $*KwEnfQJrIQAAAABx9dEB$ no"
+            "RENAULT201801 $*KwEKUC9GDAAAAAB2zXXL$ no"
           ],
           "names" => [
             "Mascott-Master\n        rear wheel drive (PR 1329)\n      "
@@ -747,19 +739,19 @@
           ],
           "names" => [
             "KERAX (FAB 33AA/../../SS)\n      ",
-            "KERAX (FAB33A/././R) 2003= :",
+            "KERAX (FAB33A/././R) 2003= =>",
             "KERAX 33G ARMEE\n        BANGLADESH\n      ",
             "KERAX 33K ARMEE\n        BANGLADESH\n      ",
             "KERAX 8X4 BENNE GENIE\n        A.F.\n      ",
             "KERAX 8X4 CLD ARMEE BELGE\n      ",
             "KERAX 8X4 CLD FRANCE\n      ",
             "KERAX 8X4 SAMPT\n        (RESEAU)\n      ",
-            "KERAX = : 1999\n      ",
+            "KERAX = => 1999\n      ",
             "KERAX ACCESSOIRES\n      ",
             "KERAX CROTALE (COMPLET)\n        33RR\n      ",
             "KERAX DXI 11\n        -FAB-34.C/34.F\n      ",
             "KERAX DXI 13\n        -FAB-36.D/36.E\n      ",
-            "KERAX FAB 33A= :S 2000= :2002",
+            "KERAX FAB 33A= =>S 2000= =>2002",
             "KERAX NAMSA (RESEAU)\n      ",
             "KERAX SEA"
           ]
@@ -868,7 +860,7 @@
             "KERAX 33K ARMEE\n        BANGLADESH\n      ",
             "KERAX 8X4 SAMPT\n        (RESEAU)\n      ",
             "KERAX ACCESSOIRES\n      ",
-            "KERAX FAB 33A= :S 2000= :2002",
+            "KERAX FAB 33A= =>S 2000= =>2002",
             "KERAX NAMSA (RESEAU)\n      ",
             "KERAX SEA",
             "MAGNUM ACCESSOIRES\n      ",
@@ -1023,10 +1015,13 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3070/1_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwGh-ITgoAAAAAAMAgIM$ no"
+            "SK862 $*KwEkfQFlIAAAAACaN3JA$ no",
+            "SK862 $*KwHag_-a2gAAAACNmKt-$ no"
+
           ],
           "names" => [
-            "Citigo"
+            "Citigo",
+            "E-Citigo"
           ]
         }
       },
@@ -1035,7 +1030,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/4885/32_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwGq84_qqgAAAADNbGt4$ no"
+            "SK862 $*KwHBmOSBywAAAADZddwZ$ no"
           ],
           "names" => [
             "Fabia"
@@ -1047,7 +1042,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3078/24_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwH5oNy5-AAAAABu3WWS$ no"
+            "SK862 $*KwGH3qLHjAAAAABdhhY6$ no"
           ],
           "names" => [
             "Favorit/Form./Pickup"
@@ -1059,7 +1054,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3083/16_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwHwqdWw9gAAAAAqfofZ$ no"
+            "SK862 $*KwGWz7PelJUAAAAAsP9ZjA$ no"
           ],
           "names" => [
             "Felicia"
@@ -1071,7 +1066,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6490/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwGO16vGjY8AAAAAAZVYFQ$ no"
+            "SK862 $*KwEjegZrIyEAAAAA5mkTUQ$ no"
           ],
           "names" => [
             "Karoq"
@@ -1083,7 +1078,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6268/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwHstcmk7-wAAAAAu2tlOQ$ no"
+            "SK862 $*KwFuN0smbm8AAAAAg4VMBQ$ no"
           ],
           "names" => [
             "Kodiaq"
@@ -1095,7 +1090,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3087/4_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwEbQj5TGxgAAAAAIEWwgw$ no"
+            "SK862 $*KwGcxbnUnZ4AAAAA3nVGXg$ no"
           ],
           "names" => [
             "Octavia"
@@ -1107,7 +1102,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3092/6_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwEdRDhVHBkAAAAAtqXAHA$ no"
+            "SK862 $*KwHrss6j4esAAAAAkTQvOA$ no"
           ],
           "names" => [
             "Rapid"
@@ -1119,7 +1114,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3095/27_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwESSzdaExkAAAAA4FIcaQ$ no"
+            "SK862 $*KwG95Jj1t7oAAAAAUL2Mnw$ no"
           ],
           "names" => [
             "Roomster"
@@ -1131,7 +1126,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5065/29_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwFEHWEMQkMAAAAA-UjwgQ$ no"
+            "SK862 $*KwGaw7_SkZgAAAAANQV6qQ$ no"
           ],
           "names" => [
             "Superb"
@@ -1143,7 +1138,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3100/28_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "SK753 $*KwHttMil6esAAAAA90tz_g$ no"
+            "SK862 $*KwE8ZRl3PzgAAAAAm4P7Qg$ no"
           ],
           "names" => [
             "Yeti"
@@ -1155,7 +1150,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "SK753 no no"
+            "SK862 no no"
           ],
           "names" => [
             "npc"
@@ -3727,7 +3722,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1636/17_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwFDG2YIRQAAAAAkaYcH$ no"
+            "KIA201903 $*KwF9JFgwfAAAAADqTpOZ$ no"
           ],
           "names" => [
             "Ceed"
@@ -3739,8 +3734,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1618/10_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwGH36LNhQAAAABmCSFx$ no",
-            "KIA201803 $*KwH5ody28wAAAADGK8ew$ no"
+            "KIA201903 $*KwF-J1sxfwAAAAB6r-LV$ no",
+            "KIA201903 $*KwGA2aXPhgAAAADtElsQ$ no"
           ],
           "names" => [
             "Cerato",
@@ -3753,7 +3748,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1627/53_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwFfB3oSWgAAAAAWv8Ia$ no"
+            "KIA201903 $*KwGj-obpoQAAAAADSpU2$ no"
           ],
           "names" => [
             "Magentis"
@@ -3765,7 +3760,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5392/4_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwGRybTalgAAAACK7TO4$ no"
+            "KIA201903 $*KwH7ot66-gAAAAACc0uY$ no"
           ],
           "names" => [
             "Optima"
@@ -3777,7 +3772,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6381/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwHEnOGOwAAAAABAlkzi$ no"
+            "KIA201903 $*KwG37pL5tgAAAAAOD8nE$ no"
           ],
           "names" => [
             "Picanto"
@@ -3789,7 +3784,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6331/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwELUy5FDwAAAADXnrJr$ no"
+            "KIA201903 $*KwGSy7fclAAAAACa9oPA$ no"
           ],
           "names" => [
             "Rio"
@@ -3801,7 +3796,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5282/5_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwHpscyo6QAAAACjN_X6$ no"
+            "KIA201903 $*KwEwaRV-OgAAAAAKN4vE$ no"
           ],
           "names" => [
             "Sorento"
@@ -3813,7 +3808,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3761/1_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwFNFWgBSQAAAAAWXCpc$ no"
+            "KIA201903 $*KwE-Zxt0OwAAAABtngnh$ no"
           ],
           "names" => [
             "Soul"
@@ -3825,7 +3820,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1655/25_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwHUjPGe0gAAAAC10tsU$ no"
+            "KIA201903 $*KwG275P7vQAAAAASlX-c$ no"
           ],
           "names" => [
             "Spectra"
@@ -3837,7 +3832,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5393/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwH1rdC49wAAAAAcCWj7$ no"
+            "KIA201903 $*KwEBWCROAwAAAADnSiVc$ no"
           ],
           "names" => [
             "Sportage"
@@ -3849,7 +3844,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7422/8_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIA201803 $*KwHVjfCa0AAAAACGznJu$ no"
+            "KIA201903 $*KwEYQT1WGgAAAAA_3JUv$ no"
           ],
           "names" => [
             "Stinger"
@@ -3861,7 +3856,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "KIA201803 no no"
+            "KIA201903 no no"
           ],
           "names" => [
             "npc"
@@ -3876,8 +3871,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5043/7_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIACV201803 $*KwFKEm8GTwAAAAAo5jeS$ no",
-            "KIA201803 $*KwFDG2YPRgAAAADyIUB6$ no"
+            "KIACV201903 $*KwFmP0MtZwAAAAAILKpm$ no",
+            "KIA201903 $*KwEaQz9RGwAAAACuFy-b$ no"
           ],
           "names" => [
             "Bongo",
@@ -3890,8 +3885,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1603/30_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIACV201803 $*KwFUDHEfVAAAAACf_fmw$ no",
-            "KIA201803 $*KwHstMmn7AAAAABl0C9j$ no"
+            "KIACV201903 $*KwEmfwNrJAAAAACqVIcy$ no",
+            "KIA201903 $*KwFFHGAIRwAAAABTPaIg$ no"
           ],
           "names" => [
             "Besta",
@@ -3904,7 +3899,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5516/11_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIACV201803 $*KwH2rtO99AAAAADohNyz$ no"
+            "KIACV201903 $*KwHZgPyW2gAAAAAx3vXF$ no"
           ],
           "names" => [
             "Granbird"
@@ -3940,8 +3935,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1632/16_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "KIACV201803 $*KwE2bhN7NQAAAAB-pSYb$ no",
-            "KIA201803 $*KwG44J31uwAAAAA3iMp7$ no"
+            "KIACV201903 $*KwGM1anGjQAAAADozn8N$ no",
+            "KIA201903 $*KwGo8Y3iqQAAAAA1Mawv$ no"
           ],
           "names" => [
             "Pregio",
@@ -3954,8 +3949,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7032/5_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "KIACV201803 $*KwEBWSRLBAAAAAC85SPf$ no",
-            "KIA201803 $*KwFJEWwDTAAAAADca4Pa$ no"
+            "KIACV201903 $*KwFFHGALQQAAAACRc1TW$ no",
+            "KIA201903 $*KwHgucWu5AAAAABBuT2h$ no"
           ],
           "names" => [
             "Towner",
@@ -3968,7 +3963,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "KIACV201803 no no"
+            "KIACV201903 no no"
           ],
           "names" => [
             "npc"
@@ -3987,11 +3982,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3670/56_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwGB2KTJg4EAAAAAqcGYJg$ no",
-            "VW1221 $*KwEqcw9iKiAAAAAAP2WO-g$ no",
-            "VW1221 $*KwENVChFDA4AAAAAU2s05w$ no",
-            "VW1221 $*KwH3rtK_9vYAAAAAXVIPxw$ no",
-            "VW1221 $*KwHiu8eq4-AAAAAASxmCRg$ no"
+            "VW1330 $*KwFMFWkET04AAAAAyYDA5w$ no",
+            "VW1330 $*KwGL0q7DjYgAAAAAZgRwHw$ no",
+            "VW1330 $*KwFVDHAdU1cAAAAAGIpAYw$ no",
+            "VW1330 $*KwEudwtmKC4AAAAAlwBYNA$ no",
+            "VW1330 $*KwHZgPyR39gAAAAAyQ2_YQ$ no"
           ],
           "names" => [
             "Golf Sportsvan",
@@ -4007,10 +4002,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3593/15_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwGx6JT_uwAAAAAHAjGR$ no",
-            "VW1221 $*KwFSC3caUFEAAAAA8HxEuQ$ no",
-            "VW1221 $*KwFQCXUYUlEAAAAAEQdpvg$ no",
-            "VW1221 $*KwFoMU0gaW0AAAAAjGxtIA$ no"
+            "VW1330 $*KwHxqNSw8gAAAACUbU6S$ no",
+            "VW1330 $*KwGI0a3AioMAAAAA6cRUNw$ no",
+            "VW1330 $*KwEfRjpXHBwAAAAAFYJ7Fg$ no",
+            "VW1330 $*KwEaQz9SEBsAAAAA3qYcEA$ no"
           ],
           "names" => [
             "Bora/Variant/4Motion",
@@ -4025,7 +4020,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5404/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwEnfgJpLAAAAAAvx2DQ$ no"
+            "VW1330 $*KwFbAn4aWwAAAACZtiBq$ no"
           ],
           "names" => [
             "Caddy"
@@ -4037,16 +4032,16 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3623/28_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwEmfwNmLQAAAABmJkHb$ no",
-            "VW1221 $*KwFSC3caUFEAAAAA8HxEuQ$ no",
-            "VW1221 $*KwGO16vGjIwAAAAAgYc47g$ no",
-            "VW1221 $*KwGB2KTJg4EAAAAAqcGYJg$ no",
-            "VW1221 $*KwHFnOCNx8IAAAAAHJcW8g$ no",
-            "VW1221 $*KwFQCXUYUlEAAAAAEQdpvg$ no",
-            "VW1221 $*KwGM1anEjokAAAAAEJbhZg$ no",
-            "VW1221 $*KwH2r9O-9PAAAAAAAhnskg$ no",
-            "VW1221 $*KwFoMU0gaW0AAAAAjGxtIA$ no",
-            "VW1221 $*KwF0LVE1fgAAAAAL7nL1$ no"
+            "VW1330 $*KwEfRjpXHRsAAAAAkv3f9A$ no",
+            "VW1330 $*KwGM1anEjocAAAAA9y7MYQ$ no",
+            "VW1330 $*KwEheARpIysAAAAA1fG1yg$ no",
+            "VW1330 $*KwFvNkonbG0AAAAA26NrSQ$ no",
+            "VW1330 $*KwFQCXUYU1EAAAAACBxY_w$ no",
+            "VW1330 $*KwHEneGMx8cAAAAA6OPGnw$ no",
+            "VW1330 $*KwHAmeWIw8cAAAAA8WSa0A$ no",
+            "VW1330 $*KwGq84_iqaoAAAAAnywyZQ$ no",
+            "VW1330 $*KwGUzbHcnpUAAAAAmV3-gw$ no",
+            "VW1330 $*KwFpMEwpbwAAAAAxpLA7$ no"
           ],
           "names" => [
             "Golf",
@@ -4067,9 +4062,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3632/31_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwH6o9-y-PAAAAAAKJAIQw$ no",
-            "VW1221 $*KwHlvMCt5ucAAAAAgrIRjA$ no",
-            "VW1221 $*KwHXjvKf1NQAAAAAdj7O2Q$ no"
+            "VW1330 $*KwGI0a3Ai4wAAAAAYGB45w$ no",
+            "VW1330 $*KwHjusar4OkAAAAAnfZNww$ no",
+            "VW1330 $*KwHDmuaLwMgAAAAAHaW_5Q$ no"
           ],
           "names" => [
             "Jetta",
@@ -4083,11 +4078,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3754/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwE1bBB9NTQAAAAAFVX3zg$ no",
-            "VW1221 $*KwFlPEAtZWUAAAAALCAlIQ$ no",
-            "VW1221 $*KwHpsMyh6e4AAAAA-soeOg$ no",
-            "VW1221 $*KwHLku6Dy80AAAAAdeygNw$ no",
-            "VW1221 $*KwENVChFDA4AAAAAU2s05w$ no"
+            "VW1330 $*KwFYAX0QWVgAAAAAcPg6Rw$ no",
+            "VW1330 $*KwGv9ornrqgAAAAAx5Z4Jw$ no",
+            "VW1330 $*KwETSjZbEhUAAAAAdOFF4Q$ no",
+            "VW1330 $*KwGSy7fak5cAAAAAbFs3LA$ no",
+            "VW1330 $*KwFhOEQpZ2MAAAAAip573Q$ no"
           ],
           "names" => [
             "Passat",
@@ -4103,7 +4098,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7327/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwG17JD9s7EAAAAAWNSihQ$ no"
+            "VW1330 $*KwHyq9e6-fcAAAAAVDieNw$ no"
           ],
           "names" => [
             "Teramont"
@@ -4115,8 +4110,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5407/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwEOVytGCAUAAAAA94ZDDA$ no",
-            "VW1221 $*KwH2r9O-8PwAAAAAb8NlvQ$ no"
+            "VW1330 $*KwGl_IDtrqEAAAAAltC9kA$ no",
+            "VW1330 $*KwHjusar6OgAAAAAIij3XQ$ no"
           ],
           "names" => [
             "Tiguan",
@@ -4129,7 +4124,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3692/62_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwGk_YHso6UAAAAAoA0jJg$ no"
+            "VW1330 $*KwHRiPSa09MAAAAAC_ulKg$ no"
           ],
           "names" => [
             "Touareg"
@@ -4141,8 +4136,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5150/94_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "VW1221 $*KwHVjPCd0tIAAAAAGkqD7w$ no",
-            "VW1221 $*KwHwqdW49_YAAAAAbvHMqg$ no"
+            "VW1330 $*KwGm_4PtpKYAAAAAp04Vhw$ no",
+            "VW1330 $*KwFjOkYoYWQAAAAAk6u4JA$ no"
           ],
           "names" => [
             "Transporter",
@@ -4155,7 +4150,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "VW1221 no no"
+            "VW1330 no no"
           ],
           "names" => [
             "npc"
@@ -4263,7 +4258,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "FORD201512 no no"
+            "FORD201902 no no"
           ],
           "names" => [
             "npc"
@@ -4283,18 +4278,22 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5184/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwFMFWkMSQAAAACiMD4m$ no",
-            "BMW201810 $*KwFgOUUrYmUAAAAAmNKwFg$ no",
-            "BMW201810 $*KwGx6JT6srsAAAAA3rddyA$ no",
-            "BMW201810 $*KwH3rtK89vMAAAAAL35FEQ$ no",
-            "BMW201810 $*KwHKk--Cz8wAAAAA4plxRw$ no",
-            "BMW201810 $*KwGA2aXBgQAAAADt9eM9$ no",
-            "BMW201810 $*KwG645_ysLAAAAAA1ZEBag$ no"
+            "BMW201910 $*KwGQybXQlQAAAADoyeC_$ no",
+            "BMW201910 $*KwFJEGwCS08AAAAAIVg2hQ$ no",
+            "BMW201910 $*KwGN1KjGiYkAAAAA2Y_tGg$ no",
+            "BMW201910 $*KwEdRDhWHhYAAAAAFmoBVg$ no",
+            "BMW201910 $*KwHfhvqU29oAAAAA749z3g$ no",
+            "BMW201910 $*KwECWydJAwUAAAAAkAiPQw$ no",
+            "BMW201910 $*KwHstcmk6esAAAAAc1VXHA$ no",
+            "BMW201910 $*KwFxKFQwcAAAAACgNJlu$ no",
+            "BMW201910 $*KwGZwLzRk5IAAAAAsLWaUg$ no"
           ],
           "names" => [
             "X1 E84",
             "X1 F48",
+            "X1 F48 LCI",
             "X1 F49",
+            "X1 F49 LCI",
             "X3 G01",
             "X5 F15",
             "X6 E71",
@@ -4307,11 +4306,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6622/4_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwEdRDhWGxkAAAAA-6Logg$ no",
-            "BMW201810 $*KwHstcmk7u4AAAAATH41VA$ no",
-            "BMW201810 $*KwGC26fKiYMAAAAA6nN65w$ no",
-            "BMW201810 $*KwGn_oLso6QAAAAAgh_Gjg$ no",
-            "BMW201810 $*KwGYwb3TnJIAAAAAsXUcJg$ no"
+            "BMW201910 $*KwH4od2z_vkAAAAA1h3mvQ$ no",
+            "BMW201910 $*KwGO16vGjIwAAAAAgYc47g$ no",
+            "BMW201910 $*KwEVTDBdHhcAAAAAmPy9Dw$ no",
+            "BMW201910 $*KwEcRTlXGB8AAAAAvfI6lg$ no",
+            "BMW201910 $*KwEOVytFCwoAAAAATlKzBw$ no"
           ],
           "names" => [
             "X2 F39",
@@ -4327,13 +4326,13 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6408/5_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwEdRDhWGxkAAAAA-6Logg$ no",
-            "BMW201810 $*KwGcxbndlwAAAADwpbkC$ no",
-            "BMW201810 $*KwFLEm4LSQAAAAB16Ybd$ no",
-            "BMW201810 $*KwHstcmk7u4AAAAATH41VA$ no",
-            "BMW201810 $*KwH3rtK89vMAAAAAL35FEQ$ no",
-            "BMW201810 $*KwHXjvKc1twAAAAASJWaMA$ no",
-            "BMW201810 $*KwHstcmt6QAAAABX6VQD$ no"
+            "BMW201910 $*KwH4od2z_vkAAAAA1h3mvQ$ no",
+            "BMW201910 $*KwGG36PHjQAAAACT_yv-$ no",
+            "BMW201910 $*KwGI0a3IigAAAABgQvir$ no",
+            "BMW201910 $*KwEudwtmLCwAAAAAHWL8HA$ no",
+            "BMW201910 $*KwGE3aHPhYMAAAAA6iZdfA$ no",
+            "BMW201910 $*KwFXDnIcVlEAAAAAXZXgzw$ no",
+            "BMW201910 $*KwF4IV05fQAAAAB9niqf$ no"
           ],
           "names" => [
             "X2 F39",
@@ -4351,11 +4350,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7069/6_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwFMFWkMSQAAAACiMD4m$ no",
-            "BMW201810 $*KwFgOUUrYmUAAAAAmNKwFg$ no",
-            "BMW201810 $*KwGx6JT6srsAAAAA3rddyA$ no",
-            "BMW201810 $*KwGC26fKiYMAAAAA6nN65w$ no",
-            "BMW201810 $*KwGn_oLso6QAAAAAgh_Gjg$ no"
+            "BMW201910 $*KwEgeQVgJQAAAAAfQU0B$ no",
+            "BMW201910 $*KwFSC3cZUFQAAAAAglAObw$ no",
+            "BMW201910 $*KwGF3KDOho4AAAAAO6RW4A$ no",
+            "BMW201910 $*KwEeRztWFRwAAAAAQF7kvQ$ no",
+            "BMW201910 $*KwE-Zxt1Oj0AAAAARdO0DQ$ no"
           ],
           "names" => [
             "X1 E84",
@@ -4371,13 +4370,13 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/410/21_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwHstcmk7u4AAAAATH41VA$ no",
-            "BMW201810 $*KwHstcmt6QAAAABX6VQD$ no",
-            "BMW201810 $*KwF5IFw2cgAAAADTxyaT$ no",
-            "BMW201810 $*KwHMlemMxgAAAADo2JVn$ no",
-            "BMW201810 $*KwHKk--Cz8wAAAAA4plxRw$ no",
-            "BMW201810 $*KwGcxbnXnZsAAAAArFkMiA$ no",
-            "BMW201810 $*KwELUi5ADgEAAAAAXQIjYw$ no"
+            "BMW201910 $*KwH_ptq3_f0AAAAA0qM9Eg$ no",
+            "BMW201910 $*KwGC26fDhwAAAACfLThv$ no",
+            "BMW201910 $*KwHNlOiCxgAAAADPJbW7$ no",
+            "BMW201910 $*KwFAGWUASgAAAADUQGZM$ no",
+            "BMW201910 $*KwHMlemEycsAAAAAhAGVrA$ no",
+            "BMW201910 $*KwG_5pr0vr0AAAAAzhBTqQ$ no",
+            "BMW201910 $*KwH6o9-x8f0AAAAAhaVx7g$ no"
           ],
           "names" => [
             "X3 F25",
@@ -4395,11 +4394,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/3749/2_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwGC26fKiYMAAAAA6nN65w$ no",
-            "BMW201810 $*KwGA2aXBgQAAAADt9eM9$ no",
-            "BMW201810 $*KwGYwb3TnJIAAAAAsXUcJg$ no",
-            "BMW201810 $*KwG645_ysLAAAAAA1ZEBag$ no",
-            "BMW201810 $*KwHJkOyCw8oAAAAA8lpOQA$ no"
+            "BMW201910 $*KwEHXiJPDAUAAAAA7COQfA$ no",
+            "BMW201910 $*KwGC26fDgwAAAACYQPx2$ no",
+            "BMW201910 $*KwFYAX0TXVwAAAAAEb-FAw$ no",
+            "BMW201910 $*KwG_5pr3tbQAAAAAVn6Mnw$ no",
+            "BMW201910 $*KwHXjvKc3NEAAAAAzMsOBw$ no"
           ],
           "names" => [
             "X4 F26",
@@ -4415,10 +4414,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7386/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "BMW201810 $*KwF5IFw2cgAAAADTxyaT$ no",
-            "BMW201810 $*KwHMlemMxgAAAADo2JVn$ no",
-            "BMW201810 $*KwGA2aXBgQAAAADt9eM9$ no",
-            "BMW201810 $*KwGYwb3TnJIAAAAAsXUcJg$ no"
+            "BMW201910 $*KwFuN0shZQAAAACBMP0R$ no",
+            "BMW201910 $*KwGk_YHkrgAAAAC-w9jW$ no",
+            "BMW201910 $*KwG645_7uwAAAAC4Opx1$ no",
+            "BMW201910 $*KwEQSTVbFRQAAAAAGbI2jg$ no"
           ],
           "names" => [
             "X5 E70",
@@ -4433,7 +4432,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "BMW201810 no no"
+            "BMW201910 no no"
           ],
           "names" => [
             "npc"
@@ -4861,11 +4860,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/214/60_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwFTCnYZUQAAAACZ6ePg$ no",
-            "AU1221 $*KwGL0q7AjwAAAADIApeb$ no",
-            "AU1221 $*KwEnfgJsLAAAAABSsJSV$ no",
-            "AU1221 $*KwEqcw9hLwAAAACEpfDs$ no",
-            "AU1221 $*KwFWD3MdXAAAAACyIWiA$ no"
+            "AU1330 $*KwGw6ZX6swAAAADN0EC0$ no",
+            "AU1330 $*KwE2bxN9MwAAAAB5IEPN$ no",
+            "AU1330 $*KwHLku6ByQAAAABVUdiH$ no",
+            "AU1330 $*KwEgeQVrKgAAAABsColb$ no",
+            "AU1330 $*KwGo8Y3jowAAAADM_3Rw$ no"
           ],
           "names" => [
             "Audi 80 Avant RS2 quattro",
@@ -4881,10 +4880,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/196/9_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwECWydKAgAAAADk0sF5$ no",
-            "AU1221 $*KwFmP0MuYQAAAADKYlyQ$ no",
-            "AU1221 $*KwGdxLjVnAAAAAAW0OfQ$ no",
-            "AU1221 $*KwGk_YHsogAAAAB_rB71$ no"
+            "AU1330 $*KwFSC3caUwAAAADltNxd$ no",
+            "AU1330 $*KwGt9IjlqQAAAABLZQgx$ no",
+            "AU1330 $*KwEpcAxhLwAAAACUVuFb$ no",
+            "AU1330 $*KwEbQj5THAAAAAC7O9Xo$ no"
           ],
           "names" => [
             "Audi 100",
@@ -4899,10 +4898,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/227/5_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwEkfQFuJQAAAAAJqV8E$ no",
-            "AU1221 $*KwGH3qLNgQAAAADZ2IIN$ no",
-            "AU1221 $*KwGq84_mrQAAAAD_vbHX$ no",
-            "AU1221 $*KwFkPUEqZgAAAACZ5xDS$ no"
+            "AU1330 $*KwHEneGOwgAAAAAWJEqr$ no",
+            "AU1330 $*KwHCm-eIxQAAAAD__Fvg$ no",
+            "AU1330 $*KwEFXCBJAQAAAADObu08$ no",
+            "AU1330 $*KwFKE28ESgAAAADSBsb6$ no"
           ],
           "names" => [
             "Audi A3 Cabriolet",
@@ -4917,11 +4916,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5264/6_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwFrMk4hbAAAAADJ-Xds$ no",
-            "AU1221 $*KwHkvcGu4AAAAADOv8Yz$ no",
-            "AU1221 $*KwFLEm4BQAAAAAD22tbz$ no",
-            "AU1221 $*KwEudwtkKwAAAAB21P87$ no",
-            "AU1221 $*KwGcxbnWlgAAAABkVlBf$ no"
+            "AU1330 $*KwGJ0KzDjQAAAACkrLmR$ no",
+            "AU1330 $*KwH9pNi3-AAAAAB4NXeX$ no",
+            "AU1330 $*KwHVjPCY1wAAAACSIOIq$ no",
+            "AU1330 $*KwGA2aXKigAAAACZ0-N-$ no",
+            "AU1330 $*KwFgOUUqawAAAABvPVPk$ no"
           ],
           "names" => [
             "Audi A4 allroad quattro",
@@ -4937,9 +4936,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6196/4_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwEJUCxECwAAAADY2Tyz$ no",
-            "AU1221 $*KwHjusau4AAAAABWJ-gP$ no",
-            "AU1221 $*KwG275P6sgAAAACbMVNM$ no"
+            "AU1330 $*KwE6Yx93OQAAAAAg1gSF$ no",
+            "AU1330 $*KwEvdgpiLwAAAACenZH2$ no",
+            "AU1330 $*KwH7ot63_gAAAACwsPHM$ no"
           ],
           "names" => [
             "Audi A5/S5 Cabriolet",
@@ -4953,17 +4952,15 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/244/52_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwF9JFgwfAAAAADqTpOZ$ no",
-            "AU1221 $*KwEsdQlhLAAAAAA8SoI4$ no",
-            "AU1221 $*KwEiewdvJAAAAABGU329$ no",
-            "AU1221 $*KwE8ZRlxOAAAAAAgbbD7$ no",
-            "AU1221 $*KwEYQT1VHwAAAABkmzJj$ no"
+            "AU1330 $*KwFRCHQcVwAAAACkcK51$ no",
+            "AU1330 $*KwEyaxd_MwAAAADDfR7E$ no",
+            "AU1330 $*KwEzahZ-NAAAAAD9fLd0$ no",
+            "AU1330 $*KwFpMEwkbQAAAABqBK9a$ no"
           ],
           "names" => [
-            "Audi A6 Allroad quattro",
-            "Audi A6 allroad quattro",
+            "Audi A6 Allroad quattro (Europe)",
+            "Audi A6 allroad quattro (USA)",
             "Audi A6/Avant",
-            "Audi A6/S6 quattro",
             "Audi A6/S6/Avant quattro"
           ]
         }
@@ -4973,13 +4970,13 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6496/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwFTCnYZUQAAAACZ6ePg$ no",
-            "AU1221 $*KwGL0q7AjwAAAADIApeb$ no",
-            "AU1221 $*KwEnfgJsLAAAAABSsJSV$ no",
-            "AU1221 $*KwEqcw9hLwAAAACEpfDs$ no",
-            "AU1221 $*KwFWD3MdXAAAAACyIWiA$ no",
-            "AU1221 $*KwFqM08nYAAAAAAva5GT$ no",
-            "AU1221 $*KwECWydPCQAAAAAOd-y0$ no"
+            "AU1330 $*KwHiu8eo4QAAAADOBHJN$ no",
+            "AU1330 $*KwEYQT1THQAAAADcz_TJ$ no",
+            "AU1330 $*KwEAWSVKAgAAAABNX92c$ no",
+            "AU1330 $*KwFvNkokZQAAAABFOQQG$ no",
+            "AU1330 $*KwEtdAhmJgAAAAAqoPCz$ no",
+            "AU1330 $*KwFkPUEpbgAAAAC8Ecsj$ no",
+            "AU1330 $*KwHPluqCxAAAAACIpshy$ no"
           ],
           "names" => [
             "Audi 80 Avant RS2 quattro",
@@ -4997,9 +4994,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/263/31_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwGH3qLNgQAAAADZ2IIN$ no",
-            "AU1221 $*KwGq84_mrQAAAAD_vbHX$ no",
-            "AU1221 $*KwFkPUEqZgAAAACZ5xDS$ no"
+            "AU1330 $*KwEJUCxDDgAAAADn8l77$ no",
+            "AU1330 $*KwEVTDBZEQAAAADVJBvm$ no",
+            "AU1330 $*KwExaBR_MQAAAAA9gG5f$ no"
           ],
           "names" => [
             "Audi A3/S3/Sportb./Lim./qu.",
@@ -5013,7 +5010,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6262/4_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwG275P6sgAAAACbMVNM$ no"
+            "AU1330 $*KwFQCXUcVQAAAADzAMIL$ no"
           ],
           "names" => [
             "Audi Q5"
@@ -5025,7 +5022,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5185/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwESSzdeFwAAAADrngYo$ no"
+            "AU1330 $*KwFVDHAZXwAAAABft-2J$ no"
           ],
           "names" => [
             "Audi Q7"
@@ -5037,10 +5034,10 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7379/3_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "AU1221 $*KwFTCnYZUQAAAACZ6ePg$ no",
-            "AU1221 $*KwEnfgJsLAAAAABSsJSV$ no",
-            "AU1221 $*KwFWD3MdXAAAAACyIWiA$ no",
-            "AU1221 $*KwECWydPCQAAAAAOd-y0$ no"
+            "AU1330 $*KwEKUy9ACQAAAABCSIks$ no",
+            "AU1330 $*KwGO16vEjAAAAAAEcjH8$ no",
+            "AU1330 $*KwHbgv6Q0AAAAAAu3Ke4$ no",
+            "AU1330 $*KwFzKlY-eAAAAACZ4SA3$ no"
           ],
           "names" => [
             "Audi 80 Avant RS2 quattro",
@@ -5055,7 +5052,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "AU1221 no no"
+            "AU1330 no no"
           ],
           "names" => [
             "npc"
@@ -5075,8 +5072,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1902/9_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwG645_6AAAAAP9UOjw$ no",
-            "MAZDA201802 $*KwGt9IjlrwAAAACiBq0E$ no"
+            "MAZDA201803 $*KwH9pNi9AAAAAN0BrIg$ no",
+            "MAZDA201803 $*KwFUDXEcVgAAAADiYqw6$ no"
           ],
           "names" => [
             "323",
@@ -5089,8 +5086,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1924/68_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwE3bhJ_MQAAAAAcZk0x$ no",
-            "MAZDA201802 $*KwEBWCRJBgAAAADYYUcU$ no"
+            "MAZDA201803 $*KwHJkOyBzwAAAAAVv2FX$ no",
+            "MAZDA201803 $*KwFpMEwhbgAAAACOegql$ no"
           ],
           "names" => [
             "626",
@@ -5103,7 +5100,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5165/3_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwHWj_Oa0wAAAAC3iFUG$ no"
+            "MAZDA201803 $*KwE0bRF4MQAAAABD1MpB$ no"
           ],
           "names" => [
             "CX-3"
@@ -5115,7 +5112,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6388/1_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwFGH2MKTQAAAACRLTgL$ no"
+            "MAZDA201803 $*KwF_JlozdAAAAABmNVSN$ no"
           ],
           "names" => [
             "CX-5"
@@ -5127,7 +5124,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1939/34_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwF7Il40eQAAAADfroF8$ no"
+            "MAZDA201803 $*KwG74p70uQAAAABo0uzE$ no"
           ],
           "names" => [
             "CX-7"
@@ -5139,7 +5136,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/7408/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwFwKVU_cwAAAAAH29lJ$ no"
+            "MAZDA201803 $*KwH3rtK49AAAAACUMULB$ no"
           ],
           "names" => [
             "CX-9"
@@ -5151,7 +5148,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1941/60_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwGcxbnTnAAAAAD59E0E$ no"
+            "MAZDA201803 $*KwGTyrbckwAAAAC97Bsx$ no"
           ],
           "names" => [
             "DEMIO"
@@ -5163,7 +5160,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1948/69_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwFTCnYbUVQAAAAAHROllQ$ no"
+            "MAZDA201803 $*KwHqs8-i6O0AAAAALYsVpg$ no"
           ],
           "names" => [
             "MPV"
@@ -5175,8 +5172,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5238/1_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwHmv8Ou5OwAAAAAcAXB4Q$ no",
-            "MAZDA201802 $*KwHAmeWIw8MAAAAA9gleyQ$ no"
+            "MAZDA201803 $*KwFQCXUYUloAAAAAhtWwNg$ no",
+            "MAZDA201803 $*KwGt9Ijlrq4AAAAA_biSlw$ no"
           ],
           "names" => [
             "MX-5",
@@ -5189,7 +5186,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1961/41_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwGt9IjlqK8AAAAA3OUFhw$ no"
+            "MAZDA201803 $*KwGt9IjlqK8AAAAA3OUFhw$ no"
           ],
           "names" => [
             "TRIBUTE"
@@ -5201,8 +5198,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/1963/71_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 $*KwH1rNC98PMAAAAAqC8TSw$ no",
-            "MAZDA201802 $*KwFvNkonamoAAAAAE51ZbA$ no"
+            "MAZDA201803 $*KwF9JFg1eHsAAAAA_kslpQ$ no",
+            "MAZDA201803 $*KwGP1qrHiooAAAAAuqAevw$ no"
           ],
           "names" => [
             "XEDOS-6",
@@ -5215,7 +5212,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "MAZDA201802 no no"
+            "MAZDA201803 no no"
           ],
           "names" => [
             "npc"
@@ -5234,56 +5231,155 @@
         "name" => "aveo",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/514/73_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwFRbX1yIjAhIiwwKDF7eH0mMVckOBlHCVtZTUFYRyksJiArGBgKFQMJEQZAX0V7Ym0sQk1VN1NMRUdpAAAAAJa4vdw$ no",
+            "GM_C201809 $*KwHQ7Pzzo7Ggo62xqbD6-fynsNaluZjGiNrYzMDZxqitp6GqmZmLlIKIkIfB3sT64-ytw8zUttHNxMboAAAAAPIZedU$ no",
+            "GM_C201809 $*KwEjHw8AUEJTUF5CWkMJCg9UQyVWSms1eykrPzMqNVteVFJZamp4Z3F7Y3QyLTcJEB9eMD8nRSM-NzUbAAAAAGbIp1s$ no",
+            "GM_C201809 $*KwFWanp1JTcmJSs3LzZ8f3ohNlAjPx5ADlxeSkZfQC4rIScsHx8NEgQOFgFHWEJ8ZWorRUokMFRLQkBuAAAAACcbYBE$ no",
+            "GM_C201809 $*KwGSrr6x4fPi4e_z6_K4u77l8pTn-9qEypiajoKbhOrv5ePo29vJ1sDK0sWDnIa4oa7vgY7s5euPhoSqAAAAANtUK9A$ no",
+            "GM_C201809 $*KwE8ABAfT11MT0FdRVwWFRBLXDpJVXQqZDY0ICw1KkRBS01GdXVneG5kfGstMigWDwBBLyBCQkUhKCoEAAAAAJNSZtE$ no",
+            "GM_C201809 $*KwFfY3N8LD4vLCI-Jj91dnMoP1kqNhdJB1VXQ09WSSciKC4lFhYEGw0HHwhOUUt1bGMiTEMhPyZCS0lnAAAAAPrNccI$ no",
+            "GM_C201809 $*KwHp1cXKmoiZmpSIkInDwMWeie-cgKH_sePh9fng_5GUnpiToKCyrbuxqb745_3D2tWU-vWRj-v0_f_RAAAAADaRHok$ no",
+            "GM_C201809 $*KwHP8-PsvK6_vLKutq_l5uO4r8m6pofZl8XH09_G2beyuL61hoaUi52Xj5jewdvl_POy3NOuzc7S29n3AAAAAB43G3w$ no",
+            "GM_C201809 $*KwH6xtbZiZuKiYebg5rQ09aNmvyPk7LsovDy5urz7IKHjYuAs7Ohvqiiuq3r9O7QycaH6eab-P_n7uzCAAAAAOKAo3I$ no",
+            "GM_C201809 $*KwH4xNTbi5mIi4WZgZjS0dSPmP6NkbDuoPLw5Ojx7oCFj4mCsbGjvKqguK_p9uzSy8SF6-SZ-oDl7O7AAAAAAD4jT6k$ no",
+            "GM_C201809 $*KwFQbHxzIzEgIy0xKTB6eXwnMFYlORhGCFpYTEBZRigtJyEqGRkLFAIIEAdBXkR6Y2wtQzcgJiIqREZoAAAAAKAYjr4$ no"
+          ],
+          "names" => [
+            "AVEO (1T1)",
+            "AVEO (1T2)",
+            "AVEO (1T3)",
+            "AVEO (GT1)",
+            "AVEO (KEJ)",
+            "AVEO (KLJ)",
+            "AVEO (KRJ)",
+            "AVEO (MT1)",
+            "AVEO (T02)",
+            "AVEO (T06)",
+            "AVEO (T0K)",
+            "AVEO SEDAN"
+          ]
         }
       },
       "captiva" => {
         "name" => "captiva",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/534/10_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwGQrLyz4_Hg4-3x6fC6ubzn8Jbl-diGyJqYjICZhujt5-Hq2dnL1MLI0MeBnoS4tLn26vLkgovjkbfcy9_-AAAAADFZy0I$ no",
+            "GM_C201809 $*KwGxjZ2SwtDBwszQyNGbmJ3G0bfE2Pmn6bu5raG4p8nMxsDL-Pjq9ePp8eagv6WZlZjXy9PFo6rOy5b96v7fAAAAANJ68sE$ no",
+            "GM_C201809 $*KwGCvq6h8ePy8f_j--Koq6714oT368qU2oiKnpKLlPr_9fP4y8vZxtDawtWTjJaqpqvk-OD2kJn95qXO2c3sAAAAAG1a3lQ$ no",
+            "GM_C201809 $*KwEaJjY5aXtqaWd7Y3owMzZtehxvc1IMQhASBgoTDGJnbWtgU1NBXkhCWk0LFA4yPjN8YHhuCAFiGz1WQVV0AAAAALzDfVQ$ no",
+            "GM_C201809 $*KwFMcGBvPy08PzEtNSxmZWA7LEo5JQRaFEZEUFxFWjQxOz02BQUXCB4UDBtdQlhkaGUqNi44Xlc1NhYAFwMiAAAAAJRXXP4$ no",
+            "GM_C201809 $*KwH9wdHejpyNjoCchJ3X1NGKnfuIlLXrpff14e3064WAioyHtLSmua-lvars8-nV2dSbh5-J7-ad-9qxprKTAAAAAPS30c8$ no",
+            "GM_C201809 $*KwHN8eHuvqy9vrCstK3n5OG6rcu4pIXblcfF0d3E27Wwury3hISWiZ-VjZrcw9nl6eSrt6-539ajt5WBloKjAAAAAJsne-k$ no"
+          ],
+          "names" => [
+            "CAPTIVA (G7L)",
+            "CAPTIVA (KLL)",
+            "CAPTIVA (KRL)",
+            "CAPTIVA (L7L)",
+            "CAPTIVA (ML1)",
+            "CAPTIVA (T0L)",
+            "CAPTIVA (ZL3)"
+          ]
         }
       },
       "cobalt" => {
         "name" => "cobalt",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/539/30_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwFQbHxzIzEgIy0xKTB6eXwnMFYlORhGCFpYTEBZRigtJyEqGRkLFAIIEAdBXkR4emsjLzBFSlIlVxIXVD8AAAAApRDbzQ$ no",
+            "GM_C201809 $*KwEQLDwzY3FgY21xaXA6OTxncBZleVgGSBoYDAAZBmhtZ2FqWVlLVEJIUEcBHgQ4Oitjb3AFCmZuF1JXFH8AAAAA5ZMFDg$ no"
+          ],
+          "names" => [
+            "COBALT (1A1)",
+            "COBALT (EJ1)"
+          ]
         }
       },
       "cruze" => {
         "name" => "cruze",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/550/67_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwH9wdHejpyNjoCchJ3X1NGKnfuIlLXrpff14e3064WAioyHtLSmua-lvars8-nVytGVi-ng_oz44rTl2QAAAADaCQA6$ no",
+            "GM_C201809 $*KwHP8-PsvK6_vLKutq_l5uO4r8m6pofZl8XH09_G2beyuL61hoaUi52Xj5jewdvn-OOnudvSzKzK0IbX6wAAAACvTq9E$ no",
+            "GM_C201809 $*KwFUaHh3JzUkJyk1LTR-fXgjNFIhPRxCDF5cSERdQiwpIyUuHR0PEAYMFANFWkB8Y3g8IkBJUyIwSx1McAAAAABVl6fv$ no",
+            "GM_C201809 $*KwExDR0SQlBBQkxQSFEbGB1GUTdEWHknaTs5LSE4J0lMRkBLeHhqdWNpcWYgPyUZBh1ZRyUsSENHLngpFQAAAADXTPtQ$ no",
+            "GM_C201809 $*KwFhXU1CEgAREhwAGAFLSE0WAWcUCCl3OWtpfXFodxkcFhAbKCg6JTM5ITZwb3VJVk0JF3V8GBcFfih5RQAAAADDphAT$ no",
+            "GM_C201809 $*KwFYZHR7KzkoKyU5IThycXQvOF4tMRBOAFJQREhRTiAlLykiEREDHAoAGA9JVkxwb3QwLkxFISc8RxFAfAAAAACk3qoa$ no",
+            "GM_C201809 $*KwGxjZ2SwtDBwszQyNGbmJ3G0bfE2Pmn6bu5raG4p8nMxsDL-Pjq9ePp8eagv6WZhp3Zx6WsyNDVrviplQAAAADkMv8e$ no",
+            "GM_C201809 $*KwHY5PT7q7moq6W5objy8fSvuN6tsZDOgNLQxMjRzqClr6mikZGDnIqAmI_J1szw7_SwrszFp6ndx5HA_AAAAAD1ShA0$ no",
+            "GM_C201809 $*KwERLT0yYnBhYmxwaHE7OD1mcRdkeFkHSRsZDQEYB2lsZmBrWFhKVUNJUUYAHwU5Jj15ZwUMdxN1DlgJNQAAAAAKA7Pi$ no",
+            "GM_C201809 $*KwFFeWlmNiQ1NjgkPCVvbGkyJUMwLA1THU9NWVVMUz04MjQ_DAweARcdBRJUS1FtcmktM1FYIDMhWgxdYQAAAACu3CQZ$ no",
+            "GM_C201809 $*KwHp1cXKmoiZmpSIkInDwMWeie-cgKH_sePh9fng_5GUnpiToKCyrbuxqb745_3B3sWBn_30jJaN9qDxzQAAAAASBV-1$ no",
+            "GM_C201809 $*KwEnGwsEVEZXVFpGXkcNDgtQRyFSTm8xfy0vOzcuMV9aUFZdbm58Y3V_Z3A2KTMPEAtPUTMnN2lOAAAAACm0PpQ$ no",
+            "GM_C201809 $*KwHS7v7xobOioa-zq7L4-_6lstSnu5rEitjazsLbxKqvpaOom5uJloCKkoXD3Mb65f66pMavobWlrPv26KvDm7oAAAAANlJxng$ no"
+
+          ],
+          "names" => [
+            "CRUZE (1B1)",
+            "CRUZE (1P1)",
+            "CRUZE (5EP)",
+            "CRUZE (KAB)",
+            "CRUZE (KEP)",
+            "CRUZE (KLP)",
+            "CRUZE (KRP)",
+            "CRUZE (MB1)",
+            "CRUZE (T1P)",
+            "CRUZE (WEP)",
+            "CRUZE (WLP)",
+            "CRUZE 5",
+            "CRUZE HATCHBACK"
+          ]
         }
       },
       "epica" => {
         "name" => "epica",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/552/45_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwHL9-fouKq7uLaqsqvh4ue8q82-ooPdk8HD19vC3bO2vLqxgoKQj5mTi5zaxd_l_vu6ud_WyK7O1ILT7wAAAACkFOfr$ no",
+            "GM_C201809 $*KwG6hpaZydvKycfbw9qQk5bN2rzP0_Ks4rCypqqzrMLHzcvA8_Ph_uji-u2rtK6Uj4rLyK6nud-8pfOingAAAADiu_Xb$ no",
+            "GM_C201809 $*KwG_g5OczN7PzMLext-VlpPI37nK1vep57W3o6-2qcfCyM7F9vbk--3n_-iusauRio_Ozauiytq6oPanmwAAAABz8639$ no",
+            "GM_C201809 $*KwEjHw8AUEJTUF5CWkMJCg9UQyVWSms1eykrPzMqNVteVFJZamp4Z3F7Y3QyLTcNFhNSUTc-RyAhPGo7BwAAAAA2N_vZ$ no",
+            "GM_C201809 $*KwGukoKN3c_e3dPP186Eh4LZzqjbx-a49qSmsr6nuNbT2d_U5-f16vz27vm_oLqAm57f3LqzyqSjsee2igAAAACc6hLz$ no"
+          ],
+          "names" => [
+            "EPICA (1V1)",
+            "EPICA (1V2)",
+            "EPICA (GV1)",
+            "EPICA (V06)",
+            "EPICA (V99)"
+          ]
         }
       },
       "lacetti" => {
         "name" => "lacetti",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6209/2_original_original.jpg",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwEyDh4RQVNCQU9TS1IYGx5FUjRHW3okajg6LiI7JEpPRUNIe3tpdmBqcmUjPCYVFghFVVJOInxbAAAAAJxZdfs$ no",
+            "GM_C201809 $*KwFLd2doOCo7ODYqMithYmc8K00-IgNdE0FDV1tCXTM2PDoxAgIQDxkTCxxaRV9sb3E8LCs3WSgtOG1ndytaAiMAAAAAbpWb-Q$ no"
+          ],
+          "names" => [
+            "LACETTI",
+            "LACETTI PREMIER"
+          ]
         }
       },
       "lanos" => {
         "name" => "lanos",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/563/15_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwEgHAwDU0FQU11BWUAKCQxXQCZVSWg2eCooPDApNlhdV1FaaWl7ZHJ4YHcxLjQHBBddQDZoTwAAAADjTJv6$ no"
+          ],
+          "names" => [
+            "LANOS"
+          ]
         }
       },
       "niva" => {
@@ -5298,24 +5394,82 @@
         "name" => "spark",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/583/71_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwECPi4hcWNycX9je2IoKy51YgR3a0oUWggKHhILFHp_dXN4S0tZRlBaQlUTDBYkJi95axlkYHBkf0saJgAAAAAnTRYi$ no",
+            "GM_C201809 $*KwG1iZmWxtTFxsjUzNWfnJnC1bPA3P2j7b-9qaW8o83IwsTP_Pzu8eft9eKku6GNgI3VzaGi-tsAAAAAHvXzKA$ no",
+            "GM_C201809 $*KwF3S1tUBBYHBAoWDhddXlsAF3ECHj9hL31_a2d-YQ8KAAYNPj4sMyUvNyBmeWNPQk8XD2NqdAdyaD5vUwAAAACiEmKa$ no",
+            "GM_C201809 $*KwGukoKN3c_e3dPP186Eh4LZzqjbx-a49qSmsr6nuNbT2d_U5-f16vz27vm_oLqWm5bO1rqzrdmrsee2igAAAAC1Eb-g$ no",
+            "GM_C201809 $*KwFRbX1yIjAhIiwwKDF7eH0mMVckOBlHCVtZTUFYRyksJiArGBgKFQMJEQZAX0VpZGkxKUVMJC9XThhJdQAAAADVa4kY$ no",
+            "GM_C201809 $*KwGXq7u05Pbn5Or27ve9vrvg95Hi_t-Bz52fi4eege_q4Obt3t7M08XP18CGmYOvoq_374OK7uHgiN6PswAAAAD1MLsO$ no",
+            "GM_C201809 $*KwE_AxMcTF5PTEJeRl8VFhNIXzlKVncpZzU3Iy82KUdCSE5FdnZke21nf2guMSsHCgdfRysiRkBIIHYnGwAAAADZNm-k$ no",
+            "GM_C201809 $*KwGDv6-g8OLz8P7i-uOpqq_044X26suV24mLn5OKlfv-9PL5ysrYx9Hbw9SSjZe7trvj-5ee-uL0nMqbpwAAAABV0ZDw$ no",
+            "GM_C201809 $*KwFgXExDEwEQEx0BGQBKSUwXAGYVCSh2OGpofHBpdhgdFxEaKSk7JDI4IDdxbnRYVVgAGHR9H2Ngfyl4RAAAAADzXo5l$ no",
+            "GM_C201809 $*KwHn28vElIaXlJqGnofNzsuQh-GSjq_xv-3v-_fu8Z-akJadrq68o7W_p7D26fPf0t-Hn_P6h5GQ-K7_wwAAAADP9mIS$ no",
+            "GM_C201809 $*KwHt0cHOnoydnpCMlI3HxMGajeuYhKX7tefl8f3k-5WQmpyXpKS2qb-1rbr84_nV2NWNlfnwjZKa8qT1yQAAAABaWLwU$ no",
+            "GM_C201809 $*KwHb5_f4qLqrqKa6orvx8vesu92uspPNg9HTx8vSzaOmrKqhkpKAn4mDm4zK1c_j7uO7o8_Gu7qsxJLD_wAAAADIAnwX$ no",
+            "GM_C201809 $*KwEjHw8AUEJTUF5CWkMJCg9UQyVWSms1eykrPzMqNVteVFJZamp4Z3F7Y3QyLTcbFhtDWzdVXVFERgEFeGxNAAAAAF2_u94$ no",
+            "GM_C201809 $*KwHj38_AkIKTkJ6CmoPJys-Ug-WWiqv1u-nr__Pq9ZuelJKZqqq4p7G7o7Ty7ffb1tuDm_eTh_D_5Mu3s_OtigAAAACe1wkL$ no",
+            "GM_C201809 $*KwF0SFhXBxUEBwkVDRReXVgDFHIBHTxiLH58aGR9YgwJAwUOPT0vMCYsNCNlemBMQUwUDGAEEGdoB01SJGQ6HQAAAAA520tM$ no",
+            "GM_C201809 $*KwHn28vElIaXlJqGnofNzsuQh-GSjq_xv-3v-_fu8Z-akJadrq68o7W_p7D26fPf0t-Hn_yflICai67_wwAAAAAlwkOi$ no"
+          ],
+          "names" => [
+            "MATIZ/SPARK",
+            "SPARK",
+            "SPARK (1C1)",
+            "SPARK (1D1)",
+            "SPARK (GM2)",
+            "SPARK (KEC)",
+            "SPARK (KLC)",
+            "SPARK (KRC)",
+            "SPARK (M04)",
+            "SPARK (REC)",
+            "SPARK (RLC)",
+            "SPARK (RRC)",
+            "SPARK CLASSIC",
+            "SPARK EV (1C1)",
+            "SPARK EV (ERC)",
+            "SPARK/MATIZ"
+          ]
         }
       },
       "tahoe" => {
         "name" => "tahoe",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6329/1_original_original.jpg",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwHj38_AkIKTkJ6CmoPJys-Ug-WWiqv1u-nr__Pq9ZuelJKZqqq4p7G7o7Ty7ffcx9Kelff-5OOU_Kr7xwAAAAAmHQfS$ no",
+            "GM_C201809 $*KwGMsKCv_-38__Ht9eympaD77Ir55cSa1IaEkJyFmvTx-_32xcXXyN7UzNudgpizqL3x-piRi4v7k8WUqAAAAAA2hMmZ$ no",
+            "GM_C201809 $*KwEaJjY5aXtqaWd7Y3owMzZtehxvc1IMQhASBgoTDGJnbWtgU1NBXkhCWk0LFA4lPitnbA4HHR9tBVMCPgAAAAAhDRZV$ no",
+            "GM_C201809 $*KwHV6fn2prSlpqi0rLX__PmitdOgvJ3Djd_dycXcw62ooqSvnJyOkYeNlYLE28Hq8eSoo8HI0tGiypzN8QAAAAAWCuYs$ no",
+            "GM_C201809 $*KwH1ydnWhpSFhoiUjJXf3NmClfOAnL3jrf_96eX8442IgoSPvLyusaettaLk--HK0cSIg-Ho8oXw6rzt0QAAAABYcHfi$ no",
+            "GM_C201809 $*KwFoVERLGwkYGxUJEQhCQUQfCG4dASB-MGJgdHhhfhAVHxkSISEzLDowKD95ZnxXTFkVHnwVAxkOF0cvbAcAAAAAKuFccw$ no"
+          ],
+          "names" => [
+            "TAHOE (53C)",
+            "TAHOE (54C)",
+            "TAHOE (56C)",
+            "TAHOE (57C)",
+            "TAHOE (5C1)",
+            "TAHOE HYBRID"
+          ]
         }
       },
       "orlando" => {
         "name" => "orlando",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/574/50_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_C201809 $*KwF6RlZZCRsKCQcbAxpQU1YNGnwPEzJsInByZmpzbAIHDQsAMzMhPigiOi1rdG5eTU8JBwoAaGF_HCM2ITUUAAAAAJhsQA0$ no",
+            "GM_C201809 $*KwH0yNjXh5WEh4mVjZTe3diDlPKBnbzirP786OT94oyJg4WOvb2vsKastKPl-uDQw8GHiYSO5u-Nh8-4r7uaAAAAAP_iJ4Y$ no",
+            "GM_C201809 $*KwEgHAwDU0FQU11BWUAKCQxXQCZVSWg2eCooPDApNlhdV1FaaWl7ZHJ4YHcxLjQEFxVTXVBaMjtZWhtse29OAAAAAF9Rd7o$ no",
+            "GM_C201809 $*KwEDPy8gcGJzcH5iemMpKi90YwV2aksVWwkLHxMKFXt-dHJ5SkpYR1FbQ1QSDRcnNDZwfnN5ERh6ZzhPWExtAAAAAPfKfZo$ no"
+          ],
+          "names" => [
+            "ORLANDO (1P2)",
+            "ORLANDO (MEP)",
+            "ORLANDO (MLP)",
+            "ORLANDO (MRP)"
+          ]
         }
       },
       "другие модели" => {
@@ -5323,7 +5477,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "ch1106 no no"
+            "GM_C201809 no no"
           ],
           "names" => [
             "npc"
@@ -5343,7 +5497,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2165/28_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwF7Il47AAAAAFG70mI$ no"
+            "MMC202002 $*KwFDGmYDAAAAAEReYi8$ no"
           ],
           "names" => [
             "ASX"
@@ -5355,9 +5509,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2167/2_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwGYwb3QmAAAAABd3-VV$ no",
-            "MMC201806 $*KwFtNEglb2gAAAAAU6mDgA$ no",
-            "MMC201806 $*KwEjegZrIScAAAAAPTzU5g$ no"
+            "MMC202002 $*KwFFHGANRQAAAADARDdJ$ no",
+            "MMC202002 $*KwHUjfGc1tEAAAAAYzEzsw$ no",
+            "MMC202002 $*KwELUi5DCQ8AAAAA970m-g$ no"
           ],
           "names" => [
             "CARISMA",
@@ -5371,18 +5525,18 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2178/11_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwF1LFA9cQAAAADq9ug-$ no",
-            "MMC201806 $*KwFOF2sFTAAAAACqFW0F$ no",
-            "MMC201806 $*KwHyq9e58QAAAADMVbXW$ no",
-            "MMC201806 $*KwFzKlY7dgAAAAADLvl1$ no",
-            "MMC201806 $*KwGZwLzRkwAAAABqaADO$ no",
-            "MMC201806 $*KwEocQ1gIwAAAAA9hZFj$ no",
-            "MMC201806 $*KwFdBHgXVgAAAABzTwH0$ no",
-            "MMC201806 $*KwFeB3sSWQAAAACOdPmX$ no",
-            "MMC201806 $*KwG275P6sAAAAAB1PzJg$ no",
-            "MMC201806 $*KwE4YR12MgAAAAAHkvCp$ no",
-            "MMC201806 $*KwGu94vvrgAAAAA_HWSv$ no",
-            "MMC201806 $*KwEBWCRAAAAAAADgwFlo$ no"
+            "MMC202002 $*KwGC26fKhgAAAAA56LOw$ no",
+            "MMC202002 $*KwFRCHQaUwAAAAD1R83q$ no",
+            "MMC202002 $*KwEMVSlHDwAAAADFjJmw$ no",
+            "MMC202002 $*KwGG36POgwAAAAClhb2w$ no",
+            "MMC202002 $*KwFGH2MOTAAAAACCRs2Z$ no",
+            "MMC202002 $*KwF1LFA9fgAAAAB6SfWv$ no",
+            "MMC202002 $*KwH0rdG-_gAAAAAyTR3u$ no",
+            "MMC202002 $*KwFGH2MKQAAAAADvnES2$ no",
+            "MMC202002 $*KwEDWiZPAgAAAAAg2zhu$ no",
+            "MMC202002 $*KwFCG2cMRwAAAACvyUkY$ no",
+            "MMC202002 $*KwHlvMCk5gAAAABkTYbe$ no",
+            "MMC202002 $*KwH-p9u__gAAAABJfEkd$ no"
           ],
           "names" => [
             "COLT",
@@ -5405,17 +5559,15 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2182/47_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwG37pL8vQAAAADkquQJ$ no",
-            "MMC201806 $*KwF4IV0yfQAAAACeavNU$ no",
-            "MMC201806 $*KwHdhPiX1wAAAADeH4ey$ no",
-            "MMC201806 $*KwFdBHgXVgAAAABzTwH0$ no",
-            "MMC201806 $*KwHstcmh7gAAAABlOI6s$ no"
+            "MMC202002 $*KwFBGGQKSwAAAADg1rMC$ no",
+            "MMC202002 $*KwHeh_uU2wAAAADsd4nt$ no",
+            "MMC202002 $*KwGu94vkpAAAAAA8PFR6$ no",
+            "MMC202002 $*KwHNlOiHxgAAAACyUkH-$ no"
           ],
           "names" => [
-            "DELICA D:5/SPACE WAGON",
+            "DELICA D=>5/SPACE WAGON",
             "ECLIPSE",
             "ECLIPSE CROSS",
-            "ECLIPSE CROSS/OUTLANDER CROSS",
             "ECLIPSE SPYDER"
           ]
         }
@@ -5425,27 +5577,27 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2193/13_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwGG36PKhAAAAABfje0X$ no",
-            "MMC201806 $*KwFeB3sSWQAAAACOdPmX$ no",
-            "MMC201806 $*KwG275P6sAAAAAB1PzJg$ no",
-            "MMC201806 $*KwFRCHQdWwAAAAC03dMf$ no",
-            "MMC201806 $*KwGK06_GjwAAAAAnJj1P$ no",
-            "MMC201806 $*KwF7Il43cAAAAACNX2ob$ no",
-            "MMC201806 $*KwGi-4ftoAAAAACpX232$ no",
-            "MMC201806 $*KwHGn-OJxQAAAABujFUq$ no",
-            "MMC201806 $*KwEJUCxGCQAAAAAE4T8d$ no",
-            "MMC201806 $*KwEsdQlgKAAAAAAiPHdg$ no",
-            "MMC201806 $*KwGy65f-sQAAAADuP_h5$ no",
-            "MMC201806 $*KwGTyrbfkgAAAADhxnhk$ no",
-            "MMC201806 $*KwHzqta_8wAAAADNf34u$ no",
-            "MMC201806 $*KwEBWCRAAAAAAADgwFlo$ no"
+            "MMC202002 $*KwF2L1M7fQAAAACl6RIk$ no",
+            "MMC202002 $*KwGy65f-tAAAAACeVQz2$ no",
+            "MMC202002 $*KwGg-YXsoQAAAABuznDE$ no",
+            "MMC202002 $*KwEEXSFIAQAAAABuC9Ev$ no",
+            "MMC202002 $*KwFaA38WXgAAAAD8F5a7$ no",
+            "MMC202002 $*KwFzKlY_eQAAAAD3_SHg$ no",
+            "MMC202002 $*KwGQybXcmwAAAACjxIK0$ no",
+            "MMC202002 $*KwFaA38VWAAAAAA-WWBN$ no",
+            "MMC202002 $*KwFHHmIIRAAAAABjue9_$ no",
+            "MMC202002 $*KwE9ZBhxOgAAAAB3HdyF$ no",
+            "MMC202002 $*KwFdBHgRXwAAAABcyR7W$ no",
+            "MMC202002 $*KwHDmuaPwwAAAADgoGVA$ no",
+            "MMC202002 $*KwHyq9e-8QAAAACDFCMR$ no",
+            "MMC202002 $*KwGv9orurwAAAADof2gq$ no"
           ],
           "names" => [
             "GALANT",
             "GALANT FORTIS SPORTBACK",
             "GALANT FORTIS/LANCER EVOLUTION",
+            "GALANT HATCH BACK (EUROPE)",
             "GALANT HATCH BACK",
-            "GALANT HATCHBACK",
             "GALANT SALOON",
             "GALANT SIGMA",
             "GALANT STATION WAGON",
@@ -5463,9 +5615,9 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5408/2_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwHhuMSv4wAAAAB_uJQR$ no",
-            "MMC201806 $*KwH6o9-0-QAAAAC8hzr-$ no",
-            "MMC201806 $*KwGi-4fsogAAAABeSj2b$ no"
+            "MMC202002 $*KwG_5prwtAAAAAD6ZGr2$ no",
+            "MMC202002 $*KwGG36PIhAAAAABtu4-V$ no",
+            "MMC202002 $*KwFtNEgjbgAAAAA0J1es$ no"
           ],
           "names" => [
             "L200",
@@ -5479,19 +5631,19 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2214/18_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwHyq9e58QAAAADMVbXW$ no",
-            "MMC201806 $*KwFdBHgXVgAAAABzTwH0$ no",
-            "MMC201806 $*KwG275P6sAAAAAB1PzJg$ no",
-            "MMC201806 $*KwExaBR_NQAAAAA67apG$ no",
-            "MMC201806 $*KwHZgPyX3AAAAADBpmGx$ no",
-            "MMC201806 $*KwE4YR12MgAAAAAHkvCp$ no",
-            "MMC201806 $*KwGu94vvrgAAAAA_HWSv$ no",
-            "MMC201806 $*KwEBWCRAAAAAAADgwFlo$ no",
-            "MMC201806 $*KwEgeQVuKwAAAABmek2I$ no",
-            "MMC201806 $*KwGw6ZXxsgAAAABZI6np$ no",
-            "MMC201806 $*KwGN1KjMjgAAAAAyVstv$ no",
-            "MMC201806 $*KwFtNEglb2gAAAAAU6mDgA$ no",
-            "MMC201806 $*KwHeh_uW3NkAAAAAv58uGA$ no"
+            "MMC202002 $*KwEOVytFDQAAAACwOYb7$ no",
+            "MMC202002 $*KwF_Jlo1dQAAAABHaMOd$ no",
+            "MMC202002 $*KwE-ZxtyPwAAAAA8qWp-$ no",
+            "MMC202002 $*KwF4IV02fwAAAAAUCFd8$ no",
+            "MMC202002 $*KwFKE28ETgAAAADVawLj$ no",
+            "MMC202002 $*KwEbQj5VHgAAAAADbxNC$ no",
+            "MMC202002 $*KwHlvMCk5gAAAABkTYbe$ no",
+            "MMC202002 $*KwHXjvKW1wAAAAClLtNB$ no",
+            "MMC202002 $*KwFlPEArbwAAAABAXpRl$ no",
+            "MMC202002 $*KwFTCnYdWAAAAACEWZ5A$ no",
+            "MMC202002 $*KwFPFmoOTQAAAACHmIkK$ no",
+            "MMC202002 $*KwEheARpIyQAAAAARU6oWw$ no",
+            "MMC202002 $*KwFHHmIPRUAAAAAAeFNcmw$ no"
           ],
           "names" => [
             "COLT/LANCER",
@@ -5515,8 +5667,8 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2248/34_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwEjegZrIScAAAAAPTzU5g$ no",
-            "MMC201806 $*KwFEHWEMRU8AAAAAv78qbQ$ no"
+            "MMC202002 $*KwHQifWY0tQAAAAACtybcw$ no",
+            "MMC202002 $*KwGYwb3QmZMAAAAAuUNmrA$ no"
           ],
           "names" => [
             "MIRAGE/SPACE STAR",
@@ -5529,11 +5681,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2223/45_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwEXTjJWAAAAAOo92Wg$ no",
-            "MMC201806 $*KwFdBHgXVgAAAABzTwH0$ no",
-            "MMC201806 $*KwGq84_iqawAAAAAdk-XUA$ no",
-            "MMC201806 $*KwH9pNi1_vgAAAAAWqnV2w$ no",
-            "MMC201806 $*KwGWz7PelZIAAAAAN4D9bg$ no"
+            "MMC202002 $*KwHfhvqeAAAAAOMdCVQ$ no",
+            "MMC202002 $*KwGI0a3CggAAAACUdpgT$ no",
+            "MMC202002 $*KwG-55v2vbgAAAAAEw9uXg$ no",
+            "MMC202002 $*KwEFXCBNBgAAAAAAtevD_A$ no",
+            "MMC202002 $*KwFIEW0AS0wAAAAAPgn9hA$ no"
           ],
           "names" => [
             "AIRTREK/OUTLANDER",
@@ -5549,17 +5701,17 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2237/32_original_original.JPG",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwHag_-S2dEAAAAAsdjLJA$ no",
-            "MMC201806 $*KwErcg5jKCEAAAAA_kr4DA$ no",
-            "MMC201806 $*KwHjusar4-AAAAAAzwempA$ no",
-            "MMC201806 $*KwFFHGANRUcAAAAANXqGvQ$ no",
-            "MMC201806 $*KwE-Zxt2PjoAAAAAvZ1a8w$ no",
-            "MMC201806 $*KwEpcAxhKSIAAAAArRXXcg$ no",
-            "MMC201806 $*KwG85Zn0vL0AAAAAqTPkFQ$ no",
-            "MMC201806 $*KwF4IV0weHgAAAAAnrfJtg$ no",
-            "MMC201806 $*KwH3rtK_9_IAAAAAQyT6nw$ no",
-            "MMC201806 $*KwH5oNyx-f4AAAAAgWB_Yg$ no",
-            "MMC201806 $*KwEcRTlUHBoAAAAAq7K1RA$ no"
+            "MMC202002 $*KwE0bRF8Nz8AAAAANK9oJg$ no",
+            "MMC202002 $*KwE7Yh5zODEAAAAAheCZVA$ no",
+            "MMC202002 $*KwEdRDhVHR4AAAAAMdpk_g$ no",
+            "MMC202002 $*KwFvNkonb20AAAAA8I44ig$ no",
+            "MMC202002 $$*KwEzahZ7MzcAAAAAdKDXPA$ no",
+            "MMC202002 $*KwHqs8-i6uEAAAAAFgs7Dw$ no",
+            "MMC202002 $*KwEUTTFcFBUAAAAACAMQSw$ no",
+            "MMC202002 $*KwH-p9u2_v4AAAAA5JkbiQ$ no",
+            "MMC202002 $*KwGP1qrHj4oAAAAAx9fq-g$ no",
+            "MMC202002 $*KwGaw7_Smp0AAAAApptX7Q$ no",
+            "MMC202002 $*KwFLEm4DS00AAAAAHl2mdQ$ no"
           ],
           "names" => [
             "PAJERO",
@@ -5581,11 +5733,11 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2249/555_279_original_original.jpg",
         "laximo" => {
           "codes" => [
-            "MMC201806 $*KwG37pL8vQAAAADkquQJ$ no",
-            "MMC201806 $*KwF3LlI_dn0AAAAAoTHQDQ$ no"
+            "MMC202002 $*KwGex7vVlAAAAAAI-H5V$ no",
+            "MMC202002 $*KwGJ0KzBiIMAAAAAX-wSVw$ no"
           ],
           "names" => [
-            "DELICA D:5/SPACE WAGON",
+            "DELICA D=>5/SPACE WAGON",
             "SPACE WAGON"
           ]
         }
@@ -5595,7 +5747,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "MMC201806 no no"
+            "MMC202002 no no"
           ],
           "names" => [
             "npc"
@@ -5614,88 +5766,169 @@
         "name" => "antara",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2448/4_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwEuEgINXU9eXVNPV04EBwJZTihbR2Y4diQmMj4nOFZTWV9UZ2d1anx2bnk_IDoEBQNdT1s5YUAAAAAAbWzK1Q$ no"
+          ],
+          "names" => [
+            "ANTARA"
+          ]
         }
       },
       "astra" => {
         "name" => "astra",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/6111/2_original_original.jpg",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwFaZnZ5KTsqKSc7Izpwc3YtOlwvMxJMAlBSRkpTTCInLSsgExMBHggCGg1LVE5wbHc6KEwSNQAAAAA3zHI7$ no",
+            "GM_OP201809 $*KwGqloaJ2cva2dfL08qAg4bdyqzfw-K88qCitrqjvNLX3dvQ4-Px7vjy6v27pL6AnIfK2LPZuuTDAAAAAPbcFuw$ no",
+            "GM_OP201809 $*KwGfo7O87P7v7OL-5v-1trPo_5nq9teJx5WXg4-Wiefi6O7l1tbE283H38iOkYu1qbL_7Ybtj9H2AAAAAN5mtn0$ no",
+            "GM_OP201809 $*KwEOMiItfW9-fXNvd24kJyJ5bgh7Z0YYVgQGEh4HGHZzeX90R0dVSlxWTlkfABokOCNufBdzHkBnAAAAADd2F1c$ no",
+            "GM_OP201809 $*KwGTr7-w4PLj4O7y6vO5ur_k85Xm-tuFy5mbj4Oahevu5OLp2trI18HL08SCnYe5pb7z4Yrsg936AAAAAPO4jmg$ no",
+            "GM_OP201809 $*KwE8ABAfT11MT0FdRVwWFRBLXDpJVXQqZDY0ICw1KkRBS01GdXVneG5kfGstMigWChFcTiVCLHJVAAAAAH5rGvg$ no"
+          ],
+          "names" => [
+            "ASTRA",
+            "ASTRA-F",
+            "ASTRA-G",
+            "ASTRA-H",
+            "ASTRA-J",
+            "ASTRA-K"
+          ]
         }
       },
       "corsa" => {
         "name" => "corsa",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/5066/6_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwEXKzs0ZHZnZGp2bnc9PjtgdxFifl8BTx0fCwceAW9qYGZtXl5MU0VPV0AGGQM_PTx2ZQ5jB1l-AAAAAKQL6bY$ no",
+            "GM_OP201809 $*KwE4BBQbS1lIS0VZQVgSERRPWD5NUXAuYDIwJCgxLkBFT0lCcXFjfGpgeG8pNiwQEhNZSiFPKHZRAAAAANE5a54$ no",
+            "GM_OP201809 $*KwHW6vr1pbempau3r7b8__qhttCjv57AjtzeysbfwK6roaesn5-NkoSOloHH2ML-_P23pM-gxpi_AAAAADxSBuY$ no",
+            "GM_OP201809 $*KwFWanp1JTcmJSs3LzZ8f3ohNlAjPx5ADlxeSkZfQC4rIScsHx8NEgQOFgFHWEJ-fH03JE8nRhg_AAAAAPNt4Gw$ no",
+            "GM_OP201809 $*KwGFuamm9uT19vjk_OWvrKny5YPw7M2T3Y-NmZWMk_348vT_zMzewdfdxdKUi5Gtr67k95z1lcvsAAAAAK33968$ no"
+          ],
+          "names" => [
+            "KORSA-A",
+            "KORSA-B",
+            "KORSA-C",
+            "KORSA-D",
+            "KORSA-E"
+          ]
         }
       },
       "frontera" => {
         "name" => "frontera",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2510/42_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwHb5_f4qLqrqKa6orvx8vesu92uspPNg9HTx8vSzaOmrKqhkpKAn4mDm4zK1c_27O2nvKq8qMjHuImMi8uVsgAAAAAmBbSA$ no",
+            "GM_OP201809 $*KwG6hpaZydvKycfbw9qQk5bN2rzP0_Ks4rCypqqzrMLHzcvA8_Ph_uji-u2rtK6XjYzG3cvdyamm2ejm6qr00wAAAAAnEk41$ no",
+            "GM_OP201809 $*KwG6hpaZydvKycfbw9qQk5bN2rzP0_Ks4rCypqqzrMLHzcvA8_Ph_uji-u2rtK6XjYzG3cvdyamm2ejm6qr00wAAAAAnEk41$ no"
+          ],
+          "names" => [
+            "FRONTERA (U92)",
+            "FRONTERA (U99)"
+          ]
         }
       },
       "insignia" => {
         "name" => "insignia",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2514/79_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwEwDBwTQ1FAQ01RSVAaGRxHUDZFWXgmaDo4LCA5JkhNR0FKeXlrdGJocGchPiQSGxpLREpMQyMsQWtsYCB-WQAAAABCV6To$ no",
+            "GM_OP201809 $*KwHJ9eXquqi5urSosKnj4OW-qc-8oIHfkcPB1dnA37G0vrizgICSjZuRiZ7Yx93r4uOyvbO1utrVpZOUmdmHoAAAAADp64DZ$ no"
+          ],
+          "names" => [
+            "INSIGNIA (G09)",
+            "INSIGNIA (Z18)"
+          ]
         }
       },
       "kadett" => {
         "name" => "kadett",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2529/46_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwHO8uLtva--vbOvt67k5-K5rsi7p4bYlsTG0t7H2Lazub-0h4eVipyWjpnfwNru6vO5qa7ZgaAAAAAAo1uZRA$ no"
+          ],
+          "names" => [
+            "KADETT"
+          ]
         }
       },
       "meriva" => {
         "name" => "meriva",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2541/13_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwEBPS0icmBxcnxgeGErKC12YQd0aEkXWQsJHREIF3l8dnB7SEhaRVNZQVYQDxUnISp6ZHQUG2EEB0NGBW4AAAAAEdIn_w$ no",
+            "GM_OP201809 $*KwG5hZWaytjJysTYwNmTkJXO2b_M0PGv4bOxpamwr8HEzsjD8PDi_evh-e6ot62fmZLC3Myso9K9vPv-vdYAAAAA6AsO1Q$ no"
+          ],
+          "names" => [
+            "MERIVA (S10)",
+            "MERIVA (X03)"
+          ]
         }
       },
       "mokka" => {
         "name" => "mokka",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2542/50_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwFKdmZpOSs6OTcrMypgY2Y9Kkw_IwJcEkBCVlpDXDI3PTswAwMRDhgSCh1bRF5sYHgzOFwCJQAAAACClyiZ$ no",
+            "GM_OP201809 $*KwHg3MzDk4GQk52BmYDKycyXgOaViaj2uOro_PDp9pidl5Gaqam7pLK4oLfx7vTGytKZkvSN8K6JAAAAAM09JRU$ no"
+          ],
+          "names" => [
+            "MOKKA",
+            "MOKKA X"
+          ]
         }
       },
       "omega" => {
         "name" => "omega",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2559/54_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwEDPy8gcGJzcH5iemMpKi90YwV2aksVWwkLHxMKFXt-dHJ5SkpYR1FbQ1QSDRcnKz92cRceZwgAHEobJwAAAAAuEB-O$ no",
+            "GM_OP201809 $*KwEHOyskdGZ3dHpmfmctLitwZwFybk8RXw0PGxcOEX96cHZ9Tk5cQ1VfR1AWCRMjLztydRMaYw0HGE4fIwAAAAAyMxn9$ no"
+          ],
+          "names" => [
+            "OMEGA (V87)",
+            "OMEGA (V94)"
+          ]
         }
       },
       "vectra" => {
         "name" => "vectra",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2591/67_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwHG-urltae2tbunv6bs7-qxpsCzr47QnszO2tbP0L67sbe8j4-dgpSehpHXyNL75vygp7PT3L_KyYSBwqkAAAAAmux1nw$ no",
+            "GM_OP201809 $*KwGgnIyD08HQ093B2cCKiYzXwKbVyei2-KqovLCpttjd19Ha6en75PL44PexrrSdgJrGwdW1utmtoOLnpM8AAAAAjNtkLQ$ no",
+            "GM_OP201809 $*KwFbZ3d4KDorKCY6IjtxcncsO10uMhNNA1FTR0tSTSMmLCohEhIAHwkDGwxKVU9me2E9Oi5OQTJfXxkcXzQAAAAARv-wBw$ no"
+          ],
+          "names" => [
+            "VECTRA (J89)",
+            "VECTRA (J96)",
+            "VECTRA (Z02)"
+          ]
         }
       },
       "zafira" => {
         "name" => "zafira",
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/2600/57_original_original.JPG",
         "laximo" => {
-          "codes" => [],
-          "names" => []
+          "codes" => [
+            "GM_OP201809 $*KwEBPS0icmBxcnxgeGErKC12YQd0aEkXWQsJHREIF3l8dnB7SEhaRVNZQVYQDxUwJT56YHQUG3MFAkNGBW4AAAAA4IdWTQ$ no",
+            "GM_OP201809 $*KwGUqLi35_Xk5-n17fS-vbjj9JLh_dyCzJ6ciISdguzp4-Xu3d3P0MbM1MOFmoClsKvv9eGBjveRkNbTkPsAAAAAflBf7w$ no",
+            "GM_OP201809 $*KwFFeWlmNiQ1NjgkPCVvbGkyJUMwLA1THU9NWVVMUz04MjQ_DAweARcdBRJUS1F0YXo-JDBQXyJISwcCQSoAAAAA1gMU5g$ no"
+          ],
+          "names" => [
+            "ZAFIRA (A05)",
+            "ZAFIRA (P12)",
+            "ZAFIRA (T98)"
+          ]
         }
       },
       "другие модели" => {
@@ -5703,7 +5936,7 @@
         "imgSrc" => "https://api.parts-soft.ru/system/car_base_model/default.gif",
         "laximo" => {
           "codes" => [
-            "op1210 no no"
+            "GM_OP201809 no no"
           ],
           "names" => [
             "npc"
