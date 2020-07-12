@@ -2103,6 +2103,8 @@ p img, span img, div img {
   width: 60px;
   padding: 0 29px;
   appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
   background: url(/images/design/arrow-icon--black-red.png) no-repeat center 17px;
   background-size: 30px 55px;
   transition: unset;

@@ -428,6 +428,16 @@
   .wrap_3s _show_3w {
     margin: 0 10px 50px 0
   }
+
+  .b-content .paging{
+    padding: 5px 0;
+  }
+  .b-content .paging a{
+    margin: 10px 0;
+  }
+  .b-content .paging .xlsx{
+    position: static;
+  }
 }
 @media (min-width: 425px) and (max-width: 456px) {
   .b-msd-logo::after {
