@@ -249,6 +249,7 @@ export default class ContactMap extends React.Component {
   saveDeliveryType = (deliveryType) => this.saveCookie('deliveryType', deliveryType);
   getBackUrl = () => {
     const fromUrl = sessionStorage.getItem('fromAnotherUrl');
+    console.log("llllllllllllllllll");
     if (fromUrl) {
       sessionStorage.removeItem('fromAnotherUrl');
       location.assign(fromUrl);

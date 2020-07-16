@@ -317,7 +317,7 @@ module.exports = (grunt) => {
           'src/js/basket/shiptor-points-getter/shiptor-points-getter.js',
           'src/js/basket/delivery-pickup/delivery-pickup.js',
           'src/js/basket/delivery-selfExport/delivery-selfExport.js',
-          'src/js/basket/basket-react/dist/main.js',
+          'src/js/basket/basket-react/dist/kontakty.js',
           // 'src/js/basket/basket-delivery/basket-delivery.js',
         ],
         dest: 'build/js/basket-delivery-page-script.js'
@@ -450,12 +450,12 @@ module.exports = (grunt) => {
   const SCSS_SETTINGS = {
     tasks: ['sass', 'autoprefixer', 'cssmin'],
     type: 'css',
-    preset: "aboutCompany",
+    preset: "users-styles",
   };
   const JS_SETTINGS = {
     tasks: ['concat', 'babel', 'uglify'],
     type: 'js',
-    preset: 'aboutCompany',
+    preset: 'basketDelivery',
   };
 
   /**

@@ -15,7 +15,28 @@ export const BottomNav = ({step, onClick}) => {
       3: {
         text: ['Назад', 'Оформить'],
         className: ['basket__react-bottom-nav-btn', 'basket__react-bottom-nav-btn basket__react-bottom-nav-btn--confirm'],
-        onClick: [onClick.bind(null, 'sub'), (evt) => {evt.preventDefault(); document.querySelector('a.c-order.to-right').click()}],
+        onClick: [onClick.bind(null, 'sub'), (evt) => {evt.preventDefault();
+
+          BX24.callMethod(
+              "crm.lead.list",
+              {
+                filter: { "EMAIL": "service@moika76.ru" },
+                select: [ "ID", "TITLE" ]
+              },
+              function(result)
+              {
+                if(result.error())
+                  console.error(result.error());
+                else
+                {
+                  console.dir(result.data());
+                  if(result.more())
+                    result.next();
+                }
+              }
+          );
+        }],
+        //document.querySelector('a.c-order.to-right').click()
         available: [true, buttonAvailable],
       },
     };
