@@ -15,7 +15,8 @@ const useCookie = (initialState) => {
     const options = {
       path: '/',
       secure: true,
-      'expires': new Date(Date.now() + 11586400e5),
+      expires: (new Date(Date.now() + 11586400e5)).toUTCString(),
+      SameSite: 'None',
     };
 
     let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
